@@ -1,8 +1,7 @@
 .env
-data/
-media/ready/
-media/logos/
 __pycache__/
 *.pyc
+media/ready/
+media/logos/
 imports/archive/
 libs/
