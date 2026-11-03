@@ -1,16 +1,18 @@
+import base64
 import ctypes
 import json
 import os
 from pathlib import Path
 
-_libs = Path(__file__).resolve().parent / "libs"
-if _libs.exists():
-    os.environ["PATH"] = str(_libs) + os.pathsep + os.environ["PATH"]
-    os.add_dll_directory(str(_libs))
-    try:
-        ctypes.CDLL(str(_libs / "fribidi.dll"))
-    except OSError as e:
-        print("[warn] fribidi load fail:", e)
+if os.name == "nt":
+    _libs = Path(__file__).resolve().parent / "libs"
+    if _libs.exists():
+        os.environ["PATH"] = str(_libs) + os.pathsep + os.environ["PATH"]
+        os.add_dll_directory(str(_libs))
+        try:
+            ctypes.CDLL(str(_libs / "fribidi.dll"))
+        except OSError as e:
+            print("[warn] fribidi load fail:", e)
 
 import socket
 import threading
@@ -20,7 +22,7 @@ from zoneinfo import ZoneInfo
 
 import uvicorn
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import RedirectResponse
+from fastapi.responses import RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
@@ -40,6 +42,28 @@ NEWS_TPL_COUNT = getattr(store, "NEWS_TPL_COUNT", 4)
 TPL_COUNT = getattr(config, "TEMPLATE_COUNT", 4)
 
 app = FastAPI(title="FB Engine")
+
+FB_USER = os.getenv("FB_USER", "admin")
+FB_PASS = os.getenv("FB_PASS", "")
+
+
+@app.middleware("http")
+async def _auth(request: Request, call_next):
+    if not FB_PASS or request.url.path.startswith("/static") or \
+            request.url.path.startswith("/media"):
+        return await call_next(request)
+    hdr = request.headers.get("authorization", "")
+    if hdr.startswith("Basic "):
+        try:
+            u, p = base64.b64decode(hdr[6:]).decode().split(":", 1)
+            if u == FB_USER and p == FB_PASS:
+                return await call_next(request)
+        except Exception:
+            pass
+    return Response("Auth required", status_code=401,
+                    headers={"WWW-Authenticate": 'Basic realm="fb"'})
+
+
 app.mount("/static", StaticFiles(directory=str(config.STATIC_DIR)), name="static")
 app.mount("/media", StaticFiles(directory=str(config.MEDIA_DIR)), name="media")
 templates = Jinja2Templates(directory=str(config.TEMPLATE_DIR))
@@ -47,7 +71,6 @@ templates.env.globals["SECTIONS"] = config.SECTIONS
 templates.env.globals["LANGS"] = LANGS
 templates.env.globals["NEWS_TPL_COUNT"] = NEWS_TPL_COUNT
 templates.env.globals["TEMPLATE_COUNT"] = TPL_COUNT
-
 
 def _now_ist():
     return datetime.now(ZoneInfo(config.TZ)).strftime("%d %b, %I:%M %p")
