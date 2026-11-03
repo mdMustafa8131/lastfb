@@ -10,7 +10,19 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
-import feedparser
+
+try:
+    import feedparser
+except ModuleNotFoundError:      # feedparser na ho to bhi app boot ho jaye
+    class _EmptyFeed(dict):
+        entries = []
+
+    class _FeedShim:
+        @staticmethod
+        def parse(*a, **k):
+            return _EmptyFeed()
+
+    feedparser = _FeedShim()
 import httpx
 
 import config

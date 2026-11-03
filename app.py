@@ -86,8 +86,26 @@ def _ctx(request, **kw):
     return kw
 
 
+def _seed_pools():
+    seed_dir = config.BASE_DIR / "imports" / "seed"
+    if not seed_dir.exists():
+        return
+    for section in ("english", "islam"):
+        if pool.remaining(section):
+            continue
+        f = seed_dir / f"{section}.csv"
+        if not f.exists():
+            continue
+        try:
+            importer.import_text(section, f.read_text("utf-8"), None)
+            print("[seed] loaded", section)
+        except Exception as e:
+            print("[seed] fail", section, e)
+
+
 @app.on_event("startup")
 async def _startup():
+    _seed_pools()
     scheduler.start()
 
 
