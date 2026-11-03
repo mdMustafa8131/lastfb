@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if not connected %}
+<section class="hero card">
+    <h1>Facebook Page Automation</h1>
+    <p class="muted">App ID, App Secret aur user token daalo. Saare pages list ho jayenge, phir har page ko section aur
+        translations assign karo.</p>
+    <form id="connectForm" class="grid gap">
+        <label>App ID <input name="app_id" required autocomplete="off"></label>
+        <label>App Secret <input name="app_secret" required autocomplete="off" type="password"></label>
+        <label>User Token <textarea name="user_token" rows="3" required></textarea></label>
+        <button class="btn btn-primary" type="submit">Connect</button>
+    </form>
+</section>
+{% else %}
+
+<div class="rowbar">
+    <h1 class="h1">Pages</h1>
+    <div class="rowbar-actions">
+        <button class="btn btn-ghost" id="syncBtn">Refresh pages</button>
+        <button class="btn btn-ghost" id="dryRunBtn">{{ "DRY RUN: ON" if settings.dry_run else "DRY RUN: OFF" }}</button>
+        <button class="btn btn-ghost" id="dryRunBtn">
+            {{ "DRY RUN: ON" if settings.dry_run else "DRY RUN: OFF" }}
+        </button>
+    </div>
+</div>
+
+{% if not pages %}
+<div class="card empty">Koi page nahi mila. Token me pages manage permission check karo, phir refresh.</div>
+{% endif %}
+
+<div class="grid pages">
+    {% for p in pages %}
+    <article class="card page-card sec-{{ p.section or 'none' }}" data-id="{{ p.id }}">
+        {% if p.section and p.remaining <= 10 %} <div class="warnbar">Data khatam ho raha hai — {{ p.remaining }} bache
+</div>
+{% endif %}
+<div class="pc-head">
+    <div>
+        <h2 class="pc-name">{{ p.name }}</h2>
+        <span class="muted small">{{ p.category or "page" }}</span>
+    </div>
+    <label class="switch">
+        <input type="checkbox" class="toggle" {% if p.enabled %}checked{% endif %}>
+        <span class="slider"></span>
+    </label>
+</div>
+
+<div class="chips">
+    <button class="chip {% if p.section=='english' %}on{% endif %}" data-sec="english">English</button>
+    <button class="chip {% if p.section=='islam' %}on{% endif %}" data-sec="islam">Islam</button>
+</div>
+
+<div class="small muted">
+    translations: {{ (p.langs or [])|join(", ") or "—" }} · boxes: {{ p.sentences or 4 }}{% if p.question_box %} · Q{%
+    endif %}
+</div>
+
+<div class="pc-foot">
+    <span class="status" data-status="{{ p.status }}">{{ p.status }}</span>
+    <span class="small muted" data-next>next: {{ p.next_ist or "—" }}</span>
+    <a class="btn btn-sm" href="/page/{{ p.id }}">Config</a>
+</div>
+</article>
+{% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}

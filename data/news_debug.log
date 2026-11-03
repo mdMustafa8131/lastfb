@@ -1,0 +1,616 @@
+14:10:41 --- start mode=trending region=in sub=worldnews cat=None kw=None
+14:10:43 hashtags https://trends24.in/in/ status=404 len=28264
+14:10:44 hashtags https://trends24.in/ status=200 len=288059
+14:10:44 hashtags raw=133 sample=['GMMTVNEXT', 'PPxPAPERCLIP', 'GMMTVNEXT', 'PPxPAPERCLIP', 'PPxPAPERCLIP', 'GMMTVNEXT', 'WeareARASHI', 'PPxPAPERCLIP']
+14:10:44 keywords=['#GMMTVNEXT', '#PPxPAPERCLIP', '#WeareARASHI']
+14:10:45 google q='#GMMTVNEXT' status=404 rss=False
+14:10:46 google q='#GMMTVNEXT' status=200 rss=True
+14:10:48 bing q='#GMMTVNEXT' status=200 rss=True
+14:10:49 reddit search r/worldnews q='#GMMTVNEXT' status=403
+14:10:50 reddit search r/worldnews q='#GMMTVNEXT' status=200
+14:10:50 reddit search fail r/worldnews: Expecting value: line 2 column 5 (char 5)
+14:10:52 reddit search r/india q='#GMMTVNEXT' status=403
+14:10:53 reddit search r/india q='#GMMTVNEXT' status=200
+14:10:53 reddit search fail r/india: Expecting value: line 2 column 5 (char 5)
+14:10:54 reddit search r/news q='#GMMTVNEXT' status=403
+14:10:55 reddit search r/news q='#GMMTVNEXT' status=200
+14:10:55 reddit search fail r/news: Expecting value: line 2 column 5 (char 5)
+14:10:57 google q='#PPxPAPERCLIP' status=404 rss=False
+14:10:58 google q='#PPxPAPERCLIP' status=200 rss=True
+14:10:59 bing q='#PPxPAPERCLIP' status=200 rss=True
+14:11:00 reddit search r/worldnews q='#PPxPAPERCLIP' status=403
+14:11:02 reddit search r/worldnews q='#PPxPAPERCLIP' status=200
+14:11:02 reddit search fail r/worldnews: Expecting value: line 2 column 5 (char 5)
+14:11:03 reddit search r/india q='#PPxPAPERCLIP' status=403
+14:11:04 reddit search r/india q='#PPxPAPERCLIP' status=200
+14:11:04 reddit search fail r/india: Expecting value: line 2 column 5 (char 5)
+14:11:05 reddit search r/news q='#PPxPAPERCLIP' status=403
+14:11:06 reddit search r/news q='#PPxPAPERCLIP' status=200
+14:11:06 reddit search fail r/news: Expecting value: line 2 column 5 (char 5)
+14:11:07 google q='#WeareARASHI' status=404 rss=False
+14:11:09 google q='#WeareARASHI' status=200 rss=True
+14:11:12 bing q='#WeareARASHI' status=200 rss=True
+14:11:13 reddit search r/worldnews q='#WeareARASHI' status=403
+14:11:14 reddit search r/worldnews q='#WeareARASHI' status=200
+14:11:14 reddit search fail r/worldnews: Expecting value: line 2 column 5 (char 5)
+14:11:15 reddit search r/india q='#WeareARASHI' status=403
+14:11:17 reddit search r/india q='#WeareARASHI' status=200
+14:11:17 reddit search fail r/india: Expecting value: line 2 column 5 (char 5)
+14:11:18 reddit search r/news q='#WeareARASHI' status=403
+14:11:19 reddit search r/news q='#WeareARASHI' status=200
+14:11:19 reddit search fail r/news: Expecting value: line 2 column 5 (char 5)
+14:11:20 reddit hot r/worldnews https://www.reddit.com status=403
+14:11:21 reddit hot r/worldnews https://old.reddit.com status=200
+14:11:21 reddit fail r/worldnews: Expecting value: line 2 column 5 (char 5)
+14:11:22 reddit hot r/india https://www.reddit.com status=403
+14:11:24 reddit hot r/india https://old.reddit.com status=200
+14:11:24 reddit fail r/india: Expecting value: line 2 column 5 (char 5)
+14:11:25 reddit hot r/news https://www.reddit.com status=403
+14:11:26 reddit hot r/news https://old.reddit.com status=200
+14:11:26 reddit fail r/news: Expecting value: line 2 column 5 (char 5)
+14:11:26 raw items=22
+14:11:26 unique=12 matched=3 loose=9 cooled=0
+14:11:34 final=3 with_img=3
+14:11:34 --- start mode=auto region=in sub=worldnews cat=None kw=None
+14:11:35 trends geo=IN status=200
+14:11:35 keywords=['sbi results', 'యశస్వి జైస్వాల్', 'jesús de miguel', 'au bank', 'lottery sambad today', 'निधि राजदान उमर अब्दुल्ला', 'cancer horoscope today', 'manasvi vashistha', 'ওয়ারেন বাফেট', 'bse share']
+14:11:37 google q='sbi results' status=200 rss=True
+14:11:38 bing q='sbi results' status=200 rss=True
+14:11:39 reddit search r/worldnews q='sbi results' status=403
+14:11:41 reddit search r/worldnews q='sbi results' status=200
+14:11:41 reddit search fail r/worldnews: Expecting value: line 2 column 5 (char 5)
+14:11:42 reddit search r/india q='sbi results' status=403
+14:11:43 reddit search r/india q='sbi results' status=200
+14:11:43 reddit search fail r/india: Expecting value: line 2 column 5 (char 5)
+14:11:44 reddit search r/news q='sbi results' status=403
+14:11:45 reddit search r/news q='sbi results' status=200
+14:11:45 reddit search fail r/news: Expecting value: line 2 column 5 (char 5)
+14:11:47 google q='యశస్వి జైస్వాల్' status=200 rss=True
+14:11:48 bing q='యశస్వి జైస్వాల్' status=200 rss=True
+14:11:49 reddit search r/worldnews q='యశస్వి జైస్వాల్' status=403
+14:11:50 reddit search r/worldnews q='యశస్వి జైస్వాల్' status=200
+14:11:50 reddit search fail r/worldnews: Expecting value: line 2 column 5 (char 5)
+14:11:51 reddit search r/india q='యశస్వి జైస్వాల్' status=403
+14:11:53 reddit search r/india q='యశస్వి జైస్వాల్' status=200
+14:11:53 reddit search fail r/india: Expecting value: line 2 column 5 (char 5)
+14:11:54 reddit search r/news q='యశస్వి జైస్వాల్' status=403
+14:11:55 reddit search r/news q='యశస్వి జైస్వాల్' status=200
+14:11:55 reddit search fail r/news: Expecting value: line 2 column 5 (char 5)
+14:11:56 google q='jesús de miguel' status=200 rss=True
+14:11:58 bing q='jesús de miguel' status=200 rss=True
+14:11:59 reddit search r/worldnews q='jesús de miguel' status=403
+14:12:00 reddit search r/worldnews q='jesús de miguel' status=200
+14:12:00 reddit search fail r/worldnews: Expecting value: line 2 column 5 (char 5)
+14:12:01 reddit search r/india q='jesús de miguel' status=403
+14:12:03 reddit search r/india q='jesús de miguel' status=200
+14:12:03 reddit search fail r/india: Expecting value: line 2 column 5 (char 5)
+14:12:04 reddit search r/news q='jesús de miguel' status=403
+14:12:05 reddit search r/news q='jesús de miguel' status=200
+14:12:05 reddit search fail r/news: Expecting value: line 2 column 5 (char 5)
+14:12:06 google q='au bank' status=200 rss=True
+14:12:10 bing q='au bank' status=200 rss=True
+14:12:11 reddit search r/worldnews q='au bank' status=403
+14:12:12 reddit search r/worldnews q='au bank' status=200
+14:12:12 reddit search fail r/worldnews: Expecting value: line 2 column 5 (char 5)
+14:12:13 reddit search r/india q='au bank' status=403
+14:12:15 reddit search r/india q='au bank' status=200
+14:12:15 reddit search fail r/india: Expecting value: line 2 column 5 (char 5)
+14:12:16 reddit search r/news q='au bank' status=403
+14:12:17 reddit search r/news q='au bank' status=200
+14:12:17 reddit search fail r/news: Expecting value: line 2 column 5 (char 5)
+14:12:19 google q='lottery sambad today' status=200 rss=True
+14:12:20 bing q='lottery sambad today' status=200 rss=True
+14:12:21 reddit search r/worldnews q='lottery sambad today' status=403
+14:12:23 reddit search r/worldnews q='lottery sambad today' status=200
+14:12:23 reddit search fail r/worldnews: Expecting value: line 2 column 5 (char 5)
+14:12:24 reddit search r/india q='lottery sambad today' status=403
+14:12:25 reddit search r/india q='lottery sambad today' status=200
+14:12:25 reddit search fail r/india: Expecting value: line 2 column 5 (char 5)
+14:12:26 reddit search r/news q='lottery sambad today' status=403
+14:12:27 reddit search r/news q='lottery sambad today' status=200
+14:12:27 reddit search fail r/news: Expecting value: line 2 column 5 (char 5)
+14:12:28 reddit hot r/worldnews https://www.reddit.com status=403
+14:12:30 reddit hot r/worldnews https://old.reddit.com status=200
+14:12:30 reddit fail r/worldnews: Expecting value: line 2 column 5 (char 5)
+14:12:31 reddit hot r/india https://www.reddit.com status=403
+14:12:33 reddit hot r/india https://old.reddit.com status=200
+14:12:33 reddit fail r/india: Expecting value: line 2 column 5 (char 5)
+14:12:34 reddit hot r/news https://www.reddit.com status=403
+14:12:36 reddit hot r/news https://old.reddit.com status=200
+14:12:36 reddit fail r/news: Expecting value: line 2 column 5 (char 5)
+14:12:36 raw items=42
+14:12:36 unique=42 matched=6 loose=36 cooled=0
+14:12:44 final=5 with_img=0
+14:14:01 --- start mode=manual region=in sub=worldnews cat=None kw=india election
+14:14:01 keywords=['india election']
+14:14:03 google q='india election' status=200 rss=True
+14:14:04 bing q='india election' status=200 rss=True
+14:14:05 reddit search r/worldnews q='india election' status=403
+14:14:07 reddit search r/worldnews q='india election' status=200
+14:14:07 reddit search fail r/worldnews: Expecting value: line 2 column 5 (char 5)
+14:14:08 reddit search r/india q='india election' status=403
+14:14:09 reddit search r/india q='india election' status=200
+14:14:09 reddit search fail r/india: Expecting value: line 2 column 5 (char 5)
+14:14:10 reddit search r/news q='india election' status=403
+14:14:11 reddit search r/news q='india election' status=200
+14:14:11 reddit search fail r/news: Expecting value: line 2 column 5 (char 5)
+14:14:12 reddit hot r/worldnews https://www.reddit.com status=403
+14:14:14 reddit hot r/worldnews https://old.reddit.com status=200
+14:14:14 reddit fail r/worldnews: Expecting value: line 2 column 5 (char 5)
+14:14:15 reddit hot r/india https://www.reddit.com status=403
+14:14:16 reddit hot r/india https://old.reddit.com status=200
+14:14:16 reddit fail r/india: Expecting value: line 2 column 5 (char 5)
+14:14:17 reddit hot r/news https://www.reddit.com status=403
+14:14:19 reddit hot r/news https://old.reddit.com status=200
+14:14:19 reddit fail r/news: Expecting value: line 2 column 5 (char 5)
+14:14:19 raw items=9
+14:14:19 unique=9 matched=0 loose=9 cooled=0
+14:14:24 final=3 with_img=0
+14:28:24 --- start mode=auto region=in sub=worldnews cat=None kw=None
+14:28:25 trends geo=IN status=200
+14:28:25 keywords=['दिल्ली पुलिस', 'विमान दुर्घटना', 'भारतीय रेल', 'trit raj das', 'fortuner', 'sbi results', 'harmeet singh', 'యశస్వి జైస్వాల్', 'jesús de miguel', 'au bank']
+14:28:27 google q='दिल्ली पुलिस' status=200 rss=True
+14:28:29 bing q='दिल्ली पुलिस' status=200 rss=True
+14:28:33 reddit search r/worldnews json=False
+14:28:36 reddit search r/india json=False
+14:28:38 reddit search r/news json=False
+14:28:41 google q='विमान दुर्घटना' status=200 rss=True
+14:28:43 bing q='विमान दुर्घटना' status=200 rss=True
+14:28:46 reddit search r/worldnews json=False
+14:28:48 reddit search r/india json=False
+14:28:51 reddit search r/news json=False
+14:28:53 google q='भारतीय रेल' status=200 rss=True
+14:28:55 bing q='भारतीय रेल' status=200 rss=True
+14:28:58 reddit search r/worldnews json=False
+14:29:00 reddit search r/india json=False
+14:29:04 reddit search r/news json=False
+14:29:06 google q='trit raj das' status=200 rss=True
+14:29:07 bing q='trit raj das' status=200 rss=True
+14:29:10 reddit search r/worldnews json=False
+14:29:13 reddit search r/india json=False
+14:29:15 reddit search r/news json=False
+14:29:18 google q='fortuner' status=200 rss=True
+14:29:19 bing q='fortuner' status=200 rss=True
+14:29:21 reddit search r/worldnews json=False
+14:29:24 reddit search r/india json=False
+14:29:27 reddit search r/news json=False
+14:29:28 reddit hot r/worldnews https://www.reddit.com status=403
+14:29:29 reddit hot r/worldnews json=False
+14:29:30 reddit hot r/india https://www.reddit.com status=403
+14:29:32 reddit hot r/india json=False
+14:29:33 reddit hot r/news https://www.reddit.com status=403
+14:29:34 reddit hot r/news json=False
+14:29:34 raw items=49
+14:29:34 unique=49 matched=16 loose=33 cooled=0
+14:29:42 bingimg q='प्रोटेस्ट कर रहे दिल्ली पु' status=200
+14:29:51 final=5 with_img=5
+14:36:10 --- start mode=trending region=in sub=worldnews cat=1a720f12 kw=None
+14:36:12 hashtags https://trends24.in/india/ status=200 len=310936
+14:36:12 hashtags raw=239 sample=['Nepal', 'SSMBxShortgunGames', 'ISA9thAssembly', 'LiciousSizzlLaunch', 'PuneThanksDevaBhau', 'LiciousSizzlLaunch', 'SSMBxShortgunGames', 'PuneThanksDevaBhau']
+14:36:12 keywords=['#Nepal', '#SSMBxShortgunGames', '#ISA9thAssembly']
+14:36:13 google q='#Nepal' status=404 rss=False
+14:36:14 google q='#Nepal' status=200 rss=True
+14:36:17 bing q='#Nepal' status=200 rss=True
+14:36:20 reddit search r/worldnews json=False
+14:36:22 reddit search r/india json=False
+14:36:25 reddit search r/news json=False
+14:36:26 google q='#SSMBxShortgunGames' status=404 rss=False
+14:36:27 google q='#SSMBxShortgunGames' status=200 rss=True
+14:36:30 bing q='#SSMBxShortgunGames' status=200 rss=True
+14:36:32 reddit search r/worldnews json=False
+14:36:35 reddit search r/india json=False
+14:36:37 reddit search r/news json=False
+14:36:38 google q='#ISA9thAssembly' status=404 rss=False
+14:36:39 google q='#ISA9thAssembly' status=200 rss=True
+14:36:40 bing q='#ISA9thAssembly' status=200 rss=True
+14:36:43 reddit search r/worldnews json=False
+14:36:45 reddit search r/india json=False
+14:36:47 reddit search r/news json=False
+14:36:48 reddit hot r/worldnews https://www.reddit.com status=403
+14:36:49 reddit hot r/worldnews json=False
+14:36:50 reddit hot r/india https://www.reddit.com status=403
+14:36:51 reddit hot r/india json=False
+14:36:52 reddit hot r/news https://www.reddit.com status=403
+14:36:55 reddit hot r/news json=False
+14:36:55 raw items=17
+14:36:55 unique=7 matched=3 loose=4 cooled=0
+14:36:58 bingimg q='Indian killed as two helic' status=200
+14:37:00 bingimg q='A breathtaking 4K journey ' status=200
+14:37:02 bingimg q='$30 flight from Pokhara to' status=200
+14:37:02 final=3 with_img=3
+14:39:04 --- start mode=auto region=in sub=worldnews cat=1a720f12 kw=None
+14:39:05 trends geo=IN status=200
+14:39:05 keywords=['दिल्ली पुलिस', 'विमान दुर्घटना', 'होंडा', 'ગ્લેન મેક્સવેલ', 'भारतीय रेल', 'trit raj das', 'fortuner', 'sbi results', 'harmeet singh', 'యశస్వి జైస్వాల్']
+14:39:07 google q='दिल्ली पुलिस' status=200 rss=True
+14:39:08 bing q='दिल्ली पुलिस' status=200 rss=True
+14:39:11 reddit search r/worldnews json=False
+14:39:13 reddit search r/india json=False
+14:39:15 reddit search r/news json=False
+14:39:16 google q='विमान दुर्घटना' status=200 rss=True
+14:39:18 bing q='विमान दुर्घटना' status=200 rss=True
+14:39:20 reddit search r/worldnews json=False
+14:39:22 reddit search r/india json=False
+14:39:24 reddit search r/news json=False
+14:39:26 google q='होंडा' status=200 rss=True
+14:39:47 bing q='होंडा' status=200 rss=True
+14:39:49 reddit search r/worldnews json=False
+14:39:51 reddit search r/india json=False
+14:39:54 reddit search r/news json=False
+14:39:55 google q='ગ્લેન મેક્સવેલ' status=200 rss=True
+14:39:56 google q='ગ્લેન મેક્સવેલ' status=200 rss=True
+14:39:57 bing q='ગ્લેન મેક્સવેલ' status=200 rss=True
+14:40:00 reddit search r/worldnews json=False
+14:40:02 reddit search r/india json=False
+14:40:04 reddit search r/news json=False
+14:40:06 google q='भारतीय रेल' status=200 rss=True
+14:40:07 bing q='भारतीय रेल' status=200 rss=True
+14:40:09 reddit search r/worldnews json=False
+14:40:11 reddit search r/india json=False
+14:40:13 reddit search r/news json=False
+14:40:14 reddit hot r/worldnews https://www.reddit.com status=403
+14:40:16 reddit hot r/worldnews json=False
+14:40:17 reddit hot r/india https://www.reddit.com status=403
+14:40:18 reddit hot r/india json=False
+14:40:19 reddit hot r/news https://www.reddit.com status=403
+14:40:20 reddit hot r/news json=False
+14:40:20 raw items=50
+14:40:20 unique=50 matched=12 loose=38 cooled=0
+14:40:35 bingimg q='खरीदनी है नई SUV? होंडा ला' status=200
+14:40:35 final=5 with_img=5
+14:41:21 --- start mode=auto region=in sub=worldnews cat=1a720f12 kw=None
+14:41:22 trends geo=IN status=200
+14:41:22 keywords=['दिल्ली पुलिस', 'विमान दुर्घटना', 'होंडा', 'ગ્લેન મેક્સવેલ', 'भारतीय रेल', 'trit raj das', 'fortuner', 'sbi results', 'harmeet singh', 'యశస్వి జైస్వాల్']
+14:41:25 google q='दिल्ली पुलिस' status=200 rss=True
+14:41:26 bing q='दिल्ली पुलिस' status=200 rss=True
+14:41:28 reddit search r/worldnews json=False
+14:41:30 reddit search r/india json=False
+14:41:34 reddit search r/news json=False
+14:41:36 google q='विमान दुर्घटना' status=200 rss=True
+14:41:37 bing q='विमान दुर्घटना' status=200 rss=True
+14:41:40 reddit search r/worldnews json=False
+14:41:42 reddit search r/india json=False
+14:41:44 reddit search r/news json=False
+14:41:46 google q='होंडा' status=200 rss=True
+14:41:47 bing q='होंडा' status=200 rss=True
+14:41:49 reddit search r/worldnews json=False
+14:41:52 reddit search r/india json=False
+14:41:54 reddit search r/news json=False
+14:41:55 google q='ગ્લેન મેક્સવેલ' status=200 rss=True
+14:41:57 google q='ગ્લેન મેક્સવેલ' status=200 rss=True
+14:41:58 bing q='ગ્લેન મેક્સવેલ' status=200 rss=True
+14:42:00 reddit search r/worldnews json=False
+14:42:03 reddit search r/india json=False
+14:42:05 reddit search r/news json=False
+14:42:07 google q='भारतीय रेल' status=200 rss=True
+14:42:08 bing q='भारतीय रेल' status=200 rss=True
+14:42:11 reddit search r/worldnews json=False
+14:42:13 reddit search r/india json=False
+14:42:15 reddit search r/news json=False
+14:42:16 reddit hot r/worldnews https://www.reddit.com status=403
+14:42:17 reddit hot r/worldnews json=False
+14:42:18 reddit hot r/india https://www.reddit.com status=403
+14:42:19 reddit hot r/india json=False
+14:42:20 reddit hot r/news https://www.reddit.com status=403
+14:42:21 reddit hot r/news json=False
+14:42:21 raw items=50
+14:42:21 unique=50 matched=12 loose=38 cooled=0
+14:42:31 bingimg q='खरीदनी है नई SUV? होंडा ला' status=200
+14:42:31 final=5 with_img=5
+14:44:37 --- start mode=manual region=in sub=worldnews cat=1a720f12 kw=None
+14:44:37 manual cat=bollywood kws=['salman khan', 'srk', 'imran hashmi']
+14:44:37 keywords=['salman khan srk imran hashmi', 'salman khan', 'srk', 'imran hashmi']
+14:44:39 google q='salman khan srk imran ha' status=200 rss=True
+14:44:40 bing q='salman khan srk imran ha' status=200 rss=True
+14:44:42 reddit search r/worldnews json=False
+14:44:44 reddit search r/india json=False
+14:44:46 reddit search r/news json=False
+14:44:48 google q='salman khan' status=200 rss=True
+14:44:49 bing q='salman khan' status=200 rss=True
+14:44:51 reddit search r/worldnews json=False
+14:44:53 reddit search r/india json=False
+14:44:55 reddit search r/news json=False
+14:44:57 google q='srk' status=200 rss=True
+14:45:00 bing q='srk' status=200 rss=True
+14:45:02 reddit search r/worldnews json=False
+14:45:05 reddit search r/india json=False
+14:45:07 reddit search r/news json=False
+14:45:09 google q='imran hashmi' status=200 rss=True
+14:45:10 bing q='imran hashmi' status=200 rss=True
+14:45:12 reddit search r/worldnews json=False
+14:45:15 reddit search r/india json=False
+14:45:17 reddit search r/news json=False
+14:45:18 reddit hot r/worldnews https://www.reddit.com status=403
+14:45:19 reddit hot r/worldnews json=False
+14:45:20 reddit hot r/india https://www.reddit.com status=403
+14:45:22 reddit hot r/india json=False
+14:45:23 reddit hot r/news https://www.reddit.com status=403
+14:45:24 reddit hot r/news json=False
+14:45:24 raw items=36
+14:45:24 unique=36 matched=22 loose=14 cooled=0
+14:45:28 bingimg q='Emraan Hashmi defends grea' status=200
+14:45:32 bingimg q='Eagle-eyed fans spot SRK's' status=200
+14:45:34 bingimg q=''Want To Be A Star': SRK K' status=200
+14:45:37 bingimg q='Throwback: When Emraan Has' status=200
+14:45:37 final=5 with_img=3
+14:51:23 --- start mode=auto region=in sub=worldnews cat=None kw=None
+14:51:24 trends geo=IN status=200
+14:51:24 keywords=['micron', 'ರಕ್ಷಿತಾ', 'jesus de miguel', 'சமந்தா', 'दिल्ली पुलिस', 'होंडा', 'विमान दुर्घटना', 'भारतीय रेल', 'ગ્લેન મેક્સવેલ', 'trit raj das']
+14:51:31 feeds items=361
+14:52:52 google q='micron' status=200 rss=True
+14:52:55 bing q='micron' status=200 rss=True
+14:52:57 google q='ರಕ್ಷಿತಾ' status=200 rss=True
+14:52:59 bing q='ರಕ್ಷಿತಾ' status=200 rss=True
+14:53:01 google q='jesus de miguel' status=200 rss=True
+14:53:02 bing q='jesus de miguel' status=200 rss=True
+14:53:04 google q='சமந்தா' status=200 rss=True
+14:53:07 bing q='சமந்தா' status=200 rss=True
+14:53:13 raw items=456
+14:53:13 unique=447 matched=43 loose=404 cooled=0
+14:53:27 final=5 with_img=5
+14:58:11 --- start mode=auto region=in sub=worldnews cat=None kw=None
+14:58:13 trends geo=IN status=200
+14:58:13 keywords=['micron', 'ರಕ್ಷಿತಾ', 'jesus de miguel', 'சமந்தா', 'दिल्ली पुलिस', 'होंडा', 'विमान दुर्घटना', 'भारतीय रेल', 'ગ્લેન મેક્સવેલ', 'trit raj das']
+14:58:28 feeds items=351
+14:58:30 google q='micron' status=200 rss=True
+14:58:31 bing q='micron' status=200 rss=True
+14:58:33 google q='ರಕ್ಷಿತಾ' status=200 rss=True
+14:58:35 bing q='ರಕ್ಷಿತಾ' status=200 rss=True
+14:58:37 google q='jesus de miguel' status=200 rss=True
+14:58:38 bing q='jesus de miguel' status=200 rss=True
+14:58:40 google q='சமந்தா' status=200 rss=True
+14:58:40 bing q='சமந்தா' status=200 rss=True
+14:58:47 raw items=438
+14:58:47 unique=429 matched=45 loose=384 cooled=0
+14:59:00 final=5 with_img=5
+15:04:51 --- start mode=auto region=in sub=worldnews cat=None kw=None
+15:04:52 trends geo=IN status=200
+15:04:52 keywords=['ఉల్లిపాయ', 'al sadd vs al-ahli', 'micron', 'ರಕ್ಷಿತಾ', 'jesus de miguel', 'சமந்தா', 'दिल्ली पुलिस', 'होंडा', 'विमान दुर्घटना', 'भारतीय रेल']
+15:04:59 feeds items=361
+15:05:01 google q='ఉల్లిపాయ' status=200 rss=True
+15:05:02 bing q='ఉల్లిపాయ' status=200 rss=True
+15:05:04 google q='al sadd vs al-ahli' status=200 rss=True
+15:05:05 bing q='al sadd vs al-ahli' status=200 rss=True
+15:05:07 google q='micron' status=200 rss=True
+15:05:08 bing q='micron' status=200 rss=True
+15:05:10 google q='ರಕ್ಷಿತಾ' status=200 rss=True
+15:05:11 bing q='ರಕ್ಷಿತಾ' status=200 rss=True
+15:05:12 google q='jesus de miguel' status=200 rss=True
+15:05:13 bing q='jesus de miguel' status=200 rss=True
+15:05:20 raw items=482
+15:05:20 unique=474 matched=44 loose=430 cooled=0
+15:05:39 final=5 with_img=5
+15:31:58 --- start mode=auto region=in sub=worldnews cat=None kw=None
+15:31:59 trends geo=IN status=200
+15:31:59 keywords=['manvanth kumar', 'सोने चांदी का', 'वायुयान', 'sbi bank quarterly results', 'ఉల్లిపాయ', 'काव्या मारन', 'west ham', 'al sadd vs al-ahli', 'ರಕ್ಷಿತಾ', 'micron']
+15:32:04 feeds items=361
+15:32:06 google q='manvanth kumar' status=200 rss=True
+15:32:07 bing q='manvanth kumar' status=200 rss=True
+15:32:09 google q='सोने चांदी का' status=200 rss=True
+15:32:10 bing q='सोने चांदी का' status=200 rss=True
+15:32:12 google q='वायुयान' status=200 rss=True
+15:32:14 bing q='वायुयान' status=200 rss=True
+15:32:16 google q='sbi bank quarterly resul' status=200 rss=True
+15:32:17 bing q='sbi bank quarterly resul' status=200 rss=True
+15:32:19 google q='ఉల్లిపాయ' status=200 rss=True
+15:32:20 bing q='ఉల్లిపాయ' status=200 rss=True
+15:32:29 raw items=497
+15:32:29 unique=489 matched=16 loose=473 cooled=0
+15:32:41 final=5 with_img=3
+15:42:03 --- start mode=auto region=in sub=worldnews cat=None kw=None
+15:42:05 trends geo=IN status=200
+15:42:05 keywords=['न्यूज़ीलैंड क्रिकेट टीम', 'विरोध', 'eicma 2026', 'manvanth kumar', 'सोने चांदी का', 'hardik pandya arshdeep singh', 'वायुयान', 'sbi bank quarterly results', 'ఉల్లిపాయ', 'काव्या मारन']
+15:42:35 feeds items=336
+15:42:37 google q='न्यूज़ीलैंड क्रिकेट टीम' status=200 rss=True
+15:42:40 bing q='न्यूज़ीलैंड क्रिकेट टीम' status=200 rss=True
+15:42:41 google q='विरोध' status=200 rss=True
+15:42:43 bing q='विरोध' status=200 rss=True
+15:42:45 google q='eicma 2026' status=200 rss=True
+15:42:46 bing q='eicma 2026' status=200 rss=True
+15:42:47 google q='manvanth kumar' status=200 rss=True
+15:42:51 bing q='manvanth kumar' status=200 rss=True
+15:42:52 google q='सोने चांदी का' status=200 rss=True
+15:42:54 bing q='सोने चांदी का' status=200 rss=True
+15:43:02 raw items=488
+15:43:02 unique=483 matched=71 loose=412 cooled=0
+15:43:34 final=5 with_img=5
+15:45:25 --- start mode=auto region=in sub=worldnews cat=1a720f12 kw=None
+15:45:26 trends geo=IN status=200
+15:45:26 keywords=['dr ashok kumar mahapatra neurosurgeon', 'न्यूज़ीलैंड क्रिकेट टीम', 'विरोध', 'eicma 2026', 'सोने चांदी का', 'manvanth kumar', 'hardik pandya arshdeep singh', 'वायुयान', 'sbi bank quarterly results', 'काव्या मारन']
+15:45:37 feeds items=361
+15:45:38 google q='dr ashok kumar mahapatra' status=200 rss=True
+15:45:40 bing q='dr ashok kumar mahapatra' status=200 rss=True
+15:45:41 google q='न्यूज़ीलैंड क्रिकेट टीम' status=200 rss=True
+15:45:42 bing q='न्यूज़ीलैंड क्रिकेट टीम' status=200 rss=True
+15:45:44 google q='विरोध' status=200 rss=True
+15:45:46 bing q='विरोध' status=200 rss=True
+15:45:48 google q='eicma 2026' status=200 rss=True
+15:45:49 bing q='eicma 2026' status=200 rss=True
+15:45:51 google q='सोने चांदी का' status=200 rss=True
+15:45:53 bing q='सोने चांदी का' status=200 rss=True
+15:46:00 raw items=519
+15:46:00 unique=511 matched=60 loose=451 cooled=0
+15:46:30 final=5 with_img=5
+15:47:33 --- start mode=trending region=in sub=worldnews cat=1a720f12 kw=None
+15:47:36 hashtags https://trends24.in/india/ status=200 len=311092
+15:47:36 hashtags raw=249 sample=['GMMTVNEXT', 'SSMBxShortgunGames', 'Nepal', 'JanaSena', 'APLocalPolls', 'GMMTVNEXT', 'Nepal', 'APLocalPolls']
+15:47:36 keywords=['#GMMTVNEXT', '#SSMBxShortgunGames', '#Nepal']
+15:47:56 feeds items=361
+15:47:58 google q='#GMMTVNEXT' status=404 rss=False
+15:48:01 bing q='#GMMTVNEXT' status=200 rss=True
+15:48:02 google q='#SSMBxShortgunGames' status=404 rss=False
+15:48:04 bing q='#SSMBxShortgunGames' status=200 rss=True
+15:48:05 google q='#Nepal' status=404 rss=False
+15:48:06 bing q='#Nepal' status=200 rss=True
+15:48:14 raw items=365
+15:48:14 unique=357 matched=6 loose=351 cooled=0
+15:48:33 final=5 with_img=5
+15:49:13 --- start mode=manual region=in sub=worldnews cat=2335ed28 kw=None
+15:49:13 keywords=['salman khan', 'salman khan']
+15:49:24 feeds items=361
+15:49:27 google q='salman khan' status=200 rss=True
+15:49:28 bing q='salman khan' status=200 rss=True
+15:49:29 google q='salman khan' status=200 rss=True
+15:49:30 bing q='salman khan' status=200 rss=True
+15:49:37 raw items=423
+15:49:37 unique=396 matched=43 loose=353 cooled=0
+15:49:43 final=3 with_img=2
+15:53:03 --- start mode=manual region=in sub=worldnews cat=80de6f89 kw=None
+15:53:03 keywords=['india china japan gold cjp congress bjp modi amit sha cricket scince technology', 'india', 'china', 'japan', 'gold', 'cjp', 'congress', 'bjp', 'modi', 'amit sha', 'cricket', 'scince', 'technology']
+15:53:22 feeds items=361
+15:53:30 google q='india china japan gold c' status=200 rss=True
+15:53:32 bing q='india china japan gold c' status=200 rss=True
+15:53:34 google q='india' status=200 rss=True
+15:53:35 bing q='india' status=200 rss=True
+15:53:37 google q='china' status=200 rss=True
+15:53:38 bing q='china' status=200 rss=True
+15:53:40 google q='japan' status=200 rss=True
+15:53:42 bing q='japan' status=200 rss=True
+15:53:44 google q='gold' status=200 rss=True
+15:53:45 bing q='gold' status=200 rss=True
+15:53:52 raw items=480
+15:53:52 unique=472 matched=193 loose=279 cooled=0
+15:54:00 final=5 with_img=5
+19:18:46 trends geo=IN status=200
+19:20:37 trends geo=US status=200
+19:20:38 trends geo=IN status=200
+19:25:41 --- start mode=auto region=in cat=None kw=None
+19:25:45 trends geo=US status=200
+19:25:46 trends geo=IN status=200
+19:25:49 hot tags=['#GMMTVNEXT', '#awkwafina', '#cricketmatchnewzealand', '#midterm']
+19:26:08 feeds items=351
+19:26:10 google q='#GMMTVNEXT' status=404 rss=False
+19:26:11 bing q='#GMMTVNEXT' status=200 rss=True
+19:26:13 google q='#awkwafina' status=404 rss=False
+19:26:14 bing q='#awkwafina' status=200 rss=True
+19:26:15 google q='#cricketmatchnewzealand' status=404 rss=False
+19:26:17 bing q='#cricketmatchnewzealand' status=200 rss=True
+19:26:18 google q='#midterm' status=404 rss=False
+19:26:20 bing q='#midterm' status=200 rss=True
+19:26:20 raw items=354
+19:26:20 unique=347 matched=5 cooled=0
+19:26:36 final=5 with_img=4
+19:30:59 --- start mode=auto region=in cat=None kw=None
+19:31:02 trends geo=US status=200
+19:31:03 trends geo=IN status=200
+19:31:25 hot tags=['#GMMTVNEXT', '#awkwafina', '#cricketmatchnewzealand', '#midterm']
+19:31:33 feeds items=361
+19:31:56 google q='GMMTVNEXT' status=200 rss=True
+19:31:58 bing q='GMMTVNEXT' status=200 rss=True
+19:32:20 google q='awkwafina' status=200 rss=True
+19:32:22 bing q='awkwafina' status=200 rss=True
+19:32:43 google q='cricketmatchnewzealand' status=200 rss=True
+19:32:45 bing q='cricketmatchnewzealand' status=200 rss=True
+19:33:08 google q='midterm' status=200 rss=True
+19:33:09 bing q='midterm' status=200 rss=True
+19:33:09 raw items=421
+19:33:09 unique=412 matched=52 cooled=0
+19:33:29 final=5 with_img=5
+19:43:49 --- start mode=auto region=in cat=None kw=None
+19:43:52 trends geo=US status=200
+19:43:53 trends geo=IN status=200
+19:44:15 tags=['#GMMTVNEXT', '#novakdjokovic', '#परधनमतरउजजवलयजन', '#midterm'] keywords=['GMMTVNEXT', 'novakdjokovic', 'परधनमतरउजजवलयजन', 'midterm']
+19:44:23 feeds items=361
+19:44:45 google q='GMMTVNEXT' status=200 rss=True
+19:44:46 bing q='GMMTVNEXT' status=200 rss=True
+19:45:09 google q='novakdjokovic' status=200 rss=True
+19:45:11 bing q='novakdjokovic' status=200 rss=True
+19:45:32 google q='परधनमतरउजजवलयजन' status=200 rss=True
+19:45:34 bing q='परधनमतरउजजवलयजन' status=200 rss=True
+19:45:56 google q='midterm' status=200 rss=True
+19:45:58 bing q='midterm' status=200 rss=True
+19:45:58 raw items=430
+19:45:58 unique=422 matched=37 cooled=0
+19:46:34 final=5 with_img=4
+19:50:48 --- start mode=auto region=in cat=None kw=None
+19:50:51 trends geo=US status=200
+19:50:52 trends geo=IN status=200
+19:51:14 tags=['#GMMTVNEXT', '#novakdjokovic', '#परधनमतरउजजवलयजन', '#Midterms'] keywords=['GMMTVNEXT', 'novakdjokovic', 'परधनमतरउजजवलयजन', 'Midterms']
+19:51:31 feeds items=346
+19:51:34 google q='GMMTVNEXT' status=200 rss=True
+19:51:35 bing q='GMMTVNEXT' status=200 rss=True
+19:51:37 google q='novakdjokovic' status=200 rss=True
+19:51:38 bing q='novakdjokovic' status=200 rss=True
+19:51:40 google q='परधनमतरउजजवलयजन' status=200 rss=True
+19:51:41 bing q='परधनमतरउजजवलयजन' status=200 rss=True
+19:51:43 google q='Midterms' status=200 rss=True
+19:51:45 bing q='Midterms' status=200 rss=True
+19:51:45 raw items=416
+19:51:45 unique=409 matched=25 cooled=0
+19:51:59 final=4 with_img=4
+19:53:49 --- start mode=auto region=in cat=None kw=None
+19:53:52 trends geo=US status=200
+19:53:54 trends geo=IN status=200
+19:53:56 tags=['#GMMTVNEXT', '#dalenterry', '#यशसवजयसवल', '#Midterms'] keywords=['GMMTVNEXT', 'dalenterry', 'यशसवजयसवल', 'Midterms']
+19:54:03 feeds items=361
+19:54:05 google q='GMMTVNEXT' status=200 rss=True
+19:54:07 bing q='GMMTVNEXT' status=200 rss=True
+19:54:09 google q='dalenterry' status=200 rss=True
+19:54:11 bing q='dalenterry' status=200 rss=True
+19:54:12 google q='यशसवजयसवल' status=200 rss=True
+19:54:14 bing q='यशसवजयसवल' status=200 rss=True
+19:54:16 google q='Midterms' status=200 rss=True
+19:54:17 bing q='Midterms' status=200 rss=True
+19:54:17 raw items=426
+19:54:17 unique=418 matched=25 cooled=0
+19:54:39 final=5 with_img=4
+19:59:03 reddit r/india status=403
+19:59:25 pullpush r/india status=522
+19:59:26 reddit r/IndianNews status=403
+19:59:47 pullpush r/IndianNews status=522
+19:59:48 reddit r/IndiaSpeaks status=403
+20:00:10 pullpush r/IndiaSpeaks status=522
+20:00:11 reddit r/Cricket status=403
+20:00:33 pullpush r/Cricket status=522
+20:00:34 reddit r/bollywood status=403
+20:00:55 pullpush r/bollywood status=522
+20:02:46 reddit r/india status=403
+20:02:47 reddit rss r/india https://www.reddit.com status=200
+20:02:48 reddit r/IndianNews status=403
+20:02:49 reddit rss r/IndianNews https://www.reddit.com status=429
+20:02:51 reddit rss r/IndianNews https://old.reddit.com status=200
+20:02:54 arctic r/IndianNews status=200
+20:02:55 reddit r/IndiaSpeaks status=403
+20:02:56 reddit rss r/IndiaSpeaks https://www.reddit.com status=429
+20:02:58 reddit rss r/IndiaSpeaks https://old.reddit.com status=200
+20:03:00 arctic r/IndiaSpeaks status=200
+20:03:02 reddit r/Cricket status=403
+20:03:04 reddit rss r/Cricket https://www.reddit.com status=200
+20:03:05 reddit r/bollywood status=403
+20:03:06 reddit rss r/bollywood https://www.reddit.com status=429
+20:03:07 reddit rss r/bollywood https://old.reddit.com status=200
+20:03:10 arctic r/bollywood status=200
+20:08:50 reddit r/india status=403
+20:08:51 reddit rss r/india https://www.reddit.com status=200
+20:08:53 reddit r/IndianNews status=403
+20:08:54 reddit rss r/IndianNews https://www.reddit.com status=429
+20:08:55 reddit rss r/IndianNews https://old.reddit.com status=200
+20:08:59 arctic r/IndianNews status=200
+20:09:00 reddit r/IndiaSpeaks status=403
+20:09:01 reddit rss r/IndiaSpeaks https://www.reddit.com status=200
+20:09:03 reddit r/Cricket status=403
+20:09:04 reddit rss r/Cricket https://www.reddit.com status=429
+20:09:06 reddit rss r/Cricket https://old.reddit.com status=200
+20:09:09 arctic r/Cricket status=200
+20:09:10 reddit r/bollywood status=403
+20:09:11 reddit rss r/bollywood https://www.reddit.com status=429
+20:09:13 reddit rss r/bollywood https://old.reddit.com status=200
+20:09:16 arctic r/bollywood status=200
+20:34:43 --- start reddit mode limit=5
+20:34:44 reddit r/india status=403
+20:34:46 reddit rss r/india https://www.reddit.com status=200
+20:34:48 reddit r/IndianNews status=403
+20:34:49 reddit rss r/IndianNews https://www.reddit.com status=429
+20:34:50 reddit rss r/IndianNews https://old.reddit.com status=200
+20:34:54 arctic r/IndianNews status=200
+20:34:55 reddit r/IndiaSpeaks status=403
+20:34:57 reddit rss r/IndiaSpeaks https://www.reddit.com status=429
+20:34:59 reddit rss r/IndiaSpeaks https://old.reddit.com status=200
+20:35:01 arctic r/IndiaSpeaks status=200
+20:35:02 reddit r/Cricket status=403
+20:35:04 reddit rss r/Cricket https://www.reddit.com status=200
+20:35:06 reddit r/bollywood status=403
+20:35:07 reddit rss r/bollywood https://www.reddit.com status=429
+20:35:08 reddit rss r/bollywood https://old.reddit.com status=200
+20:35:11 arctic r/bollywood status=200
+20:35:59 reddit items=15
+20:35:59 final=5 with_img=5

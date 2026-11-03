@@ -1,0 +1,502 @@
+[
+  {
+    "hadith_roman": "কবর আখিরাতের প্রথম ধাপ আর যে এটা থেকে ভালোভাবে পার হয়ে গেল তার জন্য বাকিটা সহজ হয়ে যায়",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Tirmizi 2462",
+    "category": "qabr",
+    "hindi": "कब्र आख़िरत का पहला पड़ाव है और जो इससे बख़ैर गुज़र गया उसके लिए बाक़ी आसान हो गया",
+    "id": "bbcd86c349e8",
+    "used": true
+  },
+  {
+    "hadith_roman": "বান্দাকে কবরে রাখা হলে সে চলে যাওয়া কদমের আওয়াজ শোনে",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Bukhari 1375",
+    "category": "qabr",
+    "hindi": "बंदे को कब्र में रखा जाता है तो वह जाते हुए क़दमों की आवाज़ सुनता है",
+    "id": "5c16c2cdd2ff",
+    "used": true
+  },
+  {
+    "hadith_roman": "কবর মুমিনকে এত জোরে চাপ দেয় যে তার পাঁজর মিলে যায়",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Muslim 2867",
+    "category": "qabr",
+    "hindi": "कब्र मोमिन को इतना दबाती है कि उसकी पसलियाँ मिल जाती हैं",
+    "id": "cd99a70a5d28",
+    "used": true
+  },
+  {
+    "hadith_roman": "কবর হয় জান্নাতের বাগান নয়তো জাহান্নামের গর্ত",
+    "english": "",
+    "bangla": "",
+    "source": "Sunan Tirmizi 2460",
+    "category": "qabr",
+    "hindi": "कब्र या तो जन्नत का बाग़ है या जहन्नम का गड्ढा",
+    "id": "9dc605af0568",
+    "used": true
+  },
+  {
+    "hadith_roman": "মৃতের কাছে দুই ফেরেশতা আসে আর জিজ্ঞেস করে তোমার রব কে তোমার দীন কী তোমার নবী কে",
+    "english": "",
+    "bangla": "",
+    "source": "Sunan Abu Dawud 4753",
+    "category": "qabr",
+    "hindi": "मुर्दे के पास दो फ़रिश्ते आते हैं और पूछते हैं तेरा रब कौन तेरा दीन क्या तेरा नबी कौन",
+    "id": "bb3ef6e45e25",
+    "used": false
+  },
+  {
+    "hadith_roman": "মুমিন কবরে সঠিক উত্তর দেয় আর তার জন্য জান্নাতের বিছানা পাতা হয়",
+    "english": "",
+    "bangla": "",
+    "source": "Sunan Abu Dawud 4753",
+    "category": "qabr",
+    "hindi": "मोमिन कब्र में सही जवाब देता है और उसके लिए जन्नत का बिस्तर बिछाया जाता है",
+    "id": "84593d59f696",
+    "used": false
+  },
+  {
+    "hadith_roman": "মুমিনের কবর সত্তর হাত প্রশস্ত করা হয় আর নূরে ভরিয়ে দেওয়া হয়",
+    "english": "",
+    "bangla": "",
+    "source": "Sunan Abu Dawud 4753",
+    "category": "qabr",
+    "hindi": "मोमिन की कब्र सत्तर हाथ चौड़ी की जाती है और नूर से भर दी जाती है",
+    "id": "be7945f0db52",
+    "used": false
+  },
+  {
+    "hadith_roman": "কবরের আজাব সত্য তাই প্রতি নামাজের পর এর থেকে আশ্রয় চাও",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Bukhari 1372",
+    "category": "qabr",
+    "hindi": "कब्र का अज़ाब सच्चा है इसलिए हर नमाज़ के बाद इससे पनाह माँगो",
+    "id": "faac79a41d68",
+    "used": false
+  },
+  {
+    "hadith_roman": "মৃতকে সকাল সন্ধ্যা তার ঠিকানা দেখানো হয়",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Bukhari 1379",
+    "category": "qabr",
+    "hindi": "मुर्दे को सुबह शाम उसका ठिकाना दिखाया जाता है",
+    "id": "08a6262289b2",
+    "used": false
+  },
+  {
+    "hadith_roman": "মুমিনের মৃত্যু হলে ফেরেশতারা বলে হে প্রশান্ত আত্মা বের হয়ে আয় আল্লাহর আরাম আর রিজিকের দিকে",
+    "english": "",
+    "bangla": "",
+    "source": "Sunan Nasa'i 1833",
+    "category": "qabr",
+    "hindi": "मोमिन की मौत आए तो फ़रिश्ते कहते हैं ऐ मुतमइन रूह निकल आ अल्लाह की राहत और रिज़्क़ की तरफ़",
+    "id": "23daede7e55d",
+    "used": false
+  },
+  {
+    "hadith_roman": "শহীদের কবর অন্যদের মতো নয় শহীদরা তাদের রবের কাছে জীবিত",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Bukhari 2790",
+    "category": "qabr",
+    "hindi": "शहीद की कब्र दूसरों जैसी नहीं शहीद अपने रब के पास ज़िंदा हैं",
+    "id": "5ab22d109a30",
+    "used": false
+  },
+  {
+    "hadith_roman": "নবী সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম সাহাবাদের কবরের আজাব থেকে আশ্রয় চাইতে শেখাতেন",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Muslim 589",
+    "category": "qabr",
+    "hindi": "नबी सल्लल्लाहु अलैहि वसल्लम सहाबा को कब्र के अज़ाब से पनाह माँगना सिखाते थे",
+    "id": "143a06cff04f",
+    "used": false
+  },
+  {
+    "hadith_roman": "কবর নিঃসঙ্গতার ঘর আর নেক লোকদের জন্য তা প্রশস্ত করে দেওয়া হয়",
+    "english": "",
+    "bangla": "",
+    "source": "Sunan Tirmizi 2460",
+    "category": "qabr",
+    "hindi": "कब्र तन्हाई का घर है और नेक लोगों के लिए उसे चौड़ा कर दिया जाता है",
+    "id": "cdc76bd72fe7",
+    "used": false
+  },
+  {
+    "hadith_roman": "যে কবরে গিয়ে সূরা ইয়াসীন পড়ে মৃত ব্যক্তি আরাম পায়",
+    "english": "",
+    "bangla": "",
+    "source": "Sunan Abu Dawud 3121",
+    "category": "qabr",
+    "hindi": "जो कब्र पर जाकर सूरह यासीन पढ़े मुर्दे को आराम मिलता है",
+    "id": "855eeb35f578",
+    "used": false
+  },
+  {
+    "hadith_roman": "মৃত কবরে সালাম দেওয়া ব্যক্তির সালাম শোনে",
+    "english": "",
+    "bangla": "",
+    "source": "Sunan Abu Dawud 2041",
+    "category": "qabr",
+    "hindi": "मुर्दा कब्र पर सलाम कहने वाले का सलाम सुनता है",
+    "id": "c32454942393",
+    "used": false
+  },
+  {
+    "hadith_roman": "জাহান্নাম এত গভীর যে এর কিনারা থেকে পাথর ফেলা হলে সত্তর বছরেও তলায় পৌঁছায় না",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Muslim 2844",
+    "category": "jahannam",
+    "hindi": "जहन्नम इतनी गहरी है कि इसके किनारे से पत्थर गिराया जाए तो सत्तर साल में तल तक पहुँचेगा",
+    "id": "6024e79e98e3",
+    "used": false
+  },
+  {
+    "hadith_roman": "জাহান্নামের আগুন দুনিয়ার আগুনের চেয়ে সত্তর গুণ বেশি গরম",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Muslim 2843",
+    "category": "jahannam",
+    "hindi": "जहन्नम की आग दुनिया की आग से सत्तर गुना ज़्यादा गर्म है",
+    "id": "9c691ba59e6b",
+    "used": false
+  },
+  {
+    "hadith_roman": "জাহান্নামের জ্বালানি মানুষ আর পাথর",
+    "english": "",
+    "bangla": "",
+    "source": "Al-Baqarah 2:24",
+    "category": "jahannam",
+    "hindi": "जहन्नम का ईंधन आदमी और पत्थर हैं",
+    "id": "24ae3ac2fb86",
+    "used": false
+  },
+  {
+    "hadith_roman": "যে আখিরাত অস্বীকার করে তার ঠিকানা জাহান্নামের আগুন",
+    "english": "",
+    "bangla": "",
+    "source": "Al-Baqarah 2:39",
+    "category": "jahannam",
+    "hindi": "जो आख़िरत से इनकार करे उसका ठिकाना जहन्नम की आग है",
+    "id": "3853bbfbf3f7",
+    "used": false
+  },
+  {
+    "hadith_roman": "জাহান্নামের লোকেরা কামনা করবে যদি তারা মাটি হয়ে যেত",
+    "english": "",
+    "bangla": "",
+    "source": "An-Naba 78:40",
+    "category": "jahannam",
+    "hindi": "जहन्नम वाले तमन्ना करेंगे काश वे मिट्टी होते",
+    "id": "db1a47e3f5dd",
+    "used": false
+  },
+  {
+    "hadith_roman": "জাহান্নামের সাতটি দরজা আর প্রত্যেক দরজার জন্য নির্দিষ্ট দল",
+    "english": "",
+    "bangla": "",
+    "source": "Al-Hijr 15:44",
+    "category": "jahannam",
+    "hindi": "जहन्नम के सात दरवाज़े हैं और हर दरवाज़े के लिए एक मुक़र्रर गिरोह है",
+    "id": "6c9c4517c09b",
+    "used": false
+  },
+  {
+    "hadith_roman": "জাহান্নামীদের চামড়া পুড়িয়ে দেওয়া হয় পুনরায় বদলে দেওয়া হয় যাতে তারা আবার আজাব চাখে",
+    "english": "",
+    "bangla": "",
+    "source": "An-Nisa 4:56",
+    "category": "jahannam",
+    "hindi": "जहन्नम वालों की खाल जला दी जाती है फिर बदल दी जाती है ताकि वे अज़ाब चखें",
+    "id": "2e5762141f3c",
+    "used": false
+  },
+  {
+    "hadith_roman": "তাদের পানীয় ফুটন্ত পানি যা অন্ত্র ছিঁড়ে দেয়",
+    "english": "",
+    "bangla": "",
+    "source": "Muhammad 47:15",
+    "category": "jahannam",
+    "hindi": "उनका पेय खौलता पानी है जो आँतें फाड़ देता है",
+    "id": "6959ffb3116a",
+    "used": false
+  },
+  {
+    "hadith_roman": "সবচেয়ে হালকা আজাবের লোকের জুতা আগুনের আর তার মগজ টগবগ করে",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Muslim 213",
+    "category": "jahannam",
+    "hindi": "सबसे हल्के अज़ाब वाले के जूते आग के हैं और उसका दिमाग़ उबलता है",
+    "id": "eb17b22f471a",
+    "used": false
+  },
+  {
+    "hadith_roman": "নবী সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম বলেছেন জাহান্নাম তার রবের কাছে ফরিয়াদ করল হে রব আমার এক অংশ অন্য অংশকে খেয়ে ফেলেছে",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Bukhari 3260",
+    "category": "jahannam",
+    "hindi": "नबी सल्लल्लाहु अलैहि वसल्लम ने कहा जहन्नम ने अपने रब से फ़रियाद की ऐ रब मेरे एक हिस्से ने दूसरे को खा लिया",
+    "id": "8fffab1ecaa7",
+    "used": false
+  },
+  {
+    "hadith_roman": "জাহান্নামে নিক্ষিপ্ত ব্যক্তি আজাবে থাকে আর তার লোকদের খাবার যাক্কুম",
+    "english": "",
+    "bangla": "",
+    "source": "Ad-Dukhan 44:47",
+    "category": "jahannam",
+    "hindi": "जहन्नम में डाला गया अज़ाब में है और उसके लोगों का खाना ज़क़्क़ूम है",
+    "id": "3d7cb99f15dd",
+    "used": false
+  },
+  {
+    "hadith_roman": "জাহান্নামের লোকেরা কাঁদবে যতক্ষণ না চোখের পানি নদীর মতো বয় পুনরায় রক্ত",
+    "english": "",
+    "bangla": "",
+    "source": "Ibn Majah 4324",
+    "category": "jahannam",
+    "hindi": "जहन्नम वाले रोएँगे यहाँ तक कि आँसू नदियों की तरह बहें फिर ख़ून",
+    "id": "2f6fadea0d9f",
+    "used": false
+  },
+  {
+    "hadith_roman": "জাহান্নাম ইচ্ছা আর কামনা দিয়ে ঘেরা আর জান্নাত কষ্ট দিয়ে ঘেরা",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Muslim 2822",
+    "category": "jahannam",
+    "hindi": "जहन्नम ख़्वाहिशों से घिरी है और जन्नत तकलीफ़ों से",
+    "id": "42e6c91f43aa",
+    "used": false
+  },
+  {
+    "hadith_roman": "যার دل-এ অণু পরিমাণ অহংকার থাকবে সে জান্নাতে ঢুকবে না আর অহংকারীরা জাহান্নামে একত্র হবে",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Muslim 91",
+    "category": "jahannam",
+    "hindi": "जिसके दिल में ज़र्रा भर घमंड हो वह जन्नत में न जाएगा और घमंडी जहन्नम में इकट्ठे होंगे",
+    "id": "d066767fe98d",
+    "used": false
+  },
+  {
+    "hadith_roman": "জাহান্নামের লোকেরা জান্নাতীদের কাছে পানি চাইবে বলা হবে অস্বীকারকারীদের জন্য হারাম",
+    "english": "",
+    "bangla": "",
+    "source": "Al-A'raf 7:50",
+    "category": "jahannam",
+    "hindi": "जहन्नम वाले जन्नती लोगों से पानी माँगेंगे कहा जाएगा इनकार करने वालों के लिए हराम है",
+    "id": "d433eb963c0c",
+    "used": false
+  },
+  {
+    "hadith_roman": "জান্নাতে এমন জিনিস আছে যা কোনো চোখ দেখেনি কোনো কান শোনেনি আর কোনো মানুষের دل-এ খেয়ালও আসেনি",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Bukhari 3244",
+    "category": "jannat",
+    "hindi": "जन्नत में ऐसी चीज़ें हैं जो न किसी आँख ने देखीं न किसी कान ने सुनीं न किसी दिल में आईं",
+    "id": "6ba212784871",
+    "used": false
+  },
+  {
+    "hadith_roman": "জান্নাতের মূল্য জান্নাতের শেষ অংশের বরাবর এক হাত পরিমাণ",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Bukhari 3251",
+    "category": "jannat",
+    "hindi": "जन्नत का मोल जन्नत के आख़िरी हिस्से के बराबर एक हाथ है",
+    "id": "558346749214",
+    "used": false
+  },
+  {
+    "hadith_roman": "জান্নাতে একটি গাছ আছে যার ছায়ায় চল্লিশ বছর চলা যায়",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Bukhari 3252",
+    "category": "jannat",
+    "hindi": "जन्नत में एक पेड़ है जिसकी छाया में चालीस साल चला जा सकता है",
+    "id": "4db38aefae69",
+    "used": false
+  },
+  {
+    "hadith_roman": "জান্নাতীরা জান্নাতে ঢুকবে কোনো দুঃখ কষ্ট ছাড়া",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Muslim 2837",
+    "category": "jannat",
+    "hindi": "जन्नती बिना किसी दुख तकलीफ़ के जन्नत में दाख़िल होंगे",
+    "id": "2fa97d6321ea",
+    "used": false
+  },
+  {
+    "hadith_roman": "জান্নাতে যা আছে তার প্রথম দর্শনেই জান্নাতীরা দুনিয়ার সব কষ্ট ভুলে যাবে",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Muslim 2807",
+    "category": "jannat",
+    "hindi": "जन्नत में जो है उसका पहला दीदार ही जन्नती को दुनिया की सारी तकलीफ़ें भुला देगा",
+    "id": "6e0d9652ecdd",
+    "used": false
+  },
+  {
+    "hadith_roman": "জান্নাতের আটটি দরজা আছে",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Bukhari 3257",
+    "category": "jannat",
+    "hindi": "जन्नत के आठ दरवाज़े हैं",
+    "id": "58c6278b654b",
+    "used": false
+  },
+  {
+    "hadith_roman": "জান্নাতের নিচ দিয়ে নদী বয়ে যায়",
+    "english": "",
+    "bangla": "",
+    "source": "Al-Baqarah 2:25",
+    "category": "jannat",
+    "hindi": "जन्नत के नीचे से नहरें बहती हैं",
+    "id": "dfa0cd4fff34",
+    "used": false
+  },
+  {
+    "hadith_roman": "জান্নাতে কোনো ক্লান্তি নেই আর বের হওয়ার ভয়ও নেই",
+    "english": "",
+    "bangla": "",
+    "source": "Al-Hijr 15:48",
+    "category": "jannat",
+    "hindi": "जन्नत में कोई थकान नहीं और निकलने का डर भी नहीं",
+    "id": "e5c812f58ba1",
+    "used": false
+  },
+  {
+    "hadith_roman": "জান্নাতীরা সুখে থাকবে আর বলবে আলহামদুলিল্লাহ",
+    "english": "",
+    "bangla": "",
+    "source": "Yunus 10:10",
+    "category": "jannat",
+    "hindi": "जन्नती ख़ुश रहेंगे और कहेंगे अल्हम्दुलिल्लाह",
+    "id": "5280a08a6b2d",
+    "used": false
+  },
+  {
+    "hadith_roman": "যে জান্নাতে ঢুকবে সে কখনো অসুস্থ হবে না বৃদ্ধও হবে না",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Muslim 2836",
+    "category": "jannat",
+    "hindi": "जो जन्नत में जाएगा वह कभी बीमार न होगा न बूढ़ा",
+    "id": "b52c48b19649",
+    "used": false
+  },
+  {
+    "hadith_roman": "নিয়ত ঠিক থাকলে ছোট কাজও বড় হয়ে যায়",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Bukhari 1",
+    "category": "general",
+    "hindi": "नीयत सही हो तो छोटा काम भी बड़ा हो जाता है",
+    "id": "c4c77af26dec",
+    "used": false
+  },
+  {
+    "hadith_roman": "যে রহম করে না তার প্রতি রহম করা হয় না",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Bukhari 5997",
+    "category": "general",
+    "hindi": "जो रहम नहीं करता उस पर रहम नहीं किया जाता",
+    "id": "73c3ab4a3c7b",
+    "used": false
+  },
+  {
+    "hadith_roman": "হাসিমুখে কথা বলা সদকা",
+    "english": "",
+    "bangla": "",
+    "source": "Sunan Tirmizi 1956",
+    "category": "general",
+    "hindi": "मुस्कुरा कर बात करना सदक़ा है",
+    "id": "70e2b359d5bd",
+    "used": false
+  },
+  {
+    "hadith_roman": "প্রতিবেশীর হক আদায় করো",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Bukhari 6014",
+    "category": "general",
+    "hindi": "पड़ोसी का हक़ अदा करो",
+    "id": "834f53dd8158",
+    "used": false
+  },
+  {
+    "hadith_roman": "সবচেয়ে ভালো মানুষ সে যে অন্যকে সবচেয়ে বেশি উপকার করে",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Muslim 2302",
+    "category": "general",
+    "hindi": "सबसे अच्छा इंसान वह जो दूसरों का सबसे ज़्यादा फ़ायदा करे",
+    "id": "ec91b1375413",
+    "used": false
+  },
+  {
+    "hadith_roman": "মা-বাবার সন্তুষ্টিতে রবের সন্তুষ্টি",
+    "english": "",
+    "bangla": "",
+    "source": "Sunan Tirmizi 1899",
+    "category": "general",
+    "hindi": "माँ-बाप की ख़ुशी में रब की ख़ुशी है",
+    "id": "4dd203eaf530",
+    "used": false
+  },
+  {
+    "hadith_roman": "আমানত ফিরিয়ে দেওয়া ঈমানের অংশ",
+    "english": "",
+    "bangla": "",
+    "source": "Sunan Abu Dawud 3535",
+    "category": "general",
+    "hindi": "अमानत लौटाना ईमान का हिस्सा है",
+    "id": "5315d5215240",
+    "used": false
+  },
+  {
+    "hadith_roman": "রাগ এলে চুপ থাকো",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Bukhari 6116",
+    "category": "general",
+    "hindi": "ग़ुस्सा आए तो चुप हो जाओ",
+    "id": "fe15cc6af8db",
+    "used": false
+  },
+  {
+    "hadith_roman": "প্রত্যেক ভালো কাজ সদকা",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Bukhari 6021",
+    "category": "general",
+    "hindi": "हर अच्छा काम सदक़ा है",
+    "id": "4430324091d2",
+    "used": false
+  },
+  {
+    "hadith_roman": "যে কুরআন শেখে আর শেখায় সে সবচেয়ে ভালো",
+    "english": "",
+    "bangla": "",
+    "source": "Sahih Bukhari 5027",
+    "category": "general",
+    "hindi": "जो क़ुरआन सीखे और सिखाए वह सबसे बेहतर है",
+    "id": "6148e6035da5",
+    "used": false
+  }
+]

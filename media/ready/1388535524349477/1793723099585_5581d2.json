@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "english": "Save before you spend. The rest sorts itself out.",
+      "bangla": "খরচের আগে সঞ্চয় করো। বাকিটা নিজে থেকে ঠিক হয়ে যায়।",
+      "hindi": "ख़र्च से पहले बचत करो। बाक़ी अपने आप ठीक हो जाता है।",
+      "hinglish": "Kharch se pehle bachat karo. Baaki apne aap theek ho jata hai.",
+      "id": "3b9a89eee80a",
+      "used": true
+    },
+    {
+      "english": "Ask better questions and you get better answers.",
+      "bangla": "ভালো প্রশ্ন করো তবেই ভালো উত্তর পাবে।",
+      "hindi": "बेहतर सवाल पूछो तभी बेहतर जवाब मिलेंगे।",
+      "hinglish": "Behtar sawal poocho tabhi behtar jawab milenge.",
+      "id": "040b5a084f9d",
+      "used": true
+    },
+    {
+      "english": "The person who reads for twenty minutes a day wins in five years.",
+      "bangla": "দিনে বিশ মিনিট যে পড়ে পাঁচ বছরে সে জিতে যায়।",
+      "hindi": "रोज़ बीस मिनट जो पढ़ता है पाँच साल में वही जीतता है।",
+      "hinglish": "Roz bees minute jo padhta hai paanch saal me wahi jeetta hai.",
+      "id": "72341fa914fa",
+      "used": true
+    }
+  ],
+  "section": "english",
+  "langs": [
+    "hindi",
+    "bangla"
+  ],
+  "created": 1793723099585
+}

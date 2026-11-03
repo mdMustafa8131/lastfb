@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}FB Engine{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/app.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <a class="brand" href="/">
+            <span class="brand-dot"></span> FB Engine
+        </a>
+        <nav class="topnav">
+            {% if connected %}
+            <span class="pill">{{ settings.user_name or "connected" }}</span>
+            <button class="btn btn-ghost" id="disconnectBtn">Disconnect</button>
+            <button class="btn btn-ghost" id="dryRunBtn">{{ "DRY RUN: ON" if settings.dry_run else "DRY RUN: OFF" }}</button>
+            
+            <button class="btn btn-ghost" id="stopBtn">Stop</button>
+            {% endif %}
+        </nav>
+    </header>
+    <main class="wrap">
+        {% block content %}{% endblock %}
+    </main>
+    <div id="toasts" class="toasts"></div>
+    <script src="/static/js/app.js"></script>
+</body>
+
+</html>

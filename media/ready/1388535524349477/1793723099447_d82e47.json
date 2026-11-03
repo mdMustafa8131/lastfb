@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "english": "Learn to wait. Good things are never in a hurry.",
+      "bangla": "অপেক্ষা করতে শেখো। ভালো জিনিস কখনো তাড়াহুড়ো করে না।",
+      "hindi": "इंतज़ार करना सीखो। अच्छी चीज़ें कभी जल्दबाज़ी नहीं करतीं।",
+      "hinglish": "Intezaar karna seekho. Achhi cheezein kabhi jaldbaazi nahi karti.",
+      "id": "eb5906895094",
+      "used": true
+    },
+    {
+      "english": "A walk without a phone clears more than a long vacation.",
+      "bangla": "ফোন ছাড়া একটু হাঁটা লম্বা ছুটির চেয়ে বেশি মন পরিষ্কার করে।",
+      "hindi": "फ़ोन छोड़कर थोड़ी चहलक़दमी लंबी छुट्टी से ज़्यादा मन साफ़ करती है।",
+      "hinglish": "Phone chhod kar thodi chahalqadmi lambi chhutti se zyada mann saaf karti hai.",
+      "id": "4c23545c99b4",
+      "used": true
+    },
+    {
+      "english": "Drink water before tea and your body complains less.",
+      "bangla": "চা পানের আগে পানি খাও তবেই শরীর কম অভিযোগ করবে।",
+      "hindi": "चाय से पहले पानी पियो तभी शरीर कम शिकायत करेगा।",
+      "hinglish": "Chai se pehle pani piyo tabhi shareer kam shikayat karega.",
+      "id": "b0f8e58e7e99",
+      "used": true
+    }
+  ],
+  "section": "english",
+  "langs": [
+    "hindi",
+    "bangla"
+  ],
+  "created": 1793723099447
+}
