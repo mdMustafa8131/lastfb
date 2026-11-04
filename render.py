@@ -163,6 +163,7 @@ _PALETTES = {
 }
 
 _DEFAULT_BG = {}
+_CUR_CAT = ""
 
 
 def _gradient(section, idx=0):
@@ -194,28 +195,21 @@ def _dark_bg(section):
     return _DEFAULT_BG[key].copy()
 
 
-def _bg(section, mode="image", category=None):
-    if mode.startswith("t"):
-        idx = int(mode[1]) - 1
-        if mode == "t2":
-            return _dark_bg(section)
-        return _gradient(section, idx)
-    if mode == "fresh":
-        return _gradient(section, 0)
-    folders = []
-    if category:
-        folders.append(config.BG_DIR / section / category)
-    folders.append(config.BG_DIR / section)
-    for folder in folders:
-        files = [f for f in folder.iterdir() if f.suffix.lower() in IMG_EXT] if folder.exists() else []
+def _bg(section, *_a, **_k):
+    cands = []
+    if _CUR_CAT:
+        cands.append(config.BG_DIR / section / _CUR_CAT)
+    cands.append(config.BG_DIR / section)
+    for folder in cands:
+        files = [f for f in folder.iterdir()
+                 if f.suffix.lower() in IMG_EXT] if folder.exists() else []
         if files:
             try:
                 img = Image.open(random.choice(files)).convert("RGB")
                 return ImageOps.fit(img, (W, H), Image.LANCZOS)
             except Exception:
                 pass
-    return _gradient(section, 0)
-
+    return _dark_bg(section)
 
 def _overlay(base, alpha, color=(0, 0, 0)):
     layer = Image.new("RGBA", base.size, color + (alpha,))
@@ -461,6 +455,7 @@ def render_islam(item, langs=None, mode="image", source_color="#085430", categor
     return img
 
 # ---------- gold frame design (islam only) ----------
+# ---------- gold frame design (islam only) ----------
 _G_FONTS = {
     "bold": ["NotoSans-Bold.ttf", "DejaVuSans-Bold.ttf", "arialbd.ttf"],
     "dev": ["NotoSansDevanagari-Bold.ttf", "NotoSansDevanagari-Regular.ttf",
@@ -468,8 +463,28 @@ _G_FONTS = {
     "bn": ["NotoSansBengali-Bold.ttf", "NotoSansBengali-Regular.ttf",
            "Nirmala.ttf", "vrinda.ttf"],
 }
-_G_ALIAS = {"hi": "dev", "hindi": "dev", "devanagari": "dev", "dev": "dev",
+_G_DIRS = [config.BASE_DIR / "assets" / "fonts", Path("/usr/share/fonts"),
+           Path("C:/Windows/Fonts")]
+GOLD = (212, 175, 55)
+
+_G_ALIAS = {"hi": "dev", "devanagari": "dev", "dev": "dev", "hindi": "dev",
             "bn": "bn", "bangla": "bn", "bengali": "bn"}
+
+
+def _g_path(k):
+    for n in _G_FONTS.get(k, []):
+        for d in _G_DIRS:
+            p = d / n
+            if p.exists():
+                return str(p)
+    return None
+
+
+_G_FP = {k: _g_path(k) for k in _G_FONTS}
+
+from PIL import features as _features
+
+_RAQM = _features.check("raqm")
 
 
 def _g_key(t):
@@ -485,8 +500,34 @@ def _g_key(t):
 def _g_font(k, s):
     k = _G_ALIAS.get(k, k)
     p = _G_FP.get(k) or _G_FP.get("bold")
-    return ImageFont.truetype(p, s) if p else ImageFont.load_default(s)
+    if not p:
+        return ImageFont.load_default(s)
+    if _RAQM:
+        return ImageFont.truetype(p, s, layout_engine=ImageFont.Layout.RAQM)
+    return ImageFont.truetype(p, s)
 
+
+def _g_key(t):
+    for ch in str(t):
+        o = ord(ch)
+        if 0x0900 <= o <= 0x097F:
+            return "dev"
+        if 0x0980 <= o <= 0x09FF:
+            return "bn"
+    return "bold"
+
+
+_RAQM = _features.check("raqm")
+
+
+def _g_font(k, s):
+    k = _G_ALIAS.get(k, k)
+    p = _G_FP.get(k) or _G_FP.get("bold")
+    if not p:
+        return ImageFont.load_default(s)
+    if _RAQM:
+        return ImageFont.truetype(p, s, layout_engine=ImageFont.Layout.RAQM)
+    return ImageFont.truetype(p, s)
 _G_DIRS = [config.BASE_DIR / "assets" / "fonts", Path("/usr/share/fonts"),
            Path("C:/Windows/Fonts")]
 GOLD = (212, 175, 55)
@@ -625,14 +666,17 @@ def render_english_clean(items, langs=None, brand_name=None):
                                  fill=(34, 164, 93, 255))
     return img
 
-def render_islam_gold(item, langs=None, category=None):
-    img = _overlay(_bg("islam", "image", category).convert("RGBA"), 120)
+def render_islam_gold(item, langs=None, category=None, plain=False, bg=None):
+    img = _overlay((bg or _bg("islam", "image", category)).convert("RGBA"), 120)
     pad = 26
 
     layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
     ImageDraw.Draw(layer).rounded_rectangle(
         [pad, pad, W - pad, H - pad], radius=18, outline=GOLD + (255,), width=3)
     img = Image.alpha_composite(img, layer)
+
+    if plain:
+        return img
 
     img = _g_text(img, (pad + 20, pad + 24, W - pad - 20, pad + 70),
                   "HADEEZ-E-NABAWI", "bold", GOLD, 30, 1.0)
@@ -704,8 +748,28 @@ def render_islam_gold(item, langs=None, category=None):
     img = _g_text(img, (pad + 20, H - pad - foot_h, W - pad - 20, H - pad - 14),
                   "Follow to get daily new hadiths", "bold", (240, 240, 240), 22, 1.1)
     return img
+
+
+def render_islam_gold_pair(item, langs=None, category=None):
+    """(text wali image, bina-text wali image) — dono ek hi photo pe."""
+    import uuid
+    global _CUR_CAT
+    _CUR_CAT = category
+    bg = _bg("islam", "image", category)
+    full = render_islam_gold(item, langs, category, bg=bg).convert("RGB")
+    plain = render_islam_gold(item, langs, category, plain=True, bg=bg).convert("RGB")
+    tag = uuid.uuid4().hex[:8]
+    fp = config.VIDEO_DIR / f"pair_{tag}_full.jpg"
+    pp = config.VIDEO_DIR / f"pair_{tag}_plain.jpg"
+    full.save(fp, "JPEG", quality=92)
+    plain.save(pp, "JPEG", quality=92)
+    return fp, pp
+
 def render(section, items, show_question=True, langs=None, mode="image",
            source_color="#085430", brand_name=None, logo_path=None, category=None):
+    global _CUR_CAT
+    _CUR_CAT = str(category or "").strip() or (
+        str((items[0].get("category") or "")).strip() if items else "")
     if section == "news":
         img = news_render.render(items[0], int(mode) if str(mode).isdigit() else 1)
         return img.convert("RGB") if img else None
@@ -726,3 +790,45 @@ def render(section, items, show_question=True, langs=None, mode="image",
     if brand_name or logo_path:
         img = _brand(img, brand_name, logo_path, accent)
     return img.convert("RGB")
+
+
+async def post_reel(page, video_path, message):
+    token = page["access_token"]
+    pid = page["id"]
+    size = video_path.stat().st_size
+
+    async with httpx.AsyncClient(timeout=300) as client:
+        r = await client.post(
+            f"{config.GRAPH}/{pid}/video_reels",
+            data={"upload_phase": "start", "access_token": token},
+        )
+        d = r.json()
+        if r.status_code >= 400 or "error" in d:
+            raise PostError((d.get("error") or {}).get("message") or f"start HTTP {r.status_code}")
+
+        video_id = d.get("video_id")
+        upload_url = d.get("upload_url")
+        if not video_id or not upload_url:
+            raise PostError("upload_url nahi mila")
+
+        with open(video_path, "rb") as fh:
+            up = await client.post(
+                upload_url,
+                headers={"Authorization": f"OAuth {token}", "offset": "0",
+                         "file_size": str(size)},
+                content=fh.read(),
+            )
+        if up.status_code >= 400:
+            raise PostError(f"upload HTTP {up.status_code}")
+
+        f = await client.post(
+            f"{config.GRAPH}/{pid}/video_reels",
+            data={"upload_phase": "finish", "video_id": video_id,
+                  "video_state": "PUBLISHED", "description": message,
+                  "access_token": token},
+        )
+        fd = f.json()
+        if f.status_code >= 400 or "error" in fd:
+            raise PostError((fd.get("error") or {}).get("message") or f"finish HTTP {f.status_code}")
+
+    return video_id

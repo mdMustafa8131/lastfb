@@ -17,6 +17,8 @@ if os.name == "nt":
 import socket
 import threading
 import time
+import folders
+import reel
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
@@ -661,6 +663,90 @@ def pool_purge_unused(section: str):
     pool.save_pool(section, items)
     return {"ok": True, "remaining": 0}
 
+# ---------- reel / media folders ----------
+@app.get("/api/pages/{page_id}/state")
+def page_state(page_id: str):
+    page = store.get_page(page_id)
+    if not page:
+        raise HTTPException(404, "Page not found")
+    return {"section": page.get("section"), "reel": bool(page.get("reel")),
+            "reel_mode": page.get("reel_mode") or "zoom"}
+
+
+@app.post("/api/pages/{page_id}/reel")
+async def set_reel(page_id: str, request: Request):
+    page = store.get_page(page_id)
+    if not page:
+        raise HTTPException(404, "Page not found")
+    if page.get("section") != "islam":
+        raise HTTPException(400, "Reel sirf islam section ke liye hai")
+    body = await request.json()
+    store.update_page(page_id, reel=bool(body.get("on")))
+    return {"ok": True, "reel": bool(body.get("on"))}
+
+
+@app.post("/api/pages/{page_id}/reelmode")
+async def set_reel_mode(page_id: str, request: Request):
+    page = store.get_page(page_id)
+    if not page:
+        raise HTTPException(404, "Page not found")
+    body = await request.json()
+    mode = body.get("mode") or "zoom"
+    if mode not in reel.MODES:
+        raise HTTPException(400, "Galat mode")
+    store.update_page(page_id, reel_mode=mode)
+    return {"ok": True, "mode": mode}
+
+@app.get("/api/media")
+def media_info():
+    return {"bg": folders.list_("bg"), "music": folders.list_("music"),
+            "loose_bg": folders.loose("bg"), "loose_music": folders.loose("music"),
+            "seconds": config.REEL_SECONDS}
+
+
+@app.post("/api/media/{kind}/folder")
+async def media_new_folder(kind: str, request: Request):
+    if kind not in folders.ROOTS:
+        raise HTTPException(400, "Unknown kind")
+    body = await request.json()
+    n = folders.create(kind, body.get("name") or "")
+    if not n:
+        raise HTTPException(400, "Naam do")
+    return {"ok": True, "name": n}
+
+
+@app.delete("/api/media/{kind}/folder/{name}")
+def media_del_folder(kind: str, name: str):
+    if kind not in folders.ROOTS:
+        raise HTTPException(400, "Unknown kind")
+    return {"ok": folders.delete(kind, name)}
+
+
+@app.get("/api/media/{kind}/{cat}/files")
+def media_files(kind: str, cat: str):
+    if kind not in folders.ROOTS:
+        raise HTTPException(400, "Unknown kind")
+    return {"files": folders.files(kind, cat)}
+
+
+@app.post("/api/media/{kind}/{cat}/file")
+async def media_upload(kind: str, cat: str, request: Request):
+    if kind not in folders.ROOTS:
+        raise HTTPException(400, "Unknown kind")
+    form = await request.form()
+    up = form.get("file")
+    if not up or not getattr(up, "filename", ""):
+        raise HTTPException(400, "File do")
+    n = folders.add(kind, cat, Path(up.filename).name, await up.read())
+    if not n:
+        raise HTTPException(400, "Format galat")
+    return {"ok": True, "name": n}
+
+
+@app.delete("/api/media/{kind}/{cat}/file/{name}")
+def media_del_file(kind: str, cat: str, name: str):
+    folders.remove(kind, cat, name)
+    return {"ok": True}
 
 # ---------- misc ----------
 @app.post("/api/shutdown")

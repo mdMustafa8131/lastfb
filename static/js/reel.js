@@ -1,0 +1,112 @@
+(() => {
+    const id = window.PAGE_ID;
+    if (!id) return;
+    const card = document.getElementById("reelCard");
+    const fcard = document.getElementById("folderCard");
+    const info = document.getElementById("reelInfo");
+    const toggle = document.getElementById("reelToggle");
+    if (!card) return;
+
+    fetch(`/api/pages/${id}/state`).then((x) => x.json()).then((s) => {
+        if (s.section !== "islam") return;
+        card.style.display = "";
+        fcard.style.display = "";
+        toggle.checked = !!s.reel;
+        const MODES = ["zoom", "zoomout", "pan", "wave", "warp", "ripple", "pulse", "rgb"];
+        const box = document.getElementById("reelModes");
+        box.innerHTML = MODES.map((m) =>
+            `<button class="btn btn-sm${s.reel_mode === m ? " btn-primary" : ""}" data-mode="${m}">${m}</button>`).join("");
+        box.querySelectorAll("[data-mode]").forEach((b) => {
+            b.onclick = async () => {
+                await fetch(`/api/pages/${id}/reelmode`, {
+                    method: "POST", headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ mode: b.dataset.mode }),
+                });
+                box.querySelectorAll("[data-mode]").forEach((x) =>
+                    x.classList.toggle("btn-primary", x === b));
+            };
+        });
+        load();
+    }).catch(() => { });
+
+    async function load() {
+        const r = await fetch("/api/media").then((x) => x.json()).catch(() => null);
+        if (!r) return;
+        info.textContent = `music: ${r.music.reduce((a, c) => a + c.count, 0)} track · ${r.seconds}s video`;
+        document.getElementById("fLoose").textContent =
+            `folder ke bahar: ${r.bg === r.bg ? r.loose_bg : 0} photo · ${r.loose_music} music`;
+        const kind = document.getElementById("fKindSel").value;
+        const list = r[kind] || [];
+        document.getElementById("fList").innerHTML = list.length
+            ? list.map((c) => `<div class="rowbar-actions small"><span>${c.name} — ${c.count}</span>
+          <button class="btn btn-sm" data-open="${c.name}">Files</button>
+          <button class="btn btn-sm" data-del="${c.name}">Delete folder</button></div>`).join("")
+            : `<p class="muted small">koi folder nahi</p>`;
+        document.querySelectorAll("[data-del]").forEach((b) => {
+            b.onclick = async () => {
+                if (!confirm(`${b.dataset.del} folder delete?`)) return;
+                await fetch(`/api/media/${kind}/folder/${encodeURIComponent(b.dataset.del)}`,
+                    { method: "DELETE" });
+                load();
+            };
+        });
+        document.querySelectorAll("[data-open]").forEach((b) => {
+            b.onclick = async () => {
+                const cat = b.dataset.open;
+                const r2 = await fetch(`/api/media/${kind}/${encodeURIComponent(cat)}/files`)
+                    .then((x) => x.json()).catch(() => ({ files: [] }));
+                document.getElementById("fFiles").innerHTML = r2.files.length
+                    ? `<p class="small">${cat} ki files:</p>` + r2.files.map((f) =>
+                        `<div class="rowbar-actions small"><span>${f}</span>
+               <button class="btn btn-sm" data-rm="${f}" data-cat="${cat}">x</button></div>`).join("")
+                    : `<p class="muted small">${cat} khali hai</p>`;
+                document.querySelectorAll("[data-rm]").forEach((x) => {
+                    x.onclick = async () => {
+                        await fetch(`/api/media/${kind}/${encodeURIComponent(x.dataset.cat)}/file/${encodeURIComponent(x.dataset.rm)}`,
+                            { method: "DELETE" });
+                        b.click();
+                        load();
+                    };
+                });
+            };
+        });
+    }
+
+    document.getElementById("fKindSel").onchange = load;
+
+    toggle.addEventListener("change", async () => {
+        const r = await fetch(`/api/pages/${id}/reel`, {
+            method: "POST", headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ on: toggle.checked }),
+        });
+        if (!r.ok) { toggle.checked = !toggle.checked; alert((await r.json()).detail || "Fail"); }
+    });
+
+    document.getElementById("fNew").onclick = async () => {
+        const name = document.getElementById("fName").value.trim();
+        if (!name) return alert("Naam do");
+        const kind = document.getElementById("fKindSel").value;
+        const r = await fetch(`/api/media/${kind}/folder`, {
+            method: "POST", headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name }),
+        });
+        if (r.ok) { document.getElementById("fName").value = ""; load(); }
+        else alert((await r.json()).detail || "Fail");
+    };
+
+    document.getElementById("fUp").onclick = async () => {
+        const cat = document.getElementById("fCat").value.trim();
+        const files = document.getElementById("fFile").files;
+        if (!cat) return alert("Folder naam likho");
+        if (!files.length) return alert("Files chuno");
+        const kind = document.getElementById("fKindSel").value;
+        for (const f of files) {
+            const fd = new FormData();
+            fd.append("file", f);
+            await fetch(`/api/media/${kind}/${encodeURIComponent(cat)}/file`,
+                { method: "POST", body: fd });
+        }
+        document.getElementById("fFile").value = "";
+        load();
+    };
+})();

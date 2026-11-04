@@ -206,6 +206,38 @@
     <p class="small">Status: <b id="statusText">{{ page.status }}</b> · agla: <span id="nextText">{{ page.next_post_at
             or "—" }}</span></p>
 </div>
+<div class="card" id="reelCard" style="display:none">
+    <h2 class="h2">Reel mode</h2>
+    <p class="muted small">On hone pe image post nahi hogi — us image + category ka music se 15s video banega aur Reel
+        upload hoga.</p>
+    <label class="switchrow"><input type="checkbox" id="reelToggle"> <span>Post reel</span></label>
+    <div class="rowbar-actions" id="reelModes"></div>
+    <p class="small" id="reelInfo"></p>
+</div>
+
+<div class="card" id="folderCard" style="display:none">
+    <h2 class="h2">Folders</h2>
+    <p class="muted small">Background photo aur music, dono category ke hisaab se. Hadith ki category = usi folder ka
+        photo aur music.</p>
+    <div class="rowbar-actions">
+        <input id="fKind" type="hidden" value="bg">
+        <select id="fKindSel">
+            <option value="bg">Background photos</option>
+            <option value="music">Music</option>
+        </select>
+        <input id="fName" placeholder="naya folder (jaise qabr)">
+        <button class="btn btn-sm" id="fNew">Folder banao</button>
+    </div>
+    <p class="small" id="fLoose"></p>
+    <div id="fList"></div>
+    <div id="fFiles"></div>
+    <div class="rowbar-actions" style="margin-top:10px">
+        <input id="fCat" placeholder="folder (jaise qabr)">
+        <input type="file" id="fFile" multiple>
+        <button class="btn btn-sm" id="fUp">Upload</button>
+    </div>
+</div>
+<script src="/static/js/reel.js" defer></script>
 
 <script>window.PAGE_ID = "{{ page.id }}";</script>
 {% endblock %}

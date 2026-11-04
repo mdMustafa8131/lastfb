@@ -5,6 +5,8 @@ from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 import caption
+import render
+import reel
 import news
 import config
 import hashtags
@@ -104,6 +106,19 @@ async def _post_once(page):
     tags = hashtags.pick(30)
     text = caption.build(page["section"], meta["items"], page.get("langs") or [], tags)
 
+    use_reel = bool(page.get("reel")) and page["section"] == "islam"
+    video = None
+    if use_reel:
+        cat = (meta["items"][0].get("category") or "") if meta.get("items") else ""
+        full_i, plain_i = render.render_islam_gold_pair(
+            meta["items"][0], page.get("langs") or [], cat)
+        video, _m = reel.build(image, page["section"], cat,
+                               page.get("reel_mode") or "zoom",
+                               plain_path=plain_i, full_path=full_i)
+                               
+        if not video:
+            store.update_page(page["id"], status="reel_wait")
+            return
     settings = store.get_settings()
     ok = False
     last_err = ""
@@ -113,7 +128,10 @@ async def _post_once(page):
                 await asyncio.sleep(0.2)
                 ok = True
             else:
-                await poster.post_photo(page, image, text)
+                if video:
+                    await poster.post_reel(page, video, text)
+                else:
+                    await poster.post_photo(page, image, text)
                 ok = True
             break
         except Exception as e:
@@ -121,7 +139,7 @@ async def _post_once(page):
             await asyncio.sleep(2)
 
     if not ok:
-        store.update_page(page["id"], status="error",
+        store.update_page(page["id"], status="error", last_err=last_err,
                           fail_count=(page.get("fail_count") or 0) + 1)
         return
 
@@ -129,7 +147,8 @@ async def _post_once(page):
         for it in (meta.get("items") or []):
             news.mark_posted(it.get("url"))
 
-    image.unlink(missing_ok=True)
+    if video:
+        video.unlink(missing_ok=True)
     image.with_suffix(".json").unlink(missing_ok=True)
 
     fresh = store.get_page(page["id"])
@@ -167,13 +186,34 @@ async def post_now(page_id):
     text = caption.build(page["section"], meta["items"], page.get("langs") or [], tags)
 
     dry = bool(store.get_settings().get("dry_run"))
+    use_reel = bool(page.get("reel")) and page["section"] == "islam"
+    video = None
+
+    if use_reel:
+        cat = (meta["items"][0].get("category") or "") if meta.get("items") else ""
+        full_i, plain_i = render.render_islam_gold_pair(
+            meta["items"][0], page.get("langs") or [], cat)
+        video, _m = reel.build(image, page["section"], cat,
+                               page.get("reel_mode") or "zoom",
+                               plain_path=plain_i, full_path=full_i)
+        if not video:
+            return {"ok": False, "error": "Reel ban nahi payi (music ya render fail)"}
+
     try:
         if not dry:
-            await poster.post_photo(page, image, text)
+            if video:
+                await poster.post_reel(page, video, text)
+            else:
+                await poster.post_photo(page, image, text)
     except Exception as e:
-        store.update_page(page_id, status="error",
+        if video:
+            video.unlink(missing_ok=True)
+        store.update_page(page_id, status="error", last_err=str(e)[:200],
                           fail_count=(page.get("fail_count") or 0) + 1)
         return {"ok": False, "error": str(e)[:200]}
+
+    if video:
+        video.unlink(missing_ok=True)
 
     if page["section"] == "news":
         for it in (meta.get("items") or []):
@@ -191,8 +231,7 @@ async def post_now(page_id):
         if len(pool.ready_files(page_id)) <= 1:
             pool.fill_buffer(fresh)
 
-    return {"ok": True, "dry": dry, "caption": text}
-
+    return {"ok": True, "dry": dry, "reel": bool(video), "caption": text}
 
 async def _run_page(page_id):
     while not _stop.is_set():
