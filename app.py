@@ -51,7 +51,8 @@ FB_PASS = os.getenv("FB_PASS", "")
 
 @app.middleware("http")
 async def _auth(request: Request, call_next):
-    if not FB_PASS or request.url.path.startswith("/static") or \
+    if not FB_PASS or request.url.path == "/ping" or \
+            request.url.path.startswith("/static") or \
             request.url.path.startswith("/media"):
         return await call_next(request)
     hdr = request.headers.get("authorization", "")
@@ -64,6 +65,11 @@ async def _auth(request: Request, call_next):
             pass
     return Response("Auth required", status_code=401,
                     headers={"WWW-Authenticate": 'Basic realm="fb"'})
+
+
+@app.get("/ping")
+def ping():
+    return {"ok": True}
 
 
 app.mount("/static", StaticFiles(directory=str(config.STATIC_DIR)), name="static")
