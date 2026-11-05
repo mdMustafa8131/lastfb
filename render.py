@@ -489,6 +489,8 @@ _RAQM = _features.check("raqm")
 
 def _g_key(t):
     for ch in str(t):
+        if ch in "।॥":
+            continue
         o = ord(ch)
         if 0x0900 <= o <= 0x097F:
             return "dev"
@@ -506,9 +508,10 @@ def _g_font(k, s):
         return ImageFont.truetype(p, s, layout_engine=ImageFont.Layout.RAQM)
     return ImageFont.truetype(p, s)
 
-
 def _g_key(t):
     for ch in str(t):
+        if ch in "।॥":
+            continue
         o = ord(ch)
         if 0x0900 <= o <= 0x097F:
             return "dev"
@@ -546,8 +549,13 @@ _G_FP = {k: _g_path(k) for k in _G_FONTS}
 
 
 def _g_font(k, s):
+    k = _G_ALIAS.get(k, k)
     p = _G_FP.get(k) or _G_FP.get("bold")
-    return ImageFont.truetype(p, s) if p else ImageFont.load_default(s)
+    if not p:
+        return ImageFont.load_default(s)
+    if _RAQM:
+        return ImageFont.truetype(p, s, layout_engine=ImageFont.Layout.RAQM)
+    return ImageFont.truetype(p, s)
 
 
 def _g_wrap(d, t, f, w):
@@ -682,12 +690,13 @@ def render_islam_gold(item, langs=None, category=None, plain=False, bg=None):
                   "HADEEZ-E-NABAWI", "bold", GOLD, 30, 1.0)
 
     d = ImageDraw.Draw(img)
-    trans = [item[k] for k in (langs or []) if item.get(k)]
+    hkey = _g_key(item["hadith_roman"])
+    trans = [item[k] for k in (langs or [])
+             if item.get(k) and _g_key(item[k]) != hkey]
     foot_h = 70
     top = pad + 96
     bottom = H - pad - foot_h - 6
     avail_w = W - 2 * (pad + 34)
-    hkey = _g_key(item["hadith_roman"])
     block = bottom - top
 
     size = 54

@@ -6,10 +6,10 @@
     "access_token": "EAAJEILYjdJ4BS8UYcqLqf0GQW95DTFuNh9TgNaZCNEaCT46NLeFXR6nIarzduXOoFKwMMRvWaUC0ZBZA17E4vNOlqvLJf92SgXVInOkeFtBxcaFmF4Rl2AxwEZAcZAQFAvGZBsmjs82sZAMzwkJBn32oUZClSHe44G1EPLiJO1Lr2PIa0oZBerBM7Xkmmst4wcHDbvQwz",
     "section": "english",
     "langs": [
-      "hindi",
-      "bangla"
+      "bangla",
+      "hinglish"
     ],
-    "bg_mode": "e5",
+    "bg_mode": "t3",
     "source_color": "#08c46c",
     "logo": "C:\\Users\\prvsk\\Desktop\\fbengin\\media\\logos\\1388535524349477.jpg",
     "brand": null,
@@ -44,7 +44,8 @@
     "access_token": "EAAJEILYjdJ4BSZCRiMW8j8GtWZBYBmWS2BxhRhigMO7Rs9aLw4NlEAJdNCNXZA7pV5ookbh2xFDbf1GrXUorlylB4ysZAVAZC4NJShax9hFXQIBop10pMddmeG542yHdp25xaADcZCkAppvcbJZCLXSVnmq6o8zCcmRBjGOjSQZBytQI2vwoXfcH4ZCgjeis5F3stVo0s",
     "section": "islam",
     "langs": [
-      "hindi"
+      "english",
+      "bangla"
     ],
     "bg_mode": "gold",
     "source_color": "#ff3300",
@@ -53,27 +54,27 @@
     "sentences": 1,
     "question_box": false,
     "enabled": false,
-    "status": "stopped",
+    "status": "idle",
     "schedule": {
       "day": {
         "start": "06:00",
         "end": "22:00",
-        "min": 1,
-        "max": 4
+        "min": 3,
+        "max": 5
       },
       "night": {
         "start": "22:00",
         "end": "06:00",
-        "min": 1,
-        "max": 4
+        "min": 3,
+        "max": 5
       }
     },
-    "last_post_at": "2026-11-05T03:35:18.868943+05:30",
+    "last_post_at": "2026-11-05T20:02:37.032905+05:30",
     "next_post_at": "2026-11-05T03:39:19.867477+05:30",
-    "posted_count": 22,
+    "posted_count": 29,
     "fail_count": 0,
     "created_at": "2026-11-03T04:56:43.567726+00:00",
-    "reel_mode": "ripple",
+    "reel_mode": "zoomout",
     "reel": true
   },
   {

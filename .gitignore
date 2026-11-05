@@ -5,3 +5,7 @@ media/ready/
 media/logos/
 imports/archive/
 libs/
+media/video/*.mp4
+media/video/*.jpg
+media/video/*.png
+media/video/ripple_tmp*/

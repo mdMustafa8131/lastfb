@@ -24,12 +24,10 @@ def _split_cat(source):
 
 def _lang_of(text):
     for ch in str(text or ""):
+        if ch in "।॥":
+            continue
         o = ord(ch)
-        if 0x0980 <= o <= 0x09FF:
-            return "bangla"
-        if 0x0900 <= o <= 0x097F:
-            return "hindi"
-    return "english"
+        
 
 
 def parse_english(text, lang=None):

@@ -147,7 +147,7 @@ async def _post_once(page):
         for it in (meta.get("items") or []):
             news.mark_posted(it.get("url"))
 
-    if video:
+    if video and not dry:
         video.unlink(missing_ok=True)
     image.with_suffix(".json").unlink(missing_ok=True)
 
@@ -212,7 +212,7 @@ async def post_now(page_id):
                           fail_count=(page.get("fail_count") or 0) + 1)
         return {"ok": False, "error": str(e)[:200]}
 
-    if video:
+    if video and not dry:
         video.unlink(missing_ok=True)
 
     if page["section"] == "news":
