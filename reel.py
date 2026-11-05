@@ -180,9 +180,12 @@ def build(image_path, section, category, mode="zoom", seconds=None,
 
     vpreset, vcrf = ("veryfast", "23") if mode == "ripple" else ("ultrafast", "27")
     cmd += [
+        "-filter_threads", "1",
         "-filter_complex", vf,
         "-map", "[v]", "-map", "[a]",
         "-t", str(seconds),
+        "-threads", "1", "-filter_threads", "1",
+        "-threads", "1", "-filter_threads", "1",
         "-c:v", "libx264", "-preset", vpreset, "-crf", vcrf,
         "-pix_fmt", "yuv420p", "-r", str(fps),
         "-c:a", "aac", "-b:a", "96k",
