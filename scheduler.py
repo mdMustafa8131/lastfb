@@ -149,6 +149,7 @@ async def _post_once(page):
 
     if video and not dry:
         video.unlink(missing_ok=True)
+    image.unlink(missing_ok=True)
     image.with_suffix(".json").unlink(missing_ok=True)
 
     fresh = store.get_page(page["id"])
