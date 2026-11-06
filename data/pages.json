@@ -15,8 +15,8 @@
     "brand": null,
     "sentences": 3,
     "question_box": false,
-    "enabled": false,
-    "status": "idle",
+    "enabled": true,
+    "status": "waiting",
     "schedule": {
       "day": {
         "start": "06:00",
@@ -31,11 +31,14 @@
         "max": 5
       }
     },
-    "last_post_at": "2026-11-05T02:53:10.289973+05:30",
-    "next_post_at": "2026-11-03T22:03:00+05:30",
-    "posted_count": 10,
+    "last_post_at": "2026-11-06T13:36:58.909064+05:30",
+    "next_post_at": "2026-11-06T14:27:50.050618+05:30",
+    "posted_count": 19,
     "fail_count": 0,
-    "created_at": "2026-11-03T04:56:43.567726+00:00"
+    "created_at": "2026-11-03T04:56:43.567726+00:00",
+    "reel": true,
+    "reel_mode": "zoomout",
+    "reel_music": true
   },
   {
     "id": "770827062784222",

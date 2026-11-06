@@ -95,6 +95,7 @@ def _new_page(pid, name, category, token):
         "posted_count": 0,
         "fail_count": 0,
         "reel": False,
+        "reel_music": True,
         "reel_mode": "zoom",
         "created_at": _now(),
     }

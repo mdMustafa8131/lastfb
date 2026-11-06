@@ -623,14 +623,15 @@ def _e_left(img, box, txt, key, color, size, gap=1.25, tag=None, tag_color=None)
     return Image.alpha_composite(img, layer)
 
 
-def render_english_clean(items, langs=None, brand_name=None):
+def render_english_clean(items, langs=None, brand_name=None, plain=False):
     img = Image.new("RGBA", (W, H), E_BG + (255,))
     d = ImageDraw.Draw(img)
 
     fp = _g_font("bold", 30)
     tw = d.textlength("ENGLISH", font=fp)
     d.rounded_rectangle([48, 38, 48 + tw + 56, 38 + 58], radius=29, fill=(34, 164, 93, 255))
-    d.text((76, 52), "ENGLISH", font=fp, fill=(255, 255, 255, 255))
+    if not plain:
+        d.text((76, 52), "ENGLISH", font=fp, fill=(255, 255, 255, 255))
 
     content = list(items)[:3]
     n = max(1, len(content))
@@ -646,6 +647,8 @@ def render_english_clean(items, langs=None, brand_name=None):
         d = ImageDraw.Draw(img)
         d.rounded_rectangle([48, y, W - 48, y + ch], radius=20, fill=(255, 255, 255, 255))
         d.rounded_rectangle([48, y, 58, y + ch], radius=5, fill=col + (255,))
+        if plain:
+            continue
 
         sbox_h = int(ch * 0.44)
         img = _e_left(img, (78, y + 20, W - 78, y + 20 + sbox_h),
@@ -666,14 +669,28 @@ def render_english_clean(items, langs=None, brand_name=None):
             d = ImageDraw.Draw(img)
             d.line([(78, yy - 3), (W - 78, yy - 3)], fill=(232, 232, 240, 255), width=1)
 
+    if plain:
+        return img
+
     if brand_name:
         fb = _g_font("bold", 28)
         txt = "@" + str(brand_name)
         tw2 = ImageDraw.Draw(img).textlength(txt, font=fb)
-        ImageDraw.Draw(img).text((W - 48 - tw2, H - 62), txt, font=fb,
-                                 fill=(34, 164, 93, 255))
+        ImageDraw.Draw(img).text((W - 48 - tw2, H - 62), txt, font=fb, fill=(34, 164, 93, 255))
     return img
 
+
+def render_english_clean_pair(items, langs=None, brand_name=None):
+    """(text wali, bina-text wali) — dono ek hi layout pe."""
+    import uuid
+    full = render_english_clean(items, langs, brand_name).convert("RGB")
+    plain = render_english_clean(items, langs, brand_name, plain=True).convert("RGB")
+    tag = uuid.uuid4().hex[:8]
+    fp = config.VIDEO_DIR / f"pair_{tag}_full.jpg"
+    pp = config.VIDEO_DIR / f"pair_{tag}_plain.jpg"
+    full.save(fp, "JPEG", quality=92)
+    plain.save(pp, "JPEG", quality=92)
+    return fp, pp
 def render_islam_gold(item, langs=None, category=None, plain=False, bg=None):
     img = _overlay((bg or _bg("islam", "image", category)).convert("RGBA"), 120)
     pad = 26

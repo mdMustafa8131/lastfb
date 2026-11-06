@@ -221,7 +221,7 @@
     "hindi": "लोगों को पूरा ध्यान दो। यह पैसे से भी दुर्लभ है।",
     "hinglish": "Logon ko poora dhyan do. Ye paise se bhi durlabh hai.",
     "id": "05a31b00c7fe",
-    "used": false
+    "used": true
   },
   {
     "english": "Fix the leaky tap today. Small neglect becomes big repair.",
@@ -229,7 +229,7 @@
     "hindi": "आज ही नल का रिसाव ठीक करो। छोटी लापरवाही बड़ी मरम्मत बनती है।",
     "hinglish": "Aaj hi nal ka risav theek karo. Chhoti laparwahi badi marammat banti hai.",
     "id": "36bf683871ce",
-    "used": false
+    "used": true
   },
   {
     "english": "Wear what fits and not what trends.",
@@ -237,7 +237,7 @@
     "hindi": "जो फिट हो वही पहनो ट्रेंड नहीं।",
     "hinglish": "Jo fit ho wahi pehno trend nahi.",
     "id": "80362eabb11d",
-    "used": false
+    "used": true
   },
   {
     "english": "Compliment one person daily. It costs nothing.",
@@ -245,7 +245,7 @@
     "hindi": "रोज़ एक इंसान की तारीफ़ करो। इसमें कुछ ख़र्च नहीं होता।",
     "hinglish": "Roz ek insaan ki tareef karo. Isme kuch kharch nahi hota.",
     "id": "e72d3d2701e4",
-    "used": false
+    "used": true
   },
   {
     "english": "Keep your shoes by the door and mornings get easier.",
@@ -253,7 +253,7 @@
     "hindi": "जूते दरवाज़े के पास रखो तभी सुबह आसान होती है।",
     "hinglish": "Joote darwaze ke paas rakho tabhi subah aasan hoti hai.",
     "id": "683a5e25538b",
-    "used": false
+    "used": true
   },
   {
     "english": "A list of three tasks beats a list of thirty.",
@@ -261,7 +261,7 @@
     "hindi": "तीन काम की सूची तीस की सूची को हरा देती है।",
     "hinglish": "Teen kaam ki soochi tees ki soochi ko hara deti hai.",
     "id": "2c9b70b84b9f",
-    "used": false
+    "used": true
   },
   {
     "english": "Turn the phone face down while you eat.",
@@ -269,7 +269,7 @@
     "hindi": "खाते समय फ़ोन उल्टा रखो।",
     "hinglish": "Khate samay phone ulta rakho.",
     "id": "429931c249f8",
-    "used": false
+    "used": true
   },
   {
     "english": "Learn to say no without explaining twice.",
@@ -277,7 +277,7 @@
     "hindi": "दो बार समझाए बिना ना कहना सीखो।",
     "hinglish": "Do baar samjhaye bina na kehna seekho.",
     "id": "a4906c09588d",
-    "used": false
+    "used": true
   },
   {
     "english": "The cheapest luxury is a good night's sleep.",
@@ -285,7 +285,7 @@
     "hindi": "सबसे सस्ती लक्ज़री अच्छी नींद है।",
     "hinglish": "Sabse sasti luxury achhi neend hai.",
     "id": "2ced966bb42a",
-    "used": false
+    "used": true
   },
   {
     "english": "Iron your clothes at night and mornings stop hurting.",
@@ -293,7 +293,7 @@
     "hindi": "रात में कपड़े प्रेस करो तभी सुबह और तकलीफ़ नहीं देती।",
     "hinglish": "Raat me kapde press karo tabhi subah aur takleef nahi deti.",
     "id": "5b6a3d8dd65b",
-    "used": false
+    "used": true
   },
   {
     "english": "Keep one hour a week for nothing at all.",
@@ -301,7 +301,7 @@
     "hindi": "हफ़्ते में एक घंटा कुछ न करने के लिए रखो।",
     "hinglish": "Hafte me ek ghanta kuch na karne ke liye rakho.",
     "id": "f91241a8eced",
-    "used": false
+    "used": true
   },
   {
     "english": "Buy the better version once instead of the cheap one thrice.",
@@ -309,7 +309,7 @@
     "hindi": "सस्ता तीन बार न खरीद कर अच्छा एक बार खरीदो।",
     "hinglish": "Sasta teen baar na kharid kar achha ek baar kharido.",
     "id": "b51d7256951a",
-    "used": false
+    "used": true
   },
   {
     "english": "Walk up the stairs and skip the lift when you can.",
@@ -317,7 +317,7 @@
     "hindi": "सीढ़ियाँ चढ़ो लिफ़्ट छोड़ दो जब हो सके।",
     "hinglish": "Seedhiyan chadho lift chhod do jab ho sake.",
     "id": "2c84fec8e6d7",
-    "used": false
+    "used": true
   },
   {
     "english": "A small balcony garden fixes more than a hobby.",
@@ -325,7 +325,7 @@
     "hindi": "बालकनी का छोटा बाग़ान शौक़ से ज़्यादा ठीक करता है।",
     "hinglish": "Balcony ka chhota bagaan shauq se zyada theek karta hai.",
     "id": "36b01cfd2a57",
-    "used": false
+    "used": true
   },
   {
     "english": "Read the label before the price.",
@@ -333,7 +333,7 @@
     "hindi": "दाम से पहले लेबल पढ़ो।",
     "hinglish": "Daam se pehle label padho.",
     "id": "7918135f8ca8",
-    "used": false
+    "used": true
   },
   {
     "english": "Say thank you to the person who serves you.",
@@ -341,7 +341,7 @@
     "hindi": "जो तुम्हारी सेवा करे उसे शुक्रिया कहो।",
     "hinglish": "Jo tumhari seva kare use shukriya kaho.",
     "id": "080f0975ea27",
-    "used": false
+    "used": true
   },
   {
     "english": "Keep a spare key with a neighbour you trust.",
@@ -349,7 +349,7 @@
     "hindi": "भरोसे के पड़ोसी के पास एक्स्ट्रा चाबी रखो।",
     "hinglish": "Bharose ke padosi ke paas extra chaabi rakho.",
     "id": "cb7639e06467",
-    "used": false
+    "used": true
   },
   {
     "english": "Pay your bills the day they arrive.",
@@ -357,7 +357,7 @@
     "hindi": "बिल आने के दिन ही दे दो।",
     "hinglish": "Bill aane ke din hi de do.",
     "id": "ee6efc348a1e",
-    "used": false
+    "used": true
   },
   {
     "english": "Stretch for two minutes before bed.",
@@ -365,7 +365,7 @@
     "hindi": "सोने से पहले दो मिनट स्ट्रेच करो।",
     "hinglish": "Sone se pehle do minute stretch karo.",
     "id": "0e9390495b0d",
-    "used": false
+    "used": true
   },
   {
     "english": "Delete one app you open without reason.",
@@ -373,7 +373,7 @@
     "hindi": "जो ऐप बिना कारण खोलते हो वह डिलीट करो।",
     "hinglish": "Jo app bina karan kholte ho wo delete karo.",
     "id": "11f7c31314f5",
-    "used": false
+    "used": true
   },
   {
     "english": "Keep cash for the days the network dies.",
@@ -381,7 +381,7 @@
     "hindi": "नेटवर्क मरने वाले दिनों के लिए नक़द रखो।",
     "hinglish": "Network marne wale dinon ke liye cash rakho.",
     "id": "b4801cd7d930",
-    "used": false
+    "used": true
   },
   {
     "english": "Write the reply and send it after ten minutes.",
@@ -389,7 +389,7 @@
     "hindi": "जवाब लिख कर दस मिनट बाद भेजो।",
     "hinglish": "Jawab likh kar das minute baad bhejo.",
     "id": "8c82caf9b184",
-    "used": false
+    "used": true
   },
   {
     "english": "Water before coffee and the headache stays away.",
@@ -397,6 +397,406 @@
     "hindi": "कॉफ़ी से पहले पानी पियो तभी सिरदर्द दूर रहता है।",
     "hinglish": "Coffee se pehle pani piyo tabhi sirdard door rehta hai.",
     "id": "fdcfdda5c57c",
+    "used": true
+  },
+  {
+    "english": "Wake up ten minutes early and the rush disappears.",
+    "bangla": "দশ মিনিট আগে উঠো তবেই তাড়াহুড়ো চলে যায়।",
+    "hindi": "दस मिनट पहले उठो तभी जल्दबाज़ी ख़त्म होती है।",
+    "hinglish": "Das minute pehle utho tabhi jaldbaazi khatam hoti hai.",
+    "id": "02b6ffd99cd5",
+    "used": false
+  },
+  {
+    "english": "Keep a glass of water by your bed.",
+    "bangla": "বিছানার পাশে এক গ্লাস পানি রাখো।",
+    "hindi": "बिस्तर के पास एक गिलास पानी रखो।",
+    "hinglish": "Bistar ke paas ek glass pani rakho.",
+    "id": "f8b491797768",
+    "used": false
+  },
+  {
+    "english": "Read one page instead of scrolling.",
+    "bangla": "স্ক্রল করার বদলে এক পাতা পড়ো।",
+    "hindi": "स्क्रॉल करने की जगह एक पन्ना पढ़ो।",
+    "hinglish": "Scroll karne ki jagah ek panna padho.",
+    "id": "84b1824b6c85",
+    "used": false
+  },
+  {
+    "english": "Fold your blanket before leaving the room.",
+    "bangla": "ঘর ছাড়ার আগে কম্বল ভাঁজ করো।",
+    "hindi": "कमरा छोड़ने से पहले कंबल तह करो।",
+    "hinglish": "Kamra chhodne se pehle kambal tah karo.",
+    "id": "8e2cff9c2832",
+    "used": false
+  },
+  {
+    "english": "Keep a pen and paper in your bag.",
+    "bangla": "ব্যাগে একটা কলম আর কাগজ রাখো।",
+    "hindi": "बैग में एक कलम और काग़ज़ रखो।",
+    "hinglish": "Bag me ek kalam aur kagaz rakho.",
+    "id": "fe102a851ee7",
+    "used": false
+  },
+  {
+    "english": "Say no to one unnecessary meeting.",
+    "bangla": "একটা অপ্রয়োজনীয় মিটিংয়ে না বলো।",
+    "hindi": "एक ग़ैरज़रूरी मीटिंग को ना कहो।",
+    "hinglish": "Ek ghairzaroori meeting ko na kaho.",
+    "id": "2379888120a9",
+    "used": false
+  },
+  {
+    "english": "Check your bank balance once a week.",
+    "bangla": "সপ্তাহে একবার ব্যাংক ব্যালান্স দেখো।",
+    "hindi": "हफ़्ते में एक बार बैंक बैलेंस देखो।",
+    "hinglish": "Hafte me ek baar bank balance dekho.",
+    "id": "f064a11c922c",
+    "used": false
+  },
+  {
+    "english": "Learn the names of the people you work with.",
+    "bangla": "যাদের সাথে কাজ করো তাদের নাম শেখো।",
+    "hindi": "जिनके साथ काम करते हो उनके नाम सीखो।",
+    "hinglish": "Jinke saath kaam karte ho unke naam seekho.",
+    "id": "1232709fcdae",
+    "used": false
+  },
+  {
+    "english": "Take the stairs for one floor.",
+    "bangla": "এক তলা সিঁড়ি দিয়ে ওঠো।",
+    "hindi": "एक मंज़िल सीढ़ी से चढ़ो।",
+    "hinglish": "Ek manzil seedhi se chadho.",
+    "id": "ed993819307a",
+    "used": false
+  },
+  {
+    "english": "Put the phone away thirty minutes before sleep.",
+    "bangla": "ঘুমানোর ত্রিশ মিনিট আগে ফোন সরাও।",
+    "hindi": "सोने से तीस मिनट पहले फ़ोन हटाओ।",
+    "hinglish": "Sone se tees minute pehle phone hatao.",
+    "id": "d225ef8b751d",
+    "used": false
+  },
+  {
+    "english": "Keep your desk clear before you start.",
+    "bangla": "শুরু করার আগে টেবিল পরিষ্কার রাখো।",
+    "hindi": "शुरू करने से पहले मेज़ साफ़ रखो।",
+    "hinglish": "Shuru karne se pehle mez saaf rakho.",
+    "id": "2bffd227a94b",
+    "used": false
+  },
+  {
+    "english": "Eat one fruit instead of one snack.",
+    "bangla": "একটা স্ন্যাকসের বদলে একটা ফল খাও।",
+    "hindi": "एक स्नैक की जगह एक फल खाओ।",
+    "hinglish": "Ek snack ki jagah ek fal khao.",
+    "id": "893ab5495a2c",
+    "used": false
+  },
+  {
+    "english": "Write tomorrow's plan tonight.",
+    "bangla": "আজ রাতে কালকের পরিকল্পনা লেখো।",
+    "hindi": "आज रात कल का प्लान लिखो।",
+    "hinglish": "Aaj raat kal ka plan likho.",
+    "id": "c468bc9240d7",
+    "used": false
+  },
+  {
+    "english": "Finish the small task you keep postponing.",
+    "bangla": "যে ছোট কাজটা পিছিয়ে দিচ্ছ সেটা শেষ করো।",
+    "hindi": "जो छोटा काम टाल रहे हो उसे ख़त्म करो।",
+    "hinglish": "Jo chhota kaam taal rahe ho use khatam karo.",
+    "id": "e80500e8d7c5",
+    "used": false
+  },
+  {
+    "english": "Ask one question in every conversation.",
+    "bangla": "প্রতিটি কথাবার্তায় একটা প্রশ্ন করো।",
+    "hindi": "हर बातचीत में एक सवाल पूछो।",
+    "hinglish": "Har baatcheet me ek sawal poocho.",
+    "id": "1028898b9a09",
+    "used": false
+  },
+  {
+    "english": "Send the message you are avoiding.",
+    "bangla": "যে মেসেজটা এড়িয়ে যাচ্ছ সেটা পাঠাও।",
+    "hindi": "जो मैसेज टाल रहे हो वह भेजो।",
+    "hinglish": "Jo message taal rahe ho wo bhejo.",
+    "id": "2fa826411a30",
+    "used": false
+  },
+  {
+    "english": "Repair one small thing at home.",
+    "bangla": "বাড়িতে একটা ছোট জিনিস সারাও।",
+    "hindi": "घर में एक छोटी चीज़ ठीक करो।",
+    "hinglish": "Ghar me ek chhoti cheez theek karo.",
+    "id": "e93a6a2ba6ad",
+    "used": false
+  },
+  {
+    "english": "Cancel the subscription you never use.",
+    "bangla": "যে সাবস্ক্রিপশন ব্যবহার করো না সেটা বাতিল করো।",
+    "hindi": "जो सब्सक्रिप्शन इस्तेमाल नहीं करते वह कैंसल करो।",
+    "hinglish": "Jo subscription istemal nahi karte wo cancel karo.",
+    "id": "133b79f28748",
+    "used": false
+  },
+  {
+    "english": "Walk ten minutes after dinner.",
+    "bangla": "রাতের খাওয়ার পর দশ মিনিট হাঁটো।",
+    "hindi": "रात के खाने के बाद दस मिनट चलो।",
+    "hinglish": "Raat ke khane ke baad das minute chalo.",
+    "id": "cab290f35f17",
+    "used": false
+  },
+  {
+    "english": "Keep the kitchen counter empty.",
+    "bangla": "রান্নাঘরের কাউন্টার খালি রাখো।",
+    "hindi": "रसोई का काउंटर खाली रखो।",
+    "hinglish": "Rasoi ka counter khaali rakho.",
+    "id": "3e6d01bd6b4b",
+    "used": false
+  },
+  {
+    "english": "Call your parents without a reason.",
+    "bangla": "কারণ ছাড়াই বাবা-মাকে ফোন করো।",
+    "hindi": "बिना कारण माँ-बाप को फ़ोन करो।",
+    "hinglish": "Bina karan maa-baap ko phone karo.",
+    "id": "b9c55e4d4d50",
+    "used": false
+  },
+  {
+    "english": "Delete photos you never look at.",
+    "bangla": "যে ছবিগুলো কখনো দেখো না সেগুলো ডিলিট করো।",
+    "hindi": "जो तस्वीरें कभी नहीं देखते वे डिलीट करो।",
+    "hinglish": "Jo tasveerein kabhi nahi dekhte wo delete karo.",
+    "id": "2421db59d2d8",
+    "used": false
+  },
+  {
+    "english": "Keep a shoe brush by the door.",
+    "bangla": "দরজার কাছে জুতার ব্রাশ রাখো।",
+    "hindi": "दरवाज़े के पास जूते का ब्रश रखो।",
+    "hinglish": "Darwaze ke paas joote ka brush rakho.",
+    "id": "d6956feebb65",
+    "used": false
+  },
+  {
+    "english": "Note the price before you pick the item.",
+    "bangla": "জিনিস তোলার আগে দাম দেখে নাও।",
+    "hindi": "चीज़ उठाने से पहले दाम देख लो।",
+    "hinglish": "Cheez uthane se pehle daam dekh lo.",
+    "id": "9747a64e1d49",
+    "used": false
+  },
+  {
+    "english": "Sit straight and breathe for one minute.",
+    "bangla": "সোজা বসে এক মিনিট শ্বাস নাও।",
+    "hindi": "सीधे बैठ कर एक मिनट साँस लो।",
+    "hinglish": "Seedhe baith kar ek minute saans lo.",
+    "id": "83fbd1828c32",
+    "used": false
+  },
+  {
+    "english": "Keep one drawer completely empty.",
+    "bangla": "একটা ড্রয়ার পুরো খালি রাখো।",
+    "hindi": "एक दराज़ पूरी खाली रखो।",
+    "hinglish": "Ek daraz poori khaali rakho.",
+    "id": "0ea9bfbc21eb",
+    "used": false
+  },
+  {
+    "english": "Read the whole email before replying.",
+    "bangla": "উত্তর দেওয়ার আগে পুরো মেইল পড়ো।",
+    "hindi": "जवाब देने से पहले पूरा मेल पढ़ो।",
+    "hinglish": "Jawab dene se pehle poora mail padho.",
+    "id": "0184c1645e62",
+    "used": false
+  },
+  {
+    "english": "Take a break before you get tired.",
+    "bangla": "ক্লান্ত হওয়ার আগেই বিরতি নাও।",
+    "hindi": "थकने से पहले ब्रेक लो।",
+    "hinglish": "Thakne se pehle break lo.",
+    "id": "3649d7404f9b",
+    "used": false
+  },
+  {
+    "english": "Write down one thing you did well today.",
+    "bangla": "আজ যা ভালো করেছ তার একটা লেখো।",
+    "hindi": "आज जो अच्छा किया उसमें से एक लिखो।",
+    "hinglish": "Aaj jo achha kiya usme se ek likho.",
+    "id": "b06a03e371e9",
+    "used": false
+  },
+  {
+    "english": "Wake up without checking the phone.",
+    "bangla": "ফোন না দেখে উঠো।",
+    "hindi": "फ़ोन देखे बिना उठो।",
+    "hinglish": "Phone dekhe bina utho.",
+    "id": "0ed56bfbac05",
+    "used": false
+  },
+  {
+    "english": "Keep a spare charger at work.",
+    "bangla": "কাজের জায়গায় বাড়তি চার্জার রাখো।",
+    "hindi": "काम की जगह एक्स्ट्रा चार्जर रखो।",
+    "hinglish": "Kaam ki jagah extra charger rakho.",
+    "id": "741ad29e566b",
+    "used": false
+  },
+  {
+    "english": "Water the plants before you sit down.",
+    "bangla": "বসার আগে গাছে পানি দাও।",
+    "hindi": "बैठने से पहले पौधों को पानी दो।",
+    "hinglish": "Baithne se pehle paudhon ko pani do.",
+    "id": "de9d0abccea3",
+    "used": false
+  },
+  {
+    "english": "Throw away the pen that does not write.",
+    "bangla": "যে কলম লেখে না সেটা ফেলে দাও।",
+    "hindi": "जो कलम नहीं लिखती वह फेंक दो।",
+    "hinglish": "Jo kalam nahi likhti wo phenk do.",
+    "id": "555984c66084",
+    "used": false
+  },
+  {
+    "english": "Keep a cloth in your pocket.",
+    "bangla": "পকেটে একটা কাপড় রাখো।",
+    "hindi": "जेब में एक कपड़ा रखो।",
+    "hinglish": "Jeb me ek kapda rakho.",
+    "id": "fe3520d54a7d",
+    "used": false
+  },
+  {
+    "english": "Practise the hard sentence out loud.",
+    "bangla": "কঠিন বাক্যটা জোরে বলে অভ্যাস করো।",
+    "hindi": "मुश्किल वाक्य ज़ोर से बोल कर अभ्यास करो।",
+    "hinglish": "Mushkil vakya zor se bol kar abhyas karo.",
+    "id": "d9f4b8f7621e",
+    "used": false
+  },
+  {
+    "english": "Say sorry quickly when you are wrong.",
+    "bangla": "ভুল হলে দ্রুত ক্ষমা চাও।",
+    "hindi": "ग़लत हो तो फ़ौरन माफ़ी माँगो।",
+    "hinglish": "Galat ho to fauran maafi maango.",
+    "id": "ec0cf7957665",
+    "used": false
+  },
+  {
+    "english": "Keep your wallet organised.",
+    "bangla": "মানিব্যাগ গোছানো রাখো।",
+    "hindi": "अपना बटुआ सलीक़े से रखो।",
+    "hinglish": "Apna batua saleeqe se rakho.",
+    "id": "185a1989559f",
+    "used": false
+  },
+  {
+    "english": "Dry your shoes before the night.",
+    "bangla": "রাতের আগে জুতা শুকাও।",
+    "hindi": "रात से पहले जूते सुखाओ।",
+    "hinglish": "Raat se pehle joote sukhao.",
+    "id": "08faa5fa0875",
+    "used": false
+  },
+  {
+    "english": "Close the tabs you are not reading.",
+    "bangla": "যে ট্যাব পড়ছ না সেটা বন্ধ করো।",
+    "hindi": "जो टैब नहीं पढ़ रहे वह बंद करो।",
+    "hinglish": "Jo tab nahi padh rahe wo band karo.",
+    "id": "6953f2b74b17",
+    "used": false
+  },
+  {
+    "english": "Eat slowly and put the spoon down between bites.",
+    "bangla": "ধীরে খাও আর প্রতি গ্রাসে চামচ নামাও।",
+    "hindi": "धीरे खाओ और हर कौर में चम्मच नीचे रखो।",
+    "hinglish": "Dheere khao aur har kaur me chamach neeche rakho.",
+    "id": "0f0299c1d916",
+    "used": false
+  },
+  {
+    "english": "Ask for help before the deadline.",
+    "bangla": "সময় শেষ হওয়ার আগে সাহায্য চাও।",
+    "hindi": "समय ख़त्म होने से पहले मदद माँगो।",
+    "hinglish": "Samay khatam hone se pehle madad maango.",
+    "id": "a269ec31e32d",
+    "used": false
+  },
+  {
+    "english": "Keep the door key in the same place.",
+    "bangla": "দরজার চাবি একই জায়গায় রাখো।",
+    "hindi": "दरवाज़े की चाबी एक ही जगह रखो।",
+    "hinglish": "Darwaze ki chaabi ek hi jagah rakho.",
+    "id": "0b8e599e8a9e",
+    "used": false
+  },
+  {
+    "english": "Take a photo of the bill.",
+    "bangla": "বিলের ছবি তুলে রাখো।",
+    "hindi": "बिल की फ़ोटो ले लो।",
+    "hinglish": "Bill ki photo le lo.",
+    "id": "dd2ea1d9a204",
+    "used": false
+  },
+  {
+    "english": "Do the dishes before bed.",
+    "bangla": "ঘুমানোর আগে বাসন ধোও।",
+    "hindi": "सोने से पहले बर्तन धो लो।",
+    "hinglish": "Sone se pehle bartan dho lo.",
+    "id": "42a39271c023",
+    "used": false
+  },
+  {
+    "english": "Keep a small umbrella in the bag.",
+    "bangla": "ব্যাগে ছোট ছাতা রাখো।",
+    "hindi": "बैग में छोटी छतरी रखो।",
+    "hinglish": "Bag me chhoti chhatri rakho.",
+    "id": "d56cd9143e7c",
+    "used": false
+  },
+  {
+    "english": "Look out of the window for one minute.",
+    "bangla": "এক মিনিট জানালা দিয়ে তাকাও।",
+    "hindi": "एक मिनट खिड़की से बाहर देखो।",
+    "hinglish": "Ek minute khidki se bahar dekho.",
+    "id": "2aa22df5edfc",
+    "used": false
+  },
+  {
+    "english": "Write the difficult call you must make.",
+    "bangla": "যে কঠিন কলটা করতে হবে সেটা লিখে রাখো।",
+    "hindi": "जो मुश्किल कॉल करनी है वह लिख लो।",
+    "hinglish": "Jo mushkil call karni hai wo likh lo.",
+    "id": "311d1c5951b1",
+    "used": false
+  },
+  {
+    "english": "Keep your hands warm in winter.",
+    "bangla": "শীতে হাত গরম রাখো।",
+    "hindi": "सर्दी में हाथ गर्म रखो।",
+    "hinglish": "Sardi me haath garam rakho.",
+    "id": "dfa5fe3ec0ad",
+    "used": false
+  },
+  {
+    "english": "Wear one thing you like.",
+    "bangla": "একটা জিনিস পরো যা তোমার ভালো লাগে।",
+    "hindi": "एक चीज़ पहनो जो तुम्हें पसंद है।",
+    "hinglish": "Ek cheez pehno jo tumhe pasand hai.",
+    "id": "fe25aa62ed9d",
+    "used": false
+  },
+  {
+    "english": "End the day by thanking one person.",
+    "bangla": "দিন শেষে একজনকে ধন্যবাদ দিয়ে শেষ করো।",
+    "hindi": "दिन ख़त्म करते वक़्त एक इंसान का शुक्रिया करो।",
+    "hinglish": "Din khatam karte waqt ek insaan ka shukriya karo.",
+    "id": "fa78b57a4934",
     "used": false
   }
 ]

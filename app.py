@@ -676,7 +676,8 @@ def page_state(page_id: str):
     if not page:
         raise HTTPException(404, "Page not found")
     return {"section": page.get("section"), "reel": bool(page.get("reel")),
-            "reel_mode": page.get("reel_mode") or "zoom"}
+            "reel_mode": page.get("reel_mode") or "zoom",
+            "reel_music": page.get("reel_music", True)}
 
 
 @app.post("/api/pages/{page_id}/reel")
@@ -684,11 +685,18 @@ async def set_reel(page_id: str, request: Request):
     page = store.get_page(page_id)
     if not page:
         raise HTTPException(404, "Page not found")
-    if page.get("section") != "islam":
-        raise HTTPException(400, "Reel sirf islam section ke liye hai")
     body = await request.json()
     store.update_page(page_id, reel=bool(body.get("on")))
     return {"ok": True, "reel": bool(body.get("on"))}
+
+@app.post("/api/pages/{page_id}/reelmusic")
+async def set_reel_music(page_id: str, request: Request):
+    page = store.get_page(page_id)
+    if not page:
+        raise HTTPException(404, "Page not found")
+    body = await request.json()
+    store.update_page(page_id, reel_music=bool(body.get("on")))
+    return {"ok": True}
 
 
 @app.post("/api/pages/{page_id}/reelmode")
@@ -703,55 +711,56 @@ async def set_reel_mode(page_id: str, request: Request):
     store.update_page(page_id, reel_mode=mode)
     return {"ok": True, "mode": mode}
 
-@app.get("/api/media")
-def media_info():
-    return {"bg": folders.list_("bg"), "music": folders.list_("music"),
-            "loose_bg": folders.loose("bg"), "loose_music": folders.loose("music"),
+@app.get("/api/media/{section}")
+def media_info(section: str):
+    return {"bg": folders.list_("bg", section), "music": folders.list_("music", section),
+            "loose_bg": folders.loose("bg", section),
+            "loose_music": folders.loose("music", section),
             "seconds": config.REEL_SECONDS}
 
 
-@app.post("/api/media/{kind}/folder")
-async def media_new_folder(kind: str, request: Request):
+@app.post("/api/media/{section}/{kind}/folder")
+async def media_new_folder(section: str, kind: str, request: Request):
     if kind not in folders.ROOTS:
         raise HTTPException(400, "Unknown kind")
     body = await request.json()
-    n = folders.create(kind, body.get("name") or "")
+    n = folders.create(kind, section, body.get("name") or "")
     if not n:
         raise HTTPException(400, "Naam do")
     return {"ok": True, "name": n}
 
 
-@app.delete("/api/media/{kind}/folder/{name}")
-def media_del_folder(kind: str, name: str):
+@app.delete("/api/media/{section}/{kind}/folder/{name}")
+def media_del_folder(section: str, kind: str, name: str):
     if kind not in folders.ROOTS:
         raise HTTPException(400, "Unknown kind")
-    return {"ok": folders.delete(kind, name)}
+    return {"ok": folders.delete(kind, section, name)}
 
 
-@app.get("/api/media/{kind}/{cat}/files")
-def media_files(kind: str, cat: str):
+@app.get("/api/media/{section}/{kind}/{cat}/files")
+def media_files(section: str, kind: str, cat: str):
     if kind not in folders.ROOTS:
         raise HTTPException(400, "Unknown kind")
-    return {"files": folders.files(kind, cat)}
+    return {"files": folders.files(kind, section, cat)}
 
 
-@app.post("/api/media/{kind}/{cat}/file")
-async def media_upload(kind: str, cat: str, request: Request):
+@app.post("/api/media/{section}/{kind}/{cat}/file")
+async def media_upload(section: str, kind: str, cat: str, request: Request):
     if kind not in folders.ROOTS:
         raise HTTPException(400, "Unknown kind")
     form = await request.form()
     up = form.get("file")
     if not up or not getattr(up, "filename", ""):
         raise HTTPException(400, "File do")
-    n = folders.add(kind, cat, Path(up.filename).name, await up.read())
+    n = folders.add(kind, section, cat, Path(up.filename).name, await up.read())
     if not n:
         raise HTTPException(400, "Format galat")
     return {"ok": True, "name": n}
 
 
-@app.delete("/api/media/{kind}/{cat}/file/{name}")
-def media_del_file(kind: str, cat: str, name: str):
-    folders.remove(kind, cat, name)
+@app.delete("/api/media/{section}/{kind}/{cat}/file/{name}")
+def media_del_file(section: str, kind: str, cat: str, name: str):
+    folders.remove(kind, section, cat, name)
     return {"ok": True}
 
 # ---------- misc ----------

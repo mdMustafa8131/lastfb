@@ -8,11 +8,28 @@
     if (!card) return;
 
     fetch(`/api/pages/${id}/state`).then((x) => x.json()).then((s) => {
-        if (s.section !== "islam") return;
+        if (s.section !== "islam" && s.section !== "english") return;
         card.style.display = "";
         fcard.style.display = "";
+        window.SEC = s.section;
         toggle.checked = !!s.reel;
-        const MODES = ["zoom", "zoomout", "pan", "wave", "warp", "ripple", "pulse", "rgb"];
+        const mrow = document.getElementById("reelMusicRow");
+        const mtog = document.getElementById("reelMusic");
+        if (s.section === "english" && mrow) {
+            mrow.style.display = "";
+            mtog.checked = s.reel_music !== false;
+            mtog.addEventListener("change", async () => {
+                const r = await fetch(`/api/pages/${id}/reelmusic`, {
+                    method: "POST", headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ on: mtog.checked }),
+                });
+                if (!r.ok) mtog.checked = !mtog.checked;
+            });
+        }
+
+        const MODES = s.section === "english"
+            ? ["zoomout", "wave", "ripple"]
+            : ["zoom", "zoomout", "pan", "wave", "warp", "ripple", "pulse", "rgb"];
         const box = document.getElementById("reelModes");
         box.innerHTML = MODES.map((m) =>
             `<button class="btn btn-sm${s.reel_mode === m ? " btn-primary" : ""}" data-mode="${m}">${m}</button>`).join("");
@@ -30,7 +47,12 @@
     }).catch(() => { });
 
     async function load() {
-        const r = await fetch("/api/media").then((x) => x.json()).catch(() => null);
+        if (window.SEC === "english") {
+            const sel = document.getElementById("fKindSel");
+            sel.value = "music";
+            [...sel.options].forEach((o) => { o.hidden = o.value !== "music"; });
+        }
+        const r = await fetch(`/api/media/${window.SEC}`).then((x) => x.json()).catch(() => null);
         if (!r) return;
         info.textContent = `music: ${r.music.reduce((a, c) => a + c.count, 0)} track · ${r.seconds}s video`;
         document.getElementById("fLoose").textContent =
@@ -45,7 +67,7 @@
         document.querySelectorAll("[data-del]").forEach((b) => {
             b.onclick = async () => {
                 if (!confirm(`${b.dataset.del} folder delete?`)) return;
-                await fetch(`/api/media/${kind}/folder/${encodeURIComponent(b.dataset.del)}`,
+                await fetch(`/api/media/${window.SEC}/${kind}/folder/${encodeURIComponent(b.dataset.del)}`,
                     { method: "DELETE" });
                 load();
             };
@@ -53,7 +75,7 @@
         document.querySelectorAll("[data-open]").forEach((b) => {
             b.onclick = async () => {
                 const cat = b.dataset.open;
-                const r2 = await fetch(`/api/media/${kind}/${encodeURIComponent(cat)}/files`)
+                const r2 = await fetch(`/api/media/${window.SEC}/${kind}/${encodeURIComponent(cat)}/files`)
                     .then((x) => x.json()).catch(() => ({ files: [] }));
                 document.getElementById("fFiles").innerHTML = r2.files.length
                     ? `<p class="small">${cat} ki files:</p>` + r2.files.map((f) =>
@@ -62,7 +84,7 @@
                     : `<p class="muted small">${cat} khali hai</p>`;
                 document.querySelectorAll("[data-rm]").forEach((x) => {
                     x.onclick = async () => {
-                        await fetch(`/api/media/${kind}/${encodeURIComponent(x.dataset.cat)}/file/${encodeURIComponent(x.dataset.rm)}`,
+                        await fetch(`/api/media/${window.SEC}/${kind}/${encodeURIComponent(x.dataset.cat)}/file/${encodeURIComponent(x.dataset.rm)}`,
                             { method: "DELETE" });
                         b.click();
                         load();
@@ -86,7 +108,7 @@
         const name = document.getElementById("fName").value.trim();
         if (!name) return alert("Naam do");
         const kind = document.getElementById("fKindSel").value;
-        const r = await fetch(`/api/media/${kind}/folder`, {
+        const r = await fetch(`/api/media/${window.SEC}/${kind}/folder`, {
             method: "POST", headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name }),
         });
@@ -103,7 +125,7 @@
         for (const f of files) {
             const fd = new FormData();
             fd.append("file", f);
-            await fetch(`/api/media/${kind}/${encodeURIComponent(cat)}/file`,
+            await fetch(`/api/media/${window.SEC}/${kind}/${encodeURIComponent(cat)}/file`,
                 { method: "POST", body: fd });
         }
         document.getElementById("fFile").value = "";

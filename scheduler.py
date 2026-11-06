@@ -106,15 +106,22 @@ async def _post_once(page):
     tags = hashtags.pick(30)
     text = caption.build(page["section"], meta["items"], page.get("langs") or [], tags)
 
-    use_reel = bool(page.get("reel")) and page["section"] == "islam"
+    use_reel = bool(page.get("reel")) and page["section"] in ("islam", "english")
     video = None
     if use_reel:
-        cat = (meta["items"][0].get("category") or "") if meta.get("items") else ""
-        full_i, plain_i = render.render_islam_gold_pair(
-            meta["items"][0], page.get("langs") or [], cat)
-        video, _m = reel.build(image, page["section"], cat,
-                               page.get("reel_mode") or "zoom",
-                               plain_path=plain_i, full_path=full_i)
+        cat = "general" if page["section"] == "english" else (
+            (meta["items"][0].get("category") or "") if meta.get("items") else "")
+        if page["section"] == "islam":
+            full_i, plain_i = render.render_islam_gold_pair(
+                meta["items"][0], page.get("langs") or [], cat)
+        else:
+            full_i, plain_i = render.render_english_clean_pair(
+                meta["items"], page.get("langs") or [], page.get("brand_name"))
+        video, _m = reel.build(
+            image, page["section"], cat, page.get("reel_mode") or "zoom",
+            plain_path=plain_i, full_path=full_i,
+            use_music=(True if page["section"] == "islam"
+                       else bool(page.get("reel_music", True))))
                                
         if not video:
             store.update_page(page["id"], status="reel_wait")
@@ -187,16 +194,23 @@ async def post_now(page_id):
     text = caption.build(page["section"], meta["items"], page.get("langs") or [], tags)
 
     dry = bool(store.get_settings().get("dry_run"))
-    use_reel = bool(page.get("reel")) and page["section"] == "islam"
+    use_reel = bool(page.get("reel")) and page["section"] in ("islam", "english")
     video = None
 
     if use_reel:
-        cat = (meta["items"][0].get("category") or "") if meta.get("items") else ""
-        full_i, plain_i = render.render_islam_gold_pair(
-            meta["items"][0], page.get("langs") or [], cat)
-        video, _m = reel.build(image, page["section"], cat,
-                               page.get("reel_mode") or "zoom",
-                               plain_path=plain_i, full_path=full_i)
+        cat = "general" if page["section"] == "english" else (
+            (meta["items"][0].get("category") or "") if meta.get("items") else "")
+        if page["section"] == "islam":
+            full_i, plain_i = render.render_islam_gold_pair(
+                meta["items"][0], page.get("langs") or [], cat)
+        else:
+            full_i, plain_i = render.render_english_clean_pair(
+                meta["items"], page.get("langs") or [], page.get("brand_name"))
+        video, _m = reel.build(
+            image, page["section"], cat, page.get("reel_mode") or "zoom",
+            plain_path=plain_i, full_path=full_i,
+            use_music=(True if page["section"] == "islam"
+                       else bool(page.get("reel_music", True))))
         if not video:
             return {"ok": False, "error": "Reel ban nahi payi (music ya render fail)"}
 

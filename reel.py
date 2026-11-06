@@ -139,11 +139,10 @@ def _ripple_maps(fps):
 
 
 def build(image_path, section, category, mode="zoom", seconds=None,
-          plain_path=None, full_path=None):
+          plain_path=None, full_path=None, use_music=True):
     """(video_path, music_path) ya (None, None)."""
-    music = pick_music(section, category)
-    if not music:
-        return None, None
+    music = pick_music(section, category) if use_music else None
+    silent = music is None
 
     mode = mode if mode in MODES else "zoom"
     seconds = seconds or config.REEL_SECONDS
@@ -156,6 +155,8 @@ def build(image_path, section, category, mode="zoom", seconds=None,
     extra = []
 
     fade = f"[1:a]afade=t=out:st={max(0, seconds - 1.5)}:d=1.5[a]"
+    music_in = (["-f", "lavfi", "-i", "anullsrc=r=48000:cl=stereo"] if silent
+                else ["-stream_loop", "-1", "-i", str(music)])
 
     if mode == "ripple":
         xv, yv = _ripple_maps(fps)
@@ -170,13 +171,12 @@ def build(image_path, section, category, mode="zoom", seconds=None,
             f"fade=t=out:st={max(0, seconds - 2)}:d=2[v];" + fade
         )
         cmd = [_ffmpeg(), "-y", "-loop", "1", "-framerate", str(fps), "-i", str(frame),
-               "-stream_loop", "-1", "-i", str(music),
+               *music_in,
                "-stream_loop", "-1", "-i", str(xv),
                "-stream_loop", "-1", "-i", str(yv)]
     else:
         vf = (f"[0:v]scale={W}:{H},{_chain(mode, frames, fps)}[v];" + fade)
-        cmd = [_ffmpeg(), "-y", "-i", str(frame),
-               "-stream_loop", "-1", "-i", str(music)]
+        cmd = [_ffmpeg(), "-y", "-i", str(frame), *music_in]
 
     vpreset, vcrf = ("veryfast", "23") if mode == "ripple" else ("ultrafast", "27")
     cmd += [
