@@ -32,7 +32,7 @@
       }
     },
     "last_post_at": "2026-11-06T13:36:58.909064+05:30",
-    "next_post_at": "2026-11-06T17:01:01.725519+05:30",
+    "next_post_at": "2026-11-06T17:08:24.261999+05:30",
     "posted_count": 19,
     "fail_count": 0,
     "created_at": "2026-11-03T04:56:43.567726+00:00",
@@ -56,8 +56,8 @@
     "brand": null,
     "sentences": 1,
     "question_box": false,
-    "enabled": false,
-    "status": "idle",
+    "enabled": true,
+    "status": "waiting",
     "schedule": {
       "day": {
         "start": "06:00",
@@ -73,7 +73,7 @@
       }
     },
     "last_post_at": "2026-11-06T09:05:29.221805+05:30",
-    "next_post_at": "2026-11-05T03:39:19.867477+05:30",
+    "next_post_at": "2026-11-06T23:15:00+05:30",
     "posted_count": 30,
     "fail_count": 0,
     "created_at": "2026-11-03T04:56:43.567726+00:00",
