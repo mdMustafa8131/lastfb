@@ -279,10 +279,10 @@ async def _run_page(page_id):
 async def _supervise():
     while not _stop.is_set():
         try:
+            for pid, t in list(_tasks.items()):
+                if t.done():
+                    _tasks.pop(pid, None)
             pages = {p["id"]: p for p in store.get_pages()}
-            for pid, p in pages.items():
-                if p["enabled"] and p.get("section") and pid not in _tasks:
-                    _tasks[pid] = asyncio.create_task(_run_page(pid))
             for pid in list(_tasks):
                 if pid not in pages or not pages[pid]["enabled"]:
                     _tasks[pid].cancel()
