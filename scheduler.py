@@ -297,6 +297,11 @@ def start():
     asyncio.create_task(_supervise())
 
 
+def restart(page_id):
+    t = _tasks.pop(page_id, None)
+    if t:
+        t.cancel()
+        
 def stop():
     _stop.set()
     for t in _tasks.values():

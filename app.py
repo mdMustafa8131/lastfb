@@ -484,6 +484,7 @@ def set_schedule(page_id: str, payload: ScheduleIn):
     if not store.get_page(page_id):
         raise HTTPException(404, "Page not found")
     store.update_page(page_id, schedule=payload.model_dump())
+    scheduler.restart(page_id)
     return {"ok": True}
 
 
