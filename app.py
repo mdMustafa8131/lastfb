@@ -496,11 +496,11 @@ def state():
                 "id": p["id"], "status": p["status"], "enabled": p["enabled"],
                 "next_post_at": p.get("next_post_at"),
                 "posted_count": p.get("posted_count", 0),
+                "schedule": p.get("schedule"),
             }
             for p in store.get_pages()
         ]
     }
-
 
 # ---------- image preview ----------
 @app.post("/api/pages/{page_id}/preview")
