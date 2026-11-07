@@ -405,7 +405,7 @@
     "hindi": "दस मिनट पहले उठो तभी जल्दबाज़ी ख़त्म होती है।",
     "hinglish": "Das minute pehle utho tabhi jaldbaazi khatam hoti hai.",
     "id": "02b6ffd99cd5",
-    "used": false
+    "used": true
   },
   {
     "english": "Keep a glass of water by your bed.",
@@ -413,7 +413,7 @@
     "hindi": "बिस्तर के पास एक गिलास पानी रखो।",
     "hinglish": "Bistar ke paas ek glass pani rakho.",
     "id": "f8b491797768",
-    "used": false
+    "used": true
   },
   {
     "english": "Read one page instead of scrolling.",
@@ -421,7 +421,7 @@
     "hindi": "स्क्रॉल करने की जगह एक पन्ना पढ़ो।",
     "hinglish": "Scroll karne ki jagah ek panna padho.",
     "id": "84b1824b6c85",
-    "used": false
+    "used": true
   },
   {
     "english": "Fold your blanket before leaving the room.",
@@ -429,7 +429,7 @@
     "hindi": "कमरा छोड़ने से पहले कंबल तह करो।",
     "hinglish": "Kamra chhodne se pehle kambal tah karo.",
     "id": "8e2cff9c2832",
-    "used": false
+    "used": true
   },
   {
     "english": "Keep a pen and paper in your bag.",
@@ -437,7 +437,7 @@
     "hindi": "बैग में एक कलम और काग़ज़ रखो।",
     "hinglish": "Bag me ek kalam aur kagaz rakho.",
     "id": "fe102a851ee7",
-    "used": false
+    "used": true
   },
   {
     "english": "Say no to one unnecessary meeting.",
@@ -445,7 +445,7 @@
     "hindi": "एक ग़ैरज़रूरी मीटिंग को ना कहो।",
     "hinglish": "Ek ghairzaroori meeting ko na kaho.",
     "id": "2379888120a9",
-    "used": false
+    "used": true
   },
   {
     "english": "Check your bank balance once a week.",
@@ -453,7 +453,7 @@
     "hindi": "हफ़्ते में एक बार बैंक बैलेंस देखो।",
     "hinglish": "Hafte me ek baar bank balance dekho.",
     "id": "f064a11c922c",
-    "used": false
+    "used": true
   },
   {
     "english": "Learn the names of the people you work with.",
@@ -461,7 +461,7 @@
     "hindi": "जिनके साथ काम करते हो उनके नाम सीखो।",
     "hinglish": "Jinke saath kaam karte ho unke naam seekho.",
     "id": "1232709fcdae",
-    "used": false
+    "used": true
   },
   {
     "english": "Take the stairs for one floor.",
@@ -469,7 +469,7 @@
     "hindi": "एक मंज़िल सीढ़ी से चढ़ो।",
     "hinglish": "Ek manzil seedhi se chadho.",
     "id": "ed993819307a",
-    "used": false
+    "used": true
   },
   {
     "english": "Put the phone away thirty minutes before sleep.",
@@ -477,7 +477,7 @@
     "hindi": "सोने से तीस मिनट पहले फ़ोन हटाओ।",
     "hinglish": "Sone se tees minute pehle phone hatao.",
     "id": "d225ef8b751d",
-    "used": false
+    "used": true
   },
   {
     "english": "Keep your desk clear before you start.",
@@ -485,7 +485,7 @@
     "hindi": "शुरू करने से पहले मेज़ साफ़ रखो।",
     "hinglish": "Shuru karne se pehle mez saaf rakho.",
     "id": "2bffd227a94b",
-    "used": false
+    "used": true
   },
   {
     "english": "Eat one fruit instead of one snack.",
@@ -493,7 +493,7 @@
     "hindi": "एक स्नैक की जगह एक फल खाओ।",
     "hinglish": "Ek snack ki jagah ek fal khao.",
     "id": "893ab5495a2c",
-    "used": false
+    "used": true
   },
   {
     "english": "Write tomorrow's plan tonight.",

@@ -18,6 +18,7 @@ TZ = ZoneInfo(config.TZ)
 
 _tasks = {}
 _stop = asyncio.Event()
+_loop = None
 
 
 def _minutes(hhmm):
@@ -127,11 +128,12 @@ async def _post_once(page):
             store.update_page(page["id"], status="reel_wait")
             return
     settings = store.get_settings()
+    dry = bool(settings.get("dry_run"))
     ok = False
     last_err = ""
     for attempt in range(2):
         try:
-            if settings.get("dry_run"):
+            if dry:
                 await asyncio.sleep(0.2)
                 ok = True
             else:
@@ -275,33 +277,46 @@ async def _run_page(page_id):
             store.update_page(page_id, status="error")
         await asyncio.sleep(1)
 
-
 async def _supervise():
     while not _stop.is_set():
         try:
-            for pid, t in list(_tasks.items()):
-                if t.done():
-                    _tasks.pop(pid, None)
             pages = {p["id"]: p for p in store.get_pages()}
-            for pid in list(_tasks):
-                if pid not in pages or not pages[pid]["enabled"]:
-                    _tasks[pid].cancel()
+            for pid, t in list(_tasks.items()):
+                if t.done() or pid not in pages or not pages[pid]["enabled"]:
                     _tasks.pop(pid, None)
-        except Exception:
-            pass
+                    if not t.done():
+                        t.cancel()
+            for pid, page in pages.items():
+                if page["enabled"] and pid not in _tasks:
+                    _tasks[pid] = asyncio.create_task(_run_page(pid))
+                    print("[sched] task created", pid)
+        except Exception as e:
+            print("[sched] supervise error", e)
         await asyncio.sleep(5)
 
 
 def start():
+    global _loop
+    _loop = asyncio.get_running_loop()
     _stop.clear()
     asyncio.create_task(_supervise())
 
 
-def restart(page_id):
+def _restart_now(page_id):
     t = _tasks.pop(page_id, None)
     if t:
         t.cancel()
-        
+    page = store.get_page(page_id)
+    if page and page["enabled"] and page_id not in _tasks:
+        _tasks[page_id] = asyncio.create_task(_run_page(page_id))
+
+
+def restart(page_id):
+    if _loop is None:
+        return
+    _loop.call_soon_threadsafe(_restart_now, page_id)
+
+
 def stop():
     _stop.set()
     for t in _tasks.values():
