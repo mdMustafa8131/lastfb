@@ -97,6 +97,7 @@ def _new_page(pid, name, category, token):
         "reel": False,
         "reel_music": True,
         "reel_mode": "zoom",
+        "hashtags": [],
         "created_at": _now(),
     }
 

@@ -206,6 +206,15 @@
     <p class="small">Status: <b id="statusText">{{ page.status }}</b> · agla: <span id="nextText">{{ page.next_post_at
             or "—" }}</span></p>
 </div>
+<div class="card" id="tagCard">
+    <h2 class="h2">Caption hashtags</h2>
+    <p class="muted small">Space se alag karke likho. Yahi tags post ke caption me sabse niche jayenge.</p>
+    <textarea id="tagBox" rows="4" style="width:100%"></textarea>
+    <div class="rowbar-actions">
+        <button class="btn btn-sm btn-primary" id="tagSave">Save tags</button>
+        <span class="small" id="tagMsg"></span>
+    </div>
+</div>
 <div class="card" id="reelCard" style="display:none">
     <h2 class="h2">Reel mode</h2>
     <p class="muted small">On hone pe image post nahi hogi — us image + category ka music se 15s video banega aur Reel
@@ -244,4 +253,24 @@
 <script src="/static/js/reel.js?v=2" defer></script>
 
 <script>window.PAGE_ID = "{{ page.id }}";</script>
+<script>
+    (() => {
+        const box = document.getElementById("tagBox");
+        const msg = document.getElementById("tagMsg");
+        if (!box) return;
+        fetch(`/api/pages/${window.PAGE_ID}/state`).then((x) => x.json()).then((s) => {
+            box.value = (s.hashtags || []).join(" ");
+        }).catch(() => { });
+        document.getElementById("tagSave").onclick = async () => {
+            const r = await fetch(`/api/pages/${window.PAGE_ID}/hashtags`, {
+                method: "POST", headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ tags: box.value }),
+            });
+            if (!r.ok) { msg.textContent = "Fail"; return; }
+            const d = await r.json();
+            box.value = (d.tags || []).join(" ");
+            msg.textContent = `save: ${(d.tags || []).length}`;
+        };
+    })();
+</script>
 {% endblock %}

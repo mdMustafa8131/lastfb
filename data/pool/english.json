@@ -501,7 +501,7 @@
     "hindi": "आज रात कल का प्लान लिखो।",
     "hinglish": "Aaj raat kal ka plan likho.",
     "id": "c468bc9240d7",
-    "used": false
+    "used": true
   },
   {
     "english": "Finish the small task you keep postponing.",
@@ -509,7 +509,7 @@
     "hindi": "जो छोटा काम टाल रहे हो उसे ख़त्म करो।",
     "hinglish": "Jo chhota kaam taal rahe ho use khatam karo.",
     "id": "e80500e8d7c5",
-    "used": false
+    "used": true
   },
   {
     "english": "Ask one question in every conversation.",
@@ -517,7 +517,7 @@
     "hindi": "हर बातचीत में एक सवाल पूछो।",
     "hinglish": "Har baatcheet me ek sawal poocho.",
     "id": "1028898b9a09",
-    "used": false
+    "used": true
   },
   {
     "english": "Send the message you are avoiding.",
@@ -525,7 +525,7 @@
     "hindi": "जो मैसेज टाल रहे हो वह भेजो।",
     "hinglish": "Jo message taal rahe ho wo bhejo.",
     "id": "2fa826411a30",
-    "used": false
+    "used": true
   },
   {
     "english": "Repair one small thing at home.",
@@ -533,7 +533,7 @@
     "hindi": "घर में एक छोटी चीज़ ठीक करो।",
     "hinglish": "Ghar me ek chhoti cheez theek karo.",
     "id": "e93a6a2ba6ad",
-    "used": false
+    "used": true
   },
   {
     "english": "Cancel the subscription you never use.",
@@ -541,7 +541,7 @@
     "hindi": "जो सब्सक्रिप्शन इस्तेमाल नहीं करते वह कैंसल करो।",
     "hinglish": "Jo subscription istemal nahi karte wo cancel karo.",
     "id": "133b79f28748",
-    "used": false
+    "used": true
   },
   {
     "english": "Walk ten minutes after dinner.",
@@ -549,7 +549,7 @@
     "hindi": "रात के खाने के बाद दस मिनट चलो।",
     "hinglish": "Raat ke khane ke baad das minute chalo.",
     "id": "cab290f35f17",
-    "used": false
+    "used": true
   },
   {
     "english": "Keep the kitchen counter empty.",
@@ -557,7 +557,7 @@
     "hindi": "रसोई का काउंटर खाली रखो।",
     "hinglish": "Rasoi ka counter khaali rakho.",
     "id": "3e6d01bd6b4b",
-    "used": false
+    "used": true
   },
   {
     "english": "Call your parents without a reason.",
@@ -565,7 +565,7 @@
     "hindi": "बिना कारण माँ-बाप को फ़ोन करो।",
     "hinglish": "Bina karan maa-baap ko phone karo.",
     "id": "b9c55e4d4d50",
-    "used": false
+    "used": true
   },
   {
     "english": "Delete photos you never look at.",
@@ -573,7 +573,7 @@
     "hindi": "जो तस्वीरें कभी नहीं देखते वे डिलीट करो।",
     "hinglish": "Jo tasveerein kabhi nahi dekhte wo delete karo.",
     "id": "2421db59d2d8",
-    "used": false
+    "used": true
   },
   {
     "english": "Keep a shoe brush by the door.",
@@ -581,7 +581,7 @@
     "hindi": "दरवाज़े के पास जूते का ब्रश रखो।",
     "hinglish": "Darwaze ke paas joote ka brush rakho.",
     "id": "d6956feebb65",
-    "used": false
+    "used": true
   },
   {
     "english": "Note the price before you pick the item.",
@@ -589,7 +589,7 @@
     "hindi": "चीज़ उठाने से पहले दाम देख लो।",
     "hinglish": "Cheez uthane se pehle daam dekh lo.",
     "id": "9747a64e1d49",
-    "used": false
+    "used": true
   },
   {
     "english": "Sit straight and breathe for one minute.",

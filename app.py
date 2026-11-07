@@ -591,7 +591,7 @@ def make_caption(page_id: str):
     if not meta.exists():
         raise HTTPException(400, "Image meta nahi mila")
     data = json.loads(meta.read_text("utf-8"))
-    tags = hashtags.pick(30)
+    tags = page.get("hashtags") or []
     text = caption.build(page["section"], data["items"],
                          page.get("langs") or [], tags)
     return {"ok": True, "caption": text}
@@ -670,7 +670,12 @@ def pool_purge_unused(section: str):
     pool.save_pool(section, items)
     return {"ok": True, "remaining": 0}
 
+
 # ---------- reel / media folders ----------
+class TagsIn(BaseModel):
+    tags: str
+
+
 @app.get("/api/pages/{page_id}/state")
 def page_state(page_id: str):
     page = store.get_page(page_id)
@@ -678,7 +683,8 @@ def page_state(page_id: str):
         raise HTTPException(404, "Page not found")
     return {"section": page.get("section"), "reel": bool(page.get("reel")),
             "reel_mode": page.get("reel_mode") or "zoom",
-            "reel_music": page.get("reel_music", True)}
+            "reel_music": page.get("reel_music", True),
+            "hashtags": page.get("hashtags") or []}
 
 
 @app.post("/api/pages/{page_id}/reel")
@@ -711,6 +717,21 @@ async def set_reel_mode(page_id: str, request: Request):
         raise HTTPException(400, "Galat mode")
     store.update_page(page_id, reel_mode=mode)
     return {"ok": True, "mode": mode}
+
+
+@app.post("/api/pages/{page_id}/hashtags")
+def set_hashtags(page_id: str, payload: TagsIn):
+    if not store.get_page(page_id):
+        raise HTTPException(404, "Page not found")
+    raw = payload.tags.replace(",", " ").split()
+    out = []
+    for t in raw:
+        t = "".join(ch for ch in t.lstrip("#") if ch.isalnum() or ch in "_-")
+        if t and "#" + t not in out:
+            out.append("#" + t)
+    store.update_page(page_id, hashtags=out[:30])
+    return {"ok": True, "tags": out[:30]}
+
 
 @app.get("/api/media/{section}")
 def media_info(section: str):
@@ -763,6 +784,7 @@ async def media_upload(section: str, kind: str, cat: str, request: Request):
 def media_del_file(section: str, kind: str, cat: str, name: str):
     folders.remove(kind, section, cat, name)
     return {"ok": True}
+
 
 # ---------- misc ----------
 @app.post("/api/shutdown")

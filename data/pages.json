@@ -21,8 +21,8 @@
       "day": {
         "start": "06:00",
         "end": "22:00",
-        "min": 2,
-        "max": 6
+        "min": 45,
+        "max": 90
       },
       "night": {
         "start": "22:00",
@@ -31,14 +31,19 @@
         "max": 300
       }
     },
-    "last_post_at": "2026-11-07T14:48:24.890838+05:30",
-    "next_post_at": "2026-11-07T15:06:42.715708+05:30",
-    "posted_count": 23,
+    "last_post_at": "2026-11-07T15:20:38.540761+05:30",
+    "next_post_at": "2026-11-07T17:42:52.423704+05:30",
+    "posted_count": 28,
     "fail_count": 0,
     "created_at": "2026-11-03T04:56:43.567726+00:00",
     "reel": true,
     "reel_mode": "zoomout",
-    "reel_music": true
+    "reel_music": true,
+    "hashtags": [
+      "#qabr",
+      "#hadith",
+      "#islam"
+    ]
   },
   {
     "id": "770827062784222",
@@ -57,7 +62,7 @@
     "sentences": 1,
     "question_box": false,
     "enabled": true,
-    "status": "waiting",
+    "status": "idle",
     "schedule": {
       "day": {
         "start": "06:00",
@@ -72,13 +77,19 @@
         "max": 300
       }
     },
-    "last_post_at": "2026-11-06T09:05:29.221805+05:30",
-    "next_post_at": "2026-11-07T15:53:42.778169+05:30",
-    "posted_count": 30,
+    "last_post_at": "2026-11-07T16:57:24.292219+05:30",
+    "next_post_at": "2026-11-07T17:44:52.440703+05:30",
+    "posted_count": 36,
     "fail_count": 0,
     "created_at": "2026-11-03T04:56:43.567726+00:00",
-    "reel_mode": "zoomout",
-    "reel": true
+    "reel_mode": "ripple",
+    "reel": true,
+    "hashtags": [
+      "#qabr",
+      "#hadith",
+      "#islam",
+      "#mulla"
+    ]
   },
   {
     "id": "100737239401306",
