@@ -358,28 +358,37 @@ async def post_now(page_id):
 
 async def _run_page(page_id):
     while not _stop.is_set():
-        page = store.get_page(page_id)
-        if not page or not page["enabled"]:
-            return
-
-        target = _plan(page)
-        store.update_page(page_id, next_post_at=target.isoformat(), status="waiting")
-
-        wait = (target - datetime.now(TZ)).total_seconds()
-        if wait > 0:
-            try:
-                await asyncio.wait_for(_stop.wait(), timeout=wait)
-            except asyncio.TimeoutError:
-                pass
-            if _stop.is_set():
+        try:
+            page = store.get_page(page_id)
+            if not page or not page["enabled"]:
+                print("[run] exit", page_id, "page?", bool(page))
                 return
 
+            target = _plan(page)
+            print("[run] wait", page_id, target.isoformat())
+            store.update_page(page_id, next_post_at=target.isoformat(), status="waiting")
+
+            wait = (target - datetime.now(TZ)).total_seconds()
+            if wait > 0:
+                try:
+                    await asyncio.wait_for(_stop.wait(), timeout=wait)
+                except asyncio.TimeoutError:
+                    pass
+                if _stop.is_set():
+                    print("[run] stop", page_id)
+                    return
+        except Exception as e:
+            print("[run] err", page_id, repr(e))
+            return
+
         page = store.get_page(page_id)
         if not page or not page["enabled"]:
+            print("[run] exit2", page_id)
             return
         try:
             await _post_once(page)
-        except Exception:
+        except Exception as e:
+            print("[run] post err", page_id, repr(e))
             store.update_page(page_id, status="error")
         await asyncio.sleep(1)
 
