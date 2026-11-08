@@ -18,6 +18,7 @@ import store
 TZ = ZoneInfo(config.TZ)
 
 _tasks = {}
+_sup = None
 _stop = asyncio.Event()
 _loop = None
 
@@ -393,7 +394,8 @@ async def _supervise():
                     if not t.done():
                         t.cancel()
             for pid, page in pages.items():
-                if page["enabled"] and pid not in _tasks:
+                t = _tasks.get(pid)
+                if page["enabled"] and (t is None or t.done()):
                     _tasks[pid] = asyncio.create_task(_run_page(pid))
                     print("[sched] task created", pid)
         except Exception as e:
@@ -402,10 +404,12 @@ async def _supervise():
 
 
 def start():
-    global _loop
+    global _loop, _sup
+    if _sup is not None and not _sup.done():
+        return
     _loop = asyncio.get_running_loop()
     _stop.clear()
-    asyncio.create_task(_supervise())
+    _sup = asyncio.create_task(_supervise())
 
 
 def _restart_now(page_id):
@@ -424,7 +428,11 @@ def restart(page_id):
 
 
 def stop():
+    global _sup
     _stop.set()
     for t in _tasks.values():
         t.cancel()
     _tasks.clear()
+    if _sup is not None:
+        _sup.cancel()
+        _sup = None
