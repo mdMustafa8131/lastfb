@@ -16,8 +16,8 @@
     "brand": null,
     "sentences": 4,
     "question_box": true,
-    "enabled": false,
-    "status": "idle",
+    "enabled": true,
+    "status": "waiting",
     "schedule": {
       "day": {
         "start": "06:00",
@@ -33,7 +33,7 @@
       }
     },
     "last_post_at": null,
-    "next_post_at": null,
+    "next_post_at": "2026-11-09T02:53:57.290724+05:30",
     "posted_count": 0,
     "fail_count": 0,
     "reel": false,
@@ -74,8 +74,8 @@
     "brand": null,
     "sentences": 4,
     "question_box": true,
-    "enabled": false,
-    "status": "idle",
+    "enabled": true,
+    "status": "waiting",
     "schedule": {
       "day": {
         "start": "06:00",
@@ -91,7 +91,7 @@
       }
     },
     "last_post_at": null,
-    "next_post_at": null,
+    "next_post_at": "2026-11-09T02:51:57.334296+05:30",
     "posted_count": 0,
     "fail_count": 0,
     "reel": false,
@@ -132,8 +132,8 @@
     "brand": null,
     "sentences": 4,
     "question_box": true,
-    "enabled": false,
-    "status": "idle",
+    "enabled": true,
+    "status": "waiting",
     "schedule": {
       "day": {
         "start": "06:00",
@@ -149,7 +149,7 @@
       }
     },
     "last_post_at": null,
-    "next_post_at": null,
+    "next_post_at": "2026-11-09T02:42:57.349056+05:30",
     "posted_count": 0,
     "fail_count": 0,
     "reel": false,
