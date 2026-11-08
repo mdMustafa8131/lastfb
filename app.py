@@ -123,6 +123,7 @@ async def _shutdown():
 
 
 # ---------- views ----------
+@app.head("/")
 @app.get("/")
 def dashboard(request: Request):
     pages = store.get_pages()
