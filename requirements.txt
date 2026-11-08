@@ -6,3 +6,5 @@ python-multipart==0.0.9
 pillow==10.4.0
 feedparser==6.0.11
 imageio-ffmpeg==0.5.1
+edge-tts
+mutagen

@@ -1,6 +1,7 @@
-import random
+﻿import random
 from pathlib import Path
 import news_render
+import httpx
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
@@ -72,7 +73,8 @@ def _fit(draw, text, key, max_w, max_h, max_size, min_size=16, gap=1.22):
     return font, _wrap(draw, text, font, max_w), min_size
 
 
-def _place(base, box, text, key, color, max_size, min_size, gap, align, valign, shadow):
+def _place(base, box, text, key, color, max_size, min_size, gap, align, valign,
+           shadow, track=None, seg=None, lang=None):
     if not text:
         return base
     bw, bh = box[2] - box[0], box[3] - box[1]
@@ -91,6 +93,12 @@ def _place(base, box, text, key, color, max_size, min_size, gap, align, valign, 
     for ln in lines:
         w = d.textlength(ln, font=font)
         x = box[0] if align == "left" else box[0] + (bw - w) / 2
+        if track is not None and seg is not None:
+            bb = d.textbbox((x, y), ln, font=font)
+            track.setdefault(seg, []).append(
+                {"x0": bb[0], "x1": bb[2], "y0": bb[1],
+                 "y1": max(bb[3], y + size * 0.95),
+                 "h": size, "k": lang or "english", "t": text, "yb": box[3]})
         if shadow:
             d.text((x + 2, y + 3), ln, font=font, fill=(0, 0, 0, 165))
         d.text((x, y), ln, font=font, fill=color)
@@ -98,8 +106,10 @@ def _place(base, box, text, key, color, max_size, min_size, gap, align, valign, 
     return Image.alpha_composite(base, layer)
 
 
-def _block(base, box, text, key, color, max_size, min_size=16, gap=1.22):
-    return _place(base, box, text, key, color, max_size, min_size, gap, "left", "top", False)
+def _block(base, box, text, key, color, max_size, min_size=16, gap=1.22,
+           track=None, seg=None, lang=None):
+    return _place(base, box, text, key, color, max_size, min_size, gap,
+                  "left", "top", False, track, seg, lang)
 
 
 def _hline(base, y, alpha=190, x1=None, x2=None, color=(190, 196, 214)):
@@ -210,6 +220,7 @@ def _bg(section, *_a, **_k):
             except Exception:
                 pass
     return _dark_bg(section)
+
 
 def _overlay(base, alpha, color=(0, 0, 0)):
     layer = Image.new("RGBA", base.size, color + (alpha,))
@@ -336,7 +347,8 @@ STYLE = {
 }
 
 
-def render_english(items, show_question, langs=None, mode="image"):
+def render_english(items, show_question, langs=None, mode="image", plain=False,
+                   boxes=None, seps=None, track=None):
     st = STYLE.get(mode, STYLE["image"])
     accent = (18, 168, 100)
     content = list(items[:-1]) if show_question else list(items)
@@ -353,9 +365,13 @@ def render_english(items, show_question, langs=None, mode="image"):
     bh = (avail - GAP * (total - 1)) / total
     y = top
     idx = 0
+    ord_i = 0
 
     for it in content:
-        trans = _trans_list(it, langs)
+        trans = [k for k in ("bangla", "hindi", "hinglish")
+                 if k in (langs or []) and it.get(k)] or [
+            k for k in ("bangla", "hindi", "hinglish") if it.get(k)]
+        print("[tr]", len(trans), trans, (it.get("english") or "")[:25])
         box = (M, y, W - M, y + bh)
 
         if st["blur"]:
@@ -375,16 +391,22 @@ def render_english(items, show_question, langs=None, mode="image"):
         if st["band"]:
             img = _panel(img, (M, y, W - M, y + bh * 0.42), BAR_COLORS[idx % len(BAR_COLORS)],
                          radius=24)
-            img = _block(img, (M + 30, y + 22, W - M - 30, y + bh * 0.42 - 18),
-                         it["english"], _detect_key(it["english"]), (255, 255, 255),
-                         int(min(90, max(28, bh * 0.20))), 18, gap=1.16)
+            if not plain:
+                img = _block(img, (M + 30, y + 22, W - M - 30, y + bh * 0.42 - 18),
+                             it["english"], _detect_key(it["english"]), (255, 255, 255),
+                             int(min(90, max(28, bh * 0.20))), 18, gap=1.16,
+                             track=track, seg=ord_i, lang="english")
+                ord_i += 1
             ty = y + bh * 0.42 + 16
         else:
             head_h = (bh - 44) * (0.40 if trans else 0.60)
             ox = x1 + (80 if st["num"] else 0)
-            img = _block(img, (ox, y + 20, x2, y + 20 + head_h),
-                         it["english"], _detect_key(it["english"]), st["ink"],
-                         int(min(120, max(30, bh * 0.24))), 18, gap=1.16)
+            if not plain:
+                img = _block(img, (ox, y + 20, x2, y + 20 + head_h),
+                             it["english"], _detect_key(it["english"]), st["ink"],
+                             int(min(120, max(30, bh * 0.24))), 18, gap=1.16,
+                             track=track, seg=ord_i, lang="english")
+                ord_i += 1
             ty = y + 20 + head_h + 14
 
         rest = (y + bh - 22) - ty
@@ -393,26 +415,33 @@ def render_english(items, show_question, langs=None, mode="image"):
             for key in trans:
                 img = _hline(img, ty - 8, 150, x1, x2,
                              (255, 255, 255) if st["dark"] or st["band"] else (190, 196, 214))
-                img = _block(img, (x1, ty, x1 + 52, ty + 28), TAGS.get(key, "TR"),
-                             "bold", TAG_COLOR.get(key, st["soft"]), 19, 14, gap=1.0)
-                img = _block(img, (x1 + 62, ty, x2, ty + step - 8), it[key],
-                             LANG_FONT.get(key, "body"), st["soft"],
-                             int(min(44, max(20, bh * 0.10))), 16, gap=1.1)
+                if not plain:
+                    img = _block(img, (x1, ty, x1 + 52, ty + 28), TAGS.get(key, "TR"),
+                                 "bold", TAG_COLOR.get(key, st["soft"]), 19, 14, gap=1.0)
+                    img = _block(img, (x1 + 62, ty, x2, ty + step - 8), it[key],
+                                 LANG_FONT.get(key, "body"), st["soft"],
+                                 int(min(44, max(20, bh * 0.10))), 16, gap=1.1,
+                                 track=track, seg=ord_i, lang=key)
+                    ord_i += 1
                 ty += step
         idx += 1
         y += bh + GAP
 
     if question:
-        qh = H - M - y
         if st["blur"]:
             img = _blur_panel(img, (M + 4, y + 4, W - M - 4, H - M - 4))
         img = _panel(img, (M, y, W - M, H - M), BAR_COLORS[idx % len(BAR_COLORS)])
-        img = _place(img, (M + 34, y + 22, W - M - 30, H - M - 56),
-                     question["english"], _detect_key(question["english"]),
-                     (255, 255, 255), 60, 24, 1.16, "center", "center", False)
+        if not plain:
+            img = _place(img, (M + 34, y + 22, W - M - 30, H - M - 56),
+                         question["english"], _detect_key(question["english"]),
+                         (255, 255, 255), 60, 24, 1.16, "center", "center", False,
+                         track=track, seg=ord_i, lang="english")
+            ord_i += 1
         img = _hline(img, H - M - 52, 120, M + 34, W - M - 30, (255, 255, 255))
-        img = _block(img, (M + 34, H - M - 46, W - M - 30, H - M - 14),
-                     "Comment the meaning below \u2193", "bold", (255, 255, 255), 24, 15, gap=1.1)
+        if not plain:
+            img = _block(img, (M + 34, H - M - 46, W - M - 30, H - M - 14),
+                         "Comment the meaning below \u2193", "bold", (255, 255, 255),
+                         24, 15, gap=1.1)
     return img
 
 
@@ -454,7 +483,7 @@ def render_islam(item, langs=None, mode="image", source_color="#085430", categor
                  (255, 255, 255), 22, 15, 1.1, "center", "center", False)
     return img
 
-# ---------- gold frame design (islam only) ----------
+
 # ---------- gold frame design (islam only) ----------
 _G_FONTS = {
     "bold": ["NotoSans-Bold.ttf", "DejaVuSans-Bold.ttf", "arialbd.ttf"],
@@ -508,55 +537,6 @@ def _g_font(k, s):
         return ImageFont.truetype(p, s, layout_engine=ImageFont.Layout.RAQM)
     return ImageFont.truetype(p, s)
 
-def _g_key(t):
-    for ch in str(t):
-        if ch in "।॥":
-            continue
-        o = ord(ch)
-        if 0x0900 <= o <= 0x097F:
-            return "dev"
-        if 0x0980 <= o <= 0x09FF:
-            return "bn"
-    return "bold"
-
-
-_RAQM = _features.check("raqm")
-
-
-def _g_font(k, s):
-    k = _G_ALIAS.get(k, k)
-    p = _G_FP.get(k) or _G_FP.get("bold")
-    if not p:
-        return ImageFont.load_default(s)
-    if _RAQM:
-        return ImageFont.truetype(p, s, layout_engine=ImageFont.Layout.RAQM)
-    return ImageFont.truetype(p, s)
-_G_DIRS = [config.BASE_DIR / "assets" / "fonts", Path("/usr/share/fonts"),
-           Path("C:/Windows/Fonts")]
-GOLD = (212, 175, 55)
-
-
-def _g_path(k):
-    for n in _G_FONTS.get(k, []):
-        for d in _G_DIRS:
-            p = d / n
-            if p.exists():
-                return str(p)
-    return None
-
-
-_G_FP = {k: _g_path(k) for k in _G_FONTS}
-
-
-def _g_font(k, s):
-    k = _G_ALIAS.get(k, k)
-    p = _G_FP.get(k) or _G_FP.get("bold")
-    if not p:
-        return ImageFont.load_default(s)
-    if _RAQM:
-        return ImageFont.truetype(p, s, layout_engine=ImageFont.Layout.RAQM)
-    return ImageFont.truetype(p, s)
-
 
 def _g_wrap(d, t, f, w):
     words = str(t).split()
@@ -574,7 +554,7 @@ def _g_wrap(d, t, f, w):
     return lines
 
 
-def _g_text(img, box, txt, key, color, size, gap=1.25):
+def _g_text(img, box, txt, key, color, size, gap=1.25, seg=None, track=None, lang=None):
     layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
     d = ImageDraw.Draw(layer)
     x1, y1, x2, y2 = box
@@ -589,9 +569,17 @@ def _g_text(img, box, txt, key, color, size, gap=1.25):
     y = y1 + max(0, ((y2 - y1) - total) // 2)
     for ln in lines:
         lw = d.textlength(ln, font=f)
-        d.text((x1 + (w - lw) / 2, y), ln, font=f, fill=color + (255,))
+        x = x1 + (w - lw) / 2
+        if track is not None and seg is not None:
+            bb = d.textbbox((x, y), ln, font=f)
+            track.setdefault(seg, []).append(
+                {"x0": bb[0], "x1": bb[2], "y0": bb[1],
+                 "y1": max(bb[3], y + size * 0.95),
+                 "h": size, "k": lang or "english", "t": txt, "yb": y2})
+        d.text((x, y), ln, font=f, fill=color + (255,))
         y += size + gap
     return Image.alpha_composite(img, layer)
+
 
 # ---------- clean card design (english only) ----------
 E_BG = (233, 233, 242)
@@ -600,7 +588,8 @@ E_TAGS = [(34, 164, 93), (242, 84, 125), (59, 107, 245)]
 E_TAGMAP = {"hindi": "HI", "bangla": "BN", "hinglish": "HG"}
 
 
-def _e_left(img, box, txt, key, color, size, gap=1.25, tag=None, tag_color=None):
+def _e_left(img, box, txt, key, color, size, gap=1.25, tag=None, tag_color=None,
+            collect=None, lang=None, seg=None, track=None):
     layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
     d = ImageDraw.Draw(layer)
     x1, y1, x2, y2 = box
@@ -612,18 +601,36 @@ def _e_left(img, box, txt, key, color, size, gap=1.25, tag=None, tag_color=None)
     w = max(60, x2 - x)
     f = _g_font(key, size)
     lines = _g_wrap(d, txt, f, w)
-    while lines and len(lines) * (size + gap) > (y2 - y1) and size > 16:
+    step = int(size * 1.34)
+    while lines and len(lines) * step > (y2 - y1) and size > 16:
         size -= 1
         f = _g_font(key, size)
+        step = int(size * 1.34)
         lines = _g_wrap(d, txt, f, w)
+    sp = d.textlength(" ", font=f)
     y = y1
     for ln in lines:
-        d.text((x, y), ln, font=f, fill=color + (255,))
-        y += size + gap
+        bb = d.textbbox((x, y), ln, font=f) if ln else (x, y, x, y + size)
+        if track is not None and seg is not None:
+            track.setdefault(seg, []).append(
+                {"x0": bb[0], "x1": bb[2], "y0": bb[1],
+                 "y1": max(bb[3], y + size * 0.95),
+                 "h": size, "k": lang or "english", "t": txt, "yb": y2})
+        cx = x
+        for word in ln.split():
+            ww = d.textlength(word, font=f)
+            d.text((cx, y), word, font=f, fill=color + (255,))
+            if collect is not None:
+                collect.append({"ls": x, "xe": cx + ww + sp,
+                                "y": y + size * 0.34, "h": size * 0.58,
+                                "k": lang or "english", "seg": seg})
+            cx += ww + sp
+        y += step
     return Image.alpha_composite(img, layer)
 
 
-def render_english_clean(items, langs=None, brand_name=None, plain=False):
+def render_english_clean(items, langs=None, brand_name=None, plain=False,
+                         show_question=False, boxes=None, seps=None, track=None):
     img = Image.new("RGBA", (W, H), E_BG + (255,))
     d = ImageDraw.Draw(img)
 
@@ -633,15 +640,23 @@ def render_english_clean(items, langs=None, brand_name=None, plain=False):
     if not plain:
         d.text((76, 52), "ENGLISH", font=fp, fill=(255, 255, 255, 255))
 
-    content = list(items)[:3]
-    n = max(1, len(content))
+    items = list(items)
+    q = None
+    if show_question and len(items) > 1:
+        q = items[-1]
+        items = items[:-1]
+    content = items[:4]
+    print("[q]", show_question, len(items), bool(q), len(content))
+    n = max(1, len(content) + (1 if q else 0))
     top = 130
     bottom = H - 92
     gap = 14
     ch = int((bottom - top - gap * (n - 1)) / n)
-    rows = [l for l in (langs or []) if content and content[0].get(l)]
+    rows = list(langs or [])
+    ord_i = 0
 
     for i, it in enumerate(content):
+        sn = 0
         y = top + i * (ch + gap)
         col = E_TAGS[i % 3]
         d = ImageDraw.Draw(img)
@@ -652,22 +667,46 @@ def render_english_clean(items, langs=None, brand_name=None, plain=False):
 
         sbox_h = int(ch * 0.44)
         img = _e_left(img, (78, y + 20, W - 78, y + 20 + sbox_h),
-                      it.get("english", ""), "bold", E_INK, 52, 1.22)
+                      it.get("english", ""), "bold", E_INK, 52, 1.22,
+                      collect=boxes, lang="english", seg=ord_i, track=track)
+        ord_i += 1
 
         yy = y + 24 + sbox_h
         d = ImageDraw.Draw(img)
         d.line([(78, yy), (W - 78, yy)], fill=(226, 226, 234, 255), width=2)
+        if seps is not None:
+            seps.append({"y": yy, "k": "english", "n": 0,
+                         "x1": 78, "x2": W - 78})
         yy += 18
 
-        use = [k for k in rows if it.get(k)]
+        use = [k for k in ("bangla", "hindi", "hinglish") if k in rows and it.get(k)]
         rh = int((ch - (yy - y) - 22) / max(1, len(use)))
         for k in use:
             img = _e_left(img, (78, yy, W - 78, yy + rh), it[k], _g_key(it[k]),
                           (40, 40, 48), 34, 1.2, tag=E_TAGMAP.get(k, k[:2].upper()),
-                          tag_color=col)
+                          tag_color=col, collect=boxes, lang=k,
+                          seg=ord_i, track=track)
+            ord_i += 1
             yy += rh + 6
             d = ImageDraw.Draw(img)
             d.line([(78, yy - 3), (W - 78, yy - 3)], fill=(232, 232, 240, 255), width=1)
+            sn += 1
+            if seps is not None:
+                seps.append({"y": yy - 3, "k": k, "n": sn,
+                             "x1": 78, "x2": W - 78})
+
+    if q:
+        qy = top + len(content) * (ch + gap)
+        d = ImageDraw.Draw(img)
+        d.rounded_rectangle([48, qy, W - 48, bottom], radius=20, fill=(59, 107, 245, 255))
+        if not plain:
+            img = _e_left(img, (78, qy + 26, W - 78, bottom - 56),
+                          q.get("english", ""), "bold", (255, 255, 255), 46, 1.3,
+                          lang="english", seg=ord_i, track=track)
+            ord_i += 1
+            img = _block(img, (78, bottom - 50, W - 78, bottom - 18),
+                         "Comment the meaning below \u2193", "bold", (255, 255, 255),
+                         22, 14, gap=1.1)
 
     if plain:
         return img
@@ -680,18 +719,42 @@ def render_english_clean(items, langs=None, brand_name=None, plain=False):
     return img
 
 
-def render_english_clean_pair(items, langs=None, brand_name=None):
+def render_english_clean_pair(items, langs=None, brand_name=None,
+                              show_question=False, boxes=None, seps=None,
+                              track=None):
     """(text wali, bina-text wali) — dono ek hi layout pe."""
     import uuid
-    full = render_english_clean(items, langs, brand_name).convert("RGB")
-    plain = render_english_clean(items, langs, brand_name, plain=True).convert("RGB")
+    full = render_english_clean(items, langs, brand_name,
+                                show_question=show_question,
+                                boxes=boxes, seps=seps, track=track).convert("RGB")
+    plain = render_english_clean(items, langs, brand_name, plain=True,
+                                 show_question=show_question).convert("RGB")
     tag = uuid.uuid4().hex[:8]
     fp = config.VIDEO_DIR / f"pair_{tag}_full.jpg"
     pp = config.VIDEO_DIR / f"pair_{tag}_plain.jpg"
     full.save(fp, "JPEG", quality=92)
     plain.save(pp, "JPEG", quality=92)
     return fp, pp
-def render_islam_gold(item, langs=None, category=None, plain=False, bg=None):
+
+
+def render_english_pair(items, show_question=True, langs=None, mode="image",
+                        brand_name=None, boxes=None, seps=None, track=None):
+    """bg_mode wale template pe (text wali, bina-text wali)."""
+    import uuid
+    full = render_english(items, show_question, langs, mode, plain=False,
+                          boxes=boxes, seps=seps, track=track)
+    if brand_name:
+        full = _brand(full, brand_name, None, (18, 168, 100))
+    plain = render_english(items, show_question, langs, mode, plain=True)
+    tag = uuid.uuid4().hex[:8]
+    fp = config.VIDEO_DIR / f"pair_{tag}_full.jpg"
+    pp = config.VIDEO_DIR / f"pair_{tag}_plain.jpg"
+    full.convert("RGB").save(fp, "JPEG", quality=92)
+    plain.convert("RGB").save(pp, "JPEG", quality=92)
+    return fp, pp
+
+
+def render_islam_gold(item, langs=None, category=None, plain=False, bg=None, track=None):
     img = _overlay((bg or _bg("islam", "image", category)).convert("RGBA"), 120)
     pad = 26
 
@@ -738,8 +801,10 @@ def render_islam_gold(item, langs=None, category=None, plain=False, bg=None):
     group = hh + 46 + int(th) + (26 if trans else 0) + (58 if item.get("source") else 0)
     y = top + max(0, (block - group) // 2)
 
+    hlang = "bangla" if hkey == "bn" else ("hindi" if hkey == "dev" else "english")
     img = _g_text(img, (pad + 34, y, W - pad - 34, y + hh),
-                  item["hadith_roman"], hkey, (255, 255, 255), size, gap_h)
+                  item["hadith_roman"], hkey, (255, 255, 255), size, gap_h,
+                  seg=0, track=track, lang=hlang)
     y += hh + 18
 
     d = ImageDraw.Draw(img)
@@ -747,11 +812,14 @@ def render_islam_gold(item, langs=None, category=None, plain=False, bg=None):
     y += 28
 
     if trans:
-        for t in trans:
+        for ti, t in enumerate(trans, start=1):
             th1 = int(len(_g_wrap(ImageDraw.Draw(img), t, _g_font(_g_key(t), size),
                                   avail_w)) * (size * 1.18))
             img = _g_text(img, (pad + 34, y, W - pad - 34, y + th1), t,
-                          _g_key(t), (240, 226, 190), size, gap_h)
+                          _g_key(t), (240, 226, 190), size, gap_h,
+                          seg=ti, track=track,
+                          lang=("bangla" if _g_key(t) == "bn" else
+                                "hindi" if _g_key(t) == "dev" else "english"))
             y += th1 + 6
         y += 10
         d = ImageDraw.Draw(img)
@@ -769,20 +837,21 @@ def render_islam_gold(item, langs=None, category=None, plain=False, bg=None):
             [x1 - 22, y - 6, x1 + tw + 22, y + 42], radius=14, fill=(12, 74, 44, 235))
         img = Image.alpha_composite(img, pill)
         img = _g_text(img, (pad + 40, y, W - pad - 40, y + 46),
-                      src, "bold", (255, 255, 255), 28, 1.1)
+                      src, "bold", (255, 255, 255), 28, 1.1,
+                      seg=len(trans) + 1, track=track, lang="english")
 
     img = _g_text(img, (pad + 20, H - pad - foot_h, W - pad - 20, H - pad - 14),
                   "Follow to get daily new hadiths", "bold", (240, 240, 240), 22, 1.1)
     return img
 
 
-def render_islam_gold_pair(item, langs=None, category=None):
+def render_islam_gold_pair(item, langs=None, category=None, track=None):
     """(text wali image, bina-text wali image) — dono ek hi photo pe."""
     import uuid
     global _CUR_CAT
     _CUR_CAT = category
     bg = _bg("islam", "image", category)
-    full = render_islam_gold(item, langs, category, bg=bg).convert("RGB")
+    full = render_islam_gold(item, langs, category, bg=bg, track=track).convert("RGB")
     plain = render_islam_gold(item, langs, category, plain=True, bg=bg).convert("RGB")
     tag = uuid.uuid4().hex[:8]
     fp = config.VIDEO_DIR / f"pair_{tag}_full.jpg"
@@ -790,6 +859,7 @@ def render_islam_gold_pair(item, langs=None, category=None):
     full.save(fp, "JPEG", quality=92)
     plain.save(pp, "JPEG", quality=92)
     return fp, pp
+
 
 def render(section, items, show_question=True, langs=None, mode="image",
            source_color="#085430", brand_name=None, logo_path=None, category=None):
@@ -804,7 +874,8 @@ def render(section, items, show_question=True, langs=None, mode="image",
         return render_islam_gold(items[0], langs, category).convert("RGB")
 
     if section == "english" and mode == "e5":
-        return render_english_clean(items, langs, brand_name).convert("RGB")
+        return render_english_clean(items, langs, brand_name,
+                                    show_question=show_question).convert("RGB")
 
     if section == "english":
         img = render_english(items, show_question, langs, mode)
@@ -830,12 +901,12 @@ async def post_reel(page, video_path, message):
         )
         d = r.json()
         if r.status_code >= 400 or "error" in d:
-            raise PostError((d.get("error") or {}).get("message") or f"start HTTP {r.status_code}")
+            raise RuntimeError((d.get("error") or {}).get("message") or f"start HTTP {r.status_code}")
 
         video_id = d.get("video_id")
         upload_url = d.get("upload_url")
         if not video_id or not upload_url:
-            raise PostError("upload_url nahi mila")
+            raise RuntimeError("upload_url nahi mila")
 
         with open(video_path, "rb") as fh:
             up = await client.post(
@@ -845,7 +916,7 @@ async def post_reel(page, video_path, message):
                 content=fh.read(),
             )
         if up.status_code >= 400:
-            raise PostError(f"upload HTTP {up.status_code}")
+            raise RuntimeError(f"upload HTTP {up.status_code}")
 
         f = await client.post(
             f"{config.GRAPH}/{pid}/video_reels",
@@ -855,6 +926,6 @@ async def post_reel(page, video_path, message):
         )
         fd = f.json()
         if f.status_code >= 400 or "error" in fd:
-            raise PostError((fd.get("error") or {}).get("message") or f"finish HTTP {f.status_code}")
+            raise RuntimeError((fd.get("error") or {}).get("message") or f"finish HTTP {f.status_code}")
 
     return video_id

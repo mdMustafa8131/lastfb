@@ -612,3 +612,13 @@ pre {
     border: 1px solid #e2e6f3;
     background: #f2f4fb
 }
+@media (max-width: 640px) {
+    .topbar {
+        position: static;
+        padding: 10px 12px;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    .topbar .brand { font-size: 15px; }
+    .topbar .btn { padding: 6px 10px; font-size: 12px; }
+}

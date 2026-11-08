@@ -1,4 +1,4 @@
-import base64
+﻿import base64
 import ctypes
 import json
 import os
@@ -617,7 +617,7 @@ async def import_data(page_id: str, request: Request):
     if not section:
         raise HTTPException(400, "Pehle section select karo")
     if section not in importer.PARSERS:
-        raise HTTPException(400, "Is section me import nahi — News settings se fetch karo")
+        raise HTTPException(400, "Is section me import nahi â€” News settings se fetch karo")
 
     form = await request.form()
     lang = form.get("lang") or None
@@ -629,8 +629,17 @@ async def import_data(page_id: str, request: Request):
         text = raw
     if not text:
         raise HTTPException(400, "File ya text do")
-    return importer.import_text(section, text, lang)
-
+    if section == "english":
+        mapping = [form.get(f"p{n}") or "" for n in (1, 2, 3)]
+    else:
+        mapping = ["hadith_roman", form.get("p2") or "",
+                   form.get("p3") or "", "source"]
+    mapping = [m for m in mapping if m != ""]
+    if len(set(mapping)) != len(mapping):
+        raise HTTPException(400, "Ek language do jagah select ki hai")
+    if section == "english" and "english" not in mapping:
+        raise HTTPException(400, "Sentence (english) ka column select karo")
+    return importer.import_text(section, text, lang, mapping)
 
 # ---------- pool ----------
 @app.get("/api/pool/{section}")
@@ -684,7 +693,23 @@ def page_state(page_id: str):
     return {"section": page.get("section"), "reel": bool(page.get("reel")),
             "reel_mode": page.get("reel_mode") or "zoom",
             "reel_music": page.get("reel_music", True),
-            "hashtags": page.get("hashtags") or []}
+            "hashtags": page.get("hashtags") or [],
+            "voice_on": bool(page.get("voice_on")),
+            "voice_gender": page.get("voice_gender") or "female",
+            "voice_on": bool(page.get("voice_on")),
+            "voice_gender": page.get("voice_gender") or "female",
+            "voice_rate": page.get("voice_rate", -6),
+            "hl_on": bool(page.get("hl_on", True)),
+            "hl_on": bool(page.get("hl_on", True)),
+            "line_on": bool(page.get("line_on", True)),
+            "ul_on": bool(page.get("ul_on")),
+            "ul_style": page.get("ul_style") or "underline",
+            "ul_alpha": page.get("ul_alpha") or 38,
+            "music_vol": page.get("music_vol", 20),
+            "ul_px": {k: page.get("ul_px_" + k) or 6 for k in ("en", "bn", "hi")},
+            "ul_color": {k: page.get("ul_color_" + k) or d for k, d in
+                         (("en", "#FFD400"), ("bn", "#00E5A0"), ("hi", "#FF5A5F"))}}
+            
 
 
 @app.post("/api/pages/{page_id}/reel")
@@ -718,6 +743,19 @@ async def set_reel_mode(page_id: str, request: Request):
     store.update_page(page_id, reel_mode=mode)
     return {"ok": True, "mode": mode}
 
+@app.post("/api/pages/{page_id}/voicerate")
+async def set_voicerate(page_id: str, request: Request):
+    if not store.get_page(page_id):
+        raise HTTPException(404, "Page not found")
+    body = await request.json()
+    try:
+        v = int(body.get("rate"))
+    except Exception:
+        raise HTTPException(400, "rate -50 se 50 me do")
+    if not -50 <= v <= 50:
+        raise HTTPException(400, "rate -50 se 50 only")
+    store.update_page(page_id, voice_rate=v)
+    return {"ok": True, "voice_rate": v}
 
 @app.post("/api/pages/{page_id}/hashtags")
 def set_hashtags(page_id: str, payload: TagsIn):
@@ -731,6 +769,106 @@ def set_hashtags(page_id: str, payload: TagsIn):
             out.append("#" + t)
     store.update_page(page_id, hashtags=out[:30])
     return {"ok": True, "tags": out[:30]}
+
+@app.post("/api/pages/{page_id}/voice")
+async def set_voice(page_id: str, request: Request):
+    if not store.get_page(page_id):
+        raise HTTPException(404, "Page not found")
+    body = await request.json()
+    store.update_page(page_id, voice_on=bool(body.get("on")))
+    return {"ok": True}
+
+
+@app.post("/api/pages/{page_id}/voicegender")
+async def set_voice_gender(page_id: str, request: Request):
+    if not store.get_page(page_id):
+        raise HTTPException(404, "Page not found")
+    body = await request.json()
+    g = body.get("gender") or "female"
+    if g not in ("male", "female"):
+        raise HTTPException(400, "male ya female")
+    store.update_page(page_id, voice_gender=g)
+    return {"ok": True}
+
+@app.post("/api/pages/{page_id}/hl")
+async def set_hl(page_id: str, request: Request):
+    if not store.get_page(page_id):
+        raise HTTPException(404, "Page not found")
+    body = await request.json()
+    store.update_page(page_id, hl_on=bool(body.get("on")))
+    return {"ok": True}
+
+
+@app.post("/api/pages/{page_id}/line")
+async def set_line(page_id: str, request: Request):
+    if not store.get_page(page_id):
+        raise HTTPException(404, "Page not found")
+    body = await request.json()
+    store.update_page(page_id, line_on=bool(body.get("on")))
+    return {"ok": True}
+
+UL_KEYS = ("en", "bn", "hi")
+
+
+def _ul_hex(v):
+    v = str(v or "").strip().lstrip("#")
+    if len(v) == 3:
+        v = "".join(c * 2 for c in v)
+    if len(v) == 6 and all(c in "0123456789abcdefABCDEF" for c in v):
+        return "#" + v.upper()
+    return None
+
+
+@app.post("/api/pages/{page_id}/ul")
+async def set_ul(page_id: str, request: Request):
+    if not store.get_page(page_id):
+        raise HTTPException(404, "Page not found")
+    body = await request.json()
+    kw = {}
+    if "on" in body:
+        kw["ul_on"] = bool(body.get("on"))
+    if body.get("style") in ("underline", "highlight"):
+        kw["ul_style"] = body["style"]
+    if body.get("alpha") is not None:
+        try:
+            a = int(body["alpha"])
+        except Exception:
+            raise HTTPException(400, "alpha 5-100 me do")
+        if not 5 <= a <= 100:
+            raise HTTPException(400, "alpha 5-100 only")
+        kw["ul_alpha"] = a
+    for k in UL_KEYS:
+        if body.get("px_" + k) is not None:
+            try:
+                n = int(body["px_" + k])
+            except Exception:
+                raise HTTPException(400, "px 1-24 me do")
+            if not 1 <= n <= 24:
+                raise HTTPException(400, "px 1-24 only")
+            kw["ul_px_" + k] = n
+        if body.get("color_" + k) is not None:
+            hx = _ul_hex(body["color_" + k])
+            if not hx:
+                raise HTTPException(400, "color galat")
+            kw["ul_color_" + k] = hx
+    if not kw:
+        raise HTTPException(400, "Kuch nahi diya")
+    store.update_page(page_id, **kw)
+    return {"ok": True, **kw}
+
+@app.post("/api/pages/{page_id}/musicvol")
+async def set_musicvol(page_id: str, request: Request):
+    if not store.get_page(page_id):
+        raise HTTPException(404, "Page not found")
+    body = await request.json()
+    try:
+        v = int(body.get("vol"))
+    except Exception:
+        raise HTTPException(400, "vol 0-100 me do")
+    if not 0 <= v <= 100:
+        raise HTTPException(400, "vol 0-100 only")
+    store.update_page(page_id, music_vol=v)
+    return {"ok": True, "music_vol": v}
 
 
 @app.get("/api/media/{section}")

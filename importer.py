@@ -29,90 +29,63 @@ def _lang_of(text):
         o = ord(ch)
         
 
-
-def parse_english(text, lang=None):
+def parse_english(text, mapping=None, lang=None):
     out, errors = [], []
     for i, row in enumerate(csv.reader(io.StringIO(text)), start=1):
         row = _clean(row)
         if not any(row):
             continue
-        bangla = hindi = hinglish = ""
-        if len(row) >= 4:
-            english, bangla, hindi, hinglish = row[:4]
+        if mapping:
+            mp = mapping
         elif len(row) == 2 and lang:
-            english = row[0]
-            if lang == "bangla":
-                bangla = row[1]
-            elif lang == "hindi":
-                hindi = row[1]
-            elif lang == "hinglish":
-                hinglish = row[1]
+            mp = ["english", lang]
         else:
-            english = row[0] if row else ""
-        if not english:
-            errors.append(f"line {i}: pehla column (sentence) khali")
+            mp = ["english", "bangla", "hindi", "hinglish"]
+        item = {"english": "", "bangla": "", "hindi": "", "hinglish": ""}
+        for idx, col in enumerate(row):
+            if idx >= len(mp):
+                break
+            k = mp[idx]
+            if k in item and col and not item[k]:
+                item[k] = col
+        if not item["english"]:
+            errors.append(f"line {i}: sentence (english) khali ya column 1 me nahi")
             continue
-        out.append({"english": english, "bangla": bangla,
-                    "hindi": hindi, "hinglish": hinglish})
+        out.append(item)
     return out, errors
 
 
-def parse_islam(text, lang=None):
+def parse_islam(text, mapping=None, lang=None):
     out, errors = [], []
+    mp = mapping or ["hadith_roman", "bangla", "hinglish", "source"]
     for i, row in enumerate(csv.reader(io.StringIO(text)), start=1):
         row = _clean(row)
         if not any(row):
             continue
-
-        if len(row) >= 4:
-            hadith = row[0]
-            trans = [row[1], row[2]]
-            source = row[3]
-        elif len(row) == 3:
-            hadith = row[0]
-            trans = [row[1]]
-            source = row[2]
-        elif len(row) == 2:
-            hadith = row[0]
-            trans = []
-            source = row[1]
-        else:
-            errors.append(f"line {i}: format galat — hadith,translation,translation,source:category")
-            continue
-
-        if not hadith:
+        item = {"hadith_roman": "", "english": "", "bangla": "",
+                "hindi": "", "hinglish": ""}
+        source = ""
+        for idx, col in enumerate(row):
+            if idx >= len(mp):
+                break
+            k = mp[idx]
+            if not col:
+                continue
+            if k == "source":
+                source = col
+            elif k in item and not item[k]:
+                item[k] = col
+        if not item["hadith_roman"]:
             errors.append(f"line {i}: hadith khali")
             continue
-
         source, category = _split_cat(source)
         if not source:
             errors.append(f"line {i}: source zaroori hai")
             continue
-
-        english = bangla = ""
-        for t in trans:
-            if not t:
-                continue
-            l = _lang_of(t)
-            if l == "bangla" and not bangla:
-                bangla = t
-            elif l == "hindi":
-                hindi = t if "hindi" in locals() else t
-            elif l == "english" and not english:
-                english = t
-            if l == "hindi":
-                pass
-
-        item = {"hadith_roman": hadith, "english": english,
-                "bangla": bangla, "source": source, "category": category}
-        for t in trans:
-            if t and _lang_of(t) == "hindi":
-                item["hindi"] = t
-                break
-
+        item["source"] = source
+        item["category"] = category
         out.append(item)
     return out, errors
-
 
 PARSERS = {"english": parse_english, "islam": parse_islam}
 KEYS = {"english": ("english", "bangla", "hindi", "hinglish"),
@@ -127,10 +100,10 @@ def archive(filename, raw):
     return dest
 
 
-def import_text(section, text, lang=None):
+def import_text(section, text, lang=None, mapping=None):
     parser = PARSERS[section]
     keys = KEYS[section]
-    items, errors = parser(text, lang)
+    items, errors = parser(text, lang, mapping)
 
     existing = {tuple(str(i.get(k, "")).strip() for k in keys)
                 for i in pool.load_pool(section)}

@@ -150,7 +150,7 @@
     "source": "Musnad Ahmad 6576",
     "category": "qabr",
     "id": "d622d39093b4",
-    "used": false
+    "used": true
   },
   {
     "hadith_roman": "যে নামাজ ঠিক রাখে, তার কবর ঠিক থাকে।",
@@ -159,7 +159,7 @@
     "source": "Musnad Ahmad 6576",
     "category": "qabr",
     "id": "8fe1c670205c",
-    "used": false
+    "used": true
   },
   {
     "hadith_roman": "কবরের প্রথম রাতই সবচেয়ে কঠিন রাত।",
@@ -168,7 +168,7 @@
     "source": "Sunan at-Tirmidhi 2307",
     "category": "qabr",
     "id": "990f1d57789a",
-    "used": false
+    "used": true
   },
   {
     "hadith_roman": "কবরে মৃতকে তার নামাজের হিসাব দেখানো হবে।",
@@ -177,7 +177,7 @@
     "source": "Sunan at-Tirmidhi 413",
     "category": "qabr",
     "id": "f96f3d51924e",
-    "used": false
+    "used": true
   },
   {
     "hadith_roman": "কবরে আজাব থেকে রক্ষা পেতে সাদাকা করো।",
@@ -186,7 +186,7 @@
     "source": "Sunan at-Tirmidhi 2460",
     "category": "qabr",
     "id": "ea7c55d692bf",
-    "used": false
+    "used": true
   },
   {
     "hadith_roman": "কবরে মুনকির ও নকির ফেরেশতা আসবে।",
@@ -195,7 +195,7 @@
     "source": "Sunan at-Tirmidhi 1071",
     "category": "qabr",
     "id": "557ef3d6fd74",
-    "used": false
+    "used": true
   },
   {
     "hadith_roman": "কবরে প্রত্যেককে তার রব সম্পর্কে প্রশ্ন করা হবে।",
@@ -204,7 +204,7 @@
     "source": "Sahih Muslim 2871",
     "category": "qabr",
     "id": "8868ecfb58a8",
-    "used": false
+    "used": true
   },
   {
     "hadith_roman": "যে নামাজে শিথিলতা করে, তার কবর চেপে ধরবে।",
@@ -213,7 +213,7 @@
     "source": "Sunan Ibn Majah 1425",
     "category": "qabr",
     "id": "5188e5ce3fed",
-    "used": false
+    "used": true
   },
   {
     "hadith_roman": "কবরের আঁধার নামাজের আলোয় দূর হয়।",
@@ -222,7 +222,7 @@
     "source": "Musnad Ahmad 6576",
     "category": "qabr",
     "id": "c35185cc3dd2",
-    "used": false
+    "used": true
   },
   {
     "hadith_roman": "কবরে মৃত ব্যক্তি তার পরিবারের খবর রাখে না।",
@@ -231,7 +231,7 @@
     "source": "Sahih al-Bukhari 6514",
     "category": "qabr",
     "id": "171b3c459193",
-    "used": false
+    "used": true
   },
   {
     "hadith_roman": "আজাব থেকে বাঁচার সবচেয়ে বড় উপায় পাঁচ ওয়াক্ত নামাজ।",
@@ -240,7 +240,7 @@
     "source": "Sunan Ibn Majah 1425",
     "category": "qabr",
     "id": "7e29d39f5489",
-    "used": false
+    "used": true
   },
   {
     "hadith_roman": "কবরে প্রশ্নের প্রথম উত্তর হবে আল্লাহ কে — এই ইমানের জবাব।",
@@ -249,7 +249,7 @@
     "source": "Sahih Muslim 2871",
     "category": "qabr",
     "id": "7aa1ef165c47",
-    "used": false
+    "used": true
   },
   {
     "hadith_roman": "কবরের আজাব থেকে ফজরের পর দোয়া করুন।",
@@ -447,6 +447,556 @@
     "source": "Sunan Ibn Majah 1425",
     "category": "qabr",
     "id": "6d0b03052134",
+    "used": false
+  },
+  {
+    "hadith_roman": "I smile to make others happy.",
+    "english": "",
+    "bangla": "আমি অন্যকে খুশি করতে হাসি।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Main doosron ko khush karne ke liye muskurata hoon.",
+    "category": "general",
+    "id": "fd9614d66076",
+    "used": false
+  },
+  {
+    "hadith_roman": "She reads books to gain wisdom.",
+    "english": "",
+    "bangla": "সে জ্ঞান অর্জনে বই পড়ে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh ilm paane ke liye kitaabein padhti hai.",
+    "category": "general",
+    "id": "48b0d416aa86",
+    "used": false
+  },
+  {
+    "hadith_roman": "He helps his father at work.",
+    "english": "",
+    "bangla": "সে কাজে বাবাকে সাহায্য করে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh kaam mein apne papa ki madad karta hai.",
+    "category": "general",
+    "id": "843af7e46611",
+    "used": false
+  },
+  {
+    "hadith_roman": "We share knowledge with friends.",
+    "english": "",
+    "bangla": "আমরা বন্ধুদের সাথে জ্ঞান ভাগ করি।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Hum doston ke saath ilm baantte hain.",
+    "category": "general",
+    "id": "47bcd14f49a2",
+    "used": false
+  },
+  {
+    "hadith_roman": "They serve guests with respect.",
+    "english": "",
+    "bangla": "তারা সম্মানের সাথে অতিথি সেবা করে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh izzat se mehmanon ki khidmat karte hain.",
+    "category": "general",
+    "id": "7e21fa734f6e",
+    "used": false
+  },
+  {
+    "hadith_roman": "I forgive those who hurt me.",
+    "english": "",
+    "bangla": "আমি যারা আমাকে কষ্ট দেয় তাদের ক্ষমা করি।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Main unhe maaf karta hoon jo mujhe takleef dete hain.",
+    "category": "general",
+    "id": "e47fec7f2e5f",
+    "used": false
+  },
+  {
+    "hadith_roman": "She feeds the hungry with love.",
+    "english": "",
+    "bangla": "সে ভালোবাসায় ক্ষুধার্তকে খাওয়ায়।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh pyaar se bhookhon ko khilatee hai.",
+    "category": "general",
+    "id": "898d8c39fd62",
+    "used": false
+  },
+  {
+    "hadith_roman": "He speaks softly to avoid fights.",
+    "english": "",
+    "bangla": "সে ঝগড়া এড়াতে নরমভাবে কথা বলে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh jhagda bachne ke liye narmi se bolta hai.",
+    "category": "general",
+    "id": "3473b2a282b2",
+    "used": false
+  },
+  {
+    "hadith_roman": "We save water for the future.",
+    "english": "",
+    "bangla": "আমরা ভবিষ্যতের জন্য পানি বাঁচাই।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Hum mustaqbil ke liye paani bachate hain.",
+    "category": "general",
+    "id": "184532a9f071",
+    "used": false
+  },
+  {
+    "hadith_roman": "They pray together every evening.",
+    "english": "",
+    "bangla": "তারা প্রতিদিন সন্ধ্যায় একসাথে দোয়া করে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh roz shaam ko saath dua karte hain.",
+    "category": "general",
+    "id": "bb53a240a95a",
+    "used": false
+  },
+  {
+    "hadith_roman": "I listen carefully to understand.",
+    "english": "",
+    "bangla": "আমি বুঝতে মন দিয়ে শুনি।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Main samajhne ke liye dhyan se sunta hoon.",
+    "category": "general",
+    "id": "67e1df0a364a",
+    "used": false
+  },
+  {
+    "hadith_roman": "She respects her husband deeply.",
+    "english": "",
+    "bangla": "সে স্বামীকে গভীরভাবে সম্মান করে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh apne shohar ki gehri izzat karti hai.",
+    "category": "general",
+    "id": "b433effeea31",
+    "used": false
+  },
+  {
+    "hadith_roman": "He earns honestly for his children.",
+    "english": "",
+    "bangla": "সে সন্তানদের জন্য সৎভাবে উপার্জন করে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh bachchon ke liye imandari se kamata hai.",
+    "category": "general",
+    "id": "aa8b3188e218",
+    "used": false
+  },
+  {
+    "hadith_roman": "We clean our street together.",
+    "english": "",
+    "bangla": "আমরা একসাথে রাস্তা পরিষ্কার করি।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Hum saath milkar gali saaf karte hain.",
+    "category": "general",
+    "id": "44107f503107",
+    "used": false
+  },
+  {
+    "hadith_roman": "They donate blood to save lives.",
+    "english": "",
+    "bangla": "তারা জীবন বাঁচাতে রক্ত দান করে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh jaan bachane ke liye khoon daan karte hain.",
+    "category": "general",
+    "id": "141816029612",
+    "used": false
+  },
+  {
+    "hadith_roman": "I teach my brother patiently.",
+    "english": "",
+    "bangla": "আমি ধৈর্য ধরে ভাইকে পড়াই।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Main sabr se apne bhai ko padhata hoon.",
+    "category": "general",
+    "id": "e6732c0ff272",
+    "used": false
+  },
+  {
+    "hadith_roman": "She cooks extra food for neighbors.",
+    "english": "",
+    "bangla": "সে প্রতিবেশীর জন্য বাড়তি খাবার রান্না করে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh padosiyon ke liye extra khana banatee hai.",
+    "category": "general",
+    "id": "dfe63517e06c",
+    "used": false
+  },
+  {
+    "hadith_roman": "He fixes things for poor families.",
+    "english": "",
+    "bangla": "সে গরিব পরিবারের জিনিস মেরামত করে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh gareeb families ki cheezein theek karta hai.",
+    "category": "general",
+    "id": "c8578aaaeb5c",
+    "used": false
+  },
+  {
+    "hadith_roman": "We visit relatives to keep ties.",
+    "english": "",
+    "bangla": "আমরা সম্পর্ক রাখতে আত্মীয়দের দেখতে যাই।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Hum rishte nibhane ke liye rishtedaron se milne jaate hain.",
+    "category": "general",
+    "id": "65770240358b",
+    "used": false
+  },
+  {
+    "hadith_roman": "They plant flowers in the yard.",
+    "english": "",
+    "bangla": "তারা উঠানে ফুল লাগায়।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh aangan mein phool lagate hain.",
+    "category": "general",
+    "id": "17bf3705e1ba",
+    "used": false
+  },
+  {
+    "hadith_roman": "I control my tongue while angry.",
+    "english": "",
+    "bangla": "আমি রাগের সময় জিভ নিয়ন্ত্রণ করি।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Main gusse mein apni zubaan control karta hoon.",
+    "category": "general",
+    "id": "3ecc54092435",
+    "used": false
+  },
+  {
+    "hadith_roman": "She wears simple clothes for humility.",
+    "english": "",
+    "bangla": "সে বিনয়ের জন্য সাধারণ পোশাক পরে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh aajizi ke liye sadhe kapde pehanti hai.",
+    "category": "general",
+    "id": "1ffd175c6dfe",
+    "used": false
+  },
+  {
+    "hadith_roman": "He shares his lunch with a friend.",
+    "english": "",
+    "bangla": "সে বন্ধুর সাথে দুপুরের খাবার ভাগ করে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh dost ke saath lunch baantta hai.",
+    "category": "general",
+    "id": "7c1c0d0eae82",
+    "used": false
+  },
+  {
+    "hadith_roman": "We pray for the sick people.",
+    "english": "",
+    "bangla": "আমরা অসুস্থ মানুষের জন্য দোয়া করি।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Hum beemar logon ke liye dua karte hain.",
+    "category": "general",
+    "id": "17929c1db59c",
+    "used": false
+  },
+  {
+    "hadith_roman": "They help old people cross roads.",
+    "english": "",
+    "bangla": "তারা বৃদ্ধদের রাস্তা পার হতে সাহায্য করে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh buzurgon ko sadak paar karne mein madad karte hain.",
+    "category": "general",
+    "id": "61aba30f70ef",
+    "used": false
+  },
+  {
+    "hadith_roman": "I give my seat to elders.",
+    "english": "",
+    "bangla": "আমি বড়দের আমার আসন দিই।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Main buzurgon ko apni seat deta hoon.",
+    "category": "general",
+    "id": "cf84c481e1db",
+    "used": false
+  },
+  {
+    "hadith_roman": "She teaches poor children freely.",
+    "english": "",
+    "bangla": "সে গরিব শিশুদের বিনামূল্যে পড়ায়।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh gareeb bachchon ko muft padhatee hai.",
+    "category": "general",
+    "id": "218e484898b7",
+    "used": false
+  },
+  {
+    "hadith_roman": "He repairs the mosque door himself.",
+    "english": "",
+    "bangla": "সে নিজে মসজিদের দরজা মেরামত করে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh khud masjid ka darwaza theek karta hai.",
+    "category": "general",
+    "id": "11833e21c650",
+    "used": false
+  },
+  {
+    "hadith_roman": "We keep our homes clean daily.",
+    "english": "",
+    "bangla": "আমরা প্রতিদিন ঘর পরিষ্কার রাখি।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Hum roz ghar saaf rakhte hain.",
+    "category": "general",
+    "id": "3a167e82d4c1",
+    "used": false
+  },
+  {
+    "hadith_roman": "They feed birds every morning.",
+    "english": "",
+    "bangla": "তারা প্রতিদিন সকালে পাখিকে খাবার দেয়।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh roz subah parindon ko khana dete hain.",
+    "category": "general",
+    "id": "98e57549519d",
+    "used": false
+  },
+  {
+    "hadith_roman": "I speak kindly to my parents.",
+    "english": "",
+    "bangla": "আমি বাবা-মার সাথে নরমভাবে কথা বলি।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Main maa-baap se narmi se baat karta hoon.",
+    "category": "general",
+    "id": "b1d497eecf2b",
+    "used": false
+  },
+  {
+    "hadith_roman": "She avoids gossip to stay pure.",
+    "english": "",
+    "bangla": "সে পবিত্র থাকতে গীবত এড়ায়।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh paak rehne ke liye gheebat se bachatee hai.",
+    "category": "general",
+    "id": "9f8fa13e1aa6",
+    "used": false
+  },
+  {
+    "hadith_roman": "He returns borrowed things on time.",
+    "english": "",
+    "bangla": "সে ধার নেওয়া জিনিস সময়মতো ফেরত দেয়।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh udhaar li cheezein waqt par wapas karta hai.",
+    "category": "general",
+    "id": "cd36268c46bd",
+    "used": false
+  },
+  {
+    "hadith_roman": "We help our mother in the kitchen.",
+    "english": "",
+    "bangla": "আমরা রান্নাঘরে মাকে সাহায্য করি।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Hum kitchen mein maa ki madad karte hain.",
+    "category": "general",
+    "id": "a351f26e4c14",
+    "used": false
+  },
+  {
+    "hadith_roman": "They smile at strangers warmly.",
+    "english": "",
+    "bangla": "তারা অপরিচিতদের আন্তরিকভাবে হাসে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh ajnabiyon ko dil se muskuratte hain.",
+    "category": "general",
+    "id": "ceb20cb0b9dc",
+    "used": false
+  },
+  {
+    "hadith_roman": "I share my umbrella in rain.",
+    "english": "",
+    "bangla": "আমি বৃষ্টিতে ছাতা ভাগ করি।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Main baarish mein chhatri baantta hoon.",
+    "category": "general",
+    "id": "d031ca2bc8a4",
+    "used": false
+  },
+  {
+    "hadith_roman": "She gives water to thirsty animals.",
+    "english": "",
+    "bangla": "সে তৃষ্ণার্ত প্রাণীকে পানি দেয়।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh pyaase janwaron ko paani deti hai.",
+    "category": "general",
+    "id": "ec367c7f0bfd",
+    "used": false
+  },
+  {
+    "hadith_roman": "He speaks truth even when hard.",
+    "english": "",
+    "bangla": "সে কঠিন হলেও সত্য বলে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh mushkil ho tab bhi sach bolta hai.",
+    "category": "general",
+    "id": "db9b17151f18",
+    "used": false
+  },
+  {
+    "hadith_roman": "We respect every religion equally.",
+    "english": "",
+    "bangla": "আমরা প্রতিটি ধর্মকে সমানভাবে সম্মান করি।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Hum har mazhab ki barabar izzat karte hain.",
+    "category": "general",
+    "id": "eb6c2e13cd93",
+    "used": false
+  },
+  {
+    "hadith_roman": "They help travelers with directions.",
+    "english": "",
+    "bangla": "তারা পথিককে পথ দেখায়।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh musafiron ko raasta batate hain.",
+    "category": "general",
+    "id": "6b08c0a722b3",
+    "used": false
+  },
+  {
+    "hadith_roman": "I study hard to serve people.",
+    "english": "",
+    "bangla": "আমি মানুষকে সেবা করতে কঠোর পড়ি।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Main logon ki khidmat ke liye mehnat se padhta hoon.",
+    "category": "general",
+    "id": "48c6bb547623",
+    "used": false
+  },
+  {
+    "hadith_roman": "She keeps her promises always.",
+    "english": "",
+    "bangla": "সে সবসময় তার প্রতিশ্রুতি রাখে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh hamesha apna wada nibhatee hai.",
+    "category": "general",
+    "id": "633adb3462ae",
+    "used": false
+  },
+  {
+    "hadith_roman": "He gives his time to orphans.",
+    "english": "",
+    "bangla": "সে এতিমদের তার সময় দেয়।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh yateemon ko apna waqt deta hai.",
+    "category": "general",
+    "id": "f36e9fd62480",
+    "used": false
+  },
+  {
+    "hadith_roman": "We avoid wasting food daily.",
+    "english": "",
+    "bangla": "আমরা প্রতিদিন খাবার নষ্ট এড়াই।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Hum roz khana barbaad karne se bachte hain.",
+    "category": "general",
+    "id": "cc7dad2190d3",
+    "used": false
+  },
+  {
+    "hadith_roman": "They forgive their enemies kindly.",
+    "english": "",
+    "bangla": "তারা শত্রুদের দয়া করে ক্ষমা করে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh dushmanon ko reham se maaf karte hain.",
+    "category": "general",
+    "id": "6cddd51f3551",
+    "used": false
+  },
+  {
+    "hadith_roman": "I greet everyone with a smile.",
+    "english": "",
+    "bangla": "আমি সবাইকে হাসি দিয়ে সালাম করি।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Main sabko muskaan ke saath salaam karta hoon.",
+    "category": "general",
+    "id": "75a456d8ccfb",
+    "used": false
+  },
+  {
+    "hadith_roman": "She helps her sister with chores.",
+    "english": "",
+    "bangla": "সে বোনকে কাজে সাহায্য করে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh apni behen ki kaam mein madad karti hai.",
+    "category": "general",
+    "id": "bfbf9fac1d25",
+    "used": false
+  },
+  {
+    "hadith_roman": "He donates books to a library.",
+    "english": "",
+    "bangla": "সে লাইব্রেরিতে বই দান করে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh library mein kitaabein daan karta hai.",
+    "category": "general",
+    "id": "c46f4094b57e",
+    "used": false
+  },
+  {
+    "hadith_roman": "We pray for peace in the world.",
+    "english": "",
+    "bangla": "আমরা বিশ্বে শান্তির জন্য দোয়া করি।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Hum duniya mein aman ke liye dua karte hain.",
+    "category": "general",
+    "id": "62de8f95b2c9",
+    "used": false
+  },
+  {
+    "hadith_roman": "They do every good deed for God.",
+    "english": "",
+    "bangla": "তারা প্রতিটি ভালো কাজ আল্লাহর জন্য করে।",
+    "hindi": "",
+    "hinglish": "",
+    "source": "Woh har nek kaam Allah ke liye karte hain.",
+    "category": "general",
+    "id": "a24d20439dc5",
     "used": false
   }
 ]

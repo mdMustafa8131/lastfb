@@ -2,275 +2,477 @@
 {% block title %}{{ page.name }} — FB Engine{% endblock %}
 {% block content %}
 
+<style>
+    .pg {
+        display: grid;
+        gap: 14px;
+    }
+
+    .row3 {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    #readyGrid {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    }
+
+    #readyGrid a {
+        display: block;
+        line-height: 0;
+    }
+
+    #readyGrid img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 10px;
+        cursor: zoom-in;
+        border: 1px solid #2a2a35;
+    }
+
+    .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, .92);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        z-index: 99;
+        cursor: zoom-out;
+    }
+
+    .lightbox[hidden] {
+        display: none;
+    }
+
+    .lightbox img {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 10px;
+    }
+
+    .sched {
+        display: grid;
+        gap: 10px;
+    }
+
+    .import-map {
+        display: grid;
+        gap: 8px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @media (min-width: 720px) {
+        #readyGrid img {
+            height: 170px;
+        }
+    }
+
+    @media (max-width: 640px) {
+
+        .row3,
+        .import-map {
+            grid-template-columns: 1fr;
+        }
+
+        .rowbar-actions {
+            flex-wrap: wrap;
+        }
+
+        .chips.big .chip {
+            flex: 1 1 auto;
+        }
+
+        .btn {
+            min-height: 40px;
+        }
+    }
+</style>
+
 <a class="back" href="/">&larr; Dashboard</a>
 
-<div class="card">
-    <h1 class="h1">{{ page.name }}</h1>
-    <p class="muted small">{{ page.category }} · id {{ page.id }}</p>
-    <p class="tokenbox"><span class="muted small">Page token</span><code>{{ page.access_token[:24] }}…</code></p>
+<div class="pg">
+    <div class="card">
+        <h1 class="h1">{{ page.name }}</h1>
+        <p class="muted small">{{ page.category }} · id {{ page.id }}</p>
+        <p class="tokenbox"><span class="muted small">Page token</span><code>{{ page.access_token[:24] }}…</code></p>
 
-    <form id="logoForm" style="margin-top:12px">
-        <label>Logo (optional — image ke corner pe lagega)
-            <input type="file" name="logo" accept="image/*">
+        <form id="logoForm" style="margin-top:12px">
+            <label>Logo (optional — image ke corner pe lagega)
+                <input type="file" name="logo" accept="image/*">
+            </label>
+            <div class="rowbar-actions">
+                <button class="btn btn-sm" type="submit">Logo save</button>
+                <button class="btn btn-sm" type="button" id="logoClear">Logo hatao</button>
+            </div>
+        </form>
+        {% if page.logo %}<p class="small">Logo set hai</p>{% endif %}
+
+        <label style="margin-top:12px">Brand handle (image pe @handle lagega — khali chhodo to page name)
+            <input id="brandInput" value="{{ page.brand or '' }}" placeholder="handle">
         </label>
-        <div class="rowbar-actions">
-            <button class="btn btn-sm" type="submit">Logo save</button>
-            <button class="btn btn-sm" type="button" id="logoClear">Logo hatao</button>
-        </div>
-    </form>
-    {% if page.logo %}<p class="small">Logo set hai</p>{% endif %}
-
-    <label style="margin-top:12px">Brand handle (image pe @handle lagega — khali chhodo to page name)
-        <input id="brandInput" value="{{ page.brand or '' }}" placeholder="handle">
-    </label>
-    <button class="btn btn-sm" type="button" id="brandSave">Handle save</button>
-</div>
-
-<div class="card">
-    <h2 class="h2">Section</h2>
-    <p class="muted small">Ek page = ek section. Badalne pe languages reset hongi.</p>
-    <div class="chips big">
-        {% for key, label in SECTIONS.items() %}
-        <button class="chip {% if page.section==key %}on{% endif %}" data-sec="{{ key }}">{{ label }}</button>
-        {% endfor %}
+        <button class="btn btn-sm" type="button" id="brandSave">Handle save</button>
     </div>
-</div>
 
-{% if page.section == "news" %}
-<div class="card">
-    <h2 class="h2">News settings</h2>
-    <p class="muted small">auto = general top stories, trending = trending + reddit, manual = apni category ke keyword.
-    </p>
-    <div class="chips big">
-        {% for m in ["auto","trending","manual"] %}
-        <button class="chip {% if (page.news_mode or 'auto')==m %}on{% endif %}" data-news-mode="{{ m }}">{{ m
-            }}</button>
-        {% endfor %}
-    </div>
-    <label>Region
-        <select id="newsRegion">
-            {% for r in ["in","us","gb","bd","ae","world"] %}
-            <option value="{{ r }}" {% if (page.news_region or 'in' )==r %}selected{% endif %}>{{ r }}</option>
+    <div class="card">
+        <h2 class="h2">Section</h2>
+        <p class="muted small">Ek page = ek section. Badalne pe languages reset hongi.</p>
+        <div class="chips big">
+            {% for key, label in SECTIONS.items() %}
+            <button class="chip {% if page.section==key %}on{% endif %}" data-sec="{{ key }}">{{ label }}</button>
             {% endfor %}
-        </select>
-    </label>
-    <label>Subreddit (trending)
-        <input id="newsSub" value="{{ page.news_sub or 'worldnews' }}">
-    </label>
-    <input id="newsSub" value="{{ page.news_sub or 'worldnews' }}">
-    <label>Template</label>
-    <label>Template
-        <select id="newsTpl">
-            {% for i in range(1, NEWS_TPL_COUNT + 1) %}
-            <option value="{{ i }}" {% if (page.template or 1)==i %}selected{% endif %}>T{{ i }}</option>
+        </div>
+    </div>
+
+    {% if page.section == "news" %}
+    <div class="card">
+        <h2 class="h2">News settings</h2>
+        <div class="chips big">
+            {% for m in ["auto","trending","manual"] %}
+            <button class="chip {% if (page.news_mode or 'auto')==m %}on{% endif %}" data-news-mode="{{ m }}">{{ m
+                }}</button>
             {% endfor %}
-        </select>
-    </label>
-    <label>Category (manual)</label>
-    <label>Category (manual)
-        <select id="newsCat">
-            <option value="">—</option>
-            {% for c in news_cats %}
-            <option value="{{ c.id }}" {% if page.news_category==c.id %}selected{% endif %}>{{ c.name }}</option>
-            {% endfor %}
-        </select>
-    </label>
-    <div class="rowbar-actions">
-        <button class="btn btn-sm" id="newsFetchBtn">News fetch</button>
-        <button class="btn btn-sm" id="newsCatAddBtn">Category add</button>
-        <button class="btn btn-sm" id="newsCatDelBtn">Category delete</button>
-    </div>
-    <p class="small" id="newsMsg"></p>
-</div>
-{% else %}
-<div class="card">
-    <h2 class="h2">Language</h2>
-    <p class="muted small">Is page pe kaunsi translation use hogi.</p>
-    <div class="chips big">
-        {% for key in LANGS.get(page.section or '', ()) %}
-        <button class="chip {% if key in (page.langs or []) %}on{% endif %}" data-lang="{{ key }}">{{ key }}</button>
-        {% endfor %}
-    </div>
-</div>
-
-<div class="card">
-    <h2 class="h2">Background</h2>
-    <p class="muted small">photo = folder se random photo, fresh = gradient, t1-t4 = design templates.</p>
-    <div class="chips big">
-        {% for m in ["image","fresh","t1","t2","t3","t4","gold"] %}
-        <button class="chip {% if (page.bg_mode or 'image')==m %}on{% endif %}" data-bg="{{ m }}">{{ m }}</button>
-        {% endfor %}
-    </div>
-    <label class="switchrow" style="margin-top:12px">
-        <span>Source color</span>
-        <input type="color" id="sourceColor" value="{{ page.source_color or '#085430' }}">
-    </label>
-</div>
-
-<div class="card">
-    <h2 class="h2">Post format</h2>
-    <p class="muted small">Ek post me kitni lines jayengi.</p>
-    <div class="chips big">
-        {% for m in ["image","fresh","t1","t2","t3","t4","gold","e5"] %}
-        <button class="chip {% if (page.bg_mode or 'image')==m %}on{% endif %}" data-bg="{{ m }}">{{ m }}</button>
-        {% endfor %}
-    </div>
-    <label class="switchrow" style="margin-top:12px">
-        <span>Question box</span>
-        <input type="checkbox" id="questionToggle" {% if page.question_box %}checked{% endif %}>
-    </label>
-</div>
-{% endif %}
-
-<div class="card">
-    <h2 class="h2">Timing</h2>
-    <p class="muted small">Abhi source Reddit hai (r/india, r/IndianNews, r/IndiaSpeaks, r/Cricket, r/bollywood) — mode ka
-        koi asar nahi, koi bhi chip chhod do.</p>
-    <form id="scheduleForm" class="grid gap">
-        <div class="row3">
-            <label>Din start <input name="day_start" value="{{ page.schedule.day.start }}"></label>
-            <label>Din end <input name="day_end" value="{{ page.schedule.day.end }}"></label>
         </div>
-        <div class="row3">
-            <label>Din min <input type="number" name="day_min" value="{{ page.schedule.day.min }}"></label>
-            <label>Din max <input type="number" name="day_max" value="{{ page.schedule.day.max }}"></label>
-        </div>
-        <div class="row3">
-            <label>Raat start <input name="night_start" value="{{ page.schedule.night.start }}"></label>
-            <label>Raat end <input name="night_end" value="{{ page.schedule.night.end }}"></label>
-        </div>
-        <div class="row3">
-            <label>Raat min <input type="number" name="night_min" value="{{ page.schedule.night.min }}"></label>
-            <label>Raat max <input type="number" name="night_max" value="{{ page.schedule.night.max }}"></label>
-        </div>
-        <button class="btn btn-primary" type="submit">Timing save</button>
-    </form>
-</div>
-
-<div class="card">
-    <h2 class="h2">Preview</h2>
-    <p class="muted small">Buffer target 3 hai, 1 bachne pe refill hota hai. <span id="poolInfo"></span></p>
-    <div class="rowbar-actions">
-        <button class="btn btn-primary btn-sm" id="previewBtn">Preview</button>
-        <button class="btn btn-sm" id="refillBtn">Buffer bharo</button>
-        <button class="btn btn-sm" id="clearBtn">Images clear</button>
-        <button class="btn btn-sm" id="purgePoolBtn">Used delete</button>
-        <button class="btn btn-sm" id="purgeUnusedBtn">Bache hue delete</button>
-        <button class="btn btn-sm" id="wipeBtn">Sab clear</button>
-    </div>
-    <div class="rowbar-actions" style="margin-top:10px">
-        <button class="btn btn-sm" id="captionBtn">Caption preview</button>
-        <button class="btn btn-sm" id="postNowBtn">Ab post karo</button>
-    </div>
-    <pre id="captionBox" class="small"></pre>
-    <div id="readyGrid" class="grid2"></div>
-</div>
-
-<div class="card">
-    <h2 class="h2">Import</h2>
-    <p class="muted small" id="importHint">
-        {% if page.section == "islam" %}
-        Islam: hadith,translation(optional),source:category — jaise <code>hadith,bangla,Muslim 12:qabr</code>
-        {% elif page.section == "english" %}
-        English: sentence,translation — pehla column zaroori
-        {% else %}
-        News me import ki zaroorat nahi — News settings se fetch karo
-        {% endif %}
-    </p>
-    <form id="importForm" class="grid gap">
-        <label>File (CSV/TXT)
-            <input type="file" name="file" accept=".csv,.txt">
-        </label>
-        <label>Language (optional)
-            <select name="lang">
-                <option value="">—</option>
-                {% for key in LANGS.get(page.section or '', ()) %}
-                <option value="{{ key }}">{{ key }}</option>
+        <label>Region
+            <select id="newsRegion">
+                {% for r in ["in","us","gb","bd","ae","world"] %}
+                <option value="{{ r }}" {% if (page.news_region or 'in' )==r %}selected{% endif %}>{{ r }}</option>
                 {% endfor %}
             </select>
         </label>
-        <label>Ya seedha paste
-            <textarea name="text" rows="6" placeholder="ek line = ek entry"></textarea>
+        <label>Subreddit (trending)
+            <input id="newsSub" value="{{ page.news_sub or 'worldnews' }}">
         </label>
-        <button class="btn btn-primary" type="submit">Import</button>
-    </form>
-    <p class="small" id="importMsg"></p>
-</div>
-
-<div class="card">
-    <h2 class="h2">Posting</h2>
-    <div class="switchrow">
-        <span>Auto posting</span>
-        <input type="checkbox" id="enableToggle" {% if page.enabled %}checked{% endif %}>
+        <label>Template
+            <select id="newsTpl">
+                {% for i in range(1, NEWS_TPL_COUNT + 1) %}
+                <option value="{{ i }}" {% if (page.template or 1)==i %}selected{% endif %}>T{{ i }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <label>Category (manual)
+            <select id="newsCat">
+                <option value="">—</option>
+                {% for c in news_cats %}
+                <option value="{{ c.id }}" {% if page.news_category==c.id %}selected{% endif %}>{{ c.name }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <div class="rowbar-actions">
+            <button class="btn btn-sm" id="newsFetchBtn">News fetch</button>
+            <button class="btn btn-sm" id="newsCatAddBtn">Category add</button>
+            <button class="btn btn-sm" id="newsCatDelBtn">Category delete</button>
+        </div>
+        <p class="small" id="newsMsg"></p>
     </div>
-    <p class="small">Status: <b id="statusText">{{ page.status }}</b> · agla: <span id="nextText">{{ page.next_post_at
-            or "—" }}</span></p>
-</div>
-<div class="card" id="tagCard">
-    <h2 class="h2">Caption hashtags</h2>
-    <p class="muted small">Space se alag karke likho. Yahi tags post ke caption me sabse niche jayenge.</p>
-    <textarea id="tagBox" rows="4" style="width:100%"></textarea>
-    <div class="rowbar-actions">
-        <button class="btn btn-sm btn-primary" id="tagSave">Save tags</button>
-        <span class="small" id="tagMsg"></span>
+    {% else %}
+    <div class="card">
+        <h2 class="h2">Language</h2>
+        <p class="muted small">Is page pe kaunsi translation use hogi.</p>
+        <div class="chips big">
+            {% for key in LANGS.get(page.section or '', ()) %}
+            <button class="chip {% if key in (page.langs or []) %}on{% endif %}" data-lang="{{ key }}">{{ key
+                }}</button>
+            {% endfor %}
+        </div>
+    </div>
+    {% if page.section == "english" %}
+    <div class="card">
+        <h2 class="h2">Sentences per image</h2>
+        <p class="muted small">Ek image me kitne sentence aur unke translation aayenge (1-4).</p>
+        <div class="chips big">
+            {% for n in [1, 2, 3, 4] %}
+            <button class="chip {% if (page.sentences or 4) == n %}on{% endif %}" data-sent="{{ n }}">{{ n }}</button>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="card">
+        <h2 class="h2">Background</h2>
+        <p class="muted small">photo = folder se random photo, fresh = gradient, t1-t4 = design templates.</p>
+        <div class="chips big">
+            {% for m in ["image","fresh","t1","t2","t3","t4","gold"] %}
+            <button class="chip {% if (page.bg_mode or 'image')==m %}on{% endif %}" data-bg="{{ m }}">{{ m }}</button>
+            {% endfor %}
+        </div>
+        <label class="switchrow" style="margin-top:12px">
+            <span>Source color</span>
+            <input type="color" id="sourceColor" value="{{ page.source_color or '#085430' }}">
+        </label>
+    </div>
+
+    <div class="card">
+        <h2 class="h2">Post format</h2>
+        <p class="muted small">Ek post me kitni lines jayengi.</p>
+        <div class="chips big">
+            {% for m in ["image","fresh","t1","t2","t3","t4","gold","e5"] %}
+            <button class="chip {% if (page.bg_mode or 'image')==m %}on{% endif %}" data-bg="{{ m }}">{{ m }}</button>
+            {% endfor %}
+        </div>
+        <label class="switchrow" style="margin-top:12px">
+            <span>Question box</span>
+            <input type="checkbox" id="questionToggle" {% if page.question_box %}checked{% endif %}>
+        </label>
+    </div>
+    {% endif %}
+
+    <div class="card">
+        <h2 class="h2">Timing</h2>
+        <form id="scheduleForm" class="sched">
+            <div class="row3">
+                <label>Din start <input name="day_start" value="{{ page.schedule.day.start }}"></label>
+                <label>Din end <input name="day_end" value="{{ page.schedule.day.end }}"></label>
+            </div>
+            <div class="row3">
+                <label>Din min <input type="number" name="day_min" value="{{ page.schedule.day.min }}"></label>
+                <label>Din max <input type="number" name="day_max" value="{{ page.schedule.day.max }}"></label>
+            </div>
+            <div class="row3">
+                <label>Raat start <input name="night_start" value="{{ page.schedule.night.start }}"></label>
+                <label>Raat end <input name="night_end" value="{{ page.schedule.night.end }}"></label>
+            </div>
+            <div class="row3">
+                <label>Raat min <input type="number" name="night_min" value="{{ page.schedule.night.min }}"></label>
+                <label>Raat max <input type="number" name="night_max" value="{{ page.schedule.night.max }}"></label>
+            </div>
+            <button class="btn btn-primary" type="submit">Timing save</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h2 class="h2">Preview</h2>
+        <p class="muted small">Buffer target 3 hai, 1 bachne pe refill hota hai. <span id="poolInfo"></span></p>
+        <div class="rowbar-actions">
+            <button class="btn btn-primary btn-sm" id="previewBtn">Preview</button>
+            <button class="btn btn-sm" id="refillBtn">Buffer bharo</button>
+            <button class="btn btn-sm" id="clearBtn">Images clear</button>
+            <button class="btn btn-sm" id="purgePoolBtn">Used delete</button>
+            <button class="btn btn-sm" id="purgeUnusedBtn">Bache hue delete</button>
+            <button class="btn btn-sm" id="wipeBtn">Sab clear</button>
+        </div>
+        <div class="rowbar-actions" style="margin-top:10px">
+            <button class="btn btn-sm" id="captionBtn">Caption preview</button>
+            <button class="btn btn-sm" id="postNowBtn">Ab post karo</button>
+        </div>
+        <pre id="captionBox" class="small"></pre>
+        <div id="readyGrid"></div>
+    </div>
+
+    <div class="card">
+        <h2 class="h2">Import</h2>
+        <p class="muted small" id="importHint">
+            {% if page.section == "islam" %}
+            Islam: hadith,translation(optional),source:category — jaise <code>hadith,bangla,Muslim 12:qabr</code>
+            {% elif page.section == "english" %}
+            English: sentence, bangla, hindi, hinglish — jaise
+            <code>Keep the door shut.,দরজা বন্ধ রাখো।,दरवाज़ा बंद रखो।,Darwaza band rakho.</code>
+            {% else %}
+            News me import ki zaroorat nahi — News settings se fetch karo
+            {% endif %}
+        </p>
+        <form id="importForm" class="grid gap">
+            <label>File (CSV/TXT)
+                <input type="file" name="file" accept=".csv,.txt">
+            </label>
+            <label>Language (optional)
+                <select name="lang">
+                    <option value="">—</option>
+                    {% for key in LANGS.get(page.section or '', ()) %}
+                    <option value="{{ key }}">{{ key }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+            <label>Ya seedha paste
+                <textarea name="text" rows="6" placeholder="ek line = ek entry"></textarea>
+            </label>
+            <div class="import-map">
+                <label>Column 1
+                    <select name="p1">
+                        {% if page.section == "english" %}
+                        <option value="english">sentence (english)</option>
+                        {% else %}
+                        <option value="hadith_roman">hadith</option>
+                        {% endif %}
+                    </select>
+                </label>
+                <label>Column 2
+                    <select name="p2">
+                        <option value="">(khali)</option>
+                        <option value="bangla">bangla</option>
+                        <option value="hindi">hindi</option>
+                        <option value="hinglish">hinglish</option>
+                        {% if page.section == "islam" %}<option value="english">english</option>{% endif %}
+                    </select>
+                </label>
+                <label>Column 3
+                    <select name="p3">
+                        <option value="">(khali)</option>
+                        <option value="bangla">bangla</option>
+                        <option value="hindi">hindi</option>
+                        <option value="hinglish">hinglish</option>
+                        {% if page.section == "islam" %}<option value="english">english</option>{% endif %}
+                    </select>
+                </label>
+            </div>
+            {% if page.section == "english" %}
+            <pre class="small">Actions are judged by intentions.,নিয়তের উপর আমল নির্ভর,नियत के अनुसार अमल,niyat ke hisaab se amal
+            "Patience, then reward",ধৈর্য ধরো,,sabr karo
+            Actions are judged by intentions.,,,</pre>
+            {% elif page.section == "islam" %}
+            <pre class="small">إنما الأعمال بالنيات,নিয়তের উপর আমল নির্ভর,niyat ke hisaab se amal,বুখারী:qabr
+            "যে ব্যক্তি ধৈর্য ধরে, সে পুরস্কার পায়",ধৈর্য ধরো,,তিরমিজি:qabr
+            إنما الأعمال بالنيات,,,মুসলিম</pre>
+            {% endif %}
+            {% if page.section == "english" %}
+            <p class="small muted">CSV order: <b>sentence, bangla, hindi, hinglish</b> — pehla column zaroori, baaki
+                khali
+                chhod sakte ho. Har line comma se alag. Text me comma ho to us column ko double quotes me rakho.</p>
+            {% elif page.section == "islam" %}
+            <p class="small muted">CSV order: <b>hadith, translation, translation, source:category</b> — hadith aur
+                source
+                zaroori. Category source ke aakhir me colon ke baad. Text me comma ho to double quotes me rakho.</p>
+            {% endif %}
+            <button class="btn btn-primary" type="submit">Import</button>
+        </form>
+        <p class="small" id="importMsg"></p>
+    </div>
+
+    <div class="card">
+        <h2 class="h2">Posting</h2>
+        <div class="switchrow">
+            <span>Auto posting</span>
+            <input type="checkbox" id="enableToggle" {% if page.enabled %}checked{% endif %}>
+        </div>
+        <p class="small">Status: <b id="statusText">{{ page.status }}</b> · agla: <span id="nextText">{{
+                page.next_post_at or "—" }}</span></p>
+    </div>
+
+    <div class="card" id="voiceCard" style="display:none">
+        <h2 class="h2">Voice</h2>
+        <p class="muted small">Card ka text voice me padha jayega. Video voice ki length tak lamba hoga (max 30s, 720p).
+        </p>
+        <label class="switchrow"><input type="checkbox" id="voiceToggle"> <span>Voice chahiye</span></label>
+        <label class="switchrow"><span>Gender</span>
+            <select id="voiceGender">
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+            </select>
+        </label>
+        <label>Voice speed <span id="voiceRateVal">-6</span>%
+            <input type="range" id="voiceRate" min="-50" max="50" step="1" value="-6">
+        </label>
+        <label class="switchrow"><input type="checkbox" id="hlToggle"> <span>Text highlight</span></label>
+        <label class="switchrow"><input type="checkbox" id="lineToggle"> <span>Line animation</span></label>
+        <label class="switchrow"><input type="checkbox" id="ulToggle"> <span>Underline animation</span></label>
+        <div id="ulBox" style="display:none">
+            <div class="chips" id="ulStyle">
+                <button type="button" class="chip on" data-style="underline">Underline</button>
+                <button type="button" class="chip" data-style="highlight">Highlight</button>
+            </div>
+            <label>Opacity <span id="ulAlphaVal">38</span>%
+                <input type="range" id="ulAlpha" min="5" max="100" step="1" value="38">
+            </label>
+            <div class="row3">
+                <label>English color <input type="color" id="ulColorEn"></label>
+                <label>English px <input type="number" id="ulPxEn" min="1" max="24"></label>
+            </div>
+            <div class="row3">
+                <label>Bangla color <input type="color" id="ulColorBn"></label>
+                <label>Bangla px <input type="number" id="ulPxBn" min="1" max="24"></label>
+            </div>
+            <div class="row3">
+                <label>Hindi/Hinglish color <input type="color" id="ulColorHi"></label>
+                <label>Hindi/Hinglish px <input type="number" id="ulPxHi" min="1" max="24"></label>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" id="tagCard">
+        <h2 class="h2">Caption hashtags</h2>
+        <p class="muted small">Space se alag karke likho. Yahi tags post ke caption me sabse niche jayenge.</p>
+        <textarea id="tagBox" rows="4" style="width:100%"></textarea>
+        <div class="rowbar-actions">
+            <button class="btn btn-sm btn-primary" id="tagSave">Save tags</button>
+            <span class="small" id="tagMsg"></span>
+        </div>
+    </div>
+
+    <div class="card" id="reelCard" style="display:none">
+        <h2 class="h2">Reel mode</h2>
+        <p class="muted small">On hone pe image post nahi hogi — us image + category ka music se video banega aur Reel
+            upload
+            hoga.</p>
+        <label class="switchrow"><input type="checkbox" id="reelToggle"> <span>Post reel</span></label>
+        <label class="switchrow" id="reelMusicRow" style="display:none"><input type="checkbox" id="reelMusic">
+            <span>Music</span></label>
+        <label>Music volume <span id="musicVolVal">20</span>%
+            <input type="range" id="musicVol" min="0" max="100" step="5" value="20">
+        </label>
+        <div class="rowbar-actions" id="reelModes"></div>
+        <p class="small" id="reelInfo"></p>
+    </div>
+
+    <div class="card" id="folderCard" style="display:none">
+        <h2 class="h2">Folders</h2>
+        <p class="muted small">Background photo aur music, dono category ke hisaab se. Hadith ki category = usi folder
+            ka
+            photo aur music.</p>
+        <div class="rowbar-actions">
+            <input id="fKind" type="hidden" value="bg">
+            <select id="fKindSel">
+                <option value="bg">Background photos</option>
+                <option value="music">Music</option>
+            </select>
+            <input id="fName" placeholder="naya folder (jaise qabr)">
+            <button class="btn btn-sm" id="fNew">Folder banao</button>
+        </div>
+        <p class="small" id="fLoose"></p>
+        <div id="fList"></div>
+        <div id="fFiles"></div>
+        <div class="rowbar-actions" style="margin-top:10px">
+            <input id="fCat" placeholder="folder (jaise qabr)">
+            <input type="file" id="fFile" multiple>
+            <button class="btn btn-sm" id="fUp">Upload</button>
+        </div>
     </div>
 </div>
-<div class="card" id="reelCard" style="display:none">
-    <h2 class="h2">Reel mode</h2>
-    <p class="muted small">On hone pe image post nahi hogi — us image + category ka music se 15s video banega aur Reel
-        upload hoga.</p>
-    <label class="switchrow"><input type="checkbox" id="reelToggle"> <span>Post reel</span></label>
-    <label class="switchrow" id="reelMusicRow" style="display:none"><input type="checkbox" id="reelMusic">
-        <span>Music</span></label>
 
+<div id="lightbox" class="lightbox" hidden><img id="lightboxImg" alt=""></div>
 
-    <div class="rowbar-actions" id="reelModes"></div>
-    <p class="small" id="reelInfo"></p>
-</div>
-
-<div class="card" id="folderCard" style="display:none">
-    <h2 class="h2">Folders</h2>
-    <p class="muted small">Background photo aur music, dono category ke hisaab se. Hadith ki category = usi folder ka
-        photo aur music.</p>
-    <div class="rowbar-actions">
-        <input id="fKind" type="hidden" value="bg">
-        <select id="fKindSel">
-            <option value="bg">Background photos</option>
-            <option value="music">Music</option>
-        </select>
-        <input id="fName" placeholder="naya folder (jaise qabr)">
-        <button class="btn btn-sm" id="fNew">Folder banao</button>
-    </div>
-    <p class="small" id="fLoose"></p>
-    <div id="fList"></div>
-    <div id="fFiles"></div>
-    <div class="rowbar-actions" style="margin-top:10px">
-        <input id="fCat" placeholder="folder (jaise qabr)">
-        <input type="file" id="fFile" multiple>
-        <button class="btn btn-sm" id="fUp">Upload</button>
-    </div>
-</div>
-<script src="/static/js/reel.js?v=2" defer></script>
-
+<script src="/static/js/reel.js?v=6" defer></script>
 <script>window.PAGE_ID = "{{ page.id }}";</script>
 <script>
     (() => {
         const box = document.getElementById("tagBox");
         const msg = document.getElementById("tagMsg");
-        if (!box) return;
-        fetch(`/api/pages/${window.PAGE_ID}/state`).then((x) => x.json()).then((s) => {
-            box.value = (s.hashtags || []).join(" ");
-        }).catch(() => { });
-        document.getElementById("tagSave").onclick = async () => {
-            const r = await fetch(`/api/pages/${window.PAGE_ID}/hashtags`, {
-                method: "POST", headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ tags: box.value }),
-            });
-            if (!r.ok) { msg.textContent = "Fail"; return; }
-            const d = await r.json();
-            box.value = (d.tags || []).join(" ");
-            msg.textContent = `save: ${(d.tags || []).length}`;
-        };
+        if (box) {
+            fetch(`/api/pages/${window.PAGE_ID}/state`).then((x) => x.json()).then((s) => {
+                box.value = (s.hashtags || []).join(" ");
+            }).catch(() => { });
+            document.getElementById("tagSave").onclick = async () => {
+                const r = await fetch(`/api/pages/${window.PAGE_ID}/hashtags`, {
+                    method: "POST", headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ tags: box.value }),
+                });
+                if (!r.ok) { msg.textContent = "Fail"; return; }
+                const d = await r.json();
+                box.value = (d.tags || []).join(" ");
+                msg.textContent = `save: ${(d.tags || []).length}`;
+            };
+        }
+        const lb = document.getElementById("lightbox");
+        const lbi = document.getElementById("lightboxImg");
+        document.addEventListener("click", (e) => {
+            const img = e.target.closest("#readyGrid img");
+            if (img) { lbi.src = img.src; lb.hidden = false; }
+            else if (e.target === lb) { lb.hidden = true; lbi.src = ""; }
+        });
     })();
 </script>
 {% endblock %}

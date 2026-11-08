@@ -16,7 +16,96 @@ RW, RH = 1080, 1920
 RIPPLE_AMP = 11.0
 RIPPLE_LAM = 500.0
 RIPPLE_PERIOD = 10.0
+HL_COLORS = {"english": "yellow@0.42", "bangla": "pink@0.42",
+             "hinglish": "lightgreen@0.42", "hindi": "lightblue@0.42"}
 
+UL_COLORS = {"en": "#FFD400", "bn": "#00E5A0", "hi": "#FF5A5F"}
+UL_PX = {"en": 6, "bn": 6, "hi": 6}
+UL_GAP = 3
+UL_KEY = {"english": "en", "bangla": "bn", "hindi": "hi", "hinglish": "hi"}
+
+
+def _ul_key(lang):
+    return UL_KEY.get(str(lang or "english"), "en")
+
+
+def _ul_hex(value, fallback):
+    v = str(value or "").strip().lstrip("#")
+    if len(v) == 3:
+        v = "".join(c * 2 for c in v)
+    if len(v) != 6 or any(c not in "0123456789abcdefABCDEF" for c in v):
+        v = fallback.lstrip("#")
+    return "0x" + v
+
+
+def _ul_chain(track, words, out_w, out_h, src_w, src_h, px, colors, gap=UL_GAP,
+              style="underline", alpha=38):
+    if not track or not words:
+        return ""
+    k = float(out_w) / float(src_w)
+    oy = (src_h - SRC_H) // 2
+    hi = style == "highlight"
+    op = max(0.05, min(1.0, float(alpha) / 100.0))
+
+    segs = {}
+    for wd in words:
+        seg = wd.get("seg")
+        if seg is not None and track.get(seg):
+            segs.setdefault(seg, []).append(wd)
+    if not segs:
+        return ""
+
+    chain = []
+    for seg in sorted(segs):
+        wds = segs[seg]
+        t0 = float(wds[0]["t0"])
+        t1 = float(wds[-1]["t1"])
+        if t1 - t0 < 0.25:
+            t1 = t0 + 0.25
+        dur = t1 - t0
+
+        lines = sorted(track[seg], key=lambda l: l["y0"])
+        key = _ul_key(lines[0].get("k") or "english")
+        p = max(1, min(24, int(round(float((px or {}).get(key) or UL_PX[key])))))
+        col = _ul_hex((colors or {}).get(key), UL_COLORS[key])
+        gap_px = max(3, int(round(lines[0]["h"] * 0.10)))
+
+        geo = []
+        for l in lines:
+            if hi:
+                bx = max(0, int(round(l["x0"] * k)) - 4)
+                bw = max(2.0, (l["x1"] - l["x0"]) * k + 8)
+                bh = max(2, int(round(l["h"] * 1.26 * k)))
+                by = int(round((l["y0"] - l["h"] * 0.12 + oy) * k))
+            else:
+                bx = int(round(l["x0"] * k))
+                bw = max(2.0, (l["x1"] - l["x0"]) * k)
+                bh = p
+                by = int(round((l["y1"] + gap_px + oy) * k))
+            lim = int(round((l["yb"] + oy) * k)) - bh - 1
+            by = max(0, min(by, max(0, lim), out_h - bh - 1))
+            geo.append((bx, bw, by, bh))
+        total = sum(g[1] for g in geo)
+        if total < 2:
+            continue
+
+        steps = max(8, min(24, int(round(dur * 12))))
+        print(f"[ul] seg={seg} lines={len(geo)} t={t0:.2f}->{t1:.2f}")
+        for s in range(1, steps + 1):
+            filled = total * s / steps
+            ta = t0 + dur * s / steps
+            used = 0.0
+            for bx, bw, by, bh in geo:
+                take = min(bw, filled - used)
+                used += bw
+                if take < 1:
+                    continue
+                chain.append(
+                    f"drawbox=x={bx}:y={by}:w={int(round(take))}:h={bh}:"
+                    f"color={col}@{1 if not hi else round(op, 3)}:t=fill:"
+                    f"enable='gte(t,{ta:.3f})'"
+                )
+    return ",".join(chain)
 
 def _ffmpeg():
     import imageio_ffmpeg
@@ -139,27 +228,101 @@ def _ripple_maps(fps):
 
 
 def build(image_path, section, category, mode="zoom", seconds=None,
-          plain_path=None, full_path=None, use_music=True):
+          plain_path=None, full_path=None, use_music=True,
+          voice_path=None, voice_len=0, words=None, boxes=None, hl=True,
+          line=True, seps=None, ul=False, ul_px=None, ul_colors=None, track=None, ul_style=None, ul_alpha=None, music_vol=None):
     """(video_path, music_path) ya (None, None)."""
     music = pick_music(section, category) if use_music else None
     silent = music is None
+    mv = max(0.0, min(1.0, float(music_vol if music_vol is not None else 20) / 100.0))
 
     mode = mode if mode in MODES else "zoom"
     seconds = seconds or config.REEL_SECONDS
+    if voice_path:
+        seconds = min(30.0, max(8.0, float(voice_len or 0) + 1.0))
+    seconds = round(float(seconds), 3)
     fps = config.REEL_FPS
-    frames = seconds * fps
+    frames = max(1, int(round(seconds * fps)))
     out = config.VIDEO_DIR / f"reel_{uuid.uuid4().hex[:10]}.mp4"
     layered = mode == "ripple" and full_path
 
-    frame = full_path if layered else _frame(image_path)
+    if layered:
+        frame = full_path
+    elif voice_path and full_path:
+        frame = _frame(full_path)
+    else:
+        frame = _frame(image_path)
     extra = []
+    small = bool(voice_path) and mode != "ripple"
+    w, h = (720, 1280) if small else (W, H)
 
-    fade = f"[1:a]afade=t=out:st={max(0, seconds - 1.5)}:d=1.5[a]"
+    hl_chain = ""
+    ul_chain = ""
+    if hl and voice_path and words and boxes and seps and line:
+        k = w / W
+        oy = (H - SRC_H) // 2
+        hb = []
+        prev = {}
+        for i, wd in enumerate(words[:40]):
+            if i >= len(boxes):
+                break
+            b = boxes[i]
+            ls = b["ls"]
+            pe = prev.get(ls, ls)
+            dur = max(0.03, wd["t1"] - wd["t0"])
+            col = HL_COLORS.get(b.get("k") or "english", "yellow@0.42")
+            yy = max(0, int((b["y"] + oy) * k))
+            hh = max(2, int(b["h"] * k))
+            for s in range(1, 5):
+                fr = s / 4
+                xe = pe + (b["xe"] - pe) * fr
+                tt = wd["t0"] + dur * fr
+                xx = max(0, int(ls * k))
+                ww = max(2, int((xe - ls) * k) + 1)
+                hb.append(f"drawbox=x={xx}:y={yy}:w={ww}:h={hh}:color={col}"
+                          f":t=fill:enable='gte(t,{tt:.2f})'")
+            prev[ls] = b["xe"]
+        if hb:
+            hl_chain = "," + ",".join(hb)
+            print("[hl]", len(words), len(boxes), len(hl_chain))
+
+    if ul and voice_path and words and track:
+        uc = _ul_chain(track, words, w, h, W, H, ul_px, ul_colors,
+                       style=(ul_style or "underline"), alpha=(ul_alpha or 38))
+        if uc:
+            ul_chain = "," + uc
+            print("[ul]", len(uc))
+
+    fade = f"afade=t=out:st={max(0, seconds - 1.5)}:d=1.5[a]"
     music_in = (["-f", "lavfi", "-i", "anullsrc=r=48000:cl=stereo"] if silent
                 else ["-stream_loop", "-1", "-i", str(music)])
 
-    if mode == "ripple":
+    if voice_path:
+        cmd = [_ffmpeg(), "-y", "-loop", "1", "-framerate", str(fps),
+               "-i", str(frame), *music_in]
+    elif mode == "ripple":
         xv, yv = _ripple_maps(fps)
+        cmd = [_ffmpeg(), "-y", "-loop", "1", "-framerate", str(fps), "-i", str(frame),
+               *music_in,
+               "-stream_loop", "-1", "-i", str(xv),
+               "-stream_loop", "-1", "-i", str(yv)]
+    else:
+        cmd = [_ffmpeg(), "-y", "-i", str(frame), *music_in]
+
+    vidx = cmd.count("-i")
+    if voice_path:
+        cmd += ["-i", str(voice_path)]
+        audio = (f"[1:a]volume={mv}[mus];"
+                 f"[{vidx}:a]adelay=250|250[vo];"
+                 f"[mus][vo]amix=inputs=2:duration=longest:dropout_transition=0,"
+                 + fade)
+    else:
+        audio = f"[1:a]volume={mv}[mus];[mus]" + fade
+
+    if voice_path:
+        vf = (f"[0:v]scale={w}:{h}{hl_chain}{ul_chain},"
+              f"fade=t=out:st={max(0, seconds - 1.5)}:d=1.5[v];" + audio)
+    elif mode == "ripple":
         vf = (
             f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,"
             f"crop={W}:{H},gblur=sigma=22[bg];"
@@ -168,15 +331,10 @@ def build(image_path, section, category, mode="zoom", seconds=None,
             f"[2:v]format=gray[xm];"
             f"[3:v]format=gray[ym];"
             f"[b][xm][ym]displace=edge=mirror,setsar=1,"
-            f"fade=t=out:st={max(0, seconds - 2)}:d=2[v];" + fade
+            f"fade=t=out:st={max(0, seconds - 2)}:d=2[v];" + audio
         )
-        cmd = [_ffmpeg(), "-y", "-loop", "1", "-framerate", str(fps), "-i", str(frame),
-               *music_in,
-               "-stream_loop", "-1", "-i", str(xv),
-               "-stream_loop", "-1", "-i", str(yv)]
     else:
-        vf = (f"[0:v]scale={W}:{H},{_chain(mode, frames, fps)}[v];" + fade)
-        cmd = [_ffmpeg(), "-y", "-i", str(frame), *music_in]
+        vf = (f"[0:v]scale={w}:{h},{_chain(mode, frames, fps)}[v];" + audio)
 
     vpreset, vcrf = ("veryfast", "23") if mode == "ripple" else ("ultrafast", "27")
     cmd += [
@@ -184,8 +342,7 @@ def build(image_path, section, category, mode="zoom", seconds=None,
         "-filter_complex", vf,
         "-map", "[v]", "-map", "[a]",
         "-t", str(seconds),
-        "-threads", "1", "-filter_threads", "1",
-        "-threads", "1", "-filter_threads", "1",
+        "-threads", "1",
         "-c:v", "libx264", "-preset", vpreset, "-crf", vcrf,
         "-pix_fmt", "yuv420p", "-r", str(fps),
         "-c:a", "aac", "-b:a", "96k",

@@ -1,6 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 
+<style>
+    .pages {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+
+    @media (max-width: 560px) {
+        .pages {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
 {% if not connected %}
 <section class="hero card">
     <h1>Facebook Page Automation</h1>
@@ -19,10 +33,6 @@
     <h1 class="h1">Pages</h1>
     <div class="rowbar-actions">
         <button class="btn btn-ghost" id="syncBtn">Refresh pages</button>
-        <button class="btn btn-ghost" id="dryRunBtn">{{ "DRY RUN: ON" if settings.dry_run else "DRY RUN: OFF" }}</button>
-        <button class="btn btn-ghost" id="dryRunBtn">
-            {{ "DRY RUN: ON" if settings.dry_run else "DRY RUN: OFF" }}
-        </button>
     </div>
 </div>
 
@@ -33,9 +43,8 @@
 <div class="grid pages">
     {% for p in pages %}
     <article class="card page-card sec-{{ p.section or 'none' }}" data-id="{{ p.id }}">
-        {% if p.section and p.remaining <= 10 %} <div class="warnbar">Data khatam ho raha hai — {{ p.remaining }} bache
-</div>
-{% endif %}
+        {% if p.section and p.remaining <= 10 %}<div class="warnbar">Data khatam ho raha hai — {{ p.remaining }} bache
+</div>{% endif %}
 <div class="pc-head">
     <div>
         <h2 class="pc-name">{{ p.name }}</h2>
@@ -59,7 +68,7 @@
 
 <div class="pc-foot">
     <span class="status" data-status="{{ p.status }}">{{ p.status }}</span>
-    <span class="small muted" data-next>next: {{ p.next_ist or "—" }}</span>
+    <span class="small muted" data-next>next: {{ p.next_post_at or "—" }}</span>
     <a class="btn btn-sm" href="/page/{{ p.id }}">Config</a>
 </div>
 </article>

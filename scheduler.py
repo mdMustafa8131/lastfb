@@ -10,6 +10,7 @@ import reel
 import news
 import config
 import hashtags
+import voice
 import pool
 import poster
 import store
@@ -89,6 +90,27 @@ def _read_meta(image_path):
         return None
 
 
+def _render_pair(page, meta, boxes, seps, track):
+    cat = "general" if page["section"] == "english" else (
+        (meta["items"][0].get("category") or "") if meta.get("items") else "")
+    if page["section"] == "islam":
+        return render.render_islam_gold_pair(
+            meta["items"][0], page.get("langs") or [], cat, track), cat
+
+    bmode = page.get("bg_mode") or "e5"
+    if bmode == "e5":
+        pair = render.render_english_clean_pair(
+            meta["items"], page.get("langs") or [],
+            page.get("brand") or page.get("name"),
+            bool(page.get("question_box", True)), boxes, seps, track)
+    else:
+        pair = render.render_english_pair(
+            meta["items"], bool(page.get("question_box", True)),
+            page.get("langs") or [], bmode,
+            page.get("brand") or page.get("name"), boxes, seps, track)
+    return pair, cat
+
+
 async def _post_once(page):
     files = pool.ready_files(page["id"])
     if not files:
@@ -110,27 +132,54 @@ async def _post_once(page):
     use_reel = bool(page.get("reel")) and page["section"] in ("islam", "english")
     video = None
     pair = []
+    voice_p = None
+    words, boxes, seps, track = [], [], [], {}
     if use_reel:
-        cat = "general" if page["section"] == "english" else (
-            (meta["items"][0].get("category") or "") if meta.get("items") else "")
-        if page["section"] == "islam":
-            full_i, plain_i = render.render_islam_gold_pair(
-                meta["items"][0], page.get("langs") or [], cat)
-        else:
-            full_i, plain_i = render.render_english_clean_pair(
-                meta["items"], page.get("langs") or [], page.get("brand_name"))
-        pair = [full_i, plain_i]
+        (full_i, plain_i), cat = _render_pair(page, meta, boxes, seps, track)
+
+        voice_len = 0
+        if page.get("voice_on") and page.get("section") in ("english", "islam"):
+            segs = []
+            for seg in sorted(track):
+                ln = track[seg][0]
+                txt = (ln.get("t") or "").strip()
+                if txt:
+                    segs.append((ln.get("k") or "english", txt))
+            if page.get("section") == "english" and bool(page.get("question_box", True)):
+                segs.append(("english", "Please comment below."))
+            voice_p, voice_len, words = await voice.build(
+                segs, page.get("voice_gender") or "female",
+                f"{int(page.get('voice_rate', -6)):+d}%")
+            print("[voice]", page["section"], len(track), len(segs),
+                  bool(voice_p), voice_len, len(words))
+
         video, _m = reel.build(
             image, page["section"], cat, page.get("reel_mode") or "zoom",
             plain_path=plain_i, full_path=full_i,
             use_music=(True if page["section"] == "islam"
-                       else bool(page.get("reel_music", True))))
+                       else bool(page.get("reel_music", True))),
+            voice_path=voice_p, voice_len=voice_len, words=words, boxes=boxes,
+            seps=seps,
+            hl=bool(page.get("hl_on", True)) and (page.get("ul_style") or "underline") != "highlight",
+            line=bool(page.get("line_on", True)), track=track,
+            ul=bool(page.get("ul_on")) and bool(voice_p),
+            ul_px={"en": page.get("ul_px_en") or 6,
+                   "bn": page.get("ul_px_bn") or 6,
+                   "hi": page.get("ul_px_hi") or 6},
+            ul_colors={"en": page.get("ul_color_en"),
+                       "bn": page.get("ul_color_bn"),
+                       "hi": page.get("ul_color_hi")},
+            ul_style=page.get("ul_style") or "underline",
+            ul_alpha=page.get("ul_alpha") or 38)
 
         if not video:
             for p in pair:
                 p.unlink(missing_ok=True)
+            if voice_p:
+                voice_p.unlink(missing_ok=True)
             store.update_page(page["id"], status="reel_wait")
             return
+
     settings = store.get_settings()
     dry = bool(settings.get("dry_run"))
     ok = False
@@ -156,6 +205,8 @@ async def _post_once(page):
             video.unlink(missing_ok=True)
         for p in pair:
             p.unlink(missing_ok=True)
+        if voice_p:
+            voice_p.unlink(missing_ok=True)
         store.update_page(page["id"], status="error", last_err=last_err,
                           fail_count=(page.get("fail_count") or 0) + 1)
         return
@@ -168,6 +219,8 @@ async def _post_once(page):
         video.unlink(missing_ok=True)
     for p in pair:
         p.unlink(missing_ok=True)
+    if voice_p:
+        voice_p.unlink(missing_ok=True)
     image.unlink(missing_ok=True)
     image.with_suffix(".json").unlink(missing_ok=True)
 
@@ -211,25 +264,52 @@ async def post_now(page_id):
     use_reel = bool(page.get("reel")) and page["section"] in ("islam", "english")
     video = None
     pair = []
-
+    voice_p = None
+    words, boxes, seps, track = [], [], [], {}
     if use_reel:
-        cat = "general" if page["section"] == "english" else (
-            (meta["items"][0].get("category") or "") if meta.get("items") else "")
-        if page["section"] == "islam":
-            full_i, plain_i = render.render_islam_gold_pair(
-                meta["items"][0], page.get("langs") or [], cat)
-        else:
-            full_i, plain_i = render.render_english_clean_pair(
-                meta["items"], page.get("langs") or [], page.get("brand_name"))
-        pair = [full_i, plain_i]
+        (full_i, plain_i), cat = _render_pair(page, meta, boxes, seps, track)
+
+        voice_len = 0
+        if page.get("voice_on") and page.get("section") in ("english", "islam"):
+            segs = []
+            for seg in sorted(track):
+                ln = track[seg][0]
+                txt = (ln.get("t") or "").strip()
+                if txt:
+                    segs.append((ln.get("k") or "english", txt))
+            if page.get("section") == "english" and bool(page.get("question_box", True)):
+                segs.append(("english", "Please comment below."))
+            voice_p, voice_len, words = await voice.build(
+                segs, page.get("voice_gender") or "female",
+                f"{int(page.get('voice_rate', -6)):+d}%")
+            print("[voice]", page["section"], len(track), len(segs),
+                  bool(voice_p), voice_len, len(words))
+
         video, _m = reel.build(
             image, page["section"], cat, page.get("reel_mode") or "zoom",
             plain_path=plain_i, full_path=full_i,
             use_music=(True if page["section"] == "islam"
-                       else bool(page.get("reel_music", True))))
+                       else bool(page.get("reel_music", True))),
+            voice_path=voice_p, voice_len=voice_len, words=words, boxes=boxes,
+            seps=seps,
+            hl=bool(page.get("hl_on", True)) and (page.get("ul_style") or "underline") != "highlight",
+            line=bool(page.get("line_on", True)), track=track,
+            ul=bool(page.get("ul_on")) and bool(voice_p),
+            ul_px={"en": page.get("ul_px_en") or 6,
+                   "bn": page.get("ul_px_bn") or 6,
+                   "hi": page.get("ul_px_hi") or 6},
+            ul_colors={"en": page.get("ul_color_en"),
+                       "bn": page.get("ul_color_bn"),
+                       "hi": page.get("ul_color_hi")},
+            ul_style=page.get("ul_style") or "underline",
+            ul_alpha=page.get("ul_alpha") or 38)
+
+
         if not video:
             for p in pair:
                 p.unlink(missing_ok=True)
+            if voice_p:
+                voice_p.unlink(missing_ok=True)
             return {"ok": False, "error": "Reel ban nahi payi (music ya render fail)"}
 
     try:
@@ -243,6 +323,8 @@ async def post_now(page_id):
             video.unlink(missing_ok=True)
         for p in pair:
             p.unlink(missing_ok=True)
+        if voice_p:
+            voice_p.unlink(missing_ok=True)
         store.update_page(page_id, status="error", last_err=str(e)[:200],
                           fail_count=(page.get("fail_count") or 0) + 1)
         return {"ok": False, "error": str(e)[:200]}
@@ -251,6 +333,8 @@ async def post_now(page_id):
         video.unlink(missing_ok=True)
     for p in pair:
         p.unlink(missing_ok=True)
+    if voice_p:
+        voice_p.unlink(missing_ok=True)
 
     if page["section"] == "news":
         for it in (meta.get("items") or []):

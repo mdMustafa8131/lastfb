@@ -1,10 +1,410 @@
 [
   {
+    "english": "I pray for God's pleasure.",
+    "bangla": "আমি আল্লাহর সন্তুষ্টির জন্য নামাজ পড়ি।",
+    "hindi": "",
+    "hinglish": "Main Allah ki khushi ke liye namaz padhta hoon.",
+    "id": "ddb0b76981af",
+    "used": true
+  },
+  {
+    "english": "She helps others for reward.",
+    "bangla": "সে সওয়াবের জন্য অন্যকে সাহায্য করে।",
+    "hindi": "",
+    "hinglish": "Woh sawab ke liye doosron ki madad karti hai.",
+    "id": "2a08152b604f",
+    "used": true
+  },
+  {
+    "english": "He studies with a good intention.",
+    "bangla": "সে ভালো নিয়তে পড়াশোনা করে।",
+    "hindi": "",
+    "hinglish": "Woh achhi niyat se padhai karta hai.",
+    "id": "87295348d16e",
+    "used": true
+  },
+  {
+    "english": "We fast for God's sake.",
+    "bangla": "আমরা আল্লাহর জন্য রোজা রাখি।",
+    "hindi": "",
+    "hinglish": "Hum Allah ke liye roza rakhte hain.",
+    "id": "fab32849cdd9",
+    "used": true
+  },
+  {
+    "english": "They give charity sincerely.",
+    "bangla": "তারা আন্তরিকভাবে দান করে।",
+    "hindi": "",
+    "hinglish": "Woh dil se sadqa dete hain.",
+    "id": "2562cf6e8904",
+    "used": true
+  },
+  {
+    "english": "I work to help my family.",
+    "bangla": "আমি পরিবারকে সাহায্য করতে কাজ করি।",
+    "hindi": "",
+    "hinglish": "Main family ki madad ke liye kaam karta hoon.",
+    "id": "cea8ae6fc13a",
+    "used": true
+  },
+  {
+    "english": "She smiles to spread joy.",
+    "bangla": "সে আনন্দ ছড়াতে হাসে।",
+    "hindi": "",
+    "hinglish": "Woh khushi phailane ke liye muskuratee hai.",
+    "id": "db95acf5100d",
+    "used": true
+  },
+  {
+    "english": "He speaks to bring peace.",
+    "bangla": "সে শান্তি আনতে কথা বলে।",
+    "hindi": "",
+    "hinglish": "Woh aman laane ke liye bolta hai.",
+    "id": "8209aadcd28a",
+    "used": true
+  },
+  {
+    "english": "We eat to gain strength.",
+    "bangla": "আমরা শক্তি পেতে খাই।",
+    "hindi": "",
+    "hinglish": "Hum taqat paane ke liye khate hain.",
+    "id": "9ee8bef89401",
+    "used": true
+  },
+  {
+    "english": "They learn to teach others.",
+    "bangla": "তারা অন্যকে শেখাতে শেখে।",
+    "hindi": "",
+    "hinglish": "Woh doosron ko sikhane ke liye seekhte hain.",
+    "id": "13b56890d4ea",
+    "used": true
+  },
+  {
+    "english": "I read to gain knowledge.",
+    "bangla": "আমি জ্ঞান পেতে পড়ি।",
+    "hindi": "",
+    "hinglish": "Main ilm paane ke liye padhta hoon.",
+    "id": "803a15ac9d6c",
+    "used": true
+  },
+  {
+    "english": "She saves money for hajj.",
+    "bangla": "সে হজের জন্য টাকা সঞ্চয় করে।",
+    "hindi": "",
+    "hinglish": "Woh Hajj ke liye paisa bachatee hai.",
+    "id": "cb7888802d95",
+    "used": true
+  },
+  {
+    "english": "He exercises to stay healthy.",
+    "bangla": "সে সুস্থ থাকতে ব্যায়াম করে।",
+    "hindi": "",
+    "hinglish": "Woh sehatmand rehne ke liye exercise karta hai.",
+    "id": "bfae8f2c927d",
+    "used": true
+  },
+  {
+    "english": "We forgive to please God.",
+    "bangla": "আমরা আল্লাহকে খুশি করতে ক্ষমা করি।",
+    "hindi": "",
+    "hinglish": "Hum Allah ko khush karne ke liye maaf karte hain.",
+    "id": "1c70a7462a75",
+    "used": true
+  },
+  {
+    "english": "They share food with neighbors.",
+    "bangla": "তারা প্রতিবেশীর সাথে খাবার ভাগ করে।",
+    "hindi": "",
+    "hinglish": "Woh padosiyon ke saath khana baantte hain.",
+    "id": "70bc34889ba2",
+    "used": true
+  },
+  {
+    "english": "I call my parents daily.",
+    "bangla": "আমি প্রতিদিন বাবা-মাকে ফোন করি।",
+    "hindi": "",
+    "hinglish": "Main roz apne maa-baap ko call karta hoon.",
+    "id": "78c1727f3d69",
+    "used": true
+  },
+  {
+    "english": "She wears hijab for modesty.",
+    "bangla": "সে শালীনতার জন্য হিজাব পরে।",
+    "hindi": "",
+    "hinglish": "Woh haya ke liye hijab pehanti hai.",
+    "id": "a88025b450da",
+    "used": true
+  },
+  {
+    "english": "He helps the poor for God.",
+    "bangla": "সে আল্লাহর জন্য গরিবকে সাহায্য করে।",
+    "hindi": "",
+    "hinglish": "Woh Allah ke liye gareebon ki madad karta hai.",
+    "id": "81d4863fb11f",
+    "used": true
+  },
+  {
+    "english": "We visit the sick for reward.",
+    "bangla": "আমরা সওয়াবের জন্য রোগী দেখতে যাই।",
+    "hindi": "",
+    "hinglish": "Hum sawab ke liye beemar ko dekhne jaate hain.",
+    "id": "25a43dd7d42f",
+    "used": true
+  },
+  {
+    "english": "They clean the mosque willingly.",
+    "bangla": "তারা স্বেচ্ছায় মসজিদ পরিষ্কার করে।",
+    "hindi": "",
+    "hinglish": "Woh khushi se masjid saaf karte hain.",
+    "id": "ab4baa580e70",
+    "used": true
+  },
+  {
+    "english": "I teach kids to earn reward.",
+    "bangla": "আমি সওয়াব পেতে শিশুদের পড়াই।",
+    "hindi": "",
+    "hinglish": "Main sawab ke liye bachchon ko padhata hoon.",
+    "id": "79df772aced1",
+    "used": true
+  },
+  {
+    "english": "She cooks food for her family.",
+    "bangla": "সে পরিবারের জন্য খাবার রান্না করে।",
+    "hindi": "",
+    "hinglish": "Woh family ke liye khana banatee hai.",
+    "id": "99aaa5bef62f",
+    "used": true
+  },
+  {
+    "english": "He plants trees for the future.",
+    "bangla": "সে ভবিষ্যতের জন্য গাছ লাগায়।",
+    "hindi": "",
+    "hinglish": "Woh mustaqbil ke liye ped lagata hai.",
+    "id": "5e117f06453c",
+    "used": true
+  },
+  {
+    "english": "We pray for our parents.",
+    "bangla": "আমরা বাবা-মার জন্য দোয়া করি।",
+    "hindi": "",
+    "hinglish": "Hum apne maa-baap ke liye dua karte hain.",
+    "id": "97291bd1e6c1",
+    "used": true
+  },
+  {
+    "english": "They respect elders sincerely.",
+    "bangla": "তারা বড়দের আন্তরিকভাবে সম্মান করে।",
+    "hindi": "",
+    "hinglish": "Woh buzurgon ki dil se izzat karte hain.",
+    "id": "2765bd735e47",
+    "used": true
+  },
+  {
+    "english": "I speak truth for justice.",
+    "bangla": "আমি ন্যায়ের জন্য সত্য বলি।",
+    "hindi": "",
+    "hinglish": "Main insaaf ke liye sach bolta hoon.",
+    "id": "90513587f8ff",
+    "used": true
+  },
+  {
+    "english": "She gives water to birds.",
+    "bangla": "সে পাখিকে পানি দেয়।",
+    "hindi": "",
+    "hinglish": "Woh parindon ko paani deti hai.",
+    "id": "177491eb2804",
+    "used": true
+  },
+  {
+    "english": "He reads Quran every morning.",
+    "bangla": "সে প্রতিদিন সকালে কুরআন পড়ে।",
+    "hindi": "",
+    "hinglish": "Woh roz subah Quran padhta hai.",
+    "id": "0f6b461991d5",
+    "used": true
+  },
+  {
+    "english": "We help friends in need.",
+    "bangla": "আমরা প্রয়োজনে বন্ধুকে সাহায্য করি।",
+    "hindi": "",
+    "hinglish": "Hum zaroorat mein doston ki madad karte hain.",
+    "id": "89e0fb8a01fa",
+    "used": true
+  },
+  {
+    "english": "They donate clothes for winter.",
+    "bangla": "তারা শীতের জন্য কাপড় দান করে।",
+    "hindi": "",
+    "hinglish": "Woh sardi ke liye kapde daan karte hain.",
+    "id": "3e1f866ca1be",
+    "used": true
+  },
+  {
+    "english": "I listen to learn from others.",
+    "bangla": "আমি অন্যদের থেকে শিখতে শুনি।",
+    "hindi": "",
+    "hinglish": "Main doosron se seekhne ke liye sunta hoon.",
+    "id": "e78a29e9e36a",
+    "used": true
+  },
+  {
+    "english": "She prays to find peace.",
+    "bangla": "সে শান্তি পেতে নামাজ পড়ে।",
+    "hindi": "",
+    "hinglish": "Woh sukoon paane ke liye namaz padhti hai.",
+    "id": "359805d9af25",
+    "used": true
+  },
+  {
+    "english": "He smiles to make others happy.",
+    "bangla": "সে অন্যকে খুশি করতে হাসে।",
+    "hindi": "",
+    "hinglish": "Woh doosron ko khush karne ke liye muskurate hain.",
+    "id": "b1501041375f",
+    "used": true
+  },
+  {
+    "english": "We work hard for honest earning.",
+    "bangla": "আমরা সৎ উপার্জনের জন্য পরিশ্রম করি।",
+    "hindi": "",
+    "hinglish": "Hum halal kamai ke liye mehnat karte hain.",
+    "id": "731215103a45",
+    "used": true
+  },
+  {
+    "english": "They feed guests with love.",
+    "bangla": "তারা ভালোবাসায় অতিথিকে খাওয়ায়।",
+    "hindi": "",
+    "hinglish": "Woh pyaar se mehmanon ko khilate hain.",
+    "id": "ac80cdd5a298",
+    "used": true
+  },
+  {
+    "english": "I write to share knowledge.",
+    "bangla": "আমি জ্ঞান ভাগ করতে লিখি।",
+    "hindi": "",
+    "hinglish": "Main ilm baantne ke liye likhta hoon.",
+    "id": "eda50ab59829",
+    "used": true
+  },
+  {
+    "english": "She helps her mother at home.",
+    "bangla": "সে বাড়িতে মাকে সাহায্য করে।",
+    "hindi": "",
+    "hinglish": "Woh ghar mein apni maa ki madad karti hai.",
+    "id": "13a680f1099a",
+    "used": true
+  },
+  {
+    "english": "He controls anger for God's sake.",
+    "bangla": "সে আল্লাহর জন্য রাগ নিয়ন্ত্রণ করে।",
+    "hindi": "",
+    "hinglish": "Woh Allah ke liye gussa control karta hai.",
+    "id": "dfd9fe995e56",
+    "used": true
+  },
+  {
+    "english": "We thank God for everything.",
+    "bangla": "আমরা সবকিছুর জন্য আল্লাহর শোকর করি।",
+    "hindi": "",
+    "hinglish": "Hum har cheez ke liye Allah ka shukar karte hain.",
+    "id": "0b900617cd6a",
+    "used": true
+  },
+  {
+    "english": "They forgive mistakes kindly.",
+    "bangla": "তারা দয়া করে ভুল ক্ষমা করে।",
+    "hindi": "",
+    "hinglish": "Woh reham se galtiyan maaf karte hain.",
+    "id": "432c6c9e3129",
+    "used": true
+  },
+  {
+    "english": "I save time for worship.",
+    "bangla": "আমি ইবাদতের জন্য সময় বাঁচাই।",
+    "hindi": "",
+    "hinglish": "Main ibadat ke liye waqt bachata hoon.",
+    "id": "09d2fceae6a2",
+    "used": true
+  },
+  {
+    "english": "She teaches Quran to children.",
+    "bangla": "সে শিশুদের কুরআন শেখায়।",
+    "hindi": "",
+    "hinglish": "Woh bachchon ko Quran sikhatee hai.",
+    "id": "e03e1b6b4933",
+    "used": true
+  },
+  {
+    "english": "He gives charity secretly.",
+    "bangla": "সে গোপনে দান করে।",
+    "hindi": "",
+    "hinglish": "Woh chhupke sadqa deta hai.",
+    "id": "389a82b059d2",
+    "used": true
+  },
+  {
+    "english": "We respect our teachers always.",
+    "bangla": "আমরা সবসময় শিক্ষকদের সম্মান করি।",
+    "hindi": "",
+    "hinglish": "Hum hamesha teachers ki izzat karte hain.",
+    "id": "b9cb652545d7",
+    "used": true
+  },
+  {
+    "english": "They work together for unity.",
+    "bangla": "তারা ঐক্যের জন্য একসাথে কাজ করে।",
+    "hindi": "",
+    "hinglish": "Woh ittehad ke liye saath kaam karte hain.",
+    "id": "7c8a328c0d82",
+    "used": true
+  },
+  {
+    "english": "I help my sister with studies.",
+    "bangla": "আমি বোনকে পড়াশোনায় সাহায্য করি।",
+    "hindi": "",
+    "hinglish": "Main apni behen ki padhai mein madad karta hoon.",
+    "id": "fa8ff7fdab44",
+    "used": true
+  },
+  {
+    "english": "She keeps promises sincerely.",
+    "bangla": "সে আন্তরিকভাবে প্রতিশ্রুতি রাখে।",
+    "hindi": "",
+    "hinglish": "Woh dil se wada nibhatee hai.",
+    "id": "33db4cfa5bd8",
+    "used": true
+  },
+  {
+    "english": "He spends money on the poor.",
+    "bangla": "সে গরিবের উপর টাকা খরচ করে।",
+    "hindi": "",
+    "hinglish": "Woh gareebon par paisa kharch karta hai.",
+    "id": "64013531a396",
+    "used": true
+  },
+  {
+    "english": "We pray before every meal.",
+    "bangla": "আমরা প্রতিবার খাবারের আগে দোয়া করি।",
+    "hindi": "",
+    "hinglish": "Hum har khane se pehle dua karte hain.",
+    "id": "68c6379532ae",
+    "used": true
+  },
+  {
+    "english": "They do good deeds for God.",
+    "bangla": "তারা আল্লাহর জন্য ভালো কাজ করে।",
+    "hindi": "",
+    "hinglish": "Woh Allah ke liye nek kaam karte hain.",
+    "id": "065cddaf3b96",
+    "used": true
+  },
+  {
     "english": "Small steps taken daily beat big plans made rarely.",
     "bangla": "প্রতিদিনের ছোট পদক্ষেপ মাঝে মাঝে করা বড় পরিকল্পনাকে হারিয়ে দেয়।",
     "hindi": "रोज़ उठाए छोटे कदम कभी-कभार बने बड़े प्लान को हरा देते हैं।",
     "hinglish": "Roz uthaye chhote kadam kabhi kabhar bane bade plan ko hara dete hain.",
-    "id": "193c3fd72078",
+    "id": "f4c48859ce0c",
     "used": true
   },
   {
@@ -12,7 +412,7 @@
     "bangla": "শান্ত মন সেই উত্তর খুঁজে পায় যা ব্যস্ত মন হারিয়ে ফেলে।",
     "hindi": "शांत दिमाग़ वो जवाब ढूंढ लेता है जो बिज़ी दिमाग़ छोड़ देता है।",
     "hinglish": "Shaant dimaag wo jawab dhoondh leta hai jo busy dimaag chhod deta hai.",
-    "id": "ea36fd3143a1",
+    "id": "9c79c1df6ddb",
     "used": true
   },
   {
@@ -20,7 +420,7 @@
     "bangla": "সময়ে ঘুমাও আর সকাল উপহার হয়ে যায়।",
     "hindi": "समय पर सो जाओ और सुबह तोहफ़ा बन जाती है।",
     "hinglish": "Samay par so jao aur subah tohfa ban jati hai.",
-    "id": "270df54317d0",
+    "id": "a08135c27e83",
     "used": true
   },
   {
@@ -28,7 +428,7 @@
     "bangla": "কম বলো আর বেশি শোনো। মানুষ নিজেকে প্রকাশ করে ফেলে।",
     "hindi": "कम बोलो और ज़्यादा सुनो। लोग खुद को खोल देते हैं।",
     "hinglish": "Kam bolo aur zyada suno. Log khud ko khol dete hain.",
-    "id": "b3d34901521c",
+    "id": "f63053f7312a",
     "used": true
   },
   {
@@ -36,7 +436,7 @@
     "bangla": "আজ যে অভ্যাস তুমি বারবার করো সেটাই পরে তোমার জীবন হয়।",
     "hindi": "आज जो आदत तुम दोहराते हो वही आगे तुम्हारी ज़िंदगी बनती है।",
     "hinglish": "Aaj jo aadat tum dohrate ho wahi aage tumhari zindagi banti hai.",
-    "id": "180d2361d22a",
+    "id": "54bb468129bb",
     "used": true
   },
   {
@@ -44,7 +444,7 @@
     "bangla": "ধৈর্য আর শৃঙ্খলা যেখানে থাকে সেখানে টাকা বাড়ে।",
     "hindi": "जहाँ सब्र और अनुशासन होते हैं वहीं पैसा बढ़ता है।",
     "hinglish": "Jahan sabr aur anushasan hote hain wahin paisa badhta hai.",
-    "id": "8da8dc974247",
+    "id": "0b7c508db1cf",
     "used": true
   },
   {
@@ -52,7 +452,7 @@
     "bangla": "অপেক্ষা করতে শেখো। ভালো জিনিস কখনো তাড়াহুড়ো করে না।",
     "hindi": "इंतज़ार करना सीखो। अच्छी चीज़ें कभी जल्दबाज़ी नहीं करतीं।",
     "hinglish": "Intezaar karna seekho. Achhi cheezein kabhi jaldbaazi nahi karti.",
-    "id": "eb5906895094",
+    "id": "ebe5cb0285d8",
     "used": true
   },
   {
@@ -60,7 +460,7 @@
     "bangla": "ফোন ছাড়া একটু হাঁটা লম্বা ছুটির চেয়ে বেশি মন পরিষ্কার করে।",
     "hindi": "फ़ोन छोड़कर थोड़ी चहलक़दमी लंबी छुट्टी से ज़्यादा मन साफ़ करती है।",
     "hinglish": "Phone chhod kar thodi chahalqadmi lambi chhutti se zyada mann saaf karti hai.",
-    "id": "4c23545c99b4",
+    "id": "198f018e30dc",
     "used": true
   },
   {
@@ -68,7 +468,7 @@
     "bangla": "চা পানের আগে পানি খাও তবেই শরীর কম অভিযোগ করবে।",
     "hindi": "चाय से पहले पानी पियो तभी शरीर कम शिकायत करेगा।",
     "hinglish": "Chai se pehle pani piyo tabhi shareer kam shikayat karega.",
-    "id": "b0f8e58e7e99",
+    "id": "798c261aed97",
     "used": true
   },
   {
@@ -76,7 +476,7 @@
     "bangla": "খরচের আগে সঞ্চয় করো। বাকিটা নিজে থেকে ঠিক হয়ে যায়।",
     "hindi": "ख़र्च से पहले बचत करो। बाक़ी अपने आप ठीक हो जाता है।",
     "hinglish": "Kharch se pehle bachat karo. Baaki apne aap theek ho jata hai.",
-    "id": "3b9a89eee80a",
+    "id": "6ae84b7da20b",
     "used": true
   },
   {
@@ -84,7 +484,7 @@
     "bangla": "ভালো প্রশ্ন করো তবেই ভালো উত্তর পাবে।",
     "hindi": "बेहतर सवाल पूछो तभी बेहतर जवाब मिलेंगे।",
     "hinglish": "Behtar sawal poocho tabhi behtar jawab milenge.",
-    "id": "040b5a084f9d",
+    "id": "4a56fb84b505",
     "used": true
   },
   {
@@ -92,7 +492,7 @@
     "bangla": "দিনে বিশ মিনিট যে পড়ে পাঁচ বছরে সে জিতে যায়।",
     "hindi": "रोज़ बीस मिनट जो पढ़ता है पाँच साल में वही जीतता है।",
     "hinglish": "Roz bees minute jo padhta hai paanch saal me wahi jeetta hai.",
-    "id": "72341fa914fa",
+    "id": "2eb601a7c9b3",
     "used": true
   },
   {
@@ -100,7 +500,7 @@
     "bangla": "তর্কে চুপ থাকা চতুর জবাবের চেয়ে বেশি বাঁচায়।",
     "hindi": "बहस में चुप रहना चतुर जवाब से ज़्यादा बचाता है।",
     "hinglish": "Behas me chup rehna chatur jawab se zyada bachata hai.",
-    "id": "5ece8ad97e88",
+    "id": "3a991a333155",
     "used": true
   },
   {
@@ -108,7 +508,7 @@
     "bangla": "দেখানোর জন্য ধার নেওয়া টাকা পরে বোঝা হয়ে দাঁড়ায়।",
     "hindi": "दिखावे के लिए उधार लिया पैसा बाद में बोझ बन जाता है।",
     "hinglish": "Dikhawa karne ke liye udhaar liya paisa baad me bojh ban jata hai.",
-    "id": "3448430cb4cc",
+    "id": "2b2d34d5b846",
     "used": true
   },
   {
@@ -116,7 +516,7 @@
     "bangla": "গোছানো ঘর চুপচাপ মনও গুছিয়ে দেয়।",
     "hindi": "साफ़-सुथरा कमरा चुपचाप मन भी साफ़ कर देता है।",
     "hinglish": "Saaf-suthra kamra chupchap mann bhi saaf kar deta hai.",
-    "id": "32da8c153420",
+    "id": "9e5bf20c83e9",
     "used": true
   },
   {
@@ -124,7 +524,7 @@
     "bangla": "বছরে একটি নতুন দক্ষতা শেখো তবেই তুমি চাকরির যোগ্য থাকবে।",
     "hindi": "साल में एक नई स्किल सीखो तभी तुम नौकरी के क़ाबिल रहोगे।",
     "hinglish": "Saal me ek nayi skill seekho tabhi tum naukri ke qabil rahoge.",
-    "id": "a491c2fa17e9",
+    "id": "e3c851327195",
     "used": true
   },
   {
@@ -132,7 +532,7 @@
     "bangla": "তোমার ফোন যন্ত্র বন্ধু নয়। সেভাবেই ব্যবহার করো।",
     "hindi": "तुम्हारा फ़ोन औज़ार है दोस्त नहीं। वैसे ही इस्तेमाल करो।",
     "hinglish": "Tumhara phone auzar hai dost nahi. Waise hi istemal karo.",
-    "id": "ab258049b631",
+    "id": "8a5abb17e41f",
     "used": true
   },
   {
@@ -140,7 +540,7 @@
     "bangla": "ভঙ্গি ঠিক করো তবেই দিনের অর্ধেক ক্লান্তি চলে যায়।",
     "hindi": "अपनी मुद्रा सुधारो तभी दिन की आधी थकान चली जाती है।",
     "hinglish": "Apni mudra sudharo tabhi din ki aadhi thakan chali jati hai.",
-    "id": "ede140d481bd",
+    "id": "b81d43d31b61",
     "used": true
   },
   {
@@ -148,7 +548,7 @@
     "bangla": "খালি পেটে কেনাকাটা করো না। বিল সবসময় দ্বিগুণ হয়।",
     "hindi": "भूखे पेट खरीदारी मत करो। बिल हमेशा दोगुना होता है।",
     "hinglish": "Bhookhe pet kharidari mat karo. Bill hamesha doguna hota hai.",
-    "id": "038e3a20296d",
+    "id": "49ffb80c757c",
     "used": true
   },
   {
@@ -156,7 +556,7 @@
     "bangla": "দুশ্চিন্তাগুলো লিখে ফেলো। অর্ধেক কাগজেই ছোট হয়ে যায়।",
     "hindi": "अपनी चिंताएँ लिख दो। आधी काग़ज़ पर ही सिकुड़ जाती हैं।",
     "hinglish": "Apni chintayein likh do. Aadhi kagaz par hi sikud jati hain.",
-    "id": "00235d5b5a2f",
+    "id": "c4bc60fc6320",
     "used": true
   },
   {
@@ -164,7 +564,7 @@
     "bangla": "সকালে গাছে পানি দাও তবেই গাছ রঙ দিয়ে পুরস্কৃত করে।",
     "hindi": "सुबह पौधों को पानी दो तभी पौधे रंग से इनाम देते हैं।",
     "hinglish": "Subah paudhon ko pani do tabhi paudhe rang se inaam dete hain.",
-    "id": "2145bf457462",
+    "id": "4c70d77bb1b5",
     "used": true
   },
   {
@@ -172,7 +572,7 @@
     "bangla": "জাঙ্ক ফুডে প্রতিটি না আগামীকালের শক্তির জন্য হ্যাঁ।",
     "hindi": "जंक फ़ूड पर हर ना कल की ऊर्जा के लिए हाँ है।",
     "hinglish": "Junk food par har na kal ki urja ke liye haan hai.",
-    "id": "bf0a2456767b",
+    "id": "f72016eab37c",
     "used": true
   },
   {
@@ -180,7 +580,7 @@
     "bangla": "স্বপ্নে সই করার আগে চুক্তিটা পড়ো।",
     "hindi": "सपने पर हस्ताक्षर से पहले कॉन्ट्रैक्ट पढ़ो।",
     "hinglish": "Sapne par hastakshar se pehle contract padho.",
-    "id": "f5cc0465a234",
+    "id": "ccde802097e3",
     "used": true
   },
   {
@@ -188,7 +588,7 @@
     "bangla": "ছোট শুরু করো আর নিয়মিত থাকো। ফল দেরিতে আসতে দাও।",
     "hindi": "छोटा शुरू करो और नियमित रहो। नतीजे देर से आने दो।",
     "hinglish": "Chhota shuru karo aur niyamit raho. Nateeje der se aane do.",
-    "id": "22e1ec12ae47",
+    "id": "432503bc1ca0",
     "used": true
   },
   {
@@ -196,7 +596,7 @@
     "bangla": "খাওয়ার পর একটু হাঁটা সপ্তাহে একবার লম্বা হাঁটার চেয়ে ভালো।",
     "hindi": "खाने के बाद थोड़ी चहलक़दमी हफ़्ते में एक बार लंबी चहलक़दमी से बेहतर है।",
     "hinglish": "Khane ke baad thodi chahalqadmi hafte me ek baar lambi chahalqadmi se behtar hai.",
-    "id": "85ef4fcb6797",
+    "id": "33f8888628e3",
     "used": true
   },
   {
@@ -204,7 +604,7 @@
     "bangla": "একটা নোটবুক রাখো। স্মৃতি বাজে কর্মচারী।",
     "hindi": "एक नोटबुक रखो। याददाश्त बुरा कर्मचारी है।",
     "hinglish": "Ek notebook rakho. Yaaddasht bura karmchari hai.",
-    "id": "32fd93dfb09b",
+    "id": "e4a9f7759b49",
     "used": true
   },
   {
@@ -212,7 +612,7 @@
     "bangla": "সবচেয়ে কঠিন কাজটা আগে করো তবেই দিন হালকা লাগবে।",
     "hindi": "सबसे मुश्किल काम पहले करो तभी दिन हल्का लगेगा।",
     "hinglish": "Sabse mushkil kaam pehle karo tabhi din halka lagega.",
-    "id": "a0b4e141278f",
+    "id": "8ba0296c6011",
     "used": true
   },
   {
@@ -220,7 +620,7 @@
     "bangla": "মানুষকে পুরো মনোযোগ দাও। এটা টাকার চেয়ে দুর্লভ।",
     "hindi": "लोगों को पूरा ध्यान दो। यह पैसे से भी दुर्लभ है।",
     "hinglish": "Logon ko poora dhyan do. Ye paise se bhi durlabh hai.",
-    "id": "05a31b00c7fe",
+    "id": "8a86b7b020b2",
     "used": true
   },
   {
@@ -228,7 +628,7 @@
     "bangla": "আজই কলের লিক সারাও। ছোট অবহেলা বড় মেরামত হয়।",
     "hindi": "आज ही नल का रिसाव ठीक करो। छोटी लापरवाही बड़ी मरम्मत बनती है।",
     "hinglish": "Aaj hi nal ka risav theek karo. Chhoti laparwahi badi marammat banti hai.",
-    "id": "36bf683871ce",
+    "id": "f9bf3bf2d23c",
     "used": true
   },
   {
@@ -236,7 +636,7 @@
     "bangla": "যা ফিট হয় তা পরো ট্রেন্ড নয়।",
     "hindi": "जो फिट हो वही पहनो ट्रेंड नहीं।",
     "hinglish": "Jo fit ho wahi pehno trend nahi.",
-    "id": "80362eabb11d",
+    "id": "0161c9e2b6ba",
     "used": true
   },
   {
@@ -244,7 +644,7 @@
     "bangla": "প্রতিদিন একজনকে প্রশংসা করো। এতে কিছু খরচ হয় না।",
     "hindi": "रोज़ एक इंसान की तारीफ़ करो। इसमें कुछ ख़र्च नहीं होता।",
     "hinglish": "Roz ek insaan ki tareef karo. Isme kuch kharch nahi hota.",
-    "id": "e72d3d2701e4",
+    "id": "0c74f5908f61",
     "used": true
   },
   {
@@ -252,7 +652,7 @@
     "bangla": "জুতা দরজার কাছে রাখো তবেই সকাল সহজ হয়।",
     "hindi": "जूते दरवाज़े के पास रखो तभी सुबह आसान होती है।",
     "hinglish": "Joote darwaze ke paas rakho tabhi subah aasan hoti hai.",
-    "id": "683a5e25538b",
+    "id": "6793ec70b3bc",
     "used": true
   },
   {
@@ -260,7 +660,7 @@
     "bangla": "তিনটি কাজের তালিকা ত্রিশটির তালিকাকে হারায়।",
     "hindi": "तीन काम की सूची तीस की सूची को हरा देती है।",
     "hinglish": "Teen kaam ki soochi tees ki soochi ko hara deti hai.",
-    "id": "2c9b70b84b9f",
+    "id": "104995641cca",
     "used": true
   },
   {
@@ -268,7 +668,7 @@
     "bangla": "খাওয়ার সময় ফোন উল্টো করে রাখো।",
     "hindi": "खाते समय फ़ोन उल्टा रखो।",
     "hinglish": "Khate samay phone ulta rakho.",
-    "id": "429931c249f8",
+    "id": "8821cc9c95c4",
     "used": true
   },
   {
@@ -276,7 +676,7 @@
     "bangla": "দুবার বুঝিয়ে না বলে না বলতে শেখো।",
     "hindi": "दो बार समझाए बिना ना कहना सीखो।",
     "hinglish": "Do baar samjhaye bina na kehna seekho.",
-    "id": "a4906c09588d",
+    "id": "56666db2656f",
     "used": true
   },
   {
@@ -284,7 +684,7 @@
     "bangla": "সবচেয়ে সস্তা বিলাসিতা হলো ভালো ঘুম।",
     "hindi": "सबसे सस्ती लक्ज़री अच्छी नींद है।",
     "hinglish": "Sabse sasti luxury achhi neend hai.",
-    "id": "2ced966bb42a",
+    "id": "caccf8ec6322",
     "used": true
   },
   {
@@ -292,7 +692,7 @@
     "bangla": "রাতে কাপড় ইস্ত্রি করো তবেই সকাল আর কষ্ট দেয় না।",
     "hindi": "रात में कपड़े प्रेस करो तभी सुबह और तकलीफ़ नहीं देती।",
     "hinglish": "Raat me kapde press karo tabhi subah aur takleef nahi deti.",
-    "id": "5b6a3d8dd65b",
+    "id": "67a31bd6146b",
     "used": true
   },
   {
@@ -300,7 +700,7 @@
     "bangla": "সপ্তাহে এক ঘণ্টা কিছুই না করার জন্য রাখো।",
     "hindi": "हफ़्ते में एक घंटा कुछ न करने के लिए रखो।",
     "hinglish": "Hafte me ek ghanta kuch na karne ke liye rakho.",
-    "id": "f91241a8eced",
+    "id": "68e4f82d3ef8",
     "used": true
   },
   {
@@ -308,7 +708,7 @@
     "bangla": "সস্তাটা তিনবার না কিনে ভালোটার একবার কিনো।",
     "hindi": "सस्ता तीन बार न खरीद कर अच्छा एक बार खरीदो।",
     "hinglish": "Sasta teen baar na kharid kar achha ek baar kharido.",
-    "id": "b51d7256951a",
+    "id": "7b54736f8047",
     "used": true
   },
   {
@@ -316,7 +716,7 @@
     "bangla": "সিঁড়ি ভাঙো লিফট বাদ দাও যখন পারো।",
     "hindi": "सीढ़ियाँ चढ़ो लिफ़्ट छोड़ दो जब हो सके।",
     "hinglish": "Seedhiyan chadho lift chhod do jab ho sake.",
-    "id": "2c84fec8e6d7",
+    "id": "095f0459a729",
     "used": true
   },
   {
@@ -324,7 +724,7 @@
     "bangla": "বারান্দার ছোট বাগান শখের চেয়ে বেশি ঠিক করে।",
     "hindi": "बालकनी का छोटा बाग़ान शौक़ से ज़्यादा ठीक करता है।",
     "hinglish": "Balcony ka chhota bagaan shauq se zyada theek karta hai.",
-    "id": "36b01cfd2a57",
+    "id": "e487e544fd9f",
     "used": true
   },
   {
@@ -332,7 +732,7 @@
     "bangla": "দামের আগে লেবেল পড়ো।",
     "hindi": "दाम से पहले लेबल पढ़ो।",
     "hinglish": "Daam se pehle label padho.",
-    "id": "7918135f8ca8",
+    "id": "29b7055fc98f",
     "used": true
   },
   {
@@ -340,7 +740,7 @@
     "bangla": "যে তোমাকে সেবা দেয় তাকে ধন্যবাদ বলো।",
     "hindi": "जो तुम्हारी सेवा करे उसे शुक्रिया कहो।",
     "hinglish": "Jo tumhari seva kare use shukriya kaho.",
-    "id": "080f0975ea27",
+    "id": "e7bec348ecb6",
     "used": true
   },
   {
@@ -348,7 +748,7 @@
     "bangla": "বিশ্বাসের প্রতিবেশীর কাছে বাড়তি চাবি রাখো।",
     "hindi": "भरोसे के पड़ोसी के पास एक्स्ट्रा चाबी रखो।",
     "hinglish": "Bharose ke padosi ke paas extra chaabi rakho.",
-    "id": "cb7639e06467",
+    "id": "ef93a44b88ee",
     "used": true
   },
   {
@@ -356,7 +756,7 @@
     "bangla": "বিল আসার দিনই দিয়ে দাও।",
     "hindi": "बिल आने के दिन ही दे दो।",
     "hinglish": "Bill aane ke din hi de do.",
-    "id": "ee6efc348a1e",
+    "id": "eb0a4686b6bf",
     "used": true
   },
   {
@@ -364,7 +764,7 @@
     "bangla": "ঘুমানোর আগে দুই মিনিট স্ট্রেচ করো।",
     "hindi": "सोने से पहले दो मिनट स्ट्रेच करो।",
     "hinglish": "Sone se pehle do minute stretch karo.",
-    "id": "0e9390495b0d",
+    "id": "35b9bf44334b",
     "used": true
   },
   {
@@ -372,7 +772,7 @@
     "bangla": "যে অ্যাপ কারণ ছাড়া খোলো সেটা ডিলিট করো।",
     "hindi": "जो ऐप बिना कारण खोलते हो वह डिलीट करो।",
     "hinglish": "Jo app bina karan kholte ho wo delete karo.",
-    "id": "11f7c31314f5",
+    "id": "3b750cd23ac5",
     "used": true
   },
   {
@@ -380,7 +780,7 @@
     "bangla": "নেটওয়ার্ক মরে যাওয়া দিনের জন্য নগদ রাখো।",
     "hindi": "नेटवर्क मरने वाले दिनों के लिए नक़द रखो।",
     "hinglish": "Network marne wale dinon ke liye cash rakho.",
-    "id": "b4801cd7d930",
+    "id": "e8f662daecd6",
     "used": true
   },
   {
@@ -388,7 +788,7 @@
     "bangla": "উত্তর লিখে দশ মিনিট পরে পাঠাও।",
     "hindi": "जवाब लिख कर दस मिनट बाद भेजो।",
     "hinglish": "Jawab likh kar das minute baad bhejo.",
-    "id": "8c82caf9b184",
+    "id": "7653ba8a1aeb",
     "used": true
   },
   {
@@ -396,7 +796,7 @@
     "bangla": "কফির আগে পানি খাও তবেই মাথাব্যথা দূরে থাকে।",
     "hindi": "कॉफ़ी से पहले पानी पियो तभी सिरदर्द दूर रहता है।",
     "hinglish": "Coffee se pehle pani piyo tabhi sirdard door rehta hai.",
-    "id": "fdcfdda5c57c",
+    "id": "cdfb486f0258",
     "used": true
   },
   {
@@ -404,7 +804,7 @@
     "bangla": "দশ মিনিট আগে উঠো তবেই তাড়াহুড়ো চলে যায়।",
     "hindi": "दस मिनट पहले उठो तभी जल्दबाज़ी ख़त्म होती है।",
     "hinglish": "Das minute pehle utho tabhi jaldbaazi khatam hoti hai.",
-    "id": "02b6ffd99cd5",
+    "id": "22f8f787a919",
     "used": true
   },
   {
@@ -412,7 +812,7 @@
     "bangla": "বিছানার পাশে এক গ্লাস পানি রাখো।",
     "hindi": "बिस्तर के पास एक गिलास पानी रखो।",
     "hinglish": "Bistar ke paas ek glass pani rakho.",
-    "id": "f8b491797768",
+    "id": "e3315275513a",
     "used": true
   },
   {
@@ -420,7 +820,7 @@
     "bangla": "স্ক্রল করার বদলে এক পাতা পড়ো।",
     "hindi": "स्क्रॉल करने की जगह एक पन्ना पढ़ो।",
     "hinglish": "Scroll karne ki jagah ek panna padho.",
-    "id": "84b1824b6c85",
+    "id": "ece8d347835c",
     "used": true
   },
   {
@@ -428,7 +828,7 @@
     "bangla": "ঘর ছাড়ার আগে কম্বল ভাঁজ করো।",
     "hindi": "कमरा छोड़ने से पहले कंबल तह करो।",
     "hinglish": "Kamra chhodne se pehle kambal tah karo.",
-    "id": "8e2cff9c2832",
+    "id": "4154b13c7046",
     "used": true
   },
   {
@@ -436,7 +836,7 @@
     "bangla": "ব্যাগে একটা কলম আর কাগজ রাখো।",
     "hindi": "बैग में एक कलम और काग़ज़ रखो।",
     "hinglish": "Bag me ek kalam aur kagaz rakho.",
-    "id": "fe102a851ee7",
+    "id": "30a3e6095d1e",
     "used": true
   },
   {
@@ -444,7 +844,7 @@
     "bangla": "একটা অপ্রয়োজনীয় মিটিংয়ে না বলো।",
     "hindi": "एक ग़ैरज़रूरी मीटिंग को ना कहो।",
     "hinglish": "Ek ghairzaroori meeting ko na kaho.",
-    "id": "2379888120a9",
+    "id": "be7fdb01c130",
     "used": true
   },
   {
@@ -452,7 +852,7 @@
     "bangla": "সপ্তাহে একবার ব্যাংক ব্যালান্স দেখো।",
     "hindi": "हफ़्ते में एक बार बैंक बैलेंस देखो।",
     "hinglish": "Hafte me ek baar bank balance dekho.",
-    "id": "f064a11c922c",
+    "id": "8934d923a917",
     "used": true
   },
   {
@@ -460,7 +860,7 @@
     "bangla": "যাদের সাথে কাজ করো তাদের নাম শেখো।",
     "hindi": "जिनके साथ काम करते हो उनके नाम सीखो।",
     "hinglish": "Jinke saath kaam karte ho unke naam seekho.",
-    "id": "1232709fcdae",
+    "id": "4851d3989a04",
     "used": true
   },
   {
@@ -468,7 +868,7 @@
     "bangla": "এক তলা সিঁড়ি দিয়ে ওঠো।",
     "hindi": "एक मंज़िल सीढ़ी से चढ़ो।",
     "hinglish": "Ek manzil seedhi se chadho.",
-    "id": "ed993819307a",
+    "id": "aa537a4be364",
     "used": true
   },
   {
@@ -476,7 +876,7 @@
     "bangla": "ঘুমানোর ত্রিশ মিনিট আগে ফোন সরাও।",
     "hindi": "सोने से तीस मिनट पहले फ़ोन हटाओ।",
     "hinglish": "Sone se tees minute pehle phone hatao.",
-    "id": "d225ef8b751d",
+    "id": "18a6d3a89f82",
     "used": true
   },
   {
@@ -484,7 +884,7 @@
     "bangla": "শুরু করার আগে টেবিল পরিষ্কার রাখো।",
     "hindi": "शुरू करने से पहले मेज़ साफ़ रखो।",
     "hinglish": "Shuru karne se pehle mez saaf rakho.",
-    "id": "2bffd227a94b",
+    "id": "c9af7c0d9f31",
     "used": true
   },
   {
@@ -492,7 +892,7 @@
     "bangla": "একটা স্ন্যাকসের বদলে একটা ফল খাও।",
     "hindi": "एक स्नैक की जगह एक फल खाओ।",
     "hinglish": "Ek snack ki jagah ek fal khao.",
-    "id": "893ab5495a2c",
+    "id": "88f6d0bee4a1",
     "used": true
   },
   {
@@ -500,7 +900,7 @@
     "bangla": "আজ রাতে কালকের পরিকল্পনা লেখো।",
     "hindi": "आज रात कल का प्लान लिखो।",
     "hinglish": "Aaj raat kal ka plan likho.",
-    "id": "c468bc9240d7",
+    "id": "019402064dff",
     "used": true
   },
   {
@@ -508,7 +908,7 @@
     "bangla": "যে ছোট কাজটা পিছিয়ে দিচ্ছ সেটা শেষ করো।",
     "hindi": "जो छोटा काम टाल रहे हो उसे ख़त्म करो।",
     "hinglish": "Jo chhota kaam taal rahe ho use khatam karo.",
-    "id": "e80500e8d7c5",
+    "id": "e5d963cd8852",
     "used": true
   },
   {
@@ -516,7 +916,7 @@
     "bangla": "প্রতিটি কথাবার্তায় একটা প্রশ্ন করো।",
     "hindi": "हर बातचीत में एक सवाल पूछो।",
     "hinglish": "Har baatcheet me ek sawal poocho.",
-    "id": "1028898b9a09",
+    "id": "27fca6745144",
     "used": true
   },
   {
@@ -524,7 +924,7 @@
     "bangla": "যে মেসেজটা এড়িয়ে যাচ্ছ সেটা পাঠাও।",
     "hindi": "जो मैसेज टाल रहे हो वह भेजो।",
     "hinglish": "Jo message taal rahe ho wo bhejo.",
-    "id": "2fa826411a30",
+    "id": "3467463e44ff",
     "used": true
   },
   {
@@ -532,7 +932,7 @@
     "bangla": "বাড়িতে একটা ছোট জিনিস সারাও।",
     "hindi": "घर में एक छोटी चीज़ ठीक करो।",
     "hinglish": "Ghar me ek chhoti cheez theek karo.",
-    "id": "e93a6a2ba6ad",
+    "id": "73c25431487d",
     "used": true
   },
   {
@@ -540,7 +940,7 @@
     "bangla": "যে সাবস্ক্রিপশন ব্যবহার করো না সেটা বাতিল করো।",
     "hindi": "जो सब्सक्रिप्शन इस्तेमाल नहीं करते वह कैंसल करो।",
     "hinglish": "Jo subscription istemal nahi karte wo cancel karo.",
-    "id": "133b79f28748",
+    "id": "91da1665b032",
     "used": true
   },
   {
@@ -548,7 +948,7 @@
     "bangla": "রাতের খাওয়ার পর দশ মিনিট হাঁটো।",
     "hindi": "रात के खाने के बाद दस मिनट चलो।",
     "hinglish": "Raat ke khane ke baad das minute chalo.",
-    "id": "cab290f35f17",
+    "id": "28a6219f5fd8",
     "used": true
   },
   {
@@ -556,7 +956,7 @@
     "bangla": "রান্নাঘরের কাউন্টার খালি রাখো।",
     "hindi": "रसोई का काउंटर खाली रखो।",
     "hinglish": "Rasoi ka counter khaali rakho.",
-    "id": "3e6d01bd6b4b",
+    "id": "836a82d14795",
     "used": true
   },
   {
@@ -564,7 +964,7 @@
     "bangla": "কারণ ছাড়াই বাবা-মাকে ফোন করো।",
     "hindi": "बिना कारण माँ-बाप को फ़ोन करो।",
     "hinglish": "Bina karan maa-baap ko phone karo.",
-    "id": "b9c55e4d4d50",
+    "id": "ba83ad0a842f",
     "used": true
   },
   {
@@ -572,7 +972,7 @@
     "bangla": "যে ছবিগুলো কখনো দেখো না সেগুলো ডিলিট করো।",
     "hindi": "जो तस्वीरें कभी नहीं देखते वे डिलीट करो।",
     "hinglish": "Jo tasveerein kabhi nahi dekhte wo delete karo.",
-    "id": "2421db59d2d8",
+    "id": "5d44cef3bb11",
     "used": true
   },
   {
@@ -580,7 +980,7 @@
     "bangla": "দরজার কাছে জুতার ব্রাশ রাখো।",
     "hindi": "दरवाज़े के पास जूते का ब्रश रखो।",
     "hinglish": "Darwaze ke paas joote ka brush rakho.",
-    "id": "d6956feebb65",
+    "id": "af3831792306",
     "used": true
   },
   {
@@ -588,7 +988,7 @@
     "bangla": "জিনিস তোলার আগে দাম দেখে নাও।",
     "hindi": "चीज़ उठाने से पहले दाम देख लो।",
     "hinglish": "Cheez uthane se pehle daam dekh lo.",
-    "id": "9747a64e1d49",
+    "id": "b71b9009bf91",
     "used": true
   },
   {
@@ -596,207 +996,1407 @@
     "bangla": "সোজা বসে এক মিনিট শ্বাস নাও।",
     "hindi": "सीधे बैठ कर एक मिनट साँस लो।",
     "hinglish": "Seedhe baith kar ek minute saans lo.",
-    "id": "83fbd1828c32",
-    "used": false
+    "id": "59249e700b5f",
+    "used": true
   },
   {
     "english": "Keep one drawer completely empty.",
     "bangla": "একটা ড্রয়ার পুরো খালি রাখো।",
     "hindi": "एक दराज़ पूरी खाली रखो।",
     "hinglish": "Ek daraz poori khaali rakho.",
-    "id": "0ea9bfbc21eb",
-    "used": false
+    "id": "880e57c858cd",
+    "used": true
   },
   {
     "english": "Read the whole email before replying.",
     "bangla": "উত্তর দেওয়ার আগে পুরো মেইল পড়ো।",
     "hindi": "जवाब देने से पहले पूरा मेल पढ़ो।",
     "hinglish": "Jawab dene se pehle poora mail padho.",
-    "id": "0184c1645e62",
-    "used": false
+    "id": "fe589e0011ac",
+    "used": true
   },
   {
     "english": "Take a break before you get tired.",
     "bangla": "ক্লান্ত হওয়ার আগেই বিরতি নাও।",
     "hindi": "थकने से पहले ब्रेक लो।",
     "hinglish": "Thakne se pehle break lo.",
-    "id": "3649d7404f9b",
-    "used": false
+    "id": "b13a42563abb",
+    "used": true
   },
   {
     "english": "Write down one thing you did well today.",
     "bangla": "আজ যা ভালো করেছ তার একটা লেখো।",
     "hindi": "आज जो अच्छा किया उसमें से एक लिखो।",
     "hinglish": "Aaj jo achha kiya usme se ek likho.",
-    "id": "b06a03e371e9",
-    "used": false
+    "id": "e18453caf938",
+    "used": true
   },
   {
     "english": "Wake up without checking the phone.",
     "bangla": "ফোন না দেখে উঠো।",
     "hindi": "फ़ोन देखे बिना उठो।",
     "hinglish": "Phone dekhe bina utho.",
-    "id": "0ed56bfbac05",
-    "used": false
+    "id": "ecabc6d0cb29",
+    "used": true
   },
   {
     "english": "Keep a spare charger at work.",
     "bangla": "কাজের জায়গায় বাড়তি চার্জার রাখো।",
     "hindi": "काम की जगह एक्स्ट्रा चार्जर रखो।",
     "hinglish": "Kaam ki jagah extra charger rakho.",
-    "id": "741ad29e566b",
-    "used": false
+    "id": "d5b3f1f761ec",
+    "used": true
   },
   {
     "english": "Water the plants before you sit down.",
     "bangla": "বসার আগে গাছে পানি দাও।",
     "hindi": "बैठने से पहले पौधों को पानी दो।",
     "hinglish": "Baithne se pehle paudhon ko pani do.",
-    "id": "de9d0abccea3",
-    "used": false
+    "id": "774c97231f87",
+    "used": true
   },
   {
     "english": "Throw away the pen that does not write.",
     "bangla": "যে কলম লেখে না সেটা ফেলে দাও।",
     "hindi": "जो कलम नहीं लिखती वह फेंक दो।",
     "hinglish": "Jo kalam nahi likhti wo phenk do.",
-    "id": "555984c66084",
-    "used": false
+    "id": "359ceb633330",
+    "used": true
   },
   {
     "english": "Keep a cloth in your pocket.",
     "bangla": "পকেটে একটা কাপড় রাখো।",
     "hindi": "जेब में एक कपड़ा रखो।",
     "hinglish": "Jeb me ek kapda rakho.",
-    "id": "fe3520d54a7d",
-    "used": false
+    "id": "60ad05b27784",
+    "used": true
   },
   {
     "english": "Practise the hard sentence out loud.",
     "bangla": "কঠিন বাক্যটা জোরে বলে অভ্যাস করো।",
     "hindi": "मुश्किल वाक्य ज़ोर से बोल कर अभ्यास करो।",
     "hinglish": "Mushkil vakya zor se bol kar abhyas karo.",
-    "id": "d9f4b8f7621e",
-    "used": false
+    "id": "d1fa60945999",
+    "used": true
   },
   {
     "english": "Say sorry quickly when you are wrong.",
     "bangla": "ভুল হলে দ্রুত ক্ষমা চাও।",
     "hindi": "ग़लत हो तो फ़ौरन माफ़ी माँगो।",
     "hinglish": "Galat ho to fauran maafi maango.",
-    "id": "ec0cf7957665",
-    "used": false
+    "id": "c393c27e240b",
+    "used": true
   },
   {
     "english": "Keep your wallet organised.",
     "bangla": "মানিব্যাগ গোছানো রাখো।",
     "hindi": "अपना बटुआ सलीक़े से रखो।",
     "hinglish": "Apna batua saleeqe se rakho.",
-    "id": "185a1989559f",
-    "used": false
+    "id": "23c6b12ea184",
+    "used": true
   },
   {
     "english": "Dry your shoes before the night.",
     "bangla": "রাতের আগে জুতা শুকাও।",
     "hindi": "रात से पहले जूते सुखाओ।",
     "hinglish": "Raat se pehle joote sukhao.",
-    "id": "08faa5fa0875",
-    "used": false
+    "id": "f00fe4142c62",
+    "used": true
   },
   {
     "english": "Close the tabs you are not reading.",
     "bangla": "যে ট্যাব পড়ছ না সেটা বন্ধ করো।",
     "hindi": "जो टैब नहीं पढ़ रहे वह बंद करो।",
     "hinglish": "Jo tab nahi padh rahe wo band karo.",
-    "id": "6953f2b74b17",
-    "used": false
+    "id": "d63ed04d37dd",
+    "used": true
   },
   {
     "english": "Eat slowly and put the spoon down between bites.",
     "bangla": "ধীরে খাও আর প্রতি গ্রাসে চামচ নামাও।",
     "hindi": "धीरे खाओ और हर कौर में चम्मच नीचे रखो।",
     "hinglish": "Dheere khao aur har kaur me chamach neeche rakho.",
-    "id": "0f0299c1d916",
-    "used": false
+    "id": "6b7b17e7642d",
+    "used": true
   },
   {
     "english": "Ask for help before the deadline.",
     "bangla": "সময় শেষ হওয়ার আগে সাহায্য চাও।",
     "hindi": "समय ख़त्म होने से पहले मदद माँगो।",
     "hinglish": "Samay khatam hone se pehle madad maango.",
-    "id": "a269ec31e32d",
-    "used": false
+    "id": "aa59411c05ec",
+    "used": true
   },
   {
     "english": "Keep the door key in the same place.",
     "bangla": "দরজার চাবি একই জায়গায় রাখো।",
     "hindi": "दरवाज़े की चाबी एक ही जगह रखो।",
     "hinglish": "Darwaze ki chaabi ek hi jagah rakho.",
-    "id": "0b8e599e8a9e",
-    "used": false
+    "id": "b7683f9f2211",
+    "used": true
   },
   {
     "english": "Take a photo of the bill.",
     "bangla": "বিলের ছবি তুলে রাখো।",
     "hindi": "बिल की फ़ोटो ले लो।",
     "hinglish": "Bill ki photo le lo.",
-    "id": "dd2ea1d9a204",
-    "used": false
+    "id": "6d762d70996e",
+    "used": true
   },
   {
     "english": "Do the dishes before bed.",
     "bangla": "ঘুমানোর আগে বাসন ধোও।",
     "hindi": "सोने से पहले बर्तन धो लो।",
     "hinglish": "Sone se pehle bartan dho lo.",
-    "id": "42a39271c023",
-    "used": false
+    "id": "5f59043c389e",
+    "used": true
   },
   {
     "english": "Keep a small umbrella in the bag.",
     "bangla": "ব্যাগে ছোট ছাতা রাখো।",
     "hindi": "बैग में छोटी छतरी रखो।",
     "hinglish": "Bag me chhoti chhatri rakho.",
-    "id": "d56cd9143e7c",
-    "used": false
+    "id": "35e7a9f944e8",
+    "used": true
   },
   {
     "english": "Look out of the window for one minute.",
     "bangla": "এক মিনিট জানালা দিয়ে তাকাও।",
     "hindi": "एक मिनट खिड़की से बाहर देखो।",
     "hinglish": "Ek minute khidki se bahar dekho.",
-    "id": "2aa22df5edfc",
-    "used": false
+    "id": "09047aa931ef",
+    "used": true
   },
   {
     "english": "Write the difficult call you must make.",
     "bangla": "যে কঠিন কলটা করতে হবে সেটা লিখে রাখো।",
     "hindi": "जो मुश्किल कॉल करनी है वह लिख लो।",
     "hinglish": "Jo mushkil call karni hai wo likh lo.",
-    "id": "311d1c5951b1",
-    "used": false
+    "id": "a4b901dcd537",
+    "used": true
   },
   {
     "english": "Keep your hands warm in winter.",
     "bangla": "শীতে হাত গরম রাখো।",
     "hindi": "सर्दी में हाथ गर्म रखो।",
     "hinglish": "Sardi me haath garam rakho.",
-    "id": "dfa5fe3ec0ad",
-    "used": false
+    "id": "944c9da78a87",
+    "used": true
   },
   {
     "english": "Wear one thing you like.",
     "bangla": "একটা জিনিস পরো যা তোমার ভালো লাগে।",
     "hindi": "एक चीज़ पहनो जो तुम्हें पसंद है।",
     "hinglish": "Ek cheez pehno jo tumhe pasand hai.",
-    "id": "fe25aa62ed9d",
-    "used": false
+    "id": "7d324cc84d3e",
+    "used": true
   },
   {
     "english": "End the day by thanking one person.",
     "bangla": "দিন শেষে একজনকে ধন্যবাদ দিয়ে শেষ করো।",
     "hindi": "दिन ख़त्म करते वक़्त एक इंसान का शुक्रिया करो।",
     "hinglish": "Din khatam karte waqt ek insaan ka shukriya karo.",
-    "id": "fa78b57a4934",
+    "id": "d96e073b974e",
+    "used": true
+  },
+  {
+    "english": "Keep the door key in the same place.",
+    "bangla": "চাবি সবসময় একই জায়গায় রাখো।",
+    "hindi": "",
+    "hinglish": "Chaabi hamesha ek hi jagah rakho.",
+    "id": "6a47e8ebc1f7",
+    "used": true
+  },
+  {
+    "english": "Check the tire pressure this week.",
+    "bangla": "এই সপ্তাহে টায়ারের চাপ দেখো।",
+    "hindi": "",
+    "hinglish": "Is hafte tyre ka pressure check karo.",
+    "id": "93f42a557a1a",
+    "used": true
+  },
+  {
+    "english": "Put the glass back in the cupboard.",
+    "bangla": "গ্লাস আলমারিতে রেখে দাও।",
+    "hindi": "",
+    "hinglish": "Glass almari me wapas rakho.",
+    "id": "4516d5c8a23b",
+    "used": true
+  },
+  {
+    "english": "Water the plant before you leave.",
+    "bangla": "বেরোনোর আগে গাছে পানি দাও।",
+    "hindi": "",
+    "hinglish": "Nikalne se pehle paudhe ko paani do.",
+    "id": "24735938692c",
+    "used": true
+  },
+  {
+    "english": "Fold the quilt in the morning.",
+    "bangla": "সকালে লেপ ভাঁজ করো।",
+    "hindi": "",
+    "hinglish": "Subah rajai fold karo.",
+    "id": "3d825a7f61f8",
+    "used": true
+  },
+  {
+    "english": "Read the label before you buy.",
+    "bangla": "কেনার আগে লেবেল পড়ো।",
+    "hindi": "",
+    "hinglish": "Kharidne se pehle label padho.",
+    "id": "999099e3f7e0",
+    "used": true
+  },
+  {
+    "english": "Keep the broom behind the door.",
+    "bangla": "ঝাড়ু দরজার পিছনে রাখো।",
+    "hindi": "",
+    "hinglish": "Jhaadu darwaze ke peeche rakho.",
+    "id": "ae2f7aa1e5c6",
+    "used": true
+  },
+  {
+    "english": "Wash the spoon right after use.",
+    "bangla": "ব্যবহারের পরপরই চামচ ধোও।",
+    "hindi": "",
+    "hinglish": "Use karte hi chammach dho lo.",
+    "id": "9bbed611778c",
+    "used": true
+  },
+  {
+    "english": "Keep the notebook in the bag.",
+    "bangla": "খাতা ব্যাগে রাখো।",
+    "hindi": "",
+    "hinglish": "Copy bag me rakho.",
+    "id": "e5bb9fd3c0e5",
+    "used": true
+  },
+  {
+    "english": "Switch the light off in the hall.",
+    "bangla": "হলের লাইট নিভাও।",
+    "hindi": "",
+    "hinglish": "Hall ki light band karo.",
+    "id": "498fce32c1da",
+    "used": true
+  },
+  {
+    "english": "Take the trash out tonight.",
+    "bangla": "আজ রাতে ময়লা বাইরে ফেলো।",
+    "hindi": "",
+    "hinglish": "Aaj raat kachra bahar daalo.",
+    "id": "109d3816147c",
+    "used": true
+  },
+  {
+    "english": "Keep the sugar in the top shelf.",
+    "bangla": "চিনি উপরের তাকে রাখো।",
+    "hindi": "",
+    "hinglish": "Cheeni upar ki shelf me rakho.",
+    "id": "5c65d713106a",
+    "used": true
+  },
+  {
+    "english": "Charge the phone before bedtime.",
+    "bangla": "ঘুমানোর আগে ফোন চার্জ দাও।",
+    "hindi": "",
+    "hinglish": "Sone se pehle phone charge karo.",
+    "id": "a707abf423a7",
+    "used": true
+  },
+  {
+    "english": "Wipe the mirror after washing.",
+    "bangla": "ধোয়ার পর আয়না মুছো।",
+    "hindi": "",
+    "hinglish": "Dhone ke baad aaina pochho.",
+    "id": "ad9f3675d2fd",
+    "used": true
+  },
+  {
+    "english": "Keep the bag near the shoe rack.",
+    "bangla": "ব্যাগ জুতার র‍্যাকের কাছে রাখো।",
+    "hindi": "",
+    "hinglish": "Bag shoe rack ke paas rakho.",
+    "id": "6d9192cbec06",
+    "used": true
+  },
+  {
+    "english": "Boil the milk on low flame.",
+    "bangla": "দুধ কম আঁচে ফোটাও।",
+    "hindi": "",
+    "hinglish": "Doodh dheemi aanch pe ubalo.",
+    "id": "c9664bcdc676",
+    "used": true
+  },
+  {
+    "english": "Keep the plate in the sink.",
+    "bangla": "প্লেট সিঙ্কে রাখো।",
+    "hindi": "",
+    "hinglish": "Plate sink me rakho.",
+    "id": "56ab65d66607",
+    "used": true
+  },
+  {
+    "english": "Tie the garbage bag tightly.",
+    "bangla": "ময়লার ব্যাগ শক্ত করে বাঁধো।",
+    "hindi": "",
+    "hinglish": "Kachre ki thaili kas ke baandho.",
+    "id": "69c4473851c2",
+    "used": true
+  },
+  {
+    "english": "Keep the calendar on the wall.",
+    "bangla": "ক্যালেন্ডার দেয়ালে রাখো।",
+    "hindi": "",
+    "hinglish": "Calendar deewar pe rakho.",
+    "id": "0cd4af6a2a6f",
+    "used": true
+  },
+  {
+    "english": "Soak the lentils for an hour.",
+    "bangla": "ডাল এক ঘণ্টা ভিজিয়ে রাখো।",
+    "hindi": "",
+    "hinglish": "Daal ek ghanta bhigo do.",
+    "id": "964b327a4b4d",
+    "used": true
+  },
+  {
+    "english": "Keep the water bottle upright.",
+    "bangla": "জলের বোতল সোজা রাখো।",
+    "hindi": "",
+    "hinglish": "Paani ki bottle seedhi rakho.",
+    "id": "45a9ad6bd6f3",
+    "used": true
+  },
+  {
+    "english": "Shut the window before the rain.",
+    "bangla": "বৃষ্টির আগে জানালা বন্ধ করো।",
+    "hindi": "",
+    "hinglish": "Baarish se pehle khidki band karo.",
+    "id": "6cac8fc4d7a0",
+    "used": true
+  },
+  {
+    "english": "Keep the shoes on the rack.",
+    "bangla": "জুতা র‍্যাকে রাখো।",
+    "hindi": "",
+    "hinglish": "Joote rack pe rakho.",
+    "id": "284409424b0d",
+    "used": true
+  },
+  {
+    "english": "Cut the paper along the line.",
+    "bangla": "কাগজ দাগ বরাবর কাটো।",
+    "hindi": "",
+    "hinglish": "Kagaz line ke saath kaato.",
+    "id": "02b6c4461a5a",
+    "used": true
+  },
+  {
+    "english": "Keep the torch by the bed.",
+    "bangla": "টর্চ বিছানার পাশে রাখো।",
+    "hindi": "",
+    "hinglish": "Torch bistar ke paas rakho.",
+    "id": "583a500172c5",
+    "used": true
+  },
+  {
+    "english": "Check the bill before paying.",
+    "bangla": "বিল দেওয়ার আগে দেখো।",
+    "hindi": "",
+    "hinglish": "Bill dene se pehle check karo.",
+    "id": "25e727509685",
+    "used": true
+  },
+  {
+    "english": "Keep the remote near the sofa.",
+    "bangla": "রিমোট সোফার কাছে রাখো।",
+    "hindi": "",
+    "hinglish": "Remote sofa ke paas rakho.",
+    "id": "aa13c7d3704b",
+    "used": true
+  },
+  {
+    "english": "Hang the calendar straight.",
+    "bangla": "ক্যালেন্ডার সোজা করে ঝোলাও।",
+    "hindi": "",
+    "hinglish": "Calendar seedha tang do.",
+    "id": "fc334991cc97",
+    "used": true
+  },
+  {
+    "english": "Keep the milk in the fridge.",
+    "bangla": "দুধ ফ্রিজে রাখো।",
+    "hindi": "",
+    "hinglish": "Doodh fridge me rakho.",
+    "id": "ea0242709cd6",
+    "used": true
+  },
+  {
+    "english": "Sweep under the bed weekly.",
+    "bangla": "সপ্তাহে একবার বিছানার নিচে ঝাড়ু দাও।",
+    "hindi": "",
+    "hinglish": "Hafte me ek baar bistar ke neeche jhaadu lagao.",
+    "id": "0a630951272d",
+    "used": true
+  },
+  {
+    "english": "Keep the comb in the drawer.",
+    "bangla": "চিরুনি ড্রয়ারে রাখো।",
+    "hindi": "",
+    "hinglish": "Kanghi drawer me rakho.",
+    "id": "dc3b8a5c3281",
+    "used": true
+  },
+  {
+    "english": "Dry the plates on the stand.",
+    "bangla": "প্লেট স্ট্যান্ডে শুকাও।",
+    "hindi": "",
+    "hinglish": "Plate stand pe sukhao.",
+    "id": "692650024159",
+    "used": true
+  },
+  {
+    "english": "Keep the salt away from steam.",
+    "bangla": "লবণ ভাপ থেকে দূরে রাখো।",
+    "hindi": "",
+    "hinglish": "Namak bhaap se door rakho.",
+    "id": "01acbb79f25d",
+    "used": true
+  },
+  {
+    "english": "Fill the cooler before noon.",
+    "bangla": "দুপুরের আগে কুলার ভরো।",
+    "hindi": "",
+    "hinglish": "Dopahar se pehle cooler bharo.",
+    "id": "5c8ac9777637",
+    "used": true
+  },
+  {
+    "english": "Keep the cable coiled properly.",
+    "bangla": "কেবল ভালো করে প্যাঁচিয়ে রাখো।",
+    "hindi": "",
+    "hinglish": "Cable theek se lapet kar rakho.",
+    "id": "22e98435e0df",
+    "used": true
+  },
+  {
+    "english": "Wipe the fan blades this month.",
+    "bangla": "এই মাসে ফ্যানের ব্লেড মুছো।",
+    "hindi": "",
+    "hinglish": "Is mahine fan ke blade pochho.",
+    "id": "61961e42f11e",
+    "used": true
+  },
+  {
+    "english": "Keep the soap in the dish.",
+    "bangla": "সাবান সাবানদানিতে রাখো।",
+    "hindi": "",
+    "hinglish": "Sabun soap dish me rakho.",
+    "id": "e953a486d7d2",
+    "used": true
+  },
+  {
+    "english": "Water the tulsi daily.",
+    "bangla": "প্রতিদিন তুলসীতে পানি দাও।",
+    "hindi": "",
+    "hinglish": "Roz tulsi ko paani do.",
+    "id": "d2b8cdac2d8b",
+    "used": true
+  },
+  {
+    "english": "Keep the basket near the door.",
+    "bangla": "ঝুড়ি দরজার কাছে রাখো।",
+    "hindi": "",
+    "hinglish": "Tokri darwaze ke paas rakho.",
+    "id": "c499cfe48276",
+    "used": true
+  },
+  {
+    "english": "Sort the clothes by color.",
+    "bangla": "কাপড় রঙ অনুযায়ী আলাদা করো।",
+    "hindi": "",
+    "hinglish": "Kapde rang ke hisaab se alag karo.",
+    "id": "99dd81fe70cd",
+    "used": true
+  },
+  {
+    "english": "Keep the kettle on the counter.",
+    "bangla": "কেটলি কাউন্টারে রাখো।",
+    "hindi": "",
+    "hinglish": "Kettle counter pe rakho.",
+    "id": "44d0254a7df4",
+    "used": true
+  },
+  {
+    "english": "Oil the hinge of the gate.",
+    "bangla": "গেটের কব্জায় তেল দাও।",
+    "hindi": "",
+    "hinglish": "Gate ke kabze me tel lagao.",
+    "id": "c151665c257a",
+    "used": true
+  },
+  {
+    "english": "Keep the broom clean.",
+    "bangla": "ঝাড়ু পরিষ্কার রাখো।",
+    "hindi": "",
+    "hinglish": "Jhaadu saaf rakho.",
+    "id": "4945cc5202ee",
+    "used": true
+  },
+  {
+    "english": "Stack the books neatly.",
+    "bangla": "বইগুলো গুছিয়ে রাখো।",
+    "hindi": "",
+    "hinglish": "Kitaabein theek se rakho.",
+    "id": "de407cc3593d",
+    "used": true
+  },
+  {
+    "english": "Keep the shoes dry in rain.",
+    "bangla": "বৃষ্টিতে জুতা শুকনো রাখো।",
+    "hindi": "",
+    "hinglish": "Baarish me joote sookhe rakho.",
+    "id": "2d9cfddc87ec",
+    "used": true
+  },
+  {
+    "english": "Sharpen the pencil before writing.",
+    "bangla": "লেখার আগে পেন্সিল ধারালো করো।",
+    "hindi": "",
+    "hinglish": "Likhne se pehle pencil sharp karo.",
+    "id": "4244b6fa0c4f",
+    "used": true
+  },
+  {
+    "english": "Keep the dustbin empty daily.",
+    "bangla": "প্রতিদিন ডাস্টবিন খালি করো।",
+    "hindi": "",
+    "hinglish": "Roz kachredan khali karo.",
+    "id": "64d04e1194ca",
+    "used": true
+  },
+  {
+    "english": "Tie the curtain properly.",
+    "bangla": "পর্দা ঠিক করে বাঁধো।",
+    "hindi": "",
+    "hinglish": "Parda theek se baandho.",
+    "id": "5db73680deb5",
+    "used": true
+  },
+  {
+    "english": "Keep the medicine away from sun.",
+    "bangla": "ওষুধ রোদ থেকে দূরে রাখো।",
+    "hindi": "",
+    "hinglish": "Dawa dhoop se door rakho.",
+    "id": "d0472b8948ab",
+    "used": true
+  },
+  {
+    "english": "Lock the cycle before leaving.",
+    "bangla": "যাওয়ার আগে সাইকেল লক করো।",
+    "hindi": "",
+    "hinglish": "Jaane se pehle cycle lock karo.",
+    "id": "141dda3620a0",
+    "used": true
+  },
+  {
+    "english": "I smile to make others happy.",
+    "bangla": "আমি অন্যকে খুশি করতে হাসি।",
+    "hindi": "",
+    "hinglish": "Main doosron ko khush karne ke liye muskurata hoon.",
+    "id": "2a1fed306b6f",
+    "used": true
+  },
+  {
+    "english": "She reads books to gain wisdom.",
+    "bangla": "সে জ্ঞান অর্জনে বই পড়ে।",
+    "hindi": "",
+    "hinglish": "Woh ilm paane ke liye kitaabein padhti hai.",
+    "id": "c99ac3692701",
+    "used": true
+  },
+  {
+    "english": "He helps his father at work.",
+    "bangla": "সে কাজে বাবাকে সাহায্য করে।",
+    "hindi": "",
+    "hinglish": "Woh kaam mein apne papa ki madad karta hai.",
+    "id": "e077fd7c2865",
+    "used": true
+  },
+  {
+    "english": "We share knowledge with friends.",
+    "bangla": "আমরা বন্ধুদের সাথে জ্ঞান ভাগ করি।",
+    "hindi": "",
+    "hinglish": "Hum doston ke saath ilm baantte hain.",
+    "id": "19cfae909872",
+    "used": true
+  },
+  {
+    "english": "They serve guests with respect.",
+    "bangla": "তারা সম্মানের সাথে অতিথি সেবা করে।",
+    "hindi": "",
+    "hinglish": "Woh izzat se mehmanon ki khidmat karte hain.",
+    "id": "ff44e89f1346",
+    "used": true
+  },
+  {
+    "english": "I forgive those who hurt me.",
+    "bangla": "আমি যারা আমাকে কষ্ট দেয় তাদের ক্ষমা করি।",
+    "hindi": "",
+    "hinglish": "Main unhe maaf karta hoon jo mujhe takleef dete hain.",
+    "id": "4ae0133b5297",
+    "used": true
+  },
+  {
+    "english": "She feeds the hungry with love.",
+    "bangla": "সে ভালোবাসায় ক্ষুধার্তকে খাওয়ায়।",
+    "hindi": "",
+    "hinglish": "Woh pyaar se bhookhon ko khilatee hai.",
+    "id": "8f85a55ffc8e",
+    "used": false
+  },
+  {
+    "english": "He speaks softly to avoid fights.",
+    "bangla": "সে ঝগড়া এড়াতে নরমভাবে কথা বলে।",
+    "hindi": "",
+    "hinglish": "Woh jhagda bachne ke liye narmi se bolta hai.",
+    "id": "9b7135a5ada4",
+    "used": false
+  },
+  {
+    "english": "We save water for the future.",
+    "bangla": "আমরা ভবিষ্যতের জন্য পানি বাঁচাই।",
+    "hindi": "",
+    "hinglish": "Hum mustaqbil ke liye paani bachate hain.",
+    "id": "e0c479a98bc8",
+    "used": false
+  },
+  {
+    "english": "They pray together every evening.",
+    "bangla": "তারা প্রতিদিন সন্ধ্যায় একসাথে দোয়া করে।",
+    "hindi": "",
+    "hinglish": "Woh roz shaam ko saath dua karte hain.",
+    "id": "56ee7abbed84",
+    "used": false
+  },
+  {
+    "english": "I listen carefully to understand.",
+    "bangla": "আমি বুঝতে মন দিয়ে শুনি।",
+    "hindi": "",
+    "hinglish": "Main samajhne ke liye dhyan se sunta hoon.",
+    "id": "46439605ef72",
+    "used": false
+  },
+  {
+    "english": "She respects her husband deeply.",
+    "bangla": "সে স্বামীকে গভীরভাবে সম্মান করে।",
+    "hindi": "",
+    "hinglish": "Woh apne shohar ki gehri izzat karti hai.",
+    "id": "b0fb9eb6cbcc",
+    "used": false
+  },
+  {
+    "english": "He earns honestly for his children.",
+    "bangla": "সে সন্তানদের জন্য সৎভাবে উপার্জন করে।",
+    "hindi": "",
+    "hinglish": "Woh bachchon ke liye imandari se kamata hai.",
+    "id": "f29eb67174b6",
+    "used": false
+  },
+  {
+    "english": "We clean our street together.",
+    "bangla": "আমরা একসাথে রাস্তা পরিষ্কার করি।",
+    "hindi": "",
+    "hinglish": "Hum saath milkar gali saaf karte hain.",
+    "id": "ccef78251581",
+    "used": false
+  },
+  {
+    "english": "They donate blood to save lives.",
+    "bangla": "তারা জীবন বাঁচাতে রক্ত দান করে।",
+    "hindi": "",
+    "hinglish": "Woh jaan bachane ke liye khoon daan karte hain.",
+    "id": "16125eba4b76",
+    "used": false
+  },
+  {
+    "english": "I teach my brother patiently.",
+    "bangla": "আমি ধৈর্য ধরে ভাইকে পড়াই।",
+    "hindi": "",
+    "hinglish": "Main sabr se apne bhai ko padhata hoon.",
+    "id": "db1f4fe69fba",
+    "used": false
+  },
+  {
+    "english": "She cooks extra food for neighbors.",
+    "bangla": "সে প্রতিবেশীর জন্য বাড়তি খাবার রান্না করে।",
+    "hindi": "",
+    "hinglish": "Woh padosiyon ke liye extra khana banatee hai.",
+    "id": "c4c20a981fda",
+    "used": false
+  },
+  {
+    "english": "He fixes things for poor families.",
+    "bangla": "সে গরিব পরিবারের জিনিস মেরামত করে।",
+    "hindi": "",
+    "hinglish": "Woh gareeb families ki cheezein theek karta hai.",
+    "id": "47fbd56997e6",
+    "used": false
+  },
+  {
+    "english": "We visit relatives to keep ties.",
+    "bangla": "আমরা সম্পর্ক রাখতে আত্মীয়দের দেখতে যাই।",
+    "hindi": "",
+    "hinglish": "Hum rishte nibhane ke liye rishtedaron se milne jaate hain.",
+    "id": "008d94e7a4ce",
+    "used": false
+  },
+  {
+    "english": "They plant flowers in the yard.",
+    "bangla": "তারা উঠানে ফুল লাগায়।",
+    "hindi": "",
+    "hinglish": "Woh aangan mein phool lagate hain.",
+    "id": "5d0f43869cf9",
+    "used": false
+  },
+  {
+    "english": "I control my tongue while angry.",
+    "bangla": "আমি রাগের সময় জিভ নিয়ন্ত্রণ করি।",
+    "hindi": "",
+    "hinglish": "Main gusse mein apni zubaan control karta hoon.",
+    "id": "53beb0d31040",
+    "used": false
+  },
+  {
+    "english": "She wears simple clothes for humility.",
+    "bangla": "সে বিনয়ের জন্য সাধারণ পোশাক পরে।",
+    "hindi": "",
+    "hinglish": "Woh aajizi ke liye sadhe kapde pehanti hai.",
+    "id": "35e386fe27f7",
+    "used": false
+  },
+  {
+    "english": "He shares his lunch with a friend.",
+    "bangla": "সে বন্ধুর সাথে দুপুরের খাবার ভাগ করে।",
+    "hindi": "",
+    "hinglish": "Woh dost ke saath lunch baantta hai.",
+    "id": "60d1b605614e",
+    "used": false
+  },
+  {
+    "english": "We pray for the sick people.",
+    "bangla": "আমরা অসুস্থ মানুষের জন্য দোয়া করি।",
+    "hindi": "",
+    "hinglish": "Hum beemar logon ke liye dua karte hain.",
+    "id": "cdf0249b35fb",
+    "used": false
+  },
+  {
+    "english": "They help old people cross roads.",
+    "bangla": "তারা বৃদ্ধদের রাস্তা পার হতে সাহায্য করে।",
+    "hindi": "",
+    "hinglish": "Woh buzurgon ko sadak paar karne mein madad karte hain.",
+    "id": "4afd816b9a09",
+    "used": false
+  },
+  {
+    "english": "I give my seat to elders.",
+    "bangla": "আমি বড়দের আমার আসন দিই।",
+    "hindi": "",
+    "hinglish": "Main buzurgon ko apni seat deta hoon.",
+    "id": "0dcb4f726806",
+    "used": false
+  },
+  {
+    "english": "She teaches poor children freely.",
+    "bangla": "সে গরিব শিশুদের বিনামূল্যে পড়ায়।",
+    "hindi": "",
+    "hinglish": "Woh gareeb bachchon ko muft padhatee hai.",
+    "id": "978ca4040d89",
+    "used": false
+  },
+  {
+    "english": "He repairs the mosque door himself.",
+    "bangla": "সে নিজে মসজিদের দরজা মেরামত করে।",
+    "hindi": "",
+    "hinglish": "Woh khud masjid ka darwaza theek karta hai.",
+    "id": "5f7e45be2004",
+    "used": false
+  },
+  {
+    "english": "We keep our homes clean daily.",
+    "bangla": "আমরা প্রতিদিন ঘর পরিষ্কার রাখি।",
+    "hindi": "",
+    "hinglish": "Hum roz ghar saaf rakhte hain.",
+    "id": "db60147b5382",
+    "used": false
+  },
+  {
+    "english": "They feed birds every morning.",
+    "bangla": "তারা প্রতিদিন সকালে পাখিকে খাবার দেয়।",
+    "hindi": "",
+    "hinglish": "Woh roz subah parindon ko khana dete hain.",
+    "id": "8748a2bed4e1",
+    "used": false
+  },
+  {
+    "english": "I speak kindly to my parents.",
+    "bangla": "আমি বাবা-মার সাথে নরমভাবে কথা বলি।",
+    "hindi": "",
+    "hinglish": "Main maa-baap se narmi se baat karta hoon.",
+    "id": "cf33f3fb3648",
+    "used": false
+  },
+  {
+    "english": "She avoids gossip to stay pure.",
+    "bangla": "সে পবিত্র থাকতে গীবত এড়ায়।",
+    "hindi": "",
+    "hinglish": "Woh paak rehne ke liye gheebat se bachatee hai.",
+    "id": "07d9844d5e9d",
+    "used": false
+  },
+  {
+    "english": "He returns borrowed things on time.",
+    "bangla": "সে ধার নেওয়া জিনিস সময়মতো ফেরত দেয়।",
+    "hindi": "",
+    "hinglish": "Woh udhaar li cheezein waqt par wapas karta hai.",
+    "id": "1e54ef2ab266",
+    "used": false
+  },
+  {
+    "english": "We help our mother in the kitchen.",
+    "bangla": "আমরা রান্নাঘরে মাকে সাহায্য করি।",
+    "hindi": "",
+    "hinglish": "Hum kitchen mein maa ki madad karte hain.",
+    "id": "63bef01193b9",
+    "used": false
+  },
+  {
+    "english": "They smile at strangers warmly.",
+    "bangla": "তারা অপরিচিতদের আন্তরিকভাবে হাসে।",
+    "hindi": "",
+    "hinglish": "Woh ajnabiyon ko dil se muskuratte hain.",
+    "id": "d45bdcf131cc",
+    "used": false
+  },
+  {
+    "english": "I share my umbrella in rain.",
+    "bangla": "আমি বৃষ্টিতে ছাতা ভাগ করি।",
+    "hindi": "",
+    "hinglish": "Main baarish mein chhatri baantta hoon.",
+    "id": "b7f57cc60865",
+    "used": false
+  },
+  {
+    "english": "She gives water to thirsty animals.",
+    "bangla": "সে তৃষ্ণার্ত প্রাণীকে পানি দেয়।",
+    "hindi": "",
+    "hinglish": "Woh pyaase janwaron ko paani deti hai.",
+    "id": "4de0ae7344ed",
+    "used": false
+  },
+  {
+    "english": "He speaks truth even when hard.",
+    "bangla": "সে কঠিন হলেও সত্য বলে।",
+    "hindi": "",
+    "hinglish": "Woh mushkil ho tab bhi sach bolta hai.",
+    "id": "3c06523d1b64",
+    "used": false
+  },
+  {
+    "english": "We respect every religion equally.",
+    "bangla": "আমরা প্রতিটি ধর্মকে সমানভাবে সম্মান করি।",
+    "hindi": "",
+    "hinglish": "Hum har mazhab ki barabar izzat karte hain.",
+    "id": "0a390bd0071f",
+    "used": false
+  },
+  {
+    "english": "They help travelers with directions.",
+    "bangla": "তারা পথিককে পথ দেখায়।",
+    "hindi": "",
+    "hinglish": "Woh musafiron ko raasta batate hain.",
+    "id": "c6ab601eacac",
+    "used": false
+  },
+  {
+    "english": "I study hard to serve people.",
+    "bangla": "আমি মানুষকে সেবা করতে কঠোর পড়ি।",
+    "hindi": "",
+    "hinglish": "Main logon ki khidmat ke liye mehnat se padhta hoon.",
+    "id": "a636534b2625",
+    "used": false
+  },
+  {
+    "english": "She keeps her promises always.",
+    "bangla": "সে সবসময় তার প্রতিশ্রুতি রাখে।",
+    "hindi": "",
+    "hinglish": "Woh hamesha apna wada nibhatee hai.",
+    "id": "c28bbb06d69b",
+    "used": false
+  },
+  {
+    "english": "He gives his time to orphans.",
+    "bangla": "সে এতিমদের তার সময় দেয়।",
+    "hindi": "",
+    "hinglish": "Woh yateemon ko apna waqt deta hai.",
+    "id": "c90c11d7c475",
+    "used": false
+  },
+  {
+    "english": "We avoid wasting food daily.",
+    "bangla": "আমরা প্রতিদিন খাবার নষ্ট এড়াই।",
+    "hindi": "",
+    "hinglish": "Hum roz khana barbaad karne se bachte hain.",
+    "id": "3afd3ab54ad2",
+    "used": false
+  },
+  {
+    "english": "They forgive their enemies kindly.",
+    "bangla": "তারা শত্রুদের দয়া করে ক্ষমা করে।",
+    "hindi": "",
+    "hinglish": "Woh dushmanon ko reham se maaf karte hain.",
+    "id": "826feeadfc65",
+    "used": false
+  },
+  {
+    "english": "I greet everyone with a smile.",
+    "bangla": "আমি সবাইকে হাসি দিয়ে সালাম করি।",
+    "hindi": "",
+    "hinglish": "Main sabko muskaan ke saath salaam karta hoon.",
+    "id": "0ca1b9d780f0",
+    "used": false
+  },
+  {
+    "english": "She helps her sister with chores.",
+    "bangla": "সে বোনকে কাজে সাহায্য করে।",
+    "hindi": "",
+    "hinglish": "Woh apni behen ki kaam mein madad karti hai.",
+    "id": "7a0d8e62d444",
+    "used": false
+  },
+  {
+    "english": "He donates books to a library.",
+    "bangla": "সে লাইব্রেরিতে বই দান করে।",
+    "hindi": "",
+    "hinglish": "Woh library mein kitaabein daan karta hai.",
+    "id": "97eb9d298f04",
+    "used": false
+  },
+  {
+    "english": "We pray for peace in the world.",
+    "bangla": "আমরা বিশ্বে শান্তির জন্য দোয়া করি।",
+    "hindi": "",
+    "hinglish": "Hum duniya mein aman ke liye dua karte hain.",
+    "id": "1413e7159f7d",
+    "used": false
+  },
+  {
+    "english": "They do every good deed for God.",
+    "bangla": "তারা প্রতিটি ভালো কাজ আল্লাহর জন্য করে।",
+    "hindi": "",
+    "hinglish": "Woh har nek kaam Allah ke liye karte hain.",
+    "id": "ebb2f7b1c6af",
+    "used": false
+  },
+  {
+    "english": "Amal ka daromaad niyat par hai.",
+    "bangla": "আমলের ভিত্তি নিয়তের উপর।",
+    "hindi": "Amal ki bunyaad niyat par hai.",
+    "hinglish": "",
+    "id": "0c16839d90ed",
+    "used": false
+  },
+  {
+    "english": "Jo Allah par bharosa kare uske liye wahi kaafi hai.",
+    "bangla": "যে আল্লাহর উপর ভরসা করে তার জন্য তিনিই যথেষ্ট।",
+    "hindi": "Jo Allah par bharosa kare uske liye wahi kaafi hai.",
+    "hinglish": "",
+    "id": "fc93a2da3ecc",
+    "used": false
+  },
+  {
+    "english": "Sabse behtar amal wo jo hamesha rahe.",
+    "bangla": "সবচেয়ে ভালো আমল তা যা নিয়মিত থাকে।",
+    "hindi": "Sabse behtar amal wo jo hamesha rahe.",
+    "hinglish": "",
+    "id": "9e5d474ce613",
+    "used": false
+  },
+  {
+    "english": "Muskurana bhi sadaqah hai.",
+    "bangla": "হাসিমুখ হওয়াও সদকা।",
+    "hindi": "Muskurana bhi sadaqah hai.",
+    "hinglish": "",
+    "id": "b15dc255ca8b",
+    "used": false
+  },
+  {
+    "english": "Paani pilana sadaqah hai.",
+    "bangla": "পানি পান করানোও সদকা।",
+    "hindi": "Paani pilana sadaqah hai.",
+    "hinglish": "",
+    "id": "6be4322d8d15",
+    "used": false
+  },
+  {
+    "english": "Rishtedari jodna umar badhata hai.",
+    "bangla": "আত্মীয়তার সম্পর্ক জোড়া রাখা আয়ু বাড়ায়।",
+    "hindi": "Rishtedari jodna umar badhata hai.",
+    "hinglish": "",
+    "id": "8dbcc0b81a9d",
+    "used": false
+  },
+  {
+    "english": "Sach bolna najaat hai.",
+    "bangla": "সত্য বলা মুক্তির পথ।",
+    "hindi": "Sach bolna najaat hai.",
+    "hinglish": "",
+    "id": "e4f9bcdb4bb2",
+    "used": false
+  },
+  {
+    "english": "Chup rehna hikmat hai.",
+    "bangla": "চুপ থাকা প্রজ্ঞা।",
+    "hindi": "Chup rehna hikmat hai.",
+    "hinglish": "",
+    "id": "d94d29c55817",
+    "used": false
+  },
+  {
+    "english": "Kisi ka dil na dukhao.",
+    "bangla": "কারও মন কষ্ট দিও না।",
+    "hindi": "Kisi ka dil na dukhao.",
+    "hinglish": "",
+    "id": "1f6ab0c10564",
+    "used": false
+  },
+  {
+    "english": "Maa ke qadmon me jannat hai.",
+    "bangla": "মায়ের পায়ের নিচে জান্নাত।",
+    "hindi": "Maa ke qadmon me jannat hai.",
+    "hinglish": "",
+    "id": "2d1b0a260525",
+    "used": false
+  },
+  {
+    "english": "Walidain ki khidmat ibadat hai.",
+    "bangla": "পিতা-মাতার সেবা ইবাদত।",
+    "hindi": "Walidain ki khidmat ibadat hai.",
+    "hinglish": "",
+    "id": "ada416024bd1",
+    "used": false
+  },
+  {
+    "english": "Yateem ke sar par haath pherna sadaqah hai.",
+    "bangla": "এতিমের মাথায় হাত বুলানো সদকা।",
+    "hindi": "Yateem ke sar pe haath pherna sadaqah hai.",
+    "hinglish": "",
+    "id": "c9401ac8dfc7",
+    "used": false
+  },
+  {
+    "english": "Padosi ka haq ada karo.",
+    "bangla": "প্রতিবেশীর হক আদায় করো।",
+    "hindi": "Padosi ka haq ada karo.",
+    "hinglish": "",
+    "id": "ceae62510145",
+    "used": false
+  },
+  {
+    "english": "Mehmaan ki izzat karo.",
+    "bangla": "অতিথির সম্মান করো।",
+    "hindi": "Mehmaan ki izzat karo.",
+    "hinglish": "",
+    "id": "0a23a59214c7",
+    "used": false
+  },
+  {
+    "english": "Khana baant kar khao.",
+    "bangla": "খাবার ভাগ করে খাও।",
+    "hindi": "Khana baant kar khao.",
+    "hinglish": "",
+    "id": "8f7dbb6f2d5e",
+    "used": false
+  },
+  {
+    "english": "Subah jaldi uthna barkat hai.",
+    "bangla": "ভোরে ওঠা বরকত।",
+    "hindi": "Subah jaldi uthna barkat hai.",
+    "hinglish": "",
+    "id": "bec7c1923d63",
+    "used": false
+  },
+  {
+    "english": "Safai nisf imaan hai.",
+    "bangla": "পরিচ্ছন্নতা ঈমানের অর্ধেক।",
+    "hindi": "Safai nisf imaan hai.",
+    "hinglish": "",
+    "id": "39522bfdf401",
+    "used": false
+  },
+  {
+    "english": "Ilm haasil karna farz hai.",
+    "bangla": "জ্ঞান অর্জন ফরজ।",
+    "hindi": "Ilm haasil karna farz hai.",
+    "hinglish": "",
+    "id": "95814d66c7a6",
+    "used": false
+  },
+  {
+    "english": "Ustad ka adab karo.",
+    "bangla": "শিক্ষকের সম্মান করো।",
+    "hindi": "Ustad ka adab karo.",
+    "hinglish": "",
+    "id": "15163aa28cdb",
+    "used": false
+  },
+  {
+    "english": "Chhote pe reham",
+    "bangla": "bade ka ehtiram.",
+    "hindi": "ছোটদের স্নেহ",
+    "hinglish": "বড়দের সম্মান।",
+    "id": "a937b75a9450",
+    "used": false
+  },
+  {
+    "english": "Jhoot se bacho.",
+    "bangla": "মিথ্যা থেকে বেঁচে থাকো।",
+    "hindi": "Jhoot se bacho.",
+    "hinglish": "",
+    "id": "840b3085742b",
+    "used": false
+  },
+  {
+    "english": "Gusse ko pee jao.",
+    "bangla": "রাগ গিলে ফেলো।",
+    "hindi": "Gusse ko pee jao.",
+    "hinglish": "",
+    "id": "da5a12101d3a",
+    "used": false
+  },
+  {
+    "english": "Maaf karna izzat badhata hai.",
+    "bangla": "ক্ষমা সম্মান বাড়ায়।",
+    "hindi": "Maaf karna izzat badhata hai.",
+    "hinglish": "",
+    "id": "b8cdafb87e1f",
+    "used": false
+  },
+  {
+    "english": "Hasad se door raho.",
+    "bangla": "হিংসা থেকে দূরে থাকো।",
+    "hindi": "Hasad se door raho.",
+    "hinglish": "",
+    "id": "91af499b001d",
+    "used": false
+  },
+  {
+    "english": "Kanjoosi se bacho.",
+    "bangla": "কৃপণতা থেকে বাঁচো।",
+    "hindi": "Kanjoosi se bacho.",
+    "hinglish": "",
+    "id": "be98c04eb677",
+    "used": false
+  },
+  {
+    "english": "Qarz waqt par ada karo.",
+    "bangla": "ঋণ সময়মতো শোধ করো।",
+    "hindi": "Qarz waqt par ada karo.",
+    "hinglish": "",
+    "id": "1281c2c48eb9",
+    "used": false
+  },
+  {
+    "english": "Wada pura karo.",
+    "bangla": "প্রতিশ্রুতি রক্ষা করো।",
+    "hindi": "Wada pura karo.",
+    "hinglish": "",
+    "id": "d5d9bb395683",
+    "used": false
+  },
+  {
+    "english": "Amanat lautao.",
+    "bangla": "আমানত ফিরিয়ে দাও।",
+    "hindi": "Amanat lautao.",
+    "hinglish": "",
+    "id": "67e4a815af2f",
+    "used": false
+  },
+  {
+    "english": "Halal kamai karo.",
+    "bangla": "হালাল উপার্জন করো।",
+    "hindi": "Halal kamai karo.",
+    "hinglish": "",
+    "id": "40b44fc7749a",
+    "used": false
+  },
+  {
+    "english": "Mehnat me sharam nahi.",
+    "bangla": "পরিশ্রমে লজ্জা নেই।",
+    "hindi": "Mehnat me sharam nahi.",
+    "hinglish": "",
+    "id": "45471b3b2bc7",
+    "used": false
+  },
+  {
+    "english": "Neend se pehle zikr karo.",
+    "bangla": "ঘুমের আগে জিকির করো।",
+    "hindi": "Neend se pehle zikr karo.",
+    "hinglish": "",
+    "id": "ab750cb2da88",
+    "used": false
+  },
+  {
+    "english": "Namaz waqt par padho.",
+    "bangla": "নামাজ সময়মতো পড়ো।",
+    "hindi": "Namaz waqt par padho.",
+    "hinglish": "",
+    "id": "f1fa6705b045",
+    "used": false
+  },
+  {
+    "english": "Roza dil saaf karta hai.",
+    "bangla": "রোজা মন পরিষ্কার করে।",
+    "hindi": "Roza dil saaf karta hai.",
+    "hinglish": "",
+    "id": "57fb9ec78170",
+    "used": false
+  },
+  {
+    "english": "Zakat maal pak karti hai.",
+    "bangla": "যাকাত সম্পদ পবিত্র করে।",
+    "hindi": "Zakat maal pak karti hai.",
+    "hinglish": "",
+    "id": "c4bf732973eb",
+    "used": false
+  },
+  {
+    "english": "Hajj sabr sikhata hai.",
+    "bangla": "হজ ধৈর্য শেখায়।",
+    "hindi": "Hajj sabr sikhata hai.",
+    "hinglish": "",
+    "id": "21b5bf70041e",
+    "used": false
+  },
+  {
+    "english": "Quran rozana padho.",
+    "bangla": "প্রতিদিন কুরআন পড়ো।",
+    "hindi": "Quran rozana padho.",
+    "hinglish": "",
+    "id": "a18476a96fc4",
+    "used": false
+  },
+  {
+    "english": "Durood shareef padho.",
+    "bangla": "দরুদ শরিফ পড়ো।",
+    "hindi": "Durood shareef padho.",
+    "hinglish": "",
+    "id": "896b4a60f9f4",
+    "used": false
+  },
+  {
+    "english": "Salaam phailao.",
+    "bangla": "সালাম ছড়িয়ে দাও।",
+    "hindi": "Salaam phailao.",
+    "hinglish": "",
+    "id": "59d09dabdfcb",
+    "used": false
+  },
+  {
+    "english": "Bimaar ki iyadat karo.",
+    "bangla": "রোগী দেখতে যাও।",
+    "hindi": "Bimaar ki iyadat karo.",
+    "hinglish": "",
+    "id": "e8b2217dd275",
+    "used": false
+  },
+  {
+    "english": "Janaze me shirkat karo.",
+    "bangla": "জানাজায় শরিক হও।",
+    "hindi": "Janaze me shirkat karo.",
+    "hinglish": "",
+    "id": "e15ebb5a4a4c",
+    "used": false
+  },
+  {
+    "english": "Kisi ko zaleel na karo.",
+    "bangla": "কাউকে অপমান করো না।",
+    "hindi": "Kisi ko zaleel na karo.",
+    "hinglish": "",
+    "id": "f4766acfef8e",
+    "used": false
+  },
+  {
+    "english": "Apne haath se kamao.",
+    "bangla": "নিজ হাতে উপার্জন করো।",
+    "hindi": "Apne haath se kamao.",
+    "hinglish": "",
+    "id": "770d9228cdf0",
+    "used": false
+  },
+  {
+    "english": "Bachon se pyaar karo.",
+    "bangla": "শিশুদের ভালোবাসো।",
+    "hindi": "Bachon se pyaar karo.",
+    "hinglish": "",
+    "id": "884756d8369a",
+    "used": false
+  },
+  {
+    "english": "Biwi ka haq ada karo.",
+    "bangla": "স্ত্রীর হক আদায় করো।",
+    "hindi": "Biwi ka haq ada karo.",
+    "hinglish": "",
+    "id": "359537af029e",
+    "used": false
+  },
+  {
+    "english": "Shohar ki itaat karo.",
+    "bangla": "স্বামীর আনুগত্য করো।",
+    "hindi": "Shohar ki itaat karo.",
+    "hinglish": "",
+    "id": "cd4db1f5fa5d",
+    "used": false
+  },
+  {
+    "english": "Ghar me salaam karo.",
+    "bangla": "ঘরে সালাম দাও।",
+    "hindi": "Ghar me salaam karo.",
+    "hinglish": "",
+    "id": "1e457dad821b",
+    "used": false
+  },
+  {
+    "english": "Bahar jaate waqt dua karo.",
+    "bangla": "বেরোনোর সময় দুআ করো।",
+    "hindi": "Bahar jaate waqt dua karo.",
+    "hinglish": "",
+    "id": "46ad4710bdbb",
+    "used": false
+  },
+  {
+    "english": "Raat me darwaza band karo.",
+    "bangla": "রাতে দরজা বন্ধ করো।",
+    "hindi": "Raat me darwaza band karo.",
+    "hinglish": "",
+    "id": "e21ec57f049a",
+    "used": false
+  },
+  {
+    "english": "Har kaam bismillah se shuru karo.",
+    "bangla": "প্রতিটি কাজ বিসমিল্লাহ দিয়ে শুরু করো।",
+    "hindi": "Har kaam bismillah se shuru karo.",
+    "hinglish": "",
+    "id": "18fbe9d90ff3",
+    "used": false
+  },
+  {
+    "english": "Allah ki rah me kharch karo.",
+    "bangla": "আল্লাহর পথে খরচ করো।",
+    "hindi": "Allah ki rah me kharch karo.",
+    "hinglish": "",
+    "id": "6a091f554f64",
     "used": false
   }
 ]

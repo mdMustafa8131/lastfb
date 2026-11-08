@@ -9,3 +9,8 @@ media/video/*.mp4
 media/video/*.jpg
 media/video/*.png
 media/video/ripple_tmp*/
+media/video/
+out_*.mp4
+
+media/video/
+out_*.mp4

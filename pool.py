@@ -72,6 +72,9 @@ def add_items(section, items):
 def _take(section, count, lang=None):
     p = load_pool(section)
     avail = [i for i in p if not i.get("used") and _matches(section, i, lang)]
+    ls = [l for l in (lang or []) if l]
+    if ls:
+        avail.sort(key=lambda i: sum(1 for l in ls if i.get(l)), reverse=True)
     if section == "news":
         avail.sort(key=lambda i: i.get("score") or 0, reverse=True)
     picked = avail[:count]
