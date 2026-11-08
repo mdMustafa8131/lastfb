@@ -16,7 +16,7 @@ REEL_SECONDS = 15
 REEL_FPS = 25
 
 HOST = os.getenv("FBENGINE_HOST", "0.0.0.0")
-PORT = int(os.getenv("FBENGINE_PORT", "8080"))
+PORT = int(os.getenv("PORT") or os.getenv("FBENGINE_PORT", "8080"))
 TZ = "Asia/Kolkata"
 
 GRAPH_VERSION = os.getenv("FBENGINE_GRAPH_VERSION", "v21.0")

@@ -239,7 +239,7 @@ def build(image_path, section, category, mode="zoom", seconds=None,
     mode = mode if mode in MODES else "zoom"
     seconds = seconds or config.REEL_SECONDS
     if voice_path:
-        seconds = min(30.0, max(8.0, float(voice_len or 0) + 1.0))
+        seconds = min(60.0, max(8.0, float(voice_len or 0) + 1.0))
     seconds = round(float(seconds), 3)
     fps = config.REEL_FPS
     frames = max(1, int(round(seconds * fps)))
