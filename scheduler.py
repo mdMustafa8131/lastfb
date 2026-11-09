@@ -112,6 +112,14 @@ def _render_pair(page, meta, boxes, seps, track):
     return pair, cat
 
 
+def _music(page, voice_p):
+    mv = page.get("music_vol")
+    mv = 20 if mv is None else int(mv)
+    if voice_p:
+        mv = min(mv, 18)
+    return mv
+
+
 async def _post_once(page):
     files = pool.ready_files(page["id"])
     if not files:
@@ -157,8 +165,8 @@ async def _post_once(page):
         video, _m = reel.build(
             image, page["section"], cat, page.get("reel_mode") or "zoom",
             plain_path=plain_i, full_path=full_i,
-            use_music=(True if page["section"] == "islam"
-                       else bool(page.get("reel_music", True))),
+            use_music=bool(page.get("reel_music", True)),
+            music_vol=_music(page, voice_p),
             voice_path=voice_p, voice_len=voice_len, words=words, boxes=boxes,
             seps=seps,
             hl=bool(page.get("hl_on", True)) and (page.get("ul_style") or "underline") != "highlight",
@@ -289,8 +297,8 @@ async def post_now(page_id):
         video, _m = reel.build(
             image, page["section"], cat, page.get("reel_mode") or "zoom",
             plain_path=plain_i, full_path=full_i,
-            use_music=(True if page["section"] == "islam"
-                       else bool(page.get("reel_music", True))),
+            use_music=bool(page.get("reel_music", True)),
+            music_vol=_music(page, voice_p),
             voice_path=voice_p, voice_len=voice_len, words=words, boxes=boxes,
             seps=seps,
             hl=bool(page.get("hl_on", True)) and (page.get("ul_style") or "underline") != "highlight",
@@ -304,7 +312,6 @@ async def post_now(page_id):
                        "hi": page.get("ul_color_hi")},
             ul_style=page.get("ul_style") or "underline",
             ul_alpha=page.get("ul_alpha") or 38)
-
 
         if not video:
             for p in pair:
