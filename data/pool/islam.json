@@ -8,7 +8,7 @@
     "source": "Sunan at-Tirmidhi 1002",
     "category": "qabr",
     "id": "54cd7edb428b",
-    "used": false
+    "used": true
   },
   {
     "hadith_roman": "কবর হয় জান্নাতের বাগান, নয়তো জাহান্নামের গর্ত।",
@@ -19,7 +19,7 @@
     "source": "Sunan at-Tirmidhi 2460",
     "category": "qabr",
     "id": "b5e958282bca",
-    "used": false
+    "used": true
   },
   {
     "hadith_roman": "জাহান্নামের দরজা সাতটি।",
@@ -30,7 +30,7 @@
     "source": "Surah Hijr 44",
     "category": "jahannam",
     "id": "a8a162aaafb2",
-    "used": false
+    "used": true
   },
   {
     "hadith_roman": "জান্নাতের দরজা আটটি।",
@@ -41,7 +41,7 @@
     "source": "Sahih Bukhari 1897",
     "category": "jannat",
     "id": "20a247c68fb9",
-    "used": false
+    "used": true
   },
   {
     "hadith_roman": "জান্নাতে যা চাইবে তাই পাবে।",

@@ -17,10 +17,10 @@
     "source_color": "#085430",
     "logo": null,
     "brand": null,
-    "sentences": 4,
+    "sentences": 3,
     "question_box": true,
     "enabled": false,
-    "status": "stopped",
+    "status": "idle",
     "schedule": {
       "day": {
         "start": "09:00",
@@ -35,9 +35,9 @@
         "max": 90
       }
     },
-    "last_post_at": "2026-11-09T16:49:33.309672+05:30",
+    "last_post_at": "2026-11-09T23:11:07.253652+05:30",
     "next_post_at": "2026-11-09T17:37:34.634814+05:30",
-    "posted_count": 8,
+    "posted_count": 9,
     "fail_count": 0,
     "reel": true,
     "reel_music": true,
@@ -98,9 +98,9 @@
         "max": 90
       }
     },
-    "last_post_at": "2026-11-09T22:01:16.475763+05:30",
+    "last_post_at": "2026-11-09T23:09:36.879359+05:30",
     "next_post_at": "2026-11-09T17:27:59.950344+05:30",
-    "posted_count": 11,
+    "posted_count": 12,
     "fail_count": 0,
     "reel": true,
     "reel_music": true,
