@@ -2152,10 +2152,10 @@
     "used": false
   },
   {
-    "english": "Chhote pe reham",
-    "bangla": "bade ka ehtiram.",
-    "hindi": "ছোটদের স্নেহ",
-    "hinglish": "বড়দের সম্মান।",
+    "english": "Chhote pe reham, bade ka ehtiram.",
+    "bangla": "ছোটদের স্নেহ, বড়দের সম্মান।",
+    "hindi": "",
+    "hinglish": "",
     "id": "a937b75a9450",
     "used": true
   },
