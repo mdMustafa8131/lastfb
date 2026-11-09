@@ -20,6 +20,7 @@ TZ = ZoneInfo(config.TZ)
 _tasks = {}
 _sup = None
 _stop = asyncio.Event()
+_tts_retry = {}
 _loop = None
 
 
@@ -156,11 +157,25 @@ async def _post_once(page):
                     segs.append((ln.get("k") or "english", txt))
             if page.get("section") == "english" and bool(page.get("question_box", True)):
                 segs.append(("english", "Please comment below."))
-            voice_p, voice_len, words = await voice.build(
+            voice_p, voice_len, words, missed = await voice.build(
                 segs, page.get("voice_gender") or "female",
                 f"{int(page.get('voice_rate', -6)):+d}%")
             print("[voice]", page["section"], len(track), len(segs),
-                  bool(voice_p), voice_len, len(words))
+                  bool(voice_p), voice_len, len(words), "missed", missed)
+            if missed:
+                n = _tts_retry.get(image.name, 0) + 1
+                _tts_retry[image.name] = n
+                print("[voice] incomplete, attempt", n, missed)
+                if n <= 2:
+                    for p in pair:
+                        p.unlink(missing_ok=True)
+                    if voice_p:
+                        voice_p.unlink(missing_ok=True)
+                    store.update_page(page["id"], status="reel_wait")
+                    return
+                print("[voice] partial post", missed)
+            else:
+                _tts_retry.pop(image.name, None)
 
         video, _m = reel.build(
             image, page["section"], cat, page.get("reel_mode") or "zoom",
@@ -288,11 +303,26 @@ async def post_now(page_id):
                     segs.append((ln.get("k") or "english", txt))
             if page.get("section") == "english" and bool(page.get("question_box", True)):
                 segs.append(("english", "Please comment below."))
-            voice_p, voice_len, words = await voice.build(
+            voice_p, voice_len, words, missed = await voice.build(
                 segs, page.get("voice_gender") or "female",
                 f"{int(page.get('voice_rate', -6)):+d}%")
             print("[voice]", page["section"], len(track), len(segs),
-                  bool(voice_p), voice_len, len(words))
+                  bool(voice_p), voice_len, len(words), "missed", missed)
+            if missed:
+                n = _tts_retry.get(image.name, 0) + 1
+                _tts_retry[image.name] = n
+                print("[voice] incomplete, attempt", n, missed)
+                if n <= 2:
+                    for p in pair:
+                        p.unlink(missing_ok=True)
+                    if voice_p:
+                        voice_p.unlink(missing_ok=True)
+                    store.update_page(page["id"], status="reel_wait")
+                    return {"ok": False,
+                            "error": "Voice adhoori, dobara dabao: " + ",".join(missed)}
+                print("[voice] partial post", missed)
+            else:
+                _tts_retry.pop(image.name, None)
 
         video, _m = reel.build(
             image, page["section"], cat, page.get("reel_mode") or "zoom",
