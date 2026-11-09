@@ -3,7 +3,7 @@
     "id": "1388535524349477",
     "name": "Daily Free English ",
     "category": "Education",
-    "access_token": "EAAJEILYjdJ4BS4Nic2KFVOwZB2lWPcJYxFIIQezD63yJsNKqvBt7jae8afa1nVLHfw4ywcQml1GmC7VhCyXOr8FR71nnJr2ZCMVLiFJfo2ig4NQiW2pYxBQIYeTJ6Jc8toM656X1oLHfGhsQatPBG7flYdmWYa3IbEfsoQajjMz8pCFMpv1WxFsyu1QKZBkFPxh6t2X",
+    "access_token": "EAAJEILYjdJ4BSZCNZCNV0ZAWCJksCZAuneIdYQGP0LEE4AXZA2azQZA9KXzjJWm2i5zn0izNCD0fEZCTIyuz7UQYzQGVyP9CKyCbaLHTtAzbJEZAjNPACPQvo7Qn2eXVv4EVB62l8mlCyNtdUoDntVk0Rb0719RX5YOTKURNW2K3OA73iiZCBtHZCcPqYC0yswhZC2poN6i",
     "section": "english",
     "langs": [
       "bangla",
@@ -35,9 +35,9 @@
         "max": 120
       }
     },
-    "last_post_at": "2026-11-09T15:38:47.041596+05:30",
-    "next_post_at": "2026-11-09T16:48:48.094705+05:30",
-    "posted_count": 7,
+    "last_post_at": "2026-11-09T16:49:33.309672+05:30",
+    "next_post_at": "2026-11-09T17:37:34.634814+05:30",
+    "posted_count": 8,
     "fail_count": 0,
     "reel": true,
     "reel_music": true,
@@ -66,7 +66,7 @@
     "id": "770827062784222",
     "name": "Hadeez-e-Nabawi",
     "category": "Musician/band",
-    "access_token": "EAAJEILYjdJ4BSwuQPOsbhfKoGKHroQseqJ6JjiAb3Go7OADO6JVDVp4PPcgMuQPy6QlKutZBfQHWxLgLBYsWFJkCxVdoefmZCytMIAE5wYfeLMbvg4cj3BpHpotwg2zdMWNqeMjeMTzewWSGSfCC8NEu9WXgfVZAU94HixNXnTe76pRfKSnmRf0DqaSZArNCGu2YeqbI",
+    "access_token": "EAAJEILYjdJ4BSwfreDZCRqOpWHyDe889tj4P0im9au4i25zkg7ZAjUQ2ZCX8blzjSxdiOKAatPpZCLkl1koLIpnQa5KbqLJ2YPRyPxm7UwUg79SyX0sq96fkmoJcZC73PQ2d94GMJ4vWiLGvG2ZAFgjogZAszWE47wf0G1AvkuzykzwmBIeosjaG3yCXJzaJUHHJ1jt",
     "section": "islam",
     "langs": [
       "bangla",
@@ -98,9 +98,9 @@
         "max": 120
       }
     },
-    "last_post_at": "2026-11-09T15:38:04.419460+05:30",
-    "next_post_at": "2026-11-09T16:33:05.649128+05:30",
-    "posted_count": 6,
+    "last_post_at": "2026-11-09T16:38:54.379536+05:30",
+    "next_post_at": "2026-11-09T17:27:59.950344+05:30",
+    "posted_count": 7,
     "fail_count": 0,
     "reel": true,
     "reel_music": true,
@@ -129,8 +129,8 @@
     "id": "100737239401306",
     "name": "Malika Hafa",
     "category": "Reel creator",
-    "access_token": "",
-    "section": null,
+    "access_token": "EAAJEILYjdJ4BSwkp7p7TNiT4MQSnZBqkzNW5jZBZAqXOWyNg1hJdVp6oNCZAspx0wDZAIIeuq4Ju4iXUaOQ7PYu0YcljxHH0UL1UO9ERpNOtnQx6o7eG9o2wMp5mZA6bE6ab4zm5u9ksdlOWkOHOWPUZBXZAxyUiWjwnWhYPhIXBBvj8qmpSYrpIRZBWnlnZAbUyOST9YZD",
+    "section": "english",
     "langs": [],
     "bg_mode": "image",
     "news_mode": "auto",
@@ -142,8 +142,8 @@
     "brand": null,
     "sentences": 4,
     "question_box": true,
-    "enabled": false,
-    "status": "out_of_data",
+    "enabled": true,
+    "status": "waiting",
     "schedule": {
       "day": {
         "start": "06:00",
@@ -159,7 +159,7 @@
       }
     },
     "last_post_at": null,
-    "next_post_at": "2026-11-09T15:56:41.153824+05:30",
+    "next_post_at": "2026-11-09T17:56:58.320336+05:30",
     "posted_count": 0,
     "fail_count": 0,
     "reel": false,
