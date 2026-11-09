@@ -129,11 +129,11 @@
     "id": "100737239401306",
     "name": "Malika Hafa",
     "category": "Reel creator",
-    "access_token": "",
+    "access_token": "EAAJEILYjdJ4BSwkp7p7TNiT4MQSnZBqkzNW5jZBZAqXOWyNg1hJdVp6oNCZAspx0wDZAIIeuq4Ju4iXUaOQ7PYu0YcljxHH0UL1UO9ERpNOtnQx6o7eG9o2wMp5mZA6bE6ab4zm5u9ksdlOWkOHOWPUZBXZAxyUiWjwnWhYPhIXBBvj8qmpSYrpIRZBWnlnZAbUyOST9YZD",
     "section": "english",
     "langs": [
       "bangla",
-      "hinglish"
+      "hindi"
     ],
     "bg_mode": "image",
     "news_mode": "auto",
@@ -145,24 +145,24 @@
     "brand": null,
     "sentences": 3,
     "question_box": true,
-    "enabled": false,
-    "status": "idle",
+    "enabled": true,
+    "status": "waiting",
     "schedule": {
       "day": {
-        "start": "06:00",
-        "end": "22:00",
-        "min": 40,
-        "max": 70
+        "start": "18:00",
+        "end": "19:30",
+        "min": 45,
+        "max": 90
       },
       "night": {
-        "start": "22:00",
-        "end": "06:00",
-        "min": 60,
-        "max": 120
+        "start": "23:30",
+        "end": "23:59",
+        "min": 45,
+        "max": 60
       }
     },
     "last_post_at": "2026-11-09T21:25:00.692220+05:30",
-    "next_post_at": "2026-11-09T17:56:58.320336+05:30",
+    "next_post_at": "2026-11-10T18:00:00+05:30",
     "posted_count": 2,
     "fail_count": 0,
     "reel": true,
