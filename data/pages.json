@@ -7,7 +7,7 @@
     "section": "english",
     "langs": [
       "bangla",
-      "hinglish"
+      "hindi"
     ],
     "bg_mode": "e5",
     "news_mode": "auto",
@@ -70,7 +70,7 @@
     "section": "islam",
     "langs": [
       "bangla",
-      "english"
+      "hindi"
     ],
     "bg_mode": "gold",
     "news_mode": "auto",
@@ -98,9 +98,9 @@
         "max": 90
       }
     },
-    "last_post_at": "2026-11-09T21:30:39.288257+05:30",
+    "last_post_at": "2026-11-09T22:01:16.475763+05:30",
     "next_post_at": "2026-11-09T17:27:59.950344+05:30",
-    "posted_count": 10,
+    "posted_count": 11,
     "fail_count": 0,
     "reel": true,
     "reel_music": true,

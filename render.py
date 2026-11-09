@@ -56,9 +56,11 @@ _FONTS = {k: _font_path(k) for k in _CANDIDATES}
 
 def _font(key, size):
     p = _FONTS.get(key) or _FONTS.get("body") or _FONTS.get("bold")
-    if p:
-        return ImageFont.truetype(p, size)
-    return ImageFont.load_default(size)
+    if not p:
+        return ImageFont.load_default(size)
+    if _RAQM:
+        return ImageFont.truetype(p, size, layout_engine=ImageFont.Layout.RAQM)
+    return ImageFont.truetype(p, size)
 
 
 def _wrap(draw, text, font, max_w):
