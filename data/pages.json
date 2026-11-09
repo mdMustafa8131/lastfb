@@ -19,20 +19,20 @@
     "brand": null,
     "sentences": 4,
     "question_box": true,
-    "enabled": true,
-    "status": "waiting",
+    "enabled": false,
+    "status": "stopped",
     "schedule": {
       "day": {
-        "start": "06:00",
-        "end": "22:00",
-        "min": 40,
-        "max": 70
+        "start": "09:00",
+        "end": "12:00",
+        "min": 45,
+        "max": 90
       },
       "night": {
-        "start": "22:00",
-        "end": "06:00",
-        "min": 60,
-        "max": 120
+        "start": "20:00",
+        "end": "22:00",
+        "min": 45,
+        "max": 90
       }
     },
     "last_post_at": "2026-11-09T16:49:33.309672+05:30",
@@ -82,25 +82,25 @@
     "brand": null,
     "sentences": 4,
     "question_box": true,
-    "enabled": true,
-    "status": "waiting",
+    "enabled": false,
+    "status": "idle",
     "schedule": {
       "day": {
-        "start": "06:00",
-        "end": "22:00",
-        "min": 40,
-        "max": 70
+        "start": "13:00",
+        "end": "17:00",
+        "min": 60,
+        "max": 120
       },
       "night": {
         "start": "22:00",
-        "end": "06:00",
-        "min": 60,
-        "max": 120
+        "end": "23:30",
+        "min": 45,
+        "max": 90
       }
     },
-    "last_post_at": "2026-11-09T16:38:54.379536+05:30",
+    "last_post_at": "2026-11-09T21:30:39.288257+05:30",
     "next_post_at": "2026-11-09T17:27:59.950344+05:30",
-    "posted_count": 7,
+    "posted_count": 10,
     "fail_count": 0,
     "reel": true,
     "reel_music": true,
@@ -129,9 +129,12 @@
     "id": "100737239401306",
     "name": "Malika Hafa",
     "category": "Reel creator",
-    "access_token": "EAAJEILYjdJ4BSwkp7p7TNiT4MQSnZBqkzNW5jZBZAqXOWyNg1hJdVp6oNCZAspx0wDZAIIeuq4Ju4iXUaOQ7PYu0YcljxHH0UL1UO9ERpNOtnQx6o7eG9o2wMp5mZA6bE6ab4zm5u9ksdlOWkOHOWPUZBXZAxyUiWjwnWhYPhIXBBvj8qmpSYrpIRZBWnlnZAbUyOST9YZD",
+    "access_token": "",
     "section": "english",
-    "langs": [],
+    "langs": [
+      "bangla",
+      "hinglish"
+    ],
     "bg_mode": "image",
     "news_mode": "auto",
     "news_region": "in",
@@ -140,10 +143,10 @@
     "source_color": "#085430",
     "logo": null,
     "brand": null,
-    "sentences": 4,
+    "sentences": 3,
     "question_box": true,
-    "enabled": true,
-    "status": "waiting",
+    "enabled": false,
+    "status": "idle",
     "schedule": {
       "day": {
         "start": "06:00",
@@ -158,28 +161,28 @@
         "max": 120
       }
     },
-    "last_post_at": null,
+    "last_post_at": "2026-11-09T21:25:00.692220+05:30",
     "next_post_at": "2026-11-09T17:56:58.320336+05:30",
-    "posted_count": 0,
+    "posted_count": 2,
     "fail_count": 0,
-    "reel": false,
-    "reel_music": true,
+    "reel": true,
+    "reel_music": false,
     "reel_mode": "zoom",
     "hashtags": [],
-    "voice_on": false,
+    "voice_on": true,
     "voice_gender": "female",
     "voice_rate": -6,
-    "hl_on": true,
-    "line_on": true,
-    "ul_on": false,
+    "hl_on": false,
+    "line_on": false,
+    "ul_on": true,
     "ul_px_en": 6,
     "ul_px_bn": 6,
     "ul_px_hi": 6,
     "ul_color_en": "#FFD400",
     "ul_color_bn": "#00E5A0",
     "ul_color_hi": "#FF5A5F",
-    "ul_style": "underline",
-    "ul_alpha": 38,
+    "ul_style": "highlight",
+    "ul_alpha": 9,
     "music_vol": 20,
     "created_at": "2026-11-08T19:09:56.938804+00:00"
   }
