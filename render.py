@@ -15,12 +15,21 @@ IMG_EXT = {".jpg", ".jpeg", ".png", ".webp"}
 FONT_DIR = config.BASE_DIR / "assets" / "fonts"
 
 _CANDIDATES = {
-    "bold": ["NotoSans-Bold.ttf", "DejaVuSans-Bold.ttf", "arialbd.ttf"],
-    "body": ["NotoSans-Regular.ttf", "DejaVuSans.ttf", "arial.ttf"],
+    "bold": ["NotoSans-Bold.ttf", "DejaVuSans-Bold.ttf", "arialbd.ttf",
+             "LiberationSans-Bold.ttf", "segoeuib.ttf"],
+    "body": ["NotoSans-Regular.ttf", "DejaVuSans.ttf", "arial.ttf",
+             "LiberationSans-Regular.ttf", "segoeui.ttf"],
     "bn": ["NotoSansBengali-Regular.ttf", "NotoSansBengali-Bold.ttf",
            "nirmala.ttf", "vrinda.ttf"],
     "hi": ["NotoSansDevanagari-Regular.ttf", "NotoSansDevanagari-Bold.ttf",
-           "nirmala.ttf", "mangal.ttf"],
+           "NotoSerifDevanagari-Regular.ttf", "nirmala.ttf", "mangal.ttf"],
+}
+
+_GLOBS = {
+    "bn": ["*Bengali*.ttf"],
+    "hi": ["*Devanagari*.ttf"],
+    "body": ["*DejaVuSans*.ttf", "*LiberationSans-Regular*.ttf", "*NotoSans-Regular*.ttf"],
+    "bold": ["*DejaVuSans*Bold*.ttf", "*LiberationSans-Bold*.ttf", "*NotoSans-Bold*.ttf"],
 }
 
 _SYSTEM_DIRS = [FONT_DIR, Path("/usr/share/fonts"), Path("C:/Windows/Fonts")]
@@ -32,6 +41,13 @@ def _font_path(key):
             p = d / name
             if p.exists():
                 return str(p)
+    for g in _GLOBS.get(key, []):
+        for d in _SYSTEM_DIRS:
+            if not d.exists():
+                continue
+            for p in sorted(d.rglob(g)):
+                if p.suffix.lower() in (".ttf", ".otf", ".ttc"):
+                    return str(p)
     return None
 
 
@@ -39,7 +55,7 @@ _FONTS = {k: _font_path(k) for k in _CANDIDATES}
 
 
 def _font(key, size):
-    p = _FONTS.get(key)
+    p = _FONTS.get(key) or _FONTS.get("body") or _FONTS.get("bold")
     if p:
         return ImageFont.truetype(p, size)
     return ImageFont.load_default(size)
@@ -142,13 +158,12 @@ def _panel(base, box, fill, radius=26, outline=None, width=3):
 
 
 def _detect_key(text):
-    for ch in str(text or ""):
-        o = ord(ch)
-        if 0x0980 <= o <= 0x09FF:
-            return "bn"
-        if 0x0900 <= o <= 0x097F:
-            return "hi"
-    return "body"
+    s = str(text or "")
+    bn = sum(1 for c in s if 0x0980 <= ord(c) <= 0x09FF)
+    hi = sum(1 for c in s if 0x0900 <= ord(c) <= 0x097F and c not in "।॥")
+    if not bn and not hi:
+        return "body"
+    return "bn" if bn >= hi else "hi"
 
 
 def _hex_rgb(h, fallback=(8, 84, 48)):
@@ -278,7 +293,17 @@ BAR_COLORS = [(18, 168, 100), (232, 88, 128), (78, 108, 232),
 
 
 def _trans_list(item, langs):
-    return [l for l in (langs or []) if item.get(l)]
+    base = " ".join(str(item.get("hadith_roman") or "").split())
+    hk = _detect_key(base)
+    out = []
+    for l in (langs or []):
+        t = " ".join(str(item.get(l) or "").split())
+        if not t or t == base:
+            continue
+        if _detect_key(t) == hk:
+            continue
+        out.append(l)
+    return out
 
 
 def _group(base, box, entries, max_size, min_size=16, gap=1.18, sep=True,
@@ -486,9 +511,10 @@ def render_islam(item, langs=None, mode="image", source_color="#085430", categor
 
 # ---------- gold frame design (islam only) ----------
 _G_FONTS = {
-    "bold": ["NotoSans-Bold.ttf", "DejaVuSans-Bold.ttf", "arialbd.ttf"],
+    "bold": ["NotoSans-Bold.ttf", "DejaVuSans-Bold.ttf", "arialbd.ttf",
+             "LiberationSans-Bold.ttf"],
     "dev": ["NotoSansDevanagari-Bold.ttf", "NotoSansDevanagari-Regular.ttf",
-            "Nirmala.ttf", "mangal.ttf"],
+            "NotoSerifDevanagari-Regular.ttf", "Nirmala.ttf", "mangal.ttf"],
     "bn": ["NotoSansBengali-Bold.ttf", "NotoSansBengali-Regular.ttf",
            "Nirmala.ttf", "vrinda.ttf"],
 }
@@ -499,6 +525,12 @@ GOLD = (212, 175, 55)
 _G_ALIAS = {"hi": "dev", "devanagari": "dev", "dev": "dev", "hindi": "dev",
             "bn": "bn", "bangla": "bn", "bengali": "bn"}
 
+_G_GLOBS = {
+    "dev": ["*Devanagari*.ttf"],
+    "bn": ["*Bengali*.ttf"],
+    "bold": ["*DejaVuSans*Bold*.ttf", "*LiberationSans-Bold*.ttf"],
+}
+
 
 def _g_path(k):
     for n in _G_FONTS.get(k, []):
@@ -506,6 +538,13 @@ def _g_path(k):
             p = d / n
             if p.exists():
                 return str(p)
+    for g in _G_GLOBS.get(k, []):
+        for d in _G_DIRS:
+            if not d.exists():
+                continue
+            for p in sorted(d.rglob(g)):
+                if p.suffix.lower() in (".ttf", ".otf", ".ttc"):
+                    return str(p)
     return None
 
 
@@ -771,8 +810,11 @@ def render_islam_gold(item, langs=None, category=None, plain=False, bg=None, tra
 
     d = ImageDraw.Draw(img)
     hkey = _g_key(item["hadith_roman"])
+    _base = " ".join(str(item["hadith_roman"]).split())
     trans = [item[k] for k in (langs or [])
-             if item.get(k) and _g_key(item[k]) != hkey]
+             if item.get(k)
+             and " ".join(str(item[k]).split()) != _base
+             and _g_key(item[k]) != hkey]
     foot_h = 70
     top = pad + 96
     bottom = H - pad - foot_h - 6
